@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>willow borain</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <button id="nav-toggle" class="icon-btn" aria-label="Menu">&#9776;</button>
+    </header>
+
+    <div id="nav-backdrop" class="nav-backdrop"></div>
+    <nav id="nav-drawer" class="nav-drawer" aria-label="Site navigation">
+      <div id="nav-content"></div>
+    </nav>
+
+    <main id="app"></main>
+
+    <button id="edit-site-btn" class="pill-btn edit-site-btn">edit site</button>
+
+    <div id="edit-bar" class="edit-bar" hidden>
+      <div class="edit-bar-row">
+        <span class="edit-status"
+          >editing &mdash; saved to this browser. click "publish site" to make it
+          live for visitors.</span
+        >
+        <div class="edit-bar-actions">
+          <button id="btn-publish" class="pill-btn pill-solid">publish site</button>
+          <button id="btn-export" class="pill-btn">export data</button>
+          <button id="btn-import" class="pill-btn">import data</button>
+          <button id="btn-change-pw" class="pill-btn">change password</button>
+        </div>
+      </div>
+      <div class="edit-bar-row">
+        <div class="edit-bar-actions">
+          <button id="btn-reset" class="pill-btn">reset to defaults</button>
+          <button id="btn-exit-edit" class="pill-btn">exit edit mode</button>
+        </div>
+        <span class="editing-indicator">editing&hellip;</span>
+      </div>
+    </div>
+
+    <input type="file" id="file-input" accept="image/*" hidden />
+    <input type="file" id="import-input" accept="application/json" hidden />
+
+    <div id="modal-root"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/crop.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

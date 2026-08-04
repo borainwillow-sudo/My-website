@@ -1,0 +1,39 @@
+{
+  "siteName": "willow borain",
+  "home": {
+    "photos": [
+      { "id": "home-1", "caption": "willow borain", "image": null }
+    ]
+  },
+  "categories": [
+    {
+      "id": "personal",
+      "name": "personal",
+      "projects": [
+        { "id": "girlhood", "name": "girlhood", "year": "2015", "photos": [ { "id": "girlhood-1", "caption": "girlhood #1", "image": null } ] },
+        { "id": "volumetwospace", "name": "volumetwospace", "year": "2025", "photos": [ { "id": "volumetwospace-1", "caption": "volumetwospace #1", "image": null } ] },
+        { "id": "tattoo-convention-polaroids", "name": "tattoo convention polaroids", "year": "2025", "photos": [ { "id": "tattoo-convention-polaroids-1", "caption": "tattoo convention polaroids #1", "image": null } ] },
+        { "id": "untitled-project", "name": "untitled project", "year": "2023", "photos": [ { "id": "untitled-project-1", "caption": "untitled project #1", "image": null } ] },
+        { "id": "dorpies", "name": "dorpies", "year": "2023", "photos": [ { "id": "dorpies-1", "caption": "dorpies #1", "image": null } ] },
+        { "id": "trains", "name": "trains", "year": "2024", "photos": [ { "id": "trains-1", "caption": "trains #1", "image": null } ] },
+        { "id": "lovers-and-cat", "name": "lovers and cat", "year": "2024", "photos": [ { "id": "lovers-and-cat-1", "caption": "lovers and cat #1", "image": null } ] },
+        { "id": "girls-girls-girls", "name": "girls girls girls", "year": "2025", "photos": [ { "id": "girls-girls-girls-1", "caption": "girls girls girls #1", "image": null } ] }
+      ]
+    },
+    {
+      "id": "work",
+      "name": "work",
+      "projects": [
+        { "id": "scarlet-wednesday-bts", "name": "scarlet wednesday bts", "year": "2026", "photos": [ { "id": "scarlet-wednesday-bts-1", "caption": "scarlet wednesday bts #1", "image": null } ] },
+        { "id": "4wks", "name": "4wks", "year": "2026", "photos": [ { "id": "4wks-1", "caption": "4wks #1", "image": null } ] },
+        { "id": "superbalist", "name": "superbalist", "year": "2015", "photos": [ { "id": "superbalist-1", "caption": "superbalist #1", "image": null } ] },
+        { "id": "cape-film-supply", "name": "cape film supply", "year": "2025-2026", "photos": [ { "id": "cape-film-supply-1", "caption": "cape film supply #1", "image": null } ] },
+        { "id": "yoco", "name": "yoco", "year": "2026", "photos": [ { "id": "yoco-1", "caption": "yoco #1", "image": null } ] },
+        { "id": "deluxe-coffeeworks", "name": "deluxe coffeeworks", "year": "2021-2026", "photos": [ { "id": "deluxe-coffeeworks-1", "caption": "deluxe coffeeworks #1", "image": null } ] },
+        { "id": "sa-harvest", "name": "sa harvest", "year": "2025", "photos": [ { "id": "sa-harvest-1", "caption": "sa harvest #1", "image": null } ] },
+        { "id": "merwe-mode", "name": "merwe mode", "year": "2024", "photos": [ { "id": "merwe-mode-1", "caption": "merwe mode #1", "image": null } ] },
+        { "id": "repentance", "name": "repentance", "year": "2025", "photos": [ { "id": "repentance-1", "caption": "repentance #1", "image": null } ] }
+      ]
+    }
+  ]
+}
