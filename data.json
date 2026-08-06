@@ -37,7 +37,19 @@
         "quote": "",
         "description": ""
       },
-      "photos": []
+      "photos": [
+        {
+          "id": "mshn13oi0oeako",
+          "display": "photos/mshn13oi0oeako.jpg",
+          "thumb": "photos/mshn13oi0oeako-t.jpg",
+          "width": 2085,
+          "height": 2560,
+          "caption": "",
+          "x": 16,
+          "y": 13.828208825107296,
+          "w": 34
+        }
+      ]
     },
     {
       "id": "about",
