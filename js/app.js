@@ -135,8 +135,11 @@
     saving = true;
     clearTimeout(saveTimer);
     var pending = window.WB.getPendingPhotos();
+    var pendingFileCount = pending.reduce(function (n, r) {
+      return n + (r.files ? r.files.length : 0);
+    }, 0);
     setStatus(
-      pending.length ? "Saving " + pending.length + " photo(s)…" : "Saving…",
+      pendingFileCount ? "Saving " + pendingFileCount + " file(s)…" : "Saving…",
       "is-saving"
     );
 
@@ -149,17 +152,15 @@
         },
       ];
       for (var i = 0; i < pending.length; i++) {
-        var p = pending[i];
-        files.push({
-          path: p.displayPath,
-          content: await window.WB.blobToBase64(p.displayBlob),
-          encoding: "base64",
-        });
-        files.push({
-          path: p.thumbPath,
-          content: await window.WB.blobToBase64(p.thumbBlob),
-          encoding: "base64",
-        });
+        var staged = pending[i].files || [];
+        for (var j = 0; j < staged.length; j++) {
+          if (!(staged[j].blob instanceof Blob)) continue;
+          files.push({
+            path: staged[j].path,
+            content: await window.WB.blobToBase64(staged[j].blob),
+            encoding: "base64",
+          });
+        }
       }
 
       await window.WB.gh.commitFiles(files, "Update site content");
