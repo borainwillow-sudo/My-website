@@ -1,124 +1,160 @@
 (function () {
-  function openCropper(imageSrc, aspect, onApply) {
+  // Free-aspect cropper: the output keeps whatever shape the viewport is set
+  // to, and the viewport follows the photo's current aspect ratio so cropping
+  // never silently reshapes a photo unless the user drags the ratio control.
+  function openCropper(imageSrc, startAspect, onApply) {
     var root = document.getElementById("modal-root");
-    root.innerHTML = "";
-
     var overlay = document.createElement("div");
     overlay.className = "modal-overlay";
 
     var box = document.createElement("div");
-    box.className = "modal crop-modal";
+    box.className = "modal";
+    box.innerHTML =
+      "<h3>Crop photo</h3>" +
+      '<p class="hint">Drag the photo to reposition, zoom to scale, and set the shape of the crop. The full-resolution file is re-cut from your original.</p>';
 
-    var title = document.createElement("h3");
-    title.className = "modal-title";
-    title.textContent = "crop photo";
-    box.appendChild(title);
-
+    var vw = 420;
+    var aspect = startAspect || 1;
     var viewport = document.createElement("div");
     viewport.className = "crop-viewport";
-    var vw = 300,
-      vh = Math.round(vw / aspect);
-    viewport.style.width = vw + "px";
-    viewport.style.height = vh + "px";
 
     var img = new Image();
     img.className = "crop-image";
+    img.crossOrigin = "anonymous";
     viewport.appendChild(img);
     box.appendChild(viewport);
 
-    var zoomWrap = document.createElement("label");
-    zoomWrap.className = "crop-zoom-label";
-    zoomWrap.textContent = "zoom";
+    var zoomRow = document.createElement("div");
+    zoomRow.className = "crop-controls";
+    zoomRow.innerHTML = "<span>Zoom</span>";
     var zoom = document.createElement("input");
     zoom.type = "range";
     zoom.min = "1";
-    zoom.max = "3";
+    zoom.max = "4";
     zoom.step = "0.01";
     zoom.value = "1";
-    zoomWrap.appendChild(zoom);
-    box.appendChild(zoomWrap);
+    zoomRow.appendChild(zoom);
+    box.appendChild(zoomRow);
+
+    var ratioRow = document.createElement("div");
+    ratioRow.className = "crop-controls";
+    ratioRow.innerHTML = "<span>Shape</span>";
+    var ratio = document.createElement("input");
+    ratio.type = "range";
+    ratio.min = "0.5";
+    ratio.max = "2";
+    ratio.step = "0.01";
+    ratio.value = String(aspect);
+    ratioRow.appendChild(ratio);
+    var ratioReset = document.createElement("button");
+    ratioReset.className = "pill-btn";
+    ratioReset.textContent = "Original";
+    ratioRow.appendChild(ratioReset);
+    box.appendChild(ratioRow);
 
     var actions = document.createElement("div");
     actions.className = "modal-actions";
-    var applyBtn = document.createElement("button");
-    applyBtn.className = "pill-btn pill-solid";
-    applyBtn.textContent = "apply crop";
     var cancelBtn = document.createElement("button");
     cancelBtn.className = "pill-btn";
-    cancelBtn.textContent = "cancel";
-    actions.appendChild(applyBtn);
+    cancelBtn.textContent = "Cancel";
+    var applyBtn = document.createElement("button");
+    applyBtn.className = "pill-btn pill-solid";
+    applyBtn.textContent = "Apply crop";
     actions.appendChild(cancelBtn);
+    actions.appendChild(applyBtn);
     box.appendChild(actions);
 
     overlay.appendChild(box);
     root.appendChild(overlay);
 
+    var vh = Math.round(vw * aspect);
     var baseScale = 1,
       tx = 0,
       ty = 0,
       natW = 0,
       natH = 0;
 
-    function clamp() {
+    function sizeViewport() {
+      vh = Math.round(vw * aspect);
+      viewport.style.width = vw + "px";
+      viewport.style.height = vh + "px";
+    }
+
+    function fit() {
+      if (!natW) return;
+      baseScale = Math.max(vw / natW, vh / natH);
       var z = parseFloat(zoom.value);
-      var scale = baseScale * z;
-      var dispW = natW * scale,
-        dispH = natH * scale;
-      var minTx = vw - dispW,
-        minTy = vh - dispH;
-      tx = Math.min(0, Math.max(minTx, tx));
-      ty = Math.min(0, Math.max(minTy, ty));
+      tx = (vw - natW * baseScale * z) / 2;
+      ty = (vh - natH * baseScale * z) / 2;
+      clamp();
+      applyTransform();
+    }
+
+    function clamp() {
+      var scale = baseScale * parseFloat(zoom.value);
+      tx = Math.min(0, Math.max(vw - natW * scale, tx));
+      ty = Math.min(0, Math.max(vh - natH * scale, ty));
     }
 
     function applyTransform() {
-      var z = parseFloat(zoom.value);
-      var scale = baseScale * z;
+      var scale = baseScale * parseFloat(zoom.value);
       img.style.width = natW * scale + "px";
       img.style.height = natH * scale + "px";
-      img.style.transform = "translate(" + tx + "px, " + ty + "px)";
+      img.style.transform = "translate(" + tx + "px," + ty + "px)";
     }
+
+    sizeViewport();
 
     img.onload = function () {
       natW = img.naturalWidth;
       natH = img.naturalHeight;
-      baseScale = Math.max(vw / natW, vh / natH);
-      tx = (vw - natW * baseScale) / 2;
-      ty = (vh - natH * baseScale) / 2;
-      applyTransform();
+      fit();
     };
     img.src = imageSrc;
 
     var dragging = false,
-      startX = 0,
-      startY = 0,
-      startTx = 0,
-      startTy = 0;
+      sx = 0,
+      sy = 0,
+      stx = 0,
+      sty = 0;
 
     viewport.addEventListener("pointerdown", function (e) {
       dragging = true;
-      startX = e.clientX;
-      startY = e.clientY;
-      startTx = tx;
-      startTy = ty;
+      sx = e.clientX;
+      sy = e.clientY;
+      stx = tx;
+      sty = ty;
       viewport.setPointerCapture(e.pointerId);
     });
     viewport.addEventListener("pointermove", function (e) {
       if (!dragging) return;
-      tx = startTx + (e.clientX - startX);
-      ty = startTy + (e.clientY - startY);
+      tx = stx + (e.clientX - sx);
+      ty = sty + (e.clientY - sy);
       clamp();
       applyTransform();
     });
-    viewport.addEventListener("pointerup", function () {
-      dragging = false;
-    });
-    viewport.addEventListener("pointercancel", function () {
-      dragging = false;
+    ["pointerup", "pointercancel"].forEach(function (ev) {
+      viewport.addEventListener(ev, function () {
+        dragging = false;
+      });
     });
 
     zoom.addEventListener("input", function () {
       clamp();
       applyTransform();
+    });
+
+    ratio.addEventListener("input", function () {
+      aspect = parseFloat(ratio.value);
+      sizeViewport();
+      fit();
+    });
+
+    ratioReset.addEventListener("click", function () {
+      aspect = natH / natW;
+      ratio.value = String(aspect);
+      sizeViewport();
+      fit();
     });
 
     function close() {
@@ -131,21 +167,21 @@
     });
 
     applyBtn.addEventListener("click", function () {
-      var z = parseFloat(zoom.value);
-      var scale = baseScale * z;
-      var cropX = -tx / scale,
-        cropY = -ty / scale,
-        cropW = vw / scale,
-        cropH = vh / scale;
-      var outW = 800,
-        outH = Math.round(outW / aspect);
+      var scale = baseScale * parseFloat(zoom.value);
+      var cropX = -tx / scale;
+      var cropY = -ty / scale;
+      var cropW = vw / scale;
+      var cropH = vh / scale;
+      // Render from the source pixels so we keep the original resolution.
+      var outW = Math.round(Math.min(cropW, natW));
+      var outH = Math.round(outW * aspect);
       var canvas = document.createElement("canvas");
       canvas.width = outW;
       canvas.height = outH;
-      canvas
-        .getContext("2d")
-        .drawImage(img, cropX, cropY, cropW, cropH, 0, 0, outW, outH);
-      var dataUrl = canvas.toDataURL("image/jpeg", 0.88);
+      var ctx = canvas.getContext("2d");
+      ctx.imageSmoothingQuality = "high";
+      ctx.drawImage(img, cropX, cropY, cropW, cropH, 0, 0, outW, outH);
+      var dataUrl = canvas.toDataURL("image/jpeg", 0.92);
       close();
       onApply(dataUrl);
     });

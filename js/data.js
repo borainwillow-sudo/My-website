@@ -1,6 +1,8 @@
 (function () {
   function uid() {
-    return Math.random().toString(36).slice(2, 10);
+    return (
+      Date.now().toString(36) + Math.random().toString(36).slice(2, 8)
+    );
   }
 
   function slugify(s) {
@@ -11,60 +13,90 @@
       .replace(/(^-|-$)/g, "");
   }
 
-  function placeholderPhoto(caption) {
-    return { id: uid(), caption: caption, image: null };
+  var TYPO_ROLES = [
+    { key: "siteName", label: "Name", min: 16, max: 64 },
+    { key: "nav", label: "Navigation", min: 9, max: 24 },
+    { key: "pageTitle", label: "Page title", min: 9, max: 40 },
+    { key: "meta", label: "Header meta", min: 9, max: 32 },
+    { key: "body", label: "Body text", min: 10, max: 28 },
+    { key: "caption", label: "Captions", min: 8, max: 24 },
+  ];
+
+  var WEIGHTS = [
+    { value: 300, label: "Light" },
+    { value: 400, label: "Regular" },
+    { value: 500, label: "Medium" },
+    { value: 700, label: "Bold" },
+  ];
+
+  function emptyHeader() {
+    return { title: "", meta: "", quote: "", description: "" };
   }
 
-  function proj(name, year) {
+  function galleryPage(title) {
     return {
-      id: slugify(name),
-      name: name,
-      year: year,
-      photos: [placeholderPhoto(name + " #1")],
+      id: slugify(title) || uid(),
+      title: title,
+      type: "gallery",
+      header: emptyHeader(),
+      photos: [],
     };
   }
 
-  // Fallback content, used only if data.json can't be fetched (e.g. opened
-  // directly from disk without a server). Keep this in sync with data.json.
+  // Fallback used only if data.json cannot be fetched.
   var DEFAULT_DATA = {
-    siteName: "willow borain",
-    home: { photos: [placeholderPhoto("willow borain")] },
-    categories: [
+    siteName: "Willow Borain",
+    typography: {
+      siteName: { weight: 400, size: 30 },
+      nav: { weight: 400, size: 13 },
+      pageTitle: { weight: 500, size: 14 },
+      meta: { weight: 400, size: 14 },
+      body: { weight: 400, size: 15 },
+      caption: { weight: 400, size: 12 },
+    },
+    pages: [
+      { id: "home", title: "Home", type: "gallery", header: emptyHeader(), photos: [] },
       {
-        id: "personal",
-        name: "personal",
-        projects: [
-          proj("girlhood", "2015"),
-          proj("volumetwospace", "2025"),
-          proj("tattoo convention polaroids", "2025"),
-          proj("untitled project", "2023"),
-          proj("dorpies", "2023"),
-          proj("trains", "2024"),
-          proj("lovers and cat", "2024"),
-          proj("girls girls girls", "2025"),
-        ],
+        id: "about",
+        title: "About",
+        type: "text",
+        header: Object.assign(emptyHeader(), { title: "About" }),
+        body: "Write your about text here.",
       },
       {
-        id: "work",
-        name: "work",
-        projects: [
-          proj("scarlet wednesday bts", "2026"),
-          proj("4wks", "2026"),
-          proj("superbalist", "2015"),
-          proj("cape film supply", "2025-2026"),
-          proj("yoco", "2026"),
-          proj("deluxe coffeeworks", "2021-2026"),
-          proj("sa harvest", "2025"),
-          proj("merwe mode", "2024"),
-          proj("repentance", "2025"),
+        id: "contact",
+        title: "Contact",
+        type: "text",
+        header: Object.assign(emptyHeader(), { title: "Contact" }),
+        body: "borainwillow@gmail.com",
+      },
+      {
+        id: "pictures",
+        title: "Pictures",
+        type: "group",
+        children: [galleryPage("Personal Work"), galleryPage("Client Work")],
+      },
+      {
+        id: "zines",
+        title: "Zines",
+        type: "group",
+        children: [
+          galleryPage("001"),
+          galleryPage("002"),
+          galleryPage("003 Coming Soon Maybe"),
         ],
       },
     ],
   };
 
   window.WB = window.WB || {};
-  window.WB.uid = uid;
-  window.WB.slugify = slugify;
-  window.WB.placeholderPhoto = placeholderPhoto;
-  window.WB.DEFAULT_DATA = DEFAULT_DATA;
+  Object.assign(window.WB, {
+    uid: uid,
+    slugify: slugify,
+    emptyHeader: emptyHeader,
+    galleryPage: galleryPage,
+    TYPO_ROLES: TYPO_ROLES,
+    WEIGHTS: WEIGHTS,
+    DEFAULT_DATA: DEFAULT_DATA,
+  });
 })();
