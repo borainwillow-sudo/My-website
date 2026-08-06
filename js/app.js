@@ -1,7 +1,7 @@
 (function () {
   // Shown at the bottom of the Style panel. Bump alongside the ?v= query
   // strings in index.html so a stale copy can be identified at a glance.
-  var EDITOR_VERSION = "5";
+  var EDITOR_VERSION = "6";
   var data = null;
   var currentId = "home";
   var openGroups = {};
@@ -85,6 +85,14 @@
       value = 'url("' + src + '") ' + hx + " " + hy + ", auto";
     }
     document.documentElement.style.setProperty("--site-cursor", value);
+  }
+
+  // Blank space below the last photo, as a proportion of screen height.
+  function applyFooterSpace() {
+    var space = data.footer && typeof data.footer.space === "number"
+      ? data.footer.space
+      : 45;
+    document.documentElement.style.setProperty("--footer-space", space + "vh");
   }
 
   function applyTypography() {
@@ -389,6 +397,7 @@
   function render() {
     applyTypography();
     applyCursor();
+    applyFooterSpace();
     $("site-name").textContent = data.siteName;
     $("mobile-name").textContent = data.siteName;
     document.title = data.siteName;
@@ -553,6 +562,8 @@
       );
     }).join("");
 
+    var footerSpace =
+      data.footer && typeof data.footer.space === "number" ? data.footer.space : 45;
     var cursor = data.cursor || {};
     var cursorPreview = cursor.image
       ? '<img class="cursor-preview" src="' + esc(window.WB.resolveSrc(cursor.image)) + '" alt="">'
@@ -586,11 +597,43 @@
         '<option value="center"' + (cursor.hotspot === "center" ? " selected" : "") + ">Tip: centre</option>" +
         "</select></div>" +
         '<p class="hint" id="cursor-size-note" hidden>Size applies to the next image you upload.</p>' +
+        '<div class="group-heading">End of page</div>' +
+        '<p class="hint">Blank space below the last photo on every page. Set as a share of the screen height, so it stays in proportion on any device. Drag to preview it live.</p>' +
+        '<div class="typo-row"><span>Space</span>' +
+        '<input type="range" id="footer-space" min="0" max="100" step="5" value="' +
+        footerSpace +
+        '">' +
+        '<input type="number" id="footer-space-num" min="0" max="100" step="5" value="' +
+        footerSpace +
+        '"></div>' +
         '<p class="hint" style="margin-top:18px">Editor version ' +
         EDITOR_VERSION +
         "</p>" +
         '<div class="modal-actions"><button class="pill-btn pill-solid" id="typo-done">Done</button></div>'
     );
+
+    // Slider and number box drive the same value and mirror each other.
+    var spaceRange = modal.querySelector("#footer-space");
+    var spaceNum = modal.querySelector("#footer-space-num");
+
+    function setFooterSpace(value) {
+      var n = Math.max(0, Math.min(100, Number(value)));
+      if (isNaN(n)) return;
+      data.footer = data.footer || {};
+      data.footer.space = n;
+      spaceRange.value = n;
+      spaceNum.value = n;
+      applyFooterSpace();
+      markDirty();
+    }
+
+    spaceRange.addEventListener("input", function () {
+      setFooterSpace(this.value);
+    });
+    spaceNum.addEventListener("input", function () {
+      if (this.value === "") return;
+      setFooterSpace(this.value);
+    });
 
     modal.querySelector("#cursor-upload").addEventListener("click", function () {
       pendingCursorSize = Number(modal.querySelector("#cursor-size").value) || 32;

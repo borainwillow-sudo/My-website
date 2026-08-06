@@ -47,6 +47,7 @@
   var DEFAULT_DATA = {
     siteName: "Willow Borain",
     cursor: { image: null, size: 32, hotspot: "topleft" },
+    footer: { space: 45 },
     typography: {
       siteName: { weight: 400, size: 30 },
       nav: { weight: 400, size: 13 },

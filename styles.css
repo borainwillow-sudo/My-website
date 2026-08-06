@@ -269,12 +269,11 @@ img {
   width: 100%;
 }
 
-/* Quiet white space so the last photo never sits hard against the bottom of
-   the window. Deliberately generous — at a quarter of the screen it read as
-   nothing at all against the padding already below the content. */
+/* Blank space below the last photo. Set from Style → End of page, as a
+   proportion of screen height so it holds up across screen sizes. No
+   min-height: a setting of 0 should mean none. */
 .page-footer {
-  height: 45vh;
-  min-height: 320px;
+  height: var(--footer-space, 45vh);
   background: #fff;
 }
 
