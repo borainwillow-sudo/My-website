@@ -270,10 +270,11 @@ img {
 }
 
 /* Quiet white space so the last photo never sits hard against the bottom of
-   the window. */
+   the window. Deliberately generous — at a quarter of the screen it read as
+   nothing at all against the padding already below the content. */
 .page-footer {
-  height: 24vh;
-  min-height: 150px;
+  height: 45vh;
+  min-height: 320px;
   background: #fff;
 }
 
