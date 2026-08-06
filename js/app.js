@@ -1,4 +1,7 @@
 (function () {
+  // Shown at the bottom of the Style panel. Bump alongside the ?v= query
+  // strings in index.html so a stale copy can be identified at a glance.
+  var EDITOR_VERSION = "3";
   var data = null;
   var currentId = "home";
   var openGroups = {};
@@ -581,6 +584,9 @@
         '<option value="center"' + (cursor.hotspot === "center" ? " selected" : "") + ">Tip: centre</option>" +
         "</select></div>" +
         '<p class="hint" id="cursor-size-note" hidden>Size applies to the next image you upload.</p>' +
+        '<p class="hint" style="margin-top:18px">Editor version ' +
+        EDITOR_VERSION +
+        "</p>" +
         '<div class="modal-actions"><button class="pill-btn pill-solid" id="typo-done">Done</button></div>'
     );
 
