@@ -46,6 +46,7 @@
   // Fallback used only if data.json cannot be fetched.
   var DEFAULT_DATA = {
     siteName: "Willow Borain",
+    cursor: { image: null, size: 32, hotspot: "topleft" },
     typography: {
       siteName: { weight: 400, size: 30 },
       nav: { weight: 400, size: 13 },

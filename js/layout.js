@@ -87,6 +87,16 @@
     }
 
     function onPointerDown(e) {
+      // The tool buttons and the editable caption live inside the photo block,
+      // and the preventDefault below would swallow their click and focus. Let
+      // those through untouched.
+      if (
+        e.target.closest(".photo-tools") ||
+        e.target.closest(".link-flag") ||
+        e.target.closest("[contenteditable]")
+      ) {
+        return;
+      }
       var handle = e.target.closest(".resize-handle");
       var block = e.target.closest("[data-photo-id]");
       if (!block || !canvas.contains(block)) return;

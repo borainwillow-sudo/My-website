@@ -36,10 +36,42 @@ after that it asks for it. In edit mode you can:
 - **Drag photos** anywhere on the page; faint blue guides appear when an edge
   or centre lines up with another photo, and it snaps into place
 - **Resize** with the square handle at a photo's bottom-right corner
-- **Replace / Crop / Front / Remove** from the buttons above a photo on hover
+- **Replace / Crop / Link / Front / Remove** from the buttons above a photo on hover
 - Edit any text directly on the page (titles, captions, body copy)
-- **Type** — set Helvetica weight and size for each kind of text
+- **Style** — set Helvetica weight and size for each kind of text, and upload a custom cursor
 - **Pages** — rename, add, delete pages and sections
+
+## Photo links and hover labels
+
+**Link** on a photo opens a panel with two independent settings:
+
+- **Hover label** — fades in over the photo when the pointer is over it. Use it
+  for a project name. Desktop only; touch devices have no hover, so the label
+  never appears there and never gets stuck visible after a tap.
+- **Link** — pick a page on this site from the dropdown, or type any web
+  address. A photo with a link opens that link when clicked instead of opening
+  the lightbox. Internal links open in the same tab, external ones in a new
+  tab. A bare domain gets `https://` added for you.
+
+Together these give the usual portfolio home page: a grid of photos, each
+linking to a project, with its name appearing on hover. The label and the
+caption underneath are separate, so use either, both, or neither.
+
+While editing, a small blue `link` marker sits above any photo that has one.
+
+## Custom cursor
+
+**Style → Cursor → Upload image** takes a small PNG with a transparent
+background and uses it as the pointer across the whole site.
+
+- Pick the **size** before uploading — it's baked into the file, so to change
+  it, upload again.
+- **Tip** sets which part of the image is the click point: top-left (like a
+  normal arrow) or centre (better for a crosshair or dot).
+- Desktop only. Touch devices have no pointer, so nothing changes there.
+- The normal cursors still apply while you're editing, so grab, grabbing and
+  resize keep telling you what's draggable.
+- **Remove** reverts to the standard arrow.
 
 Positions are stored as percentages, so a layout keeps its proportions at any
 window size. Outside edit mode photos are fixed and no longer draggable.

@@ -72,7 +72,7 @@
     try {
       var records = await idbGetAll();
       (records || []).forEach(function (r) {
-        pendingPhotos[r.id] = r;
+        pendingPhotos[r.id] = normalizeRecord(r);
       });
       return Object.keys(pendingPhotos).length;
     } catch (e) {
@@ -117,23 +117,35 @@
     return loadDraft() || (await loadPublished());
   }
 
-  async function addPendingPhoto(processed) {
-    pendingPhotos[processed.id] = processed;
+  // A staged record is { id, files: [{ path, blob }] }. Photos contribute two
+  // files (display + thumbnail), the cursor contributes one. Records written
+  // by an earlier version used displayPath/thumbPath, so those are folded into
+  // the same shape on read.
+  function normalizeRecord(r) {
+    if (r.files) return r;
+    var files = [];
+    if (r.displayPath) files.push({ path: r.displayPath, blob: r.displayBlob });
+    if (r.thumbPath) files.push({ path: r.thumbPath, blob: r.thumbBlob });
+    return { id: r.id, files: files };
+  }
+
+  async function addPendingFiles(id, files) {
+    var record = { id: id, files: files };
+    pendingPhotos[id] = record;
     try {
-      await idbPut({
-        id: processed.id,
-        width: processed.width,
-        height: processed.height,
-        displayPath: processed.displayPath,
-        thumbPath: processed.thumbPath,
-        displayBlob: processed.displayBlob,
-        thumbBlob: processed.thumbBlob,
-      });
+      await idbPut(record);
     } catch (e) {
       // Staying in memory still works for this session; publishing is the
       // durable step either way.
-      console.warn("Could not stage photo to IndexedDB:", e);
+      console.warn("Could not stage files to IndexedDB:", e);
     }
+  }
+
+  function addPendingPhoto(processed) {
+    return addPendingFiles(processed.id, [
+      { path: processed.displayPath, blob: processed.displayBlob },
+      { path: processed.thumbPath, blob: processed.thumbBlob },
+    ]);
   }
 
   function getPendingPhotos() {
@@ -144,9 +156,9 @@
 
   async function clearPendingPhotos() {
     Object.keys(pendingPhotos).forEach(function (k) {
-      var p = pendingPhotos[k];
-      if (p.objectUrl) URL.revokeObjectURL(p.objectUrl);
-      if (p.thumbUrl) URL.revokeObjectURL(p.thumbUrl);
+      (pendingPhotos[k].files || []).forEach(function (f) {
+        if (f.objectUrl) URL.revokeObjectURL(f.objectUrl);
+      });
     });
     pendingPhotos = {};
     try {
@@ -161,12 +173,11 @@
   function pendingPhotoUrl(path) {
     var found = null;
     Object.keys(pendingPhotos).forEach(function (k) {
-      var p = pendingPhotos[k];
-      if (p.displayPath === path || p.thumbPath === path) {
-        if (!p.objectUrl) p.objectUrl = URL.createObjectURL(p.displayBlob);
-        if (!p.thumbUrl) p.thumbUrl = URL.createObjectURL(p.thumbBlob);
-        found = p.displayPath === path ? p.objectUrl : p.thumbUrl;
-      }
+      (pendingPhotos[k].files || []).forEach(function (f) {
+        if (f.path !== path) return;
+        if (!f.objectUrl) f.objectUrl = URL.createObjectURL(f.blob);
+        found = f.objectUrl;
+      });
     });
     return found;
   }
@@ -236,6 +247,7 @@
     isEditing: isEditing,
     setEditing: setEditing,
     addPendingPhoto: addPendingPhoto,
+    addPendingFiles: addPendingFiles,
     getPendingPhotos: getPendingPhotos,
     clearPendingPhotos: clearPendingPhotos,
     pendingCount: pendingCount,
