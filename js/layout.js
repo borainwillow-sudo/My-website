@@ -1,6 +1,12 @@
 (function () {
   // All photo geometry is stored in percentages of the canvas WIDTH — including
   // y — so a layout keeps its exact proportions at any screen size.
+  //
+  // y therefore cannot be written to CSS `top` as a percentage: for an
+  // absolutely positioned element a percentage top resolves against the
+  // container's HEIGHT, and the container grows as photos are added, which
+  // silently moved every existing photo. y is converted to pixels here
+  // instead, and recomputed whenever the canvas width changes.
   var SNAP_PX = 6;
   var MIN_WIDTH_PCT = 4;
 
@@ -22,21 +28,46 @@
     return max;
   }
 
+  // Below this width the canvas becomes a plain stacked grid and the
+  // free-form coordinates don't apply.
+  function isStacked() {
+    return window.matchMedia("(max-width: 820px)").matches;
+  }
+
   // Lays photos out and sizes the canvas to fit them.
   function applyPositions(canvas, photos) {
     var blocks = canvas.querySelectorAll("[data-photo-id]");
+
+    if (isStacked()) {
+      // Hand layout back to the grid.
+      canvas.style.height = "";
+      blocks.forEach(function (el) {
+        el.style.left = "";
+        el.style.top = "";
+        el.style.width = "";
+      });
+      return;
+    }
+
+    var width = canvas.clientWidth;
     blocks.forEach(function (el) {
       var photo = photos.find(function (p) {
         return p.id === el.dataset.photoId;
       });
       if (!photo) return;
       el.style.left = photo.x + "%";
-      el.style.top = photo.y + "%";
+      el.style.top = (photo.y / 100) * width + "px";
       el.style.width = photo.w + "%";
     });
-    var bottom = contentBottom(photos);
-    // top/left percentages resolve against width, so height must too.
-    canvas.style.paddingBottom = bottom > 0 ? bottom + "%" : "0";
+
+    // Measure the real blocks rather than trusting the image ratios: a caption
+    // adds height below the photo and would otherwise be clipped off the end.
+    var bottom = 0;
+    blocks.forEach(function (el) {
+      var b = el.offsetTop + el.offsetHeight;
+      if (b > bottom) bottom = b;
+    });
+    canvas.style.height = bottom > 0 ? bottom + "px" : "";
   }
 
   function candidatesFor(photos, movingId) {

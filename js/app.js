@@ -1,7 +1,7 @@
 (function () {
   // Shown at the bottom of the Style panel. Bump alongside the ?v= query
   // strings in index.html so a stale copy can be identified at a glance.
-  var EDITOR_VERSION = "3";
+  var EDITOR_VERSION = "4";
   var data = null;
   var currentId = "home";
   var openGroups = {};
@@ -354,7 +354,8 @@
         (editing ? ' contenteditable="true" data-body-field="1"' : "") +
         ">" +
         esc(page.body || "") +
-        "</div>";
+        "</div>" +
+        '<div class="page-footer"></div>';
       return;
     }
 
@@ -372,7 +373,8 @@
             ? "No photos yet — use “Add photos” below."
             : "Nothing here yet.") +
           "</p>"
-        : "");
+        : "") +
+      '<div class="page-footer"></div>';
 
     var canvas = $("canvas");
     if (!canvas) return;
