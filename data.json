@@ -45,7 +45,7 @@
           "width": 2085,
           "height": 2560,
           "caption": "",
-          "x": -2,
+          "x": 0.77,
           "y": 0,
           "w": 34
         },
@@ -56,8 +56,41 @@
           "width": 2560,
           "height": 2134,
           "caption": "",
-          "x": 36.68,
-          "y": 14.89,
+          "x": 37.65,
+          "y": 6.7,
+          "w": 34
+        },
+        {
+          "id": "mshn2vjewayy8c",
+          "display": "photos/mshn2vjewayy8c.jpg",
+          "thumb": "photos/mshn2vjewayy8c-t.jpg",
+          "width": 2560,
+          "height": 2084,
+          "caption": "",
+          "x": 24.69,
+          "y": 50.02,
+          "w": 34
+        },
+        {
+          "id": "mshn3gmx7wdoqz",
+          "display": "photos/mshn3gmx7wdoqz.jpg",
+          "thumb": "photos/mshn3gmx7wdoqz-t.jpg",
+          "width": 1873,
+          "height": 2560,
+          "caption": "",
+          "x": 66,
+          "y": 44.45,
+          "w": 34
+        },
+        {
+          "id": "mshn855ci80363",
+          "display": "photos/mshn855ci80363.jpg",
+          "thumb": "photos/mshn855ci80363-t.jpg",
+          "width": 2087,
+          "height": 2560,
+          "caption": "",
+          "x": 8,
+          "y": 94.92090229578217,
           "w": 34
         }
       ]
