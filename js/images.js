@@ -1,0 +1,129 @@
+(function () {
+  // Display version: large enough that it looks identical to the original on
+  // any screen (including retina), but a fraction of the file size.
+  var DISPLAY_MAX = 2560;
+  var DISPLAY_QUALITY = 0.85;
+  // Thumbnail: used in grids/free-form canvases so pages load fast.
+  var THUMB_MAX = 800;
+  var THUMB_QUALITY = 0.8;
+
+  function loadImageFromFile(file) {
+    return new Promise(function (resolve, reject) {
+      var url = URL.createObjectURL(file);
+      var img = new Image();
+      img.onload = function () {
+        URL.revokeObjectURL(url);
+        resolve(img);
+      };
+      img.onerror = function () {
+        URL.revokeObjectURL(url);
+        reject(new Error("Could not read that image file."));
+      };
+      img.src = url;
+    });
+  }
+
+  function scaleTo(img, maxDim) {
+    var w = img.naturalWidth || img.width;
+    var h = img.naturalHeight || img.height;
+    if (w <= maxDim && h <= maxDim) return { w: w, h: h };
+    if (w >= h) {
+      return { w: maxDim, h: Math.round((h * maxDim) / w) };
+    }
+    return { w: Math.round((w * maxDim) / h), h: maxDim };
+  }
+
+  function renderToBlob(img, size, quality) {
+    return new Promise(function (resolve) {
+      var canvas = document.createElement("canvas");
+      canvas.width = size.w;
+      canvas.height = size.h;
+      var ctx = canvas.getContext("2d");
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
+      ctx.drawImage(img, 0, 0, size.w, size.h);
+      canvas.toBlob(
+        function (blob) {
+          resolve(blob);
+        },
+        "image/jpeg",
+        quality
+      );
+    });
+  }
+
+  function blobToBase64(blob) {
+    return new Promise(function (resolve, reject) {
+      var reader = new FileReader();
+      reader.onerror = reject;
+      reader.onload = function () {
+        // strip the "data:image/jpeg;base64," prefix
+        var s = String(reader.result);
+        resolve(s.slice(s.indexOf(",") + 1));
+      };
+      reader.readAsDataURL(blob);
+    });
+  }
+
+  // Turns a user-selected file into the two derivatives we publish, plus the
+  // metadata the layout engine needs (intrinsic aspect ratio).
+  async function processFile(file) {
+    var img = await loadImageFromFile(file);
+    var displaySize = scaleTo(img, DISPLAY_MAX);
+    var thumbSize = scaleTo(img, THUMB_MAX);
+
+    var displayBlob = await renderToBlob(img, displaySize, DISPLAY_QUALITY);
+    var thumbBlob = await renderToBlob(img, thumbSize, THUMB_QUALITY);
+
+    var id = window.WB.uid();
+    return {
+      id: id,
+      width: displaySize.w,
+      height: displaySize.h,
+      displayPath: "photos/" + id + ".jpg",
+      thumbPath: "photos/" + id + "-t.jpg",
+      displayBlob: displayBlob,
+      thumbBlob: thumbBlob,
+    };
+  }
+
+  // Re-encodes an already-cropped canvas result back into both derivatives.
+  async function processDataUrl(dataUrl) {
+    var img = await new Promise(function (resolve, reject) {
+      var i = new Image();
+      i.onload = function () {
+        resolve(i);
+      };
+      i.onerror = reject;
+      i.src = dataUrl;
+    });
+    var displaySize = scaleTo(img, DISPLAY_MAX);
+    var thumbSize = scaleTo(img, THUMB_MAX);
+    var displayBlob = await renderToBlob(img, displaySize, DISPLAY_QUALITY);
+    var thumbBlob = await renderToBlob(img, thumbSize, THUMB_QUALITY);
+    var id = window.WB.uid();
+    return {
+      id: id,
+      width: displaySize.w,
+      height: displaySize.h,
+      displayPath: "photos/" + id + ".jpg",
+      thumbPath: "photos/" + id + "-t.jpg",
+      displayBlob: displayBlob,
+      thumbBlob: thumbBlob,
+    };
+  }
+
+  function formatBytes(n) {
+    if (n < 1024) return n + " B";
+    if (n < 1024 * 1024) return Math.round(n / 1024) + " KB";
+    return (n / (1024 * 1024)).toFixed(1) + " MB";
+  }
+
+  window.WB = window.WB || {};
+  Object.assign(window.WB, {
+    processFile: processFile,
+    processDataUrl: processDataUrl,
+    blobToBase64: blobToBase64,
+    formatBytes: formatBytes,
+  });
+})();

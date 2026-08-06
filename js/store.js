@@ -2,6 +2,83 @@
   var DRAFT_KEY = "wb_draft";
   var AUTH_KEY = "wb_auth";
   var EDITING_KEY = "wb_editing";
+  var PENDING_KEY = "wb_pending_photos";
+
+  // Photos that have been processed in the browser but not yet committed.
+  // Held as Blobs in IndexedDB (not localStorage, which is far too small and
+  // string-only) so that staged work survives a reload or a crash.
+  var pendingPhotos = {};
+  var DB_NAME = "wb_photos";
+  var STORE = "pending";
+  var dbPromise = null;
+
+  function openDB() {
+    if (dbPromise) return dbPromise;
+    dbPromise = new Promise(function (resolve, reject) {
+      var req = indexedDB.open(DB_NAME, 1);
+      req.onupgradeneeded = function () {
+        var db = req.result;
+        if (!db.objectStoreNames.contains(STORE)) {
+          db.createObjectStore(STORE, { keyPath: "id" });
+        }
+      };
+      req.onsuccess = function () {
+        resolve(req.result);
+      };
+      req.onerror = function () {
+        reject(req.error);
+      };
+    });
+    return dbPromise;
+  }
+
+  function tx(mode, fn) {
+    return openDB().then(function (db) {
+      return new Promise(function (resolve, reject) {
+        var t = db.transaction(STORE, mode);
+        var store = t.objectStore(STORE);
+        var out = fn(store);
+        t.oncomplete = function () {
+          resolve(out && out.result !== undefined ? out.result : out);
+        };
+        t.onerror = function () {
+          reject(t.error);
+        };
+      });
+    });
+  }
+
+  async function idbPut(record) {
+    return tx("readwrite", function (s) {
+      return s.put(record);
+    });
+  }
+
+  async function idbGetAll() {
+    return tx("readonly", function (s) {
+      return s.getAll();
+    });
+  }
+
+  async function idbClear() {
+    return tx("readwrite", function (s) {
+      return s.clear();
+    });
+  }
+
+  // Rehydrates anything staged in a previous session so its images still
+  // render (and can still be published) after a reload.
+  async function initPending() {
+    try {
+      var records = await idbGetAll();
+      (records || []).forEach(function (r) {
+        pendingPhotos[r.id] = r;
+      });
+      return Object.keys(pendingPhotos).length;
+    } catch (e) {
+      return 0;
+    }
+  }
 
   async function loadPublished() {
     try {
@@ -15,28 +92,94 @@
 
   function loadDraft() {
     var raw = localStorage.getItem(DRAFT_KEY);
-    return raw ? JSON.parse(raw) : null;
+    if (!raw) return null;
+    try {
+      return JSON.parse(raw);
+    } catch (e) {
+      return null;
+    }
   }
 
   function saveDraft(data) {
-    localStorage.setItem(DRAFT_KEY, JSON.stringify(data));
+    try {
+      localStorage.setItem(DRAFT_KEY, JSON.stringify(data));
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function clearDraft() {
+    localStorage.removeItem(DRAFT_KEY);
   }
 
   async function getData() {
-    var draft = loadDraft();
-    if (draft) return draft;
-    return await loadPublished();
+    return loadDraft() || (await loadPublished());
   }
 
-  async function resetToDefaults() {
-    localStorage.removeItem(DRAFT_KEY);
-    return await loadPublished();
+  async function addPendingPhoto(processed) {
+    pendingPhotos[processed.id] = processed;
+    try {
+      await idbPut({
+        id: processed.id,
+        width: processed.width,
+        height: processed.height,
+        displayPath: processed.displayPath,
+        thumbPath: processed.thumbPath,
+        displayBlob: processed.displayBlob,
+        thumbBlob: processed.thumbBlob,
+      });
+    } catch (e) {
+      // Staying in memory still works for this session; publishing is the
+      // durable step either way.
+      console.warn("Could not stage photo to IndexedDB:", e);
+    }
+  }
+
+  function getPendingPhotos() {
+    return Object.keys(pendingPhotos).map(function (k) {
+      return pendingPhotos[k];
+    });
+  }
+
+  async function clearPendingPhotos() {
+    Object.keys(pendingPhotos).forEach(function (k) {
+      var p = pendingPhotos[k];
+      if (p.objectUrl) URL.revokeObjectURL(p.objectUrl);
+      if (p.thumbUrl) URL.revokeObjectURL(p.thumbUrl);
+    });
+    pendingPhotos = {};
+    try {
+      await idbClear();
+    } catch (e) {}
+  }
+
+  function pendingCount() {
+    return Object.keys(pendingPhotos).length;
+  }
+
+  function pendingPhotoUrl(path) {
+    var found = null;
+    Object.keys(pendingPhotos).forEach(function (k) {
+      var p = pendingPhotos[k];
+      if (p.displayPath === path || p.thumbPath === path) {
+        if (!p.objectUrl) p.objectUrl = URL.createObjectURL(p.displayBlob);
+        if (!p.thumbUrl) p.thumbUrl = URL.createObjectURL(p.thumbBlob);
+        found = p.displayPath === path ? p.objectUrl : p.thumbUrl;
+      }
+    });
+    return found;
+  }
+
+  // Resolves a stored path to something the browser can render right now:
+  // an in-memory blob for not-yet-committed photos, otherwise the real file.
+  function resolveSrc(path) {
+    if (!path) return null;
+    return pendingPhotoUrl(path) || path;
   }
 
   function downloadJSON(filename, obj) {
-    var blob = new Blob([JSON.stringify(obj, null, 2)], {
-      type: "application/json",
-    });
+    var blob = new Blob([JSON.stringify(obj, null, 2)], { type: "application/json" });
     var url = URL.createObjectURL(blob);
     var a = document.createElement("a");
     a.href = url;
@@ -45,14 +188,6 @@
     a.click();
     a.remove();
     URL.revokeObjectURL(url);
-  }
-
-  function exportData(data) {
-    downloadJSON("data.json", data);
-  }
-
-  function publishSite(data) {
-    downloadJSON("data.json", data);
   }
 
   async function hashPw(pw) {
@@ -88,49 +223,23 @@
     localStorage.setItem(EDITING_KEY, v ? "true" : "false");
   }
 
-  function resizeImage(file, maxDim, quality) {
-    return new Promise(function (resolve, reject) {
-      var reader = new FileReader();
-      reader.onerror = reject;
-      reader.onload = function () {
-        var img = new Image();
-        img.onerror = reject;
-        img.onload = function () {
-          var width = img.width;
-          var height = img.height;
-          if (width > maxDim || height > maxDim) {
-            if (width > height) {
-              height = Math.round((height * maxDim) / width);
-              width = maxDim;
-            } else {
-              width = Math.round((width * maxDim) / height);
-              height = maxDim;
-            }
-          }
-          var canvas = document.createElement("canvas");
-          canvas.width = width;
-          canvas.height = height;
-          canvas.getContext("2d").drawImage(img, 0, 0, width, height);
-          resolve(canvas.toDataURL("image/jpeg", quality));
-        };
-        img.src = reader.result;
-      };
-      reader.readAsDataURL(file);
-    });
-  }
-
   window.WB = window.WB || {};
   Object.assign(window.WB, {
     getData: getData,
+    loadPublished: loadPublished,
     saveDraft: saveDraft,
-    resetToDefaults: resetToDefaults,
-    exportData: exportData,
-    publishSite: publishSite,
+    clearDraft: clearDraft,
+    downloadJSON: downloadJSON,
     setPassword: setPassword,
     verifyPassword: verifyPassword,
     getAuth: getAuth,
     isEditing: isEditing,
     setEditing: setEditing,
-    resizeImage: resizeImage,
+    addPendingPhoto: addPendingPhoto,
+    getPendingPhotos: getPendingPhotos,
+    clearPendingPhotos: clearPendingPhotos,
+    pendingCount: pendingCount,
+    initPending: initPending,
+    resolveSrc: resolveSrc,
   });
 })();
