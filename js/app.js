@@ -381,14 +381,16 @@
 
   function openConnect() {
     var repo = window.WB.gh.detectRepo();
-    var repoLabel = repo ? repo.owner + "/" + repo.repo : "not detected";
+    var repoValue = repo ? repo.owner + "/" + repo.repo : "";
     var modal = openModal(
       "<h3>Connect GitHub</h3>" +
-        '<p class="hint">Paste a fine-grained personal access token with <strong>Contents: Read and write</strong> on <strong>' +
-        esc(repoLabel) +
-        "</strong>. Edits then save automatically and go live about a minute later. The token is stored only in this browser.</p>" +
+        '<p class="hint">Paste a fine-grained personal access token with <strong>Contents: Read and write</strong> on the repository below. Edits then save automatically. The token is stored only in this browser.</p>' +
         '<div class="modal-error" id="connect-error" hidden></div>' +
         '<div class="modal-ok" id="connect-ok" hidden></div>' +
+        "<label>Repository</label>" +
+        '<input type="text" id="repo-input" placeholder="owner/repository" value="' +
+        esc(repoValue) +
+        '" autocomplete="off" spellcheck="false">' +
         "<label>Token</label>" +
         '<input type="password" id="token-input" placeholder="github_pat_..." autocomplete="off">' +
         '<div class="modal-actions">' +
@@ -415,6 +417,7 @@
       var okEl = modal.querySelector("#connect-ok");
       var btn = modal.querySelector("#token-save");
       var value = modal.querySelector("#token-input").value.trim();
+      var repoText = modal.querySelector("#repo-input").value.trim();
       errEl.hidden = true;
       okEl.hidden = true;
       if (!value) {
@@ -422,8 +425,16 @@
         errEl.hidden = false;
         return;
       }
+      var parts = repoText.replace(/^https?:\/\/github\.com\//i, "").split("/");
+      if (parts.length < 2 || !parts[0] || !parts[1]) {
+        errEl.textContent =
+          'Enter the repository as owner/repository, e.g. borainwillow-sudo/My-website.';
+        errEl.hidden = false;
+        return;
+      }
       btn.disabled = true;
       btn.textContent = "Checking…";
+      window.WB.gh.setRepo(parts[0], parts[1].replace(/\.git$/, ""));
       window.WB.gh.setToken(value);
       try {
         await window.WB.gh.verify();

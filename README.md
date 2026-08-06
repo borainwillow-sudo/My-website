@@ -56,7 +56,13 @@ site commits to this repository via the GitHub API.
 [fine-grained personal access token](https://github.com/settings/personal-access-tokens/new)
 with **Repository access: only `My-website`** and
 **Permissions → Repository → Contents: Read and write**. Then in edit mode
-click **Connect** and paste it.
+click **Connect**, check the repository field says
+`borainwillow-sudo/My-website`, and paste the token.
+
+The repository field is filled in automatically when the site is served from
+`*.github.io`. On any other host — Netlify, a custom domain, or a local
+server — type it in as `owner/repository` (pasting the full GitHub URL works
+too). It's remembered afterwards.
 
 After that, saving is automatic: about 2.5 seconds after you stop making
 changes, `data.json` and any new photos are committed in a single commit. The
