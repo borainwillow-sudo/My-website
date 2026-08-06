@@ -269,6 +269,14 @@ img {
   width: 100%;
 }
 
+/* Quiet white space so the last photo never sits hard against the bottom of
+   the window. */
+.page-footer {
+  height: 24vh;
+  min-height: 150px;
+  background: #fff;
+}
+
 .photo-block {
   position: absolute;
   top: 0;
@@ -689,36 +697,92 @@ body.is-editing {
 
 /* cropper */
 
-.crop-viewport {
-  position: relative;
-  overflow: hidden;
-  background: #111;
-  touch-action: none;
-  cursor: grab;
-  margin: 0 auto 14px;
+.crop-modal {
+  width: auto;
 }
 
-.crop-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform-origin: top left;
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-.crop-controls {
+.crop-presets {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 12px;
-  color: var(--muted);
-  margin-bottom: 6px;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 14px;
 }
 
-.crop-controls input[type="range"] {
-  flex: 1;
-  margin: 0;
+.crop-preset {
+  padding: 0.32rem 0.7rem;
+  font-size: 11px;
+}
+
+.crop-preset[aria-pressed="true"] {
+  background: var(--ink);
+  color: #fff;
+}
+
+.crop-stage {
+  position: relative;
+  margin: 0 auto;
+  touch-action: none;
+  user-select: none;
+  background: #f4f4f4;
+}
+
+.crop-img {
+  display: block;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+.crop-rect {
+  position: absolute;
+  cursor: move;
+  outline: 1px solid #fff;
+  /* Dims everything outside the box without extra elements. */
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5);
+}
+
+.crop-thirds {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(
+      to right,
+      transparent calc(33.333% - 0.5px),
+      rgba(255, 255, 255, 0.45) calc(33.333% - 0.5px) calc(33.333% + 0.5px),
+      transparent calc(33.333% + 0.5px) calc(66.666% - 0.5px),
+      rgba(255, 255, 255, 0.45) calc(66.666% - 0.5px) calc(66.666% + 0.5px),
+      transparent calc(66.666% + 0.5px)
+    ),
+    linear-gradient(
+      to bottom,
+      transparent calc(33.333% - 0.5px),
+      rgba(255, 255, 255, 0.45) calc(33.333% - 0.5px) calc(33.333% + 0.5px),
+      transparent calc(33.333% + 0.5px) calc(66.666% - 0.5px),
+      rgba(255, 255, 255, 0.45) calc(66.666% - 0.5px) calc(66.666% + 0.5px),
+      transparent calc(66.666% + 0.5px)
+    );
+}
+
+.crop-handle {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+.crop-nw { left: -7px; top: -7px; cursor: nwse-resize; }
+.crop-n  { left: calc(50% - 7px); top: -7px; cursor: ns-resize; }
+.crop-ne { right: -7px; top: -7px; cursor: nesw-resize; }
+.crop-e  { right: -7px; top: calc(50% - 7px); cursor: ew-resize; }
+.crop-se { right: -7px; bottom: -7px; cursor: nwse-resize; }
+.crop-s  { left: calc(50% - 7px); bottom: -7px; cursor: ns-resize; }
+.crop-sw { left: -7px; bottom: -7px; cursor: nesw-resize; }
+.crop-w  { left: -7px; top: calc(50% - 7px); cursor: ew-resize; }
+
+.crop-readout {
+  text-align: center;
+  margin: 12px 0 0;
+  font-variant-numeric: tabular-nums;
 }
 
 /* lightbox */
