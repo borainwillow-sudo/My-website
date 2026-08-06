@@ -45,8 +45,19 @@
           "width": 2085,
           "height": 2560,
           "caption": "",
-          "x": 16,
-          "y": 13.828208825107296,
+          "x": -2,
+          "y": 0,
+          "w": 34
+        },
+        {
+          "id": "mshn20nqjuqloq",
+          "display": "photos/mshn20nqjuqloq.jpg",
+          "thumb": "photos/mshn20nqjuqloq-t.jpg",
+          "width": 2560,
+          "height": 2134,
+          "caption": "",
+          "x": 36.68,
+          "y": 14.89,
           "w": 34
         }
       ]
