@@ -113,6 +113,39 @@
     };
   }
 
+  // Cursor artwork must keep its transparency, so this renders PNG rather than
+  // JPEG. Browsers ignore cursor images larger than 128px, and sizes above
+  // ~64px are unreliable across platforms, so the size is clamped.
+  async function processCursorFile(file, size) {
+    var img = await loadImageFromFile(file);
+    var target = Math.max(8, Math.min(128, size || 32));
+    var w = img.naturalWidth || img.width;
+    var h = img.naturalHeight || img.height;
+    var scale = Math.min(target / w, target / h);
+    var outW = Math.max(1, Math.round(w * scale));
+    var outH = Math.max(1, Math.round(h * scale));
+
+    var canvas = document.createElement("canvas");
+    canvas.width = outW;
+    canvas.height = outH;
+    var ctx = canvas.getContext("2d");
+    ctx.imageSmoothingQuality = "high";
+    ctx.drawImage(img, 0, 0, outW, outH);
+
+    var blob = await new Promise(function (resolve) {
+      canvas.toBlob(resolve, "image/png");
+    });
+
+    var id = window.WB.uid();
+    return {
+      id: id,
+      path: "cursors/" + id + ".png",
+      blob: blob,
+      width: outW,
+      height: outH,
+    };
+  }
+
   function formatBytes(n) {
     if (n < 1024) return n + " B";
     if (n < 1024 * 1024) return Math.round(n / 1024) + " KB";
@@ -123,6 +156,7 @@
   Object.assign(window.WB, {
     processFile: processFile,
     processDataUrl: processDataUrl,
+    processCursorFile: processCursorFile,
     blobToBase64: blobToBase64,
     formatBytes: formatBytes,
   });

@@ -66,6 +66,24 @@
 
   // ---------- typography ----------
 
+  // The custom cursor is deliberately not applied in edit mode, so the
+  // grab/grabbing/resize cursors still communicate what's draggable.
+  function applyCursor() {
+    var c = data.cursor || {};
+    var value = "auto";
+    if (c.image) {
+      var src = window.WB.resolveSrc(c.image);
+      var hx = 0;
+      var hy = 0;
+      if (c.hotspot === "center") {
+        hx = Math.round((c.width || 32) / 2);
+        hy = Math.round((c.height || 32) / 2);
+      }
+      value = 'url("' + src + '") ' + hx + " " + hy + ", auto";
+    }
+    document.documentElement.style.setProperty("--site-cursor", value);
+  }
+
   function applyTypography() {
     var t = data.typography || {};
     window.WB.TYPO_ROLES.forEach(function (role) {
@@ -238,6 +256,10 @@
     );
   }
 
+  function isInternalLink(href) {
+    return /^#/.test(href) || /^\/(?!\/)/.test(href);
+  }
+
   function photoHTML(photo) {
     var editing = window.WB.isEditing();
     var thumb = window.WB.resolveSrc(photo.thumb);
@@ -245,6 +267,7 @@
       ? '<div class="photo-tools">' +
         '<button data-photo-action="replace">Replace</button>' +
         '<button data-photo-action="crop">Crop</button>' +
+        '<button data-photo-action="link">Link</button>' +
         '<button data-photo-action="front">Front</button>' +
         '<button data-photo-action="remove" class="danger">Remove</button>' +
         "</div>"
@@ -259,20 +282,51 @@
           "</div>"
         : "";
 
+    var label = photo.title
+      ? '<span class="photo-label"><span>' + esc(photo.title) + "</span></span>"
+      : "";
+
+    var img =
+      '<img src="' +
+      esc(thumb) +
+      '" alt="' +
+      esc(photo.title || photo.caption || "") +
+      '" width="' +
+      (photo.width || "") +
+      '" height="' +
+      (photo.height || "") +
+      '" loading="lazy" decoding="async">';
+
+    // The link is only live outside edit mode — inside it, an anchor would
+    // swallow the drag. A marker keeps it visible while editing.
+    var media;
+    if (photo.link && !editing) {
+      var external = !isInternalLink(photo.link);
+      media =
+        '<a class="photo-media" href="' +
+        esc(photo.link) +
+        '"' +
+        (external ? ' target="_blank" rel="noopener noreferrer"' : "") +
+        ">" +
+        img +
+        label +
+        "</a>";
+    } else {
+      media = '<span class="photo-media">' + img + label + "</span>";
+    }
+
+    var linkFlag =
+      editing && photo.link
+        ? '<span class="link-flag" title="' + esc(photo.link) + '">link</span>'
+        : "";
+
     return (
       '<div class="photo-block" data-photo-id="' +
       esc(photo.id) +
       '">' +
       tools +
-      '<img src="' +
-      esc(thumb) +
-      '" alt="' +
-      esc(photo.caption || "") +
-      '" width="' +
-      (photo.width || "") +
-      '" height="' +
-      (photo.height || "") +
-      '" loading="lazy" decoding="async">' +
+      linkFlag +
+      media +
       caption +
       handle +
       "</div>"
@@ -328,6 +382,7 @@
 
   function render() {
     applyTypography();
+    applyCursor();
     $("site-name").textContent = data.siteName;
     $("mobile-name").textContent = data.siteName;
     document.title = data.siteName;
@@ -492,12 +547,68 @@
       );
     }).join("");
 
+    var cursor = data.cursor || {};
+    var cursorPreview = cursor.image
+      ? '<img class="cursor-preview" src="' + esc(window.WB.resolveSrc(cursor.image)) + '" alt="">'
+      : '<span class="hint" style="margin:0">No custom cursor — using the normal arrow.</span>';
+
     var modal = openModal(
-      "<h3>Typography</h3>" +
+      "<h3>Style</h3>" +
         '<p class="hint">Everything is Helvetica — this sets the weight and size for each kind of text. Changes preview instantly.</p>' +
         rows +
+        '<div class="group-heading">Cursor</div>' +
+        '<p class="hint">Upload a small PNG with a transparent background. Desktop only — touch devices have no pointer — and the normal cursors still apply while you\'re editing.</p>' +
+        '<div class="cursor-row">' +
+        cursorPreview +
+        '<button class="pill-btn" id="cursor-upload">Upload image</button>' +
+        (cursor.image ? '<button class="pill-btn" id="cursor-clear">Remove</button>' : "") +
+        "</div>" +
+        '<div class="typo-row"><span>Size</span>' +
+        '<select id="cursor-size">' +
+        [16, 24, 32, 48, 64]
+          .map(function (s) {
+            return (
+              '<option value="' + s + '"' +
+              ((cursor.size || 32) === s ? " selected" : "") +
+              ">" + s + "px</option>"
+            );
+          })
+          .join("") +
+        "</select>" +
+        '<select id="cursor-hotspot">' +
+        '<option value="topleft"' + (cursor.hotspot !== "center" ? " selected" : "") + ">Tip: top-left</option>" +
+        '<option value="center"' + (cursor.hotspot === "center" ? " selected" : "") + ">Tip: centre</option>" +
+        "</select></div>" +
+        '<p class="hint" id="cursor-size-note" hidden>Size applies to the next image you upload.</p>' +
         '<div class="modal-actions"><button class="pill-btn pill-solid" id="typo-done">Done</button></div>'
     );
+
+    modal.querySelector("#cursor-upload").addEventListener("click", function () {
+      pendingCursorSize = Number(modal.querySelector("#cursor-size").value) || 32;
+      $("cursor-input").click();
+    });
+
+    modal.querySelector("#cursor-size").addEventListener("change", function () {
+      modal.querySelector("#cursor-size-note").hidden = !data.cursor || !data.cursor.image;
+    });
+
+    modal.querySelector("#cursor-hotspot").addEventListener("change", function () {
+      data.cursor = data.cursor || {};
+      data.cursor.hotspot = this.value;
+      applyCursor();
+      markDirty();
+    });
+
+    var clearBtn = modal.querySelector("#cursor-clear");
+    if (clearBtn) {
+      clearBtn.addEventListener("click", function () {
+        data.cursor = { image: null, size: 32, hotspot: "topleft" };
+        applyCursor();
+        markDirty();
+        closeModal();
+        openTypography();
+      });
+    }
 
     modal.addEventListener("input", function (e) {
       var row = e.target.closest(".typo-row");
@@ -655,6 +766,7 @@
   // ---------- photo actions ----------
 
   var replaceTargetId = null;
+  var pendingCursorSize = 32;
 
   async function addFiles(fileList) {
     var page = findPage(data, currentId);
@@ -734,6 +846,11 @@
       return;
     }
 
+    if (action === "link") {
+      openPhotoLink(photo);
+      return;
+    }
+
     if (action === "crop") {
       var src = window.WB.resolveSrc(photo.display);
       var startAspect = photo.height && photo.width ? photo.height / photo.width : 1;
@@ -743,6 +860,75 @@
         applyProcessedTo(photo, processed);
       });
     }
+  }
+
+  // Per-photo hover label and click-through link.
+  function openPhotoLink(photo) {
+    var pageOptions = allPages(data)
+      .filter(function (p) {
+        return p.type !== "group";
+      })
+      .map(function (p) {
+        return (
+          '<option value="#/' +
+          esc(p.id) +
+          '"' +
+          (photo.link === "#/" + p.id ? " selected" : "") +
+          ">" +
+          esc(p.title) +
+          "</option>"
+        );
+      })
+      .join("");
+
+    var modal = openModal(
+      "<h3>Link &amp; label</h3>" +
+        '<p class="hint">The label fades in over the photo on hover (desktop only). The link opens when the photo is clicked — a photo with a link no longer opens the lightbox.</p>' +
+        "<label>Hover label</label>" +
+        '<input type="text" id="photo-title" placeholder="e.g. Girlhood" value="' +
+        esc(photo.title || "") +
+        '">' +
+        "<label>Link to a page on this site</label>" +
+        '<select id="photo-page"><option value="">— none —</option>' +
+        pageOptions +
+        "</select>" +
+        "<label>…or any web address</label>" +
+        '<input type="text" id="photo-link" placeholder="https://…" value="' +
+        esc(photo.link || "") +
+        '" spellcheck="false">' +
+        '<div class="modal-actions">' +
+        '<button class="pill-btn" id="photo-link-clear">Clear link</button>' +
+        '<button class="pill-btn" id="photo-link-cancel">Cancel</button>' +
+        '<button class="pill-btn pill-solid" id="photo-link-save">Save</button>' +
+        "</div>"
+    );
+
+    modal.querySelector("#photo-page").addEventListener("change", function () {
+      if (this.value) modal.querySelector("#photo-link").value = this.value;
+    });
+
+    modal.querySelector("#photo-link-cancel").addEventListener("click", closeModal);
+
+    modal.querySelector("#photo-link-clear").addEventListener("click", function () {
+      photo.link = "";
+      closeModal();
+      render();
+      markDirty();
+    });
+
+    modal.querySelector("#photo-link-save").addEventListener("click", function () {
+      photo.title = modal.querySelector("#photo-title").value.trim();
+      var href = modal.querySelector("#photo-link").value.trim();
+      // A bare domain typed without a scheme would otherwise resolve as a
+      // relative path on this site.
+      if (href && !/^(https?:\/\/|mailto:|#|\/)/i.test(href)) {
+        href = "https://" + href;
+      }
+      photo.link = href;
+      closeModal();
+      render();
+      markDirty();
+    });
   }
 
   function openLightbox(photo) {
@@ -770,6 +956,9 @@
       return;
     }
     if (window.WB.isEditing()) return;
+    // A linked photo follows its link; the lightbox would otherwise open on
+    // top of the page just navigated to.
+    if (e.target.closest("a.photo-media")) return;
     var pb = e.target.closest("[data-photo-id]");
     if (!pb) return;
     var page = findPage(data, currentId);
@@ -874,6 +1063,32 @@
     var files = Array.from(e.target.files || []);
     e.target.value = "";
     if (files.length) addFiles(files);
+  });
+
+  $("cursor-input").addEventListener("change", async function (e) {
+    var file = e.target.files[0];
+    e.target.value = "";
+    if (!file) return;
+    setStatus("Processing cursor…", "is-saving");
+    try {
+      var processed = await window.WB.processCursorFile(file, pendingCursorSize);
+      await window.WB.addPendingFiles(processed.id, [
+        { path: processed.path, blob: processed.blob },
+      ]);
+      data.cursor = {
+        image: processed.path,
+        size: pendingCursorSize,
+        width: processed.width,
+        height: processed.height,
+        hotspot: (data.cursor && data.cursor.hotspot) || "topleft",
+      };
+      applyCursor();
+      markDirty();
+      closeModal();
+      openTypography();
+    } catch (err) {
+      setStatus("Could not read that image", "is-error");
+    }
   });
 
   $("replace-input").addEventListener("change", async function (e) {
