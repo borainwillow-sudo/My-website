@@ -59,6 +59,17 @@ caption underneath are separate, so use either, both, or neither.
 
 While editing, a small blue `link` marker sits above any photo that has one.
 
+## Logo instead of the name
+
+**Style → Heading → Upload logo** replaces the text at the top with your own
+wordmark. Use a PNG with a transparent background.
+
+- **Logo width** sets how much of the sidebar column it fills. On phones it's
+  capped by height instead, so it fits the top bar.
+- The site name is still used for the browser tab and for screen readers, so
+  keep it filled in even when a logo is showing.
+- **Remove** puts the text heading back.
+
 ## Custom cursor
 
 **Style → Cursor → Upload image** takes a small PNG with a transparent
