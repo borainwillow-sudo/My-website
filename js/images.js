@@ -113,6 +113,30 @@
     };
   }
 
+  // A wordmark logo is line art on transparency: PNG, and generous enough to
+  // stay crisp on a retina screen at its displayed size.
+  async function processLogoFile(file) {
+    var img = await loadImageFromFile(file);
+    var size = scaleTo(img, 1400);
+    var canvas = document.createElement("canvas");
+    canvas.width = size.w;
+    canvas.height = size.h;
+    var ctx = canvas.getContext("2d");
+    ctx.imageSmoothingQuality = "high";
+    ctx.drawImage(img, 0, 0, size.w, size.h);
+    var blob = await new Promise(function (resolve) {
+      canvas.toBlob(resolve, "image/png");
+    });
+    var id = window.WB.uid();
+    return {
+      id: id,
+      path: "logo/" + id + ".png",
+      blob: blob,
+      width: size.w,
+      height: size.h,
+    };
+  }
+
   // Cursor artwork must keep its transparency, so this renders PNG rather than
   // JPEG. Browsers ignore cursor images larger than 128px, and sizes above
   // ~64px are unreliable across platforms, so the size is clamped.
@@ -157,6 +181,7 @@
     processFile: processFile,
     processDataUrl: processDataUrl,
     processCursorFile: processCursorFile,
+    processLogoFile: processLogoFile,
     blobToBase64: blobToBase64,
     formatBytes: formatBytes,
   });

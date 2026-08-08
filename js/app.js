@@ -1,7 +1,7 @@
 (function () {
   // Shown at the bottom of the Style panel. Bump alongside the ?v= query
   // strings in index.html so a stale copy can be identified at a glance.
-  var EDITOR_VERSION = "8";
+  var EDITOR_VERSION = "9";
   var data = null;
   var currentId = "home";
   var openGroups = {};
@@ -440,12 +440,34 @@
     }
   }
 
+  // The heading is either the site name as text or an uploaded wordmark. The
+  // name is still carried as alt text and the page title either way.
+  function renderHeading() {
+    var logo = data.logo || {};
+    var src = logo.image ? window.WB.resolveSrc(logo.image) : null;
+    document.documentElement.style.setProperty(
+      "--logo-width",
+      (typeof logo.size === "number" ? logo.size : 100) + "%"
+    );
+    [$("site-name"), $("mobile-name")].forEach(function (el) {
+      if (src) {
+        el.innerHTML =
+          '<img class="site-logo" src="' +
+          esc(src) +
+          '" alt="' +
+          esc(data.siteName) +
+          '">';
+      } else {
+        el.textContent = data.siteName;
+      }
+    });
+  }
+
   function render() {
     applyTypography();
     applyCursor();
     applyFooterSpace();
-    $("site-name").textContent = data.siteName;
-    $("mobile-name").textContent = data.siteName;
+    renderHeading();
     document.title = data.siteName;
     var group = parentGroupOf(data, currentId);
     if (group) openGroups[group.id] = true;
@@ -608,6 +630,11 @@
       );
     }).join("");
 
+    var logo = data.logo || {};
+    var logoSize = typeof logo.size === "number" ? logo.size : 100;
+    var logoPreview = logo.image
+      ? '<img class="logo-preview" src="' + esc(window.WB.resolveSrc(logo.image)) + '" alt="">'
+      : '<span class="hint" style="margin:0">No logo — showing the name as text.</span>';
     var footerSpace =
       data.footer && typeof data.footer.space === "number" ? data.footer.space : 45;
     var cursor = data.cursor || {};
@@ -619,6 +646,22 @@
       "<h3>Style</h3>" +
         '<p class="hint">Everything is Helvetica — this sets the weight and size for each kind of text. Changes preview instantly.</p>' +
         rows +
+        '<div class="group-heading">Heading</div>' +
+        '<p class="hint">Replace the name at the top with your own wordmark. Use a PNG with a transparent background so it sits on the white page. The name is still used for the browser tab and for screen readers.</p>' +
+        '<div class="cursor-row">' +
+        logoPreview +
+        '<button class="pill-btn" id="logo-upload">Upload logo</button>' +
+        (logo.image ? '<button class="pill-btn" id="logo-clear">Remove</button>' : "") +
+        "</div>" +
+        (logo.image
+          ? '<div class="typo-row"><span>Logo width</span>' +
+            '<input type="range" id="logo-size" min="20" max="100" step="5" value="' +
+            logoSize +
+            '">' +
+            '<input type="number" id="logo-size-num" min="20" max="100" step="5" value="' +
+            logoSize +
+            '"></div>'
+          : "") +
         '<div class="group-heading">Cursor</div>' +
         '<p class="hint">Upload a small PNG with a transparent background. Desktop only — touch devices have no pointer — and the normal cursors still apply while you\'re editing.</p>' +
         '<div class="cursor-row">' +
@@ -657,6 +700,42 @@
         "</p>" +
         '<div class="modal-actions"><button class="pill-btn pill-solid" id="typo-done">Done</button></div>'
     );
+
+    modal.querySelector("#logo-upload").addEventListener("click", function () {
+      $("logo-input").click();
+    });
+
+    var logoClear = modal.querySelector("#logo-clear");
+    if (logoClear) {
+      logoClear.addEventListener("click", function () {
+        data.logo = { image: null, size: 100 };
+        renderHeading();
+        markDirty();
+        closeModal();
+        openTypography();
+      });
+    }
+
+    var logoRange = modal.querySelector("#logo-size");
+    var logoNum = modal.querySelector("#logo-size-num");
+    if (logoRange && logoNum) {
+      var setLogoSize = function (value) {
+        var n = Math.max(20, Math.min(100, Number(value)));
+        if (isNaN(n)) return;
+        data.logo = data.logo || {};
+        data.logo.size = n;
+        logoRange.value = n;
+        logoNum.value = n;
+        renderHeading();
+        markDirty();
+      };
+      logoRange.addEventListener("input", function () {
+        setLogoSize(this.value);
+      });
+      logoNum.addEventListener("input", function () {
+        if (this.value !== "") setLogoSize(this.value);
+      });
+    }
 
     // Slider and number box drive the same value and mirror each other.
     var spaceRange = modal.querySelector("#footer-space");
@@ -1163,6 +1242,31 @@
     var files = Array.from(e.target.files || []);
     e.target.value = "";
     if (files.length) addFiles(files);
+  });
+
+  $("logo-input").addEventListener("change", async function (e) {
+    var file = e.target.files[0];
+    e.target.value = "";
+    if (!file) return;
+    setStatus("Processing logo…", "is-saving");
+    try {
+      var processed = await window.WB.processLogoFile(file);
+      await window.WB.addPendingFiles(processed.id, [
+        { path: processed.path, blob: processed.blob },
+      ]);
+      data.logo = {
+        image: processed.path,
+        width: processed.width,
+        height: processed.height,
+        size: (data.logo && typeof data.logo.size === "number") ? data.logo.size : 100,
+      };
+      renderHeading();
+      markDirty();
+      closeModal();
+      openTypography();
+    } catch (err) {
+      setStatus("Could not read that image", "is-error");
+    }
   });
 
   $("cursor-input").addEventListener("change", async function (e) {
