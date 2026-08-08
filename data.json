@@ -291,5 +291,11 @@
   },
   "footer": {
     "space": 0
+  },
+  "logo": {
+    "image": "logo/mskh4np58e89n8.png",
+    "width": 1400,
+    "height": 200,
+    "size": 100
   }
 }
