@@ -49,9 +49,9 @@
           "width": 2085,
           "height": 2560,
           "caption": "",
-          "x": 55.91,
-          "y": 167.24,
-          "w": 33.04
+          "x": 49.64,
+          "y": 120.79,
+          "w": 41.05
         },
         {
           "id": "mshn20nqjuqloq",
@@ -65,17 +65,6 @@
           "w": 40.04
         },
         {
-          "id": "mshn3gmx7wdoqz",
-          "display": "photos/mshn3gmx7wdoqz.jpg",
-          "thumb": "photos/mshn3gmx7wdoqz-t.jpg",
-          "width": 1873,
-          "height": 2560,
-          "caption": "",
-          "x": 21.38,
-          "y": 106.77,
-          "w": 32.54
-        },
-        {
           "id": "mshn855ci80363",
           "display": "photos/mshn855ci80363.jpg",
           "thumb": "photos/mshn855ci80363-t.jpg",
@@ -85,17 +74,6 @@
           "x": 75.11,
           "y": 0,
           "w": 25.17
-        },
-        {
-          "id": "mshpk7ij0ebn93",
-          "display": "photos/mshpk7ij0ebn93.jpg",
-          "thumb": "photos/mshpk7ij0ebn93-t.jpg",
-          "width": 2560,
-          "height": 1855,
-          "caption": "",
-          "x": 56.09,
-          "y": 209.86,
-          "w": 40.23
         },
         {
           "id": "mshpmb1sr3wk7q",
@@ -159,8 +137,8 @@
           "width": 2064,
           "height": 2560,
           "caption": "",
-          "x": 54.85,
-          "y": 115.26,
+          "x": 6.85,
+          "y": 120.79,
           "w": 40.53
         },
         {
@@ -186,17 +164,6 @@
           "w": 35.72
         },
         {
-          "id": "mskaw6kiokxixv",
-          "display": "photos/mskaw6kiokxixv.jpg",
-          "thumb": "photos/mskaw6kiokxixv-t.jpg",
-          "width": 2560,
-          "height": 2044,
-          "caption": "",
-          "x": 6.85,
-          "y": 153.49,
-          "w": 47.07
-        },
-        {
           "id": "mskazlx4chgulq",
           "display": "photos/mskazlx4chgulq.jpg",
           "thumb": "photos/mskazlx4chgulq-t.jpg",
@@ -214,8 +181,8 @@
           "width": 2560,
           "height": 1715,
           "caption": "",
-          "x": 11.606518296432965,
-          "y": 255.19051737392374,
+          "x": 9.15,
+          "y": 201.33,
           "w": 68.94
         }
       ]
