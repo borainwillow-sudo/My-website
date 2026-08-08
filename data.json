@@ -206,6 +206,17 @@
           "x": 1.25,
           "y": 155.98,
           "w": 53.01
+        },
+        {
+          "id": "mskazlx4chgulq",
+          "display": "photos/mskazlx4chgulq.jpg",
+          "thumb": "photos/mskazlx4chgulq-t.jpg",
+          "width": 2560,
+          "height": 2101,
+          "caption": "",
+          "x": 8,
+          "y": 323.9833438651922,
+          "w": 34
         }
       ]
     },
