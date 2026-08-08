@@ -113,10 +113,56 @@
     };
   }
 
+  // Animated formats must never go through a canvas: drawImage captures a
+  // single frame, so re-encoding silently flattens the animation to a still.
+  // APNG is a PNG carrying an acTL chunk ahead of the first IDAT; GIF and
+  // animated WebP are recognised by their own markers.
+  async function detectAnimated(file) {
+    var head = new Uint8Array(await file.slice(0, 262144).arrayBuffer());
+
+    function find(marker, from) {
+      var m = [];
+      for (var c = 0; c < marker.length; c++) m.push(marker.charCodeAt(c));
+      outer: for (var i = from || 0; i <= head.length - m.length; i++) {
+        for (var j = 0; j < m.length; j++) {
+          if (head[i + j] !== m[j]) continue outer;
+        }
+        return i;
+      }
+      return -1;
+    }
+
+    var isPng =
+      head[0] === 0x89 && head[1] === 0x50 && head[2] === 0x4e && head[3] === 0x47;
+    if (isPng) {
+      var actl = find("acTL");
+      var idat = find("IDAT");
+      return actl !== -1 && (idat === -1 || actl < idat);
+    }
+    if (find("GIF8") === 0) return true;
+    if (find("RIFF") === 0 && find("WEBP") === 8) return find("ANIM") !== -1;
+    return false;
+  }
+
   // A wordmark logo is line art on transparency: PNG, and generous enough to
-  // stay crisp on a retina screen at its displayed size.
+  // stay crisp on a retina screen at its displayed size. Animated files are
+  // published exactly as uploaded so they keep moving.
   async function processLogoFile(file) {
     var img = await loadImageFromFile(file);
+
+    if (await detectAnimated(file)) {
+      var ext = (file.name.match(/\.(png|gif|webp)$/i) || [null, "png"])[1];
+      var animId = window.WB.uid();
+      return {
+        id: animId,
+        path: "logo/" + animId + "." + ext.toLowerCase(),
+        blob: file,
+        width: img.naturalWidth || img.width,
+        height: img.naturalHeight || img.height,
+        animated: true,
+      };
+    }
+
     var size = scaleTo(img, 1400);
     var canvas = document.createElement("canvas");
     canvas.width = size.w;
@@ -182,6 +228,7 @@
     processDataUrl: processDataUrl,
     processCursorFile: processCursorFile,
     processLogoFile: processLogoFile,
+    detectAnimated: detectAnimated,
     blobToBase64: blobToBase64,
     formatBytes: formatBytes,
   });

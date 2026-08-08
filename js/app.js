@@ -1,7 +1,7 @@
 (function () {
   // Shown at the bottom of the Style panel. Bump alongside the ?v= query
   // strings in index.html so a stale copy can be identified at a glance.
-  var EDITOR_VERSION = "9";
+  var EDITOR_VERSION = "10";
   var data = null;
   var currentId = "home";
   var openGroups = {};
@@ -1264,6 +1264,19 @@
       markDirty();
       closeModal();
       openTypography();
+      // Animated files bypass resizing to keep their frames, so an oversized
+      // one would quietly slow every page load.
+      if (processed.animated) {
+        var kb = processed.blob.size;
+        setStatus(
+          kb > 3 * 1024 * 1024
+            ? "Animated logo added (" +
+                window.WB.formatBytes(kb) +
+                ") — large files slow the site; consider a smaller export"
+            : "Animated logo added (" + window.WB.formatBytes(kb) + ")",
+          kb > 3 * 1024 * 1024 ? "is-error" : ""
+        );
+      }
     } catch (err) {
       setStatus("Could not read that image", "is-error");
     }
