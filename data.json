@@ -98,17 +98,6 @@
           "w": 36.26
         },
         {
-          "id": "mshpkq6ta4mxbm",
-          "display": "photos/mshpkq6ta4mxbm.jpg",
-          "thumb": "photos/mshpkq6ta4mxbm-t.jpg",
-          "width": 2560,
-          "height": 1911,
-          "caption": "",
-          "x": -1.61,
-          "y": 214.65,
-          "w": 36.38
-        },
-        {
           "id": "mshpmb1sr3wk7q",
           "display": "photos/mshppazqmblzx8.jpg",
           "thumb": "photos/mshppazqmblzx8-t.jpg",
@@ -181,8 +170,8 @@
           "width": 2560,
           "height": 1716,
           "caption": "",
-          "x": 37.74000000000001,
-          "y": 211.2953751537515,
+          "x": 5.48,
+          "y": 254.76,
           "w": 37.37
         },
         {
@@ -206,6 +195,17 @@
           "x": 50.96,
           "y": 247,
           "w": 26.73
+        },
+        {
+          "id": "mskaw6kiokxixv",
+          "display": "photos/mskaw6kiokxixv.jpg",
+          "thumb": "photos/mskaw6kiokxixv-t.jpg",
+          "width": 2560,
+          "height": 2044,
+          "caption": "",
+          "x": 37.65,
+          "y": 210.29,
+          "w": 56.30454335793358
         }
       ]
     },
