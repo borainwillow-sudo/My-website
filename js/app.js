@@ -1,13 +1,22 @@
 (function () {
   // Shown at the bottom of the Style panel. Bump alongside the ?v= query
   // strings in index.html so a stale copy can be identified at a glance.
-  var EDITOR_VERSION = "7";
+  var EDITOR_VERSION = "8";
   var data = null;
   var currentId = "home";
   var openGroups = {};
   var saveTimer = null;
   var saving = false;
-  var dirtySinceCommit = false;
+  // Version counters rather than a boolean: a save publishes a snapshot, and
+  // edits can land while it's uploading. Comparing what was sent against what
+  // has since changed is the only way to tell "saved everything" from "saved
+  // what I happened to send".
+  var dirtyVersion = 0;
+  var savedVersion = 0;
+
+  function isDirty() {
+    return dirtyVersion !== savedVersion;
+  }
 
   var $ = function (id) {
     return document.getElementById(id);
@@ -95,6 +104,24 @@
     document.documentElement.style.setProperty("--footer-space", space + "vh");
   }
 
+  // Drops typography keys that aren't real text roles. An earlier build wrote
+  // typography["undefined"] whenever the cursor-size or end-of-page controls
+  // were touched; this clears that out of existing data.
+  function pruneTypography() {
+    if (!data.typography) return false;
+    var valid = window.WB.TYPO_ROLES.map(function (r) {
+      return r.key;
+    });
+    var removed = false;
+    Object.keys(data.typography).forEach(function (k) {
+      if (valid.indexOf(k) === -1) {
+        delete data.typography[k];
+        removed = true;
+      }
+    });
+    return removed;
+  }
+
   function applyTypography() {
     var t = data.typography || {};
     window.WB.TYPO_ROLES.forEach(function (role) {
@@ -121,7 +148,7 @@
 
   function markDirty() {
     var ok = window.WB.saveDraft(data);
-    dirtySinceCommit = true;
+    dirtyVersion++;
     if (!ok) {
       setStatus("Local draft too large — save now to publish", "is-error");
     }
@@ -141,9 +168,12 @@
       if (opts.manual) openConnect();
       return;
     }
-    if (!dirtySinceCommit && !opts.manual) return;
+    if (!isDirty() && !opts.manual) return;
 
     saving = true;
+    // Everything below publishes this snapshot; anything edited after it bumps
+    // dirtyVersion past it and earns another save.
+    var sendingVersion = dirtyVersion;
     clearTimeout(saveTimer);
     var pending = window.WB.getPendingPhotos();
     var pendingFileCount = pending.reduce(function (n, r) {
@@ -174,14 +204,30 @@
         }
       }
 
+      // Snapshot taken before the upload; only these are cleared, so photos
+      // added while it was running stay staged for the next save.
+      var committedIds = pending.map(function (r) {
+        return r.id;
+      });
+
       await window.WB.gh.commitFiles(files, "Update site content");
-      await window.WB.clearPendingPhotos();
-      dirtySinceCommit = false;
-      setStatus("Saved — live in about a minute", "is-saved");
+      await window.WB.clearPendingPhotos(committedIds);
+      savedVersion = sendingVersion;
+      setStatus(
+        isDirty() ? "Saved — more to send…" : "Saved — live in about a minute",
+        "is-saved"
+      );
     } catch (err) {
       setStatus(String(err.message || err), "is-error");
     } finally {
       saving = false;
+      // Edits made during the upload had their debounce timer swallowed by the
+      // in-flight save; without this they'd sit unpublished until some later,
+      // unrelated edit happened to trigger a save.
+      if (isDirty() && window.WB.gh.hasToken()) {
+        clearTimeout(saveTimer);
+        saveTimer = setTimeout(commit, 2500);
+      }
     }
   }
 
@@ -663,7 +709,9 @@
     }
 
     modal.addEventListener("input", function (e) {
-      var row = e.target.closest(".typo-row");
+      // The cursor-size and end-of-page rows reuse this row layout but are not
+      // text roles. Without this guard they wrote to typography[undefined].
+      var row = e.target.closest(".typo-row[data-role]");
       if (!row) return;
       var key = row.dataset.role;
       data.typography = data.typography || {};
@@ -1094,7 +1142,7 @@
   });
 
   $("btn-exit-edit").addEventListener("click", async function () {
-    if (dirtySinceCommit && window.WB.gh.hasToken()) await commit({ manual: true });
+    if (isDirty() && window.WB.gh.hasToken()) await commit({ manual: true });
     window.WB.setEditing(false);
     closeModal();
     render();
@@ -1161,7 +1209,7 @@
   window.addEventListener("hashchange", onHashChange);
 
   window.addEventListener("beforeunload", function (e) {
-    if (dirtySinceCommit && window.WB.gh.hasToken() && window.WB.isEditing()) {
+    if (isDirty() && window.WB.gh.hasToken() && window.WB.isEditing()) {
       e.preventDefault();
       e.returnValue = "";
     }
@@ -1177,16 +1225,18 @@
 
   (async function init() {
     data = await window.WB.getData();
+    var cleaned = pruneTypography();
     // Restore photos staged but not yet published in an earlier session, so
     // they render instead of 404-ing.
     var restored = await window.WB.initPending();
+    if (cleaned && window.WB.isEditing()) markDirty();
     currentId = routeFromHash();
     var page = findPage(data, currentId);
     if (!page || page.type === "group") currentId = firstNavigablePage(data);
     render();
     if (window.WB.isEditing()) {
       if (restored) {
-        dirtySinceCommit = true;
+        dirtyVersion++;
         setStatus(
           restored + " photo(s) waiting to publish — press Save now",
           ""

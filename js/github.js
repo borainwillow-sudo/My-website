@@ -47,6 +47,12 @@
     if (!token) throw new Error("No GitHub token set.");
     var res = await fetch(API + path, {
       method: options.method || "GET",
+      // Never read these from the browser cache. The branch head is fetched
+      // from the same URL on every save; a cached answer means committing onto
+      // a position the branch has already left, which GitHub rejects as "not a
+      // fast forward" — and a cached answer would be re-served on every retry,
+      // so the save could never succeed.
+      cache: "no-store",
       headers: {
         Authorization: "Bearer " + token,
         Accept: "application/vnd.github+json",
@@ -132,7 +138,9 @@
     // moves the branch on — GitHub then rejects the update as not a fast
     // forward. Rebuild on top of wherever the branch has got to and try again.
     // Our own files win; anything changed elsewhere is preserved by base_tree.
-    var attempts = 4;
+    // GitHub can also serve a briefly stale head from a read replica just
+    // after a push, so give it room to catch up rather than failing fast.
+    var attempts = 6;
     for (var attempt = 1; ; attempt++) {
       var ref = await api(base + "/git/ref/heads/" + branch);
       var baseCommitSha = ref.object.sha;
@@ -168,9 +176,9 @@
           }
           throw err;
         }
-        // Brief, growing pause before rebasing onto the new head.
+        // Growing pause before rebasing onto the new head: 0.5s, 1s, 2s, 4s…
         await new Promise(function (r) {
-          setTimeout(r, 400 * attempt);
+          setTimeout(r, Math.min(4000, 500 * Math.pow(2, attempt - 1)));
         });
       }
     }
