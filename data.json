@@ -170,8 +170,8 @@
           "width": 2560,
           "height": 1716,
           "caption": "",
-          "x": -1.69,
-          "y": 242.15,
+          "x": 6.85,
+          "y": 315.56,
           "w": 37.37
         },
         {
@@ -181,20 +181,9 @@
           "width": 1899,
           "height": 2560,
           "caption": "",
-          "x": 48.32,
-          "y": 271.83,
+          "x": 53.92,
+          "y": 288.5,
           "w": 35.72
-        },
-        {
-          "id": "mskasbe6brzh7r",
-          "display": "photos/mskasl84y26zhb.jpg",
-          "thumb": "photos/mskasl84y26zhb-t.jpg",
-          "width": 1527,
-          "height": 2048,
-          "caption": "",
-          "x": 34.96,
-          "y": 249.27,
-          "w": 26.73
         },
         {
           "id": "mskaw6kiokxixv",
@@ -220,14 +209,14 @@
         },
         {
           "id": "mskb791sp52vu2",
-          "display": "photos/mskb791sp52vu2.jpg",
-          "thumb": "photos/mskb791sp52vu2-t.jpg",
+          "display": "photos/mskb8qz0vubael.jpg",
+          "thumb": "photos/mskb8qz0vubael-t.jpg",
           "width": 2560,
           "height": 1715,
           "caption": "",
-          "x": 14.770000000000005,
-          "y": 287.12669795498306,
-          "w": 34
+          "x": 11.606518296432965,
+          "y": 255.19051737392374,
+          "w": 68.94
         }
       ]
     },
