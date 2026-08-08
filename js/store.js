@@ -154,15 +154,30 @@
     });
   }
 
-  async function clearPendingPhotos() {
-    Object.keys(pendingPhotos).forEach(function (k) {
-      (pendingPhotos[k].files || []).forEach(function (f) {
+  // Clears only the records named in `ids`. A save uploads a snapshot of
+  // what was staged when it started; anything added while it was running must
+  // survive, or data.json would reference files that never got published.
+  // Called with no argument it clears everything.
+  async function clearPendingPhotos(ids) {
+    var keys = ids || Object.keys(pendingPhotos);
+    keys.forEach(function (k) {
+      var rec = pendingPhotos[k];
+      if (!rec) return;
+      (rec.files || []).forEach(function (f) {
         if (f.objectUrl) URL.revokeObjectURL(f.objectUrl);
       });
+      delete pendingPhotos[k];
     });
-    pendingPhotos = {};
     try {
-      await idbClear();
+      if (ids) {
+        await tx("readwrite", function (s) {
+          ids.forEach(function (k) {
+            s.delete(k);
+          });
+        });
+      } else {
+        await idbClear();
+      }
     } catch (e) {}
   }
 
