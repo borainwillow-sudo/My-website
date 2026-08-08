@@ -121,14 +121,14 @@
         },
         {
           "id": "mshq599um4mrc3",
-          "display": "photos/mshq599um4mrc3.jpg",
-          "thumb": "photos/mshq599um4mrc3-t.jpg",
-          "width": 1716,
-          "height": 2560,
+          "display": "photos/mskbbrtvmjwkkl.jpg",
+          "thumb": "photos/mskbbrtvmjwkkl-t.jpg",
+          "width": 1715,
+          "height": 2414,
           "caption": "",
           "x": 76.4,
           "y": 71.53,
-          "w": 22.59
+          "w": 23.6
         },
         {
           "id": "mshq6j7wht2jid",
@@ -170,9 +170,9 @@
           "width": 2560,
           "height": 2101,
           "caption": "",
-          "x": 16.43,
-          "y": 231.84,
-          "w": 61.26
+          "x": 16.97,
+          "y": 223.71,
+          "w": 61.04
         },
         {
           "id": "mskb791sp52vu2",
@@ -181,8 +181,8 @@
           "width": 2560,
           "height": 1715,
           "caption": "",
-          "x": 16.43,
-          "y": 182.75,
+          "x": 16.75,
+          "y": 177.56,
           "w": 61.26
         }
       ]
