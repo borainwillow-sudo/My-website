@@ -75,7 +75,11 @@
           "Repository or branch not found (404). Check the repo name and that the token can see it."
         );
       }
-      throw new Error("GitHub error " + res.status + (detail ? ": " + detail : ""));
+      var err = new Error(
+        "GitHub error " + res.status + (detail ? ": " + detail : "")
+      );
+      err.status = res.status;
+      throw err;
     }
     if (res.status === 204) return null;
     return await res.json();
@@ -103,11 +107,9 @@
     var base = "/repos/" + repo.owner + "/" + repo.repo;
     var branch = repo.branch || "main";
 
-    var ref = await api(base + "/git/ref/heads/" + branch);
-    var baseCommitSha = ref.object.sha;
-    var baseCommit = await api(base + "/git/commits/" + baseCommitSha);
-    var baseTreeSha = baseCommit.tree.sha;
-
+    // Blobs are content-addressed and independent of where the branch is
+    // pointing, so they're uploaded once and reused across retries. With a
+    // batch of photos this is the slow part.
     var treeEntries = [];
     for (var i = 0; i < files.length; i++) {
       var f = files[i];
@@ -126,26 +128,52 @@
       });
     }
 
-    var tree = await api(base + "/git/trees", {
-      method: "POST",
-      body: { base_tree: baseTreeSha, tree: treeEntries },
-    });
+    // Uploading can take a while, and anything else pushing in the meantime
+    // moves the branch on — GitHub then rejects the update as not a fast
+    // forward. Rebuild on top of wherever the branch has got to and try again.
+    // Our own files win; anything changed elsewhere is preserved by base_tree.
+    var attempts = 4;
+    for (var attempt = 1; ; attempt++) {
+      var ref = await api(base + "/git/ref/heads/" + branch);
+      var baseCommitSha = ref.object.sha;
+      var baseCommit = await api(base + "/git/commits/" + baseCommitSha);
 
-    var commit = await api(base + "/git/commits", {
-      method: "POST",
-      body: {
-        message: message || "Update site content",
-        tree: tree.sha,
-        parents: [baseCommitSha],
-      },
-    });
+      var tree = await api(base + "/git/trees", {
+        method: "POST",
+        body: { base_tree: baseCommit.tree.sha, tree: treeEntries },
+      });
 
-    await api(base + "/git/refs/heads/" + branch, {
-      method: "PATCH",
-      body: { sha: commit.sha },
-    });
+      var commit = await api(base + "/git/commits", {
+        method: "POST",
+        body: {
+          message: message || "Update site content",
+          tree: tree.sha,
+          parents: [baseCommitSha],
+        },
+      });
 
-    return commit.sha;
+      try {
+        await api(base + "/git/refs/heads/" + branch, {
+          method: "PATCH",
+          body: { sha: commit.sha },
+        });
+        return commit.sha;
+      } catch (err) {
+        var raced = err.status === 422 || err.status === 409;
+        if (!raced || attempt >= attempts) {
+          if (raced) {
+            throw new Error(
+              "Could not save — the site was changed somewhere else at the same time. Close any other tab or device editing this site, then press Save now."
+            );
+          }
+          throw err;
+        }
+        // Brief, growing pause before rebasing onto the new head.
+        await new Promise(function (r) {
+          setTimeout(r, 400 * attempt);
+        });
+      }
+    }
   }
 
   window.WB = window.WB || {};
