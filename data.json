@@ -184,6 +184,17 @@
           "x": 16.75,
           "y": 177.56,
           "w": 61.26
+        },
+        {
+          "id": "mskbe418mkxdnl",
+          "display": "photos/mskbe418mkxdnl.jpg",
+          "thumb": "photos/mskbe418mkxdnl-t.jpg",
+          "width": 1851,
+          "height": 2560,
+          "caption": "",
+          "x": 50,
+          "y": 322.4001159468884,
+          "w": 34
         }
       ]
     },
