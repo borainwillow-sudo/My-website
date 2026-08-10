@@ -247,7 +247,7 @@
       "children": [
         {
           "id": "personal-work",
-          "title": "amber",
+          "title": "volumetwospace",
           "type": "gallery",
           "header": {
             "title": "PERSONAL WORK",
@@ -320,6 +320,18 @@
         {
           "id": "tattoo-convention-polaroids",
           "title": "tattoo convention polaroids",
+          "type": "gallery",
+          "header": {
+            "title": "",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": []
+        },
+        {
+          "id": "untititled-project",
+          "title": "untititled project",
           "type": "gallery",
           "header": {
             "title": "",
