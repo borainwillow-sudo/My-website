@@ -180,6 +180,17 @@
           "x": 51.58,
           "y": 54.03,
           "w": 32.58
+        },
+        {
+          "id": "msn3c4o4er740p",
+          "display": "photos/msn3c4o4er740p.jpg",
+          "thumb": "photos/msn3c4o4er740p-t.jpg",
+          "width": 2136,
+          "height": 2560,
+          "caption": "",
+          "x": 8,
+          "y": 338.2421664464993,
+          "w": 34
         }
       ]
     },
