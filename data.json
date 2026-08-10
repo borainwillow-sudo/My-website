@@ -756,8 +756,8 @@
               "width": 1716,
               "height": 2560,
               "caption": "",
-              "x": 1,
-              "y": 54.74,
+              "x": 34.33,
+              "y": 4,
               "w": 31.33
             },
             {
@@ -767,8 +767,8 @@
               "width": 1716,
               "height": 2560,
               "caption": "",
-              "x": 34.33,
-              "y": 54.74,
+              "x": 67.67,
+              "y": 4,
               "w": 31.33
             },
             {
@@ -779,7 +779,7 @@
               "height": 1742,
               "caption": "",
               "x": 1,
-              "y": 105.48,
+              "y": 54.74,
               "w": 31.33
             },
             {
@@ -790,7 +790,18 @@
               "height": 2560,
               "caption": "",
               "x": 34.33,
-              "y": 105.48,
+              "y": 54.74,
+              "w": 31.33
+            },
+            {
+              "id": "msnbvnjlzlp8zb",
+              "display": "photos/msnbvnjlzlp8zb.jpg",
+              "thumb": "photos/msnbvnjlzlp8zb-t.jpg",
+              "width": 1716,
+              "height": 2560,
+              "caption": "",
+              "x": 67.67,
+              "y": 54.74,
               "w": 31.33
             }
           ]
