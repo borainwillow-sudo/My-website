@@ -243,7 +243,41 @@
             "quote": "",
             "description": ""
           },
-          "photos": []
+          "photos": [
+            {
+              "id": "msn7nviqknhhl5",
+              "display": "photos/msn7nviqknhhl5.jpg",
+              "thumb": "photos/msn7nviqknhhl5-t.jpg",
+              "width": 2560,
+              "height": 2033,
+              "caption": "",
+              "x": 8,
+              "y": 4,
+              "w": 34
+            },
+            {
+              "id": "msn7nvt0qfc7uc",
+              "display": "photos/msn7nvt0qfc7uc.jpg",
+              "thumb": "photos/msn7nvt0qfc7uc-t.jpg",
+              "width": 2560,
+              "height": 2033,
+              "caption": "",
+              "x": 8,
+              "y": 35.00078125,
+              "w": 34
+            },
+            {
+              "id": "msn7nw2zihw5os",
+              "display": "photos/msn7nw2zihw5os.jpg",
+              "thumb": "photos/msn7nw2zihw5os-t.jpg",
+              "width": 2560,
+              "height": 2033,
+              "caption": "",
+              "x": 8,
+              "y": 66.0015625,
+              "w": 34
+            }
+          ]
         },
         {
           "id": "client-work",
