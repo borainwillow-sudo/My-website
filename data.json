@@ -217,18 +217,6 @@
       ]
     },
     {
-      "id": "about",
-      "title": "About",
-      "type": "text",
-      "header": {
-        "title": "About",
-        "meta": "",
-        "quote": "",
-        "description": ""
-      },
-      "body": "Write your about text here."
-    },
-    {
       "id": "contact",
       "title": "Contact",
       "type": "text",
