@@ -344,37 +344,6 @@
       ]
     },
     {
-      "id": "zines",
-      "title": "Zines",
-      "type": "group",
-      "children": [
-        {
-          "id": "zine-001",
-          "title": "001",
-          "type": "gallery",
-          "header": {
-            "title": "001",
-            "meta": "",
-            "quote": "",
-            "description": ""
-          },
-          "photos": []
-        },
-        {
-          "id": "zine-002",
-          "title": "002",
-          "type": "gallery",
-          "header": {
-            "title": "002",
-            "meta": "",
-            "quote": "",
-            "description": ""
-          },
-          "photos": []
-        }
-      ]
-    },
-    {
       "id": "client-work-2",
       "title": "client work",
       "type": "group",
