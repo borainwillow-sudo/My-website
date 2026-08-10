@@ -32,7 +32,10 @@ Then open `http://localhost:8000/`.
 Click **Edit site** (bottom right). The first time you'll set a password;
 after that it asks for it. In edit mode you can:
 
-- **Add photos** — select many at once; each is resized and thumbnailed
+- **Add photos** — select many at once; each is resized and thumbnailed. New
+  photos land at the top of the page in the order you chose them, and the page
+  scrolls up to show them. Whatever is already on the page shifts down by the
+  same amount, so an existing arrangement keeps its shape.
 - **Drag photos** anywhere on the page; faint blue guides appear when an edge
   or centre lines up with another photo, and it snaps into place
 - **Resize** with the square handle at a photo's bottom-right corner

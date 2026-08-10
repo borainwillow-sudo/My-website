@@ -1,7 +1,7 @@
 (function () {
   // Shown at the bottom of the Style panel. Bump alongside the ?v= query
   // strings in index.html so a stale copy can be identified at a glance.
-  var EDITOR_VERSION = "11";
+  var EDITOR_VERSION = "12";
   var data = null;
   var currentId = "home";
   var openGroups = {};
@@ -1001,6 +1001,16 @@
     var done = 0;
     var failed = [];
     var memoryOnly = 0;
+
+    // Everything already on the page shifts down as each new photo is placed
+    // at the top. Captured up front so the new arrivals stack in the order
+    // they were chosen rather than shunting each other along.
+    var existingIds = {};
+    page.photos.forEach(function (p) {
+      existingIds[p.id] = true;
+    });
+    var insertY = window.WB.layout.topPlacement().y;
+
     setStatus("Processing 0/" + files.length + "…", "is-saving");
 
     for (var i = 0; i < files.length; i++) {
@@ -1008,8 +1018,8 @@
         var processed = await window.WB.processFile(files[i]);
         var durable = await window.WB.addPendingPhoto(processed);
         if (!durable) memoryOnly++;
-        var place = window.WB.layout.defaultPlacement(page.photos);
-        page.photos.push({
+        var place = window.WB.layout.topPlacement();
+        var photo = {
           id: processed.id,
           display: processed.displayPath,
           thumb: processed.thumbPath,
@@ -1017,9 +1027,17 @@
           height: processed.height,
           caption: "",
           x: place.x,
-          y: place.y,
+          y: insertY,
           w: place.w,
-        });
+        };
+        page.photos.push(photo);
+
+        // Make room below for this one, leaving the photos already placed in
+        // this batch where they are so the batch keeps its order.
+        var room =
+          window.WB.layout.heightPct(photo) + window.WB.layout.GAP;
+        window.WB.layout.shiftDown(page.photos, existingIds, room);
+        insertY += room;
         sessionAddedIds[processed.id] = true;
         done++;
         setStatus("Processing " + done + "/" + files.length + "…", "is-saving");
@@ -1041,6 +1059,8 @@
 
     render();
     markDirty();
+    // The new photos are at the top, so show them.
+    if (done) window.scrollTo({ top: 0, behavior: "smooth" });
 
     if (failed.length) {
       showNotice(
