@@ -748,6 +748,28 @@
               "x": 1,
               "y": 4,
               "w": 31.33
+            },
+            {
+              "id": "msnbuv8squ5m5d",
+              "display": "photos/msnbuv8squ5m5d.jpg",
+              "thumb": "photos/msnbuv8squ5m5d-t.jpg",
+              "width": 1716,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 54.74,
+              "w": 31.33
+            },
+            {
+              "id": "msnbuvlocs7uwj",
+              "display": "photos/msnbuvlocs7uwj.jpg",
+              "thumb": "photos/msnbuvlocs7uwj-t.jpg",
+              "width": 1716,
+              "height": 2560,
+              "caption": "",
+              "x": 34.33,
+              "y": 54.74,
+              "w": 31.33
             }
           ]
         },
