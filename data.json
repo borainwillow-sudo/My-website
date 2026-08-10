@@ -259,10 +259,22 @@
         },
         {
           "id": "client-work",
-          "title": "",
+          "title": "girlhood",
           "type": "gallery",
           "header": {
             "title": "CLIENT WORK",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": []
+        },
+        {
+          "id": "eva",
+          "title": "Eva",
+          "type": "gallery",
+          "header": {
+            "title": "",
             "meta": "",
             "quote": "",
             "description": ""
