@@ -876,7 +876,19 @@
         "quote": "",
         "description": ""
       },
-      "photos": []
+      "photos": [
+        {
+          "id": "msnbj2vmelu79p",
+          "display": "photos/msnbj2vmelu79p.jpg",
+          "thumb": "photos/msnbj2vmelu79p-t.jpg",
+          "width": 2047,
+          "height": 2560,
+          "caption": "",
+          "x": 1,
+          "y": 4,
+          "w": 31.33
+        }
+      ]
     }
   ],
   "cursor": {
