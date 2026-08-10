@@ -3,7 +3,7 @@
   "typography": {
     "siteName": {
       "weight": 700,
-      "size": 2
+      "size": 60
     },
     "nav": {
       "weight": 400,
