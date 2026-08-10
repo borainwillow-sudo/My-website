@@ -770,6 +770,28 @@
               "x": 34.33,
               "y": 54.74,
               "w": 31.33
+            },
+            {
+              "id": "msnbv71gqpv01s",
+              "display": "photos/msnbv71gqpv01s.jpg",
+              "thumb": "photos/msnbv71gqpv01s-t.jpg",
+              "width": 2560,
+              "height": 1742,
+              "caption": "",
+              "x": 1,
+              "y": 105.48,
+              "w": 31.33
+            },
+            {
+              "id": "msnbv7dt5r88oa",
+              "display": "photos/msnbv7dt5r88oa.jpg",
+              "thumb": "photos/msnbv7dt5r88oa-t.jpg",
+              "width": 1716,
+              "height": 2560,
+              "caption": "",
+              "x": 34.33,
+              "y": 105.48,
+              "w": 31.33
             }
           ]
         },
