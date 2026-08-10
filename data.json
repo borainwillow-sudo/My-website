@@ -628,25 +628,14 @@
               "w": 31.33
             },
             {
-              "id": "msnevk7jxwwspe",
-              "display": "photos/msnevk7jxwwspe.jpg",
-              "thumb": "photos/msnevk7jxwwspe-t.jpg",
-              "width": 2104,
-              "height": 2560,
-              "caption": "",
-              "x": 1,
-              "y": 46.47,
-              "w": 31.33
-            },
-            {
               "id": "msnevke5oltlim",
               "display": "photos/msnevke5oltlim.jpg",
               "thumb": "photos/msnevke5oltlim-t.jpg",
               "width": 2086,
               "height": 2560,
               "caption": "",
-              "x": 34.33,
-              "y": 87.99,
+              "x": 1,
+              "y": 46.47,
               "w": 31.33
             },
             {
@@ -656,8 +645,8 @@
               "width": 2124,
               "height": 2560,
               "caption": "",
-              "x": 67.67,
-              "y": 88.2,
+              "x": 34.33,
+              "y": 87.99,
               "w": 31.33
             },
             {
@@ -667,8 +656,8 @@
               "width": 2098,
               "height": 2560,
               "caption": "",
-              "x": 1,
-              "y": 88.59,
+              "x": 67.67,
+              "y": 88.2,
               "w": 31.33
             },
             {
@@ -678,8 +667,8 @@
               "width": 2130,
               "height": 2560,
               "caption": "",
-              "x": 67.67,
-              "y": 129.97,
+              "x": 1,
+              "y": 88.92,
               "w": 31.33
             },
             {
@@ -690,7 +679,7 @@
               "height": 2560,
               "caption": "",
               "x": 34.33,
-              "y": 130.44,
+              "y": 129.75,
               "w": 31.33
             },
             {
@@ -700,8 +689,8 @@
               "width": 2087,
               "height": 2560,
               "caption": "",
-              "x": 1,
-              "y": 130.82,
+              "x": 67.67,
+              "y": 130.43,
               "w": 31.33
             },
             {
@@ -711,8 +700,8 @@
               "width": 2096,
               "height": 2560,
               "caption": "",
-              "x": 67.67,
-              "y": 171.62,
+              "x": 1,
+              "y": 130.57,
               "w": 31.33
             }
           ]
