@@ -180,6 +180,17 @@
           "x": 12.49,
           "y": 277.13,
           "w": 34
+        },
+        {
+          "id": "msmut4wuicmp3m",
+          "display": "photos/msmut4wuicmp3m.jpg",
+          "thumb": "photos/msmut4wuicmp3m-t.jpg",
+          "width": 1818,
+          "height": 1229,
+          "caption": "",
+          "x": 8,
+          "y": 326.3440350877193,
+          "w": 34
         }
       ]
     },
