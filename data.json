@@ -180,6 +180,17 @@
           "x": 49.64,
           "y": 263.47,
           "w": 44.41
+        },
+        {
+          "id": "msmv33om8tj9q7",
+          "display": "photos/msmv33om8tj9q7.jpg",
+          "thumb": "photos/msmv33om8tj9q7-t.jpg",
+          "width": 2016,
+          "height": 2560,
+          "caption": "",
+          "x": 3.47,
+          "y": 303.05819685063267,
+          "w": 34
         }
       ]
     },
