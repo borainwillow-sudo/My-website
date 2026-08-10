@@ -322,6 +322,17 @@
               "x": 34.33,
               "y": 4,
               "w": 31.33
+            },
+            {
+              "id": "msng9cb041p1xx",
+              "display": "photos/msng9cb041p1xx.jpg",
+              "thumb": "photos/msng9cb041p1xx-t.jpg",
+              "width": 1710,
+              "height": 2274,
+              "caption": "",
+              "x": 1,
+              "y": 30.15,
+              "w": 31.33
             }
           ]
         },
