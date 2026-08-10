@@ -427,6 +427,12 @@ body.is-editing .photo-block:hover {
   outline-offset: 3px;
 }
 
+/* The photo the arrow keys will move. */
+body.is-editing .photo-block.selected {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 body.is-editing .photo-block.dragging {
   cursor: grabbing;
   outline: 1px solid var(--accent);

@@ -1,7 +1,7 @@
 (function () {
   // Shown at the bottom of the Style panel. Bump alongside the ?v= query
   // strings in index.html so a stale copy can be identified at a glance.
-  var EDITOR_VERSION = "12";
+  var EDITOR_VERSION = "13";
   var data = null;
   var currentId = "home";
   var openGroups = {};
@@ -1002,14 +1002,12 @@
     var failed = [];
     var memoryOnly = 0;
 
-    // Everything already on the page shifts down as each new photo is placed
-    // at the top. Captured up front so the new arrivals stack in the order
-    // they were chosen rather than shunting each other along.
-    var existingIds = {};
-    page.photos.forEach(function (p) {
-      existingIds[p.id] = true;
-    });
-    var insertY = window.WB.layout.topPlacement().y;
+    // New photos are laid out in columns below whatever is already there.
+    // One cursor per column, each new photo going to whichever column is
+    // currently shortest, so varying photo heights don't leave one column
+    // trailing far behind the others.
+    var colGeo = window.WB.layout.columnGeometry();
+    var cursors = window.WB.layout.newColumnCursors(page.photos);
 
     setStatus("Processing 0/" + files.length + "…", "is-saving");
 
@@ -1018,7 +1016,7 @@
         var processed = await window.WB.processFile(files[i]);
         var durable = await window.WB.addPendingPhoto(processed);
         if (!durable) memoryOnly++;
-        var place = window.WB.layout.topPlacement();
+        var col = window.WB.layout.shortestColumn(cursors);
         var photo = {
           id: processed.id,
           display: processed.displayPath,
@@ -1026,18 +1024,13 @@
           width: processed.width,
           height: processed.height,
           caption: "",
-          x: place.x,
-          y: insertY,
-          w: place.w,
+          x: Math.round(colGeo.xs[col] * 100) / 100,
+          y: Math.round(cursors[col] * 100) / 100,
+          w: colGeo.width,
         };
         page.photos.push(photo);
-
-        // Make room below for this one, leaving the photos already placed in
-        // this batch where they are so the batch keeps its order.
-        var room =
+        cursors[col] +=
           window.WB.layout.heightPct(photo) + window.WB.layout.GAP;
-        window.WB.layout.shiftDown(page.photos, existingIds, room);
-        insertY += room;
         sessionAddedIds[processed.id] = true;
         done++;
         setStatus("Processing " + done + "/" + files.length + "…", "is-saving");
@@ -1059,8 +1052,13 @@
 
     render();
     markDirty();
-    // The new photos are at the top, so show them.
-    if (done) window.scrollTo({ top: 0, behavior: "smooth" });
+    // The new photos are at the end of the page, so show them.
+    if (done) {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth",
+      });
+    }
 
     if (failed.length) {
       showNotice(
@@ -1335,6 +1333,29 @@
   $("btn-pages").addEventListener("click", openPages);
   $("btn-add-photo").addEventListener("click", function () {
     $("file-input").click();
+  });
+
+  // One-click tidy: reflow the whole page into columns. Destroys a hand-made
+  // arrangement, so it asks first.
+  $("btn-arrange").addEventListener("click", function () {
+    var page = findPage(data, currentId);
+    if (!page || page.type !== "gallery" || !(page.photos || []).length) {
+      showNotice("Nothing to arrange on this page.");
+      return;
+    }
+    if (
+      !confirm(
+        "Rearrange all " +
+          page.photos.length +
+          " photos on this page into three columns? This replaces their current positions."
+      )
+    ) {
+      return;
+    }
+    window.WB.layout.arrangeInColumns(page.photos);
+    render();
+    markDirty();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   $("file-input").addEventListener("change", function (e) {

@@ -8,6 +8,23 @@
   // silently moved every existing photo. y is converted to pixels here
   // instead, and recomputed whenever the canvas width changes.
   var SNAP_PX = 6;
+  var selectedId = null;
+  var activeKeyHandler = null;
+
+  function selectPhoto(canvas, id) {
+    selectedId = id;
+    canvas.querySelectorAll("[data-photo-id]").forEach(function (el) {
+      el.classList.toggle("selected", el.dataset.photoId === id);
+    });
+  }
+
+  function clearSelection(canvas) {
+    selectedId = null;
+    if (!canvas) return;
+    canvas.querySelectorAll(".selected").forEach(function (el) {
+      el.classList.remove("selected");
+    });
+  }
   var MIN_WIDTH_PCT = 4;
 
   function aspect(photo) {
@@ -111,6 +128,40 @@
   function enableEditing(canvas, photos, onChange) {
     var overlay = canvas.querySelector(".snap-overlay");
     var active = null;
+    var autoScrollFrame = null;
+
+    // Dragging a photo to the far end of a page several screens tall is
+    // impossible without this: holding near the top or bottom edge scrolls
+    // the page, and the drag keeps up.
+    var EDGE = 90;
+    var MAX_SPEED = 22;
+
+    function startAutoScroll() {
+      if (autoScrollFrame) return;
+      var step = function () {
+        if (!active) {
+          autoScrollFrame = null;
+          return;
+        }
+        var y = active.clientY;
+        var speed = 0;
+        if (y < EDGE) speed = -MAX_SPEED * (1 - y / EDGE);
+        else if (y > window.innerHeight - EDGE) {
+          speed = MAX_SPEED * (1 - (window.innerHeight - y) / EDGE);
+        }
+        if (speed) {
+          window.scrollBy(0, speed);
+          updateFromPointer();
+        }
+        autoScrollFrame = requestAnimationFrame(step);
+      };
+      autoScrollFrame = requestAnimationFrame(step);
+    }
+
+    function stopAutoScroll() {
+      if (autoScrollFrame) cancelAnimationFrame(autoScrollFrame);
+      autoScrollFrame = null;
+    }
 
     function pctPerPx() {
       var rect = canvas.getBoundingClientRect();
@@ -148,15 +199,37 @@
         origY: photo.y,
         origW: photo.w,
         scale: scale,
+        startScrollY: window.scrollY,
+        clientX: e.clientX,
+        clientY: e.clientY,
       };
       block.classList.add("dragging");
       block.setPointerCapture(e.pointerId);
+      selectPhoto(canvas, photo.id);
+      startAutoScroll();
+    }
+
+    // Recomputed from the last known pointer position, so an auto-scroll can
+    // drive it too without the pointer having moved.
+    function updateFromPointer() {
+      if (!active) return;
+      applyDrag(active.clientX, active.clientY);
     }
 
     function onPointerMove(e) {
       if (!active) return;
-      var dxPct = (e.clientX - active.startX) * active.scale;
-      var dyPct = (e.clientY - active.startY) * active.scale;
+      active.clientX = e.clientX;
+      active.clientY = e.clientY;
+      applyDrag(e.clientX, e.clientY);
+    }
+
+    function applyDrag(clientX, clientY) {
+      var dxPct = (clientX - active.startX) * active.scale;
+      // The page can scroll underneath a drag, so the photo has to follow the
+      // document rather than the pointer alone.
+      var dyPct =
+        (clientY - active.startY + (window.scrollY - active.startScrollY)) *
+        active.scale;
       var threshold = SNAP_PX * active.scale;
       var cands = candidatesFor(photos, active.photo.id);
       var vGuides = [];
@@ -217,6 +290,7 @@
 
     function endDrag(e) {
       if (!active) return;
+      stopAutoScroll();
       active.block.classList.remove("dragging");
       // Round so the saved JSON stays readable and diffs stay small.
       active.photo.x = Math.round(active.photo.x * 100) / 100;
@@ -228,6 +302,28 @@
       if (onChange) onChange();
     }
 
+    // Arrow keys nudge the selected photo — far more precise than dragging,
+    // especially for lining something up by a hair.
+    function onKeyDown(e) {
+      if (!selectedId) return;
+      var dirs = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] };
+      var d = dirs[e.key];
+      if (!d) return;
+      var target = photos.find(function (p) {
+        return p.id === selectedId;
+      });
+      if (!target) return;
+      e.preventDefault();
+      var stepPct = (e.shiftKey ? 2 : 0.25);
+      target.x = Math.round((target.x + d[0] * stepPct) * 100) / 100;
+      target.y = Math.max(0, Math.round((target.y + d[1] * stepPct) * 100) / 100);
+      applyPositions(canvas, photos);
+      if (onChange) onChange();
+    }
+    if (activeKeyHandler) document.removeEventListener("keydown", activeKeyHandler);
+    activeKeyHandler = onKeyDown;
+    document.addEventListener("keydown", onKeyDown);
+
     canvas.addEventListener("pointerdown", onPointerDown);
     canvas.addEventListener("pointermove", onPointerMove);
     canvas.addEventListener("pointerup", endDrag);
@@ -236,22 +332,54 @@
 
   var TOP_MARGIN = 4;
   var GAP = 4;
+  var COLUMNS = 3;
+  var COL_GAP = 2;
+  var SIDE = 1;
 
-  // New photos go at the top of the page, where they can be seen and arranged
-  // without scrolling past everything already there.
-  function topPlacement() {
-    return { x: 8, y: TOP_MARGIN, w: 34 };
+  // Column x positions and width, as percentages of the canvas.
+  function columnGeometry(n) {
+    n = n || COLUMNS;
+    var width = (100 - 2 * SIDE - (n - 1) * COL_GAP) / n;
+    var xs = [];
+    for (var i = 0; i < n; i++) xs.push(SIDE + i * (width + COL_GAP));
+    return { width: Math.round(width * 100) / 100, xs: xs };
   }
 
-  // Moves the named photos down to make room. Every one shifts by the same
-  // amount, so an arrangement keeps its exact shape — it just sits lower.
-  function shiftDown(photos, ids, amount) {
+  // One cursor per column, all starting below whatever is already there.
+  function newColumnCursors(photos, n) {
+    var bottom = contentBottom(photos);
+    var start = bottom > 0 ? bottom + GAP : TOP_MARGIN;
+    var cursors = [];
+    for (var i = 0; i < (n || COLUMNS); i++) cursors.push(start);
+    return cursors;
+  }
+
+  function shortestColumn(cursors) {
+    var best = 0;
+    for (var i = 1; i < cursors.length; i++) {
+      if (cursors[i] < cursors[best]) best = i;
+    }
+    return best;
+  }
+
+  // Reflows every photo into columns, in their current order. Photos vary in
+  // height, so each one goes to whichever column is currently shortest —
+  // that's what stops one column running far ahead of the others.
+  function arrangeInColumns(photos, n) {
+    n = n || COLUMNS;
+    var geo = columnGeometry(n);
+    var cursors = [];
+    for (var i = 0; i < n; i++) cursors.push(TOP_MARGIN);
     photos.forEach(function (p) {
-      if (ids[p.id]) p.y = Math.round((p.y + amount) * 100) / 100;
+      var col = shortestColumn(cursors);
+      p.x = Math.round(geo.xs[col] * 100) / 100;
+      p.y = Math.round(cursors[col] * 100) / 100;
+      p.w = geo.width;
+      cursors[col] += heightPct(p) + GAP;
     });
   }
 
-  // Kept for callers that still want the old below-everything behaviour.
+  // Kept for callers that still want a single below-everything slot.
   function defaultPlacement(photos) {
     var bottom = contentBottom(photos);
     return {
@@ -267,8 +395,12 @@
       applyPositions: applyPositions,
       enableEditing: enableEditing,
       defaultPlacement: defaultPlacement,
-      topPlacement: topPlacement,
-      shiftDown: shiftDown,
+      arrangeInColumns: arrangeInColumns,
+      columnGeometry: columnGeometry,
+      newColumnCursors: newColumnCursors,
+      shortestColumn: shortestColumn,
+      clearSelection: clearSelection,
+      COLUMNS: COLUMNS,
       GAP: GAP,
       heightPct: heightPct,
       contentBottom: contentBottom,
