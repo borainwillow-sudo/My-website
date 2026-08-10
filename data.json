@@ -502,7 +502,41 @@
             "quote": "",
             "description": ""
           },
-          "photos": []
+          "photos": [
+            {
+              "id": "msn74cuxviijc6",
+              "display": "photos/msn74cuxviijc6.jpg",
+              "thumb": "photos/msn74cuxviijc6-t.jpg",
+              "width": 1731,
+              "height": 2560,
+              "caption": "",
+              "x": 8,
+              "y": 4,
+              "w": 34
+            },
+            {
+              "id": "msn74d9gdt8kt6",
+              "display": "photos/msn74d9gdt8kt6.jpg",
+              "thumb": "photos/msn74d9gdt8kt6-t.jpg",
+              "width": 1731,
+              "height": 2560,
+              "caption": "",
+              "x": 8,
+              "y": 58.28307336799538,
+              "w": 34
+            },
+            {
+              "id": "msn74dkd6yuasw",
+              "display": "photos/msn74dkd6yuasw.jpg",
+              "thumb": "photos/msn74dkd6yuasw-t.jpg",
+              "width": 1731,
+              "height": 2560,
+              "caption": "",
+              "x": 8,
+              "y": 112.56614673599076,
+              "w": 34
+            }
+          ]
         },
         {
           "id": "superbalist",
