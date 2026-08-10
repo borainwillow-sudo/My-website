@@ -257,6 +257,17 @@
           "x": 2.8,
           "y": 329.13,
           "w": 34
+        },
+        {
+          "id": "msmwdslkk2qu7b",
+          "display": "photos/msmwdslkk2qu7b.jpg",
+          "thumb": "photos/msmwdslkk2qu7b-t.jpg",
+          "width": 1313,
+          "height": 1031,
+          "caption": "",
+          "x": 50,
+          "y": 341.7194617526656,
+          "w": 34
         }
       ]
     },
