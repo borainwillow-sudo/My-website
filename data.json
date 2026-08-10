@@ -373,6 +373,12 @@
           "photos": []
         }
       ]
+    },
+    {
+      "id": "client-work-2",
+      "title": "client work",
+      "type": "group",
+      "children": []
     }
   ],
   "cursor": {
