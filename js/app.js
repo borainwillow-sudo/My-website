@@ -1,7 +1,7 @@
 (function () {
   // Shown at the bottom of the Style panel. Bump alongside the ?v= query
   // strings in index.html so a stale copy can be identified at a glance.
-  var EDITOR_VERSION = "10";
+  var EDITOR_VERSION = "11";
   var data = null;
   var currentId = "home";
   var openGroups = {};
@@ -13,6 +13,10 @@
   // what I happened to send".
   var dirtyVersion = 0;
   var savedVersion = 0;
+  // Photo ids added during this session, and those this session has since
+  // published. Only the difference between them can be judged "lost".
+  var sessionAddedIds = {};
+  var publishedPhotoIds = {};
 
   function isDirty() {
     return dirtyVersion !== savedVersion;
@@ -140,6 +144,14 @@
 
   // ---------- saving ----------
 
+  // Problems that need to survive the next status update get their own line,
+  // dismissed by the reader rather than overwritten a second later.
+  function showNotice(text) {
+    var el = $("edit-notice");
+    el.querySelector("span").textContent = text;
+    el.hidden = false;
+  }
+
   function setStatus(text, cls) {
     var el = $("save-status");
     el.textContent = text;
@@ -184,6 +196,34 @@
       "is-saving"
     );
 
+    // Guard against publishing a reference to a file that will never exist —
+    // an image that neither loads nor saves, with no way to recover it.
+    //
+    // Deliberately narrow: only photos added during THIS session, which
+    // therefore must still have staged files unless something went wrong.
+    // Anything loaded at startup is left alone, because the published
+    // data.json is served from a CDN and lags a deploy by up to a minute —
+    // trusting it to decide what exists would delete work that is perfectly
+    // fine.
+    var lost = [];
+    allPages(data).forEach(function (pg) {
+      if (!pg.photos) return;
+      pg.photos = pg.photos.filter(function (ph) {
+        if (!sessionAddedIds[ph.id]) return true;
+        if (publishedPhotoIds[ph.id] || window.WB.hasPending(ph.id)) return true;
+        lost.push(ph.id);
+        return false;
+      });
+    });
+    if (lost.length) {
+      render();
+      window.WB.saveDraft(data);
+      showNotice(
+        lost.length +
+          " photo(s) lost their image data before saving and were removed. Please add them again."
+      );
+    }
+
     try {
       var files = [
         {
@@ -211,6 +251,9 @@
       });
 
       await window.WB.gh.commitFiles(files, "Update site content");
+      committedIds.forEach(function (id) {
+        publishedPhotoIds[id] = true;
+      });
       await window.WB.clearPendingPhotos(committedIds);
       savedVersion = sendingVersion;
       setStatus(
@@ -956,12 +999,15 @@
     page.photos = page.photos || [];
     var files = Array.from(fileList);
     var done = 0;
+    var failed = [];
+    var memoryOnly = 0;
     setStatus("Processing 0/" + files.length + "…", "is-saving");
 
     for (var i = 0; i < files.length; i++) {
       try {
         var processed = await window.WB.processFile(files[i]);
-        await window.WB.addPendingPhoto(processed);
+        var durable = await window.WB.addPendingPhoto(processed);
+        if (!durable) memoryOnly++;
         var place = window.WB.layout.defaultPlacement(page.photos);
         page.photos.push({
           id: processed.id,
@@ -974,14 +1020,44 @@
           y: place.y,
           w: place.w,
         });
+        sessionAddedIds[processed.id] = true;
         done++;
         setStatus("Processing " + done + "/" + files.length + "…", "is-saving");
+        // Record progress as we go: a batch interrupted halfway keeps the
+        // photos already done instead of losing the lot.
+        window.WB.saveDraft(data);
+        // Yield between photos so a long batch doesn't monopolise the main
+        // thread, which is what pushes iOS into the memory failures above.
+        await new Promise(function (r) {
+          setTimeout(r, 0);
+        });
       } catch (err) {
+        // Previously swallowed, so a photo that failed to encode just quietly
+        // never appeared. The file is named so it can be retried.
         console.error(err);
+        failed.push(files[i].name || "one photo");
       }
     }
+
     render();
     markDirty();
+
+    if (failed.length) {
+      showNotice(
+        failed.length +
+          " of " +
+          files.length +
+          " photos couldn't be processed (" +
+          failed.slice(0, 3).join(", ") +
+          (failed.length > 3 ? "…" : "") +
+          "). This is usually memory pressure on a large batch — try adding them again, a few at a time."
+      );
+    } else if (memoryOnly) {
+      showNotice(
+        memoryOnly +
+          " photo(s) could only be held in memory, not stored. Press Save now before closing this tab, or they will be lost."
+      );
+    }
   }
 
   async function applyProcessedTo(photo, processed) {
@@ -1225,6 +1301,10 @@
     window.WB.setEditing(false);
     closeModal();
     render();
+  });
+
+  $("edit-notice-close").addEventListener("click", function () {
+    $("edit-notice").hidden = true;
   });
 
   $("btn-save-now").addEventListener("click", function () {

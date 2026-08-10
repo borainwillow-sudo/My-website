@@ -531,6 +531,31 @@ body.is-editing .photo-block:hover .photo-tools {
   padding: 10px 16px;
 }
 
+/* Sticky problem line: survives the save-status text updating underneath it,
+   and stays until dismissed. */
+.edit-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #7a1f1f;
+  color: #fff;
+  padding: 9px 12px;
+  margin: 0 0 8px;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.edit-notice button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 2px;
+  flex: none;
+}
+
 .edit-bar-inner {
   display: flex;
   align-items: center;

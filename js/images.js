@@ -34,7 +34,7 @@
   }
 
   function renderToBlob(img, size, quality) {
-    return new Promise(function (resolve) {
+    return new Promise(function (resolve, reject) {
       var canvas = document.createElement("canvas");
       canvas.width = size.w;
       canvas.height = size.h;
@@ -44,7 +44,18 @@
       ctx.drawImage(img, 0, 0, size.w, size.h);
       canvas.toBlob(
         function (blob) {
-          resolve(blob);
+          // toBlob hands back null when the browser can't encode the canvas —
+          // most often memory pressure on iOS partway through a large batch.
+          // Resolving with null used to let a photo into the page with no file
+          // behind it: it never rendered and never published.
+          if (!blob) {
+            reject(new Error("The browser ran out of memory encoding this image."));
+          } else {
+            resolve(blob);
+          }
+          // Release the backing store promptly rather than waiting for GC.
+          canvas.width = 0;
+          canvas.height = 0;
         },
         "image/jpeg",
         quality
