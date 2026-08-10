@@ -1286,6 +1286,28 @@
               "x": 67.67,
               "y": 30.09,
               "w": 31.33
+            },
+            {
+              "id": "msng6w27kflu5g",
+              "display": "photos/msng6w27kflu5g.jpg",
+              "thumb": "photos/msng6w27kflu5g-t.jpg",
+              "width": 2560,
+              "height": 2013,
+              "caption": "",
+              "x": 1,
+              "y": 60.1,
+              "w": 31.33
+            },
+            {
+              "id": "msng6whehvcqjh",
+              "display": "photos/msng6whehvcqjh.jpg",
+              "thumb": "photos/msng6whehvcqjh-t.jpg",
+              "width": 2560,
+              "height": 1882,
+              "caption": "",
+              "x": 34.33,
+              "y": 60.1,
+              "w": 31.33
             }
           ]
         },
