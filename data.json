@@ -1143,25 +1143,14 @@
           },
           "photos": [
             {
-              "id": "msnbwnan3xlvjw",
-              "display": "photos/msnbwnan3xlvjw.jpg",
-              "thumb": "photos/msnbwnan3xlvjw-t.jpg",
-              "width": 2560,
-              "height": 1716,
-              "caption": "",
-              "x": 36.34,
-              "y": 111.72,
-              "w": 31.33
-            },
-            {
               "id": "msnbwnmvjq00pm",
               "display": "photos/msnbwnmvjq00pm.jpg",
               "thumb": "photos/msnbwnmvjq00pm-t.jpg",
               "width": 2560,
               "height": 1716,
               "caption": "",
-              "x": 0,
-              "y": 110.29,
+              "x": 72.68,
+              "y": 44.91608972639486,
               "w": 31.33
             },
             {
@@ -1259,8 +1248,8 @@
               "width": 2560,
               "height": 1716,
               "caption": "",
-              "x": 6.36,
-              "y": 109.17,
+              "x": 38.94,
+              "y": 103.47,
               "w": 31.33
             },
             {
