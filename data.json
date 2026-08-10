@@ -202,6 +202,17 @@
           "x": 1.68,
           "y": 200.44,
           "w": 34
+        },
+        {
+          "id": "msmv4v4p3vdd8k",
+          "display": "photos/msmv4v4p3vdd8k.jpg",
+          "thumb": "photos/msmv4v4p3vdd8k-t.jpg",
+          "width": 2560,
+          "height": 1748,
+          "caption": "",
+          "x": 41.10999999999999,
+          "y": 302.6293361219153,
+          "w": 34
         }
       ]
     },
