@@ -454,8 +454,8 @@
               "width": 1716,
               "height": 2560,
               "caption": "",
-              "x": 56.21,
-              "y": 100.15,
+              "x": 41.225,
+              "y": 162.80381907188843,
               "w": 31.33
             },
             {
@@ -521,6 +521,17 @@
               "height": 2560,
               "caption": "",
               "x": 5.19,
+              "y": 104.28,
+              "w": 31.33
+            },
+            {
+              "id": "msnf7hwiho7jpq",
+              "display": "photos/msnf7hwiho7jpq.jpg",
+              "thumb": "photos/msnf7hwiho7jpq-t.jpg",
+              "width": 2104,
+              "height": 2560,
+              "caption": "",
+              "x": 51.34,
               "y": 104.28,
               "w": 31.33
             }
