@@ -300,7 +300,30 @@
             "quote": "",
             "description": ""
           },
-          "photos": []
+          "photos": [
+            {
+              "id": "msng96xdovd2sm",
+              "display": "photos/msng96xdovd2sm.jpg",
+              "thumb": "photos/msng96xdovd2sm-t.jpg",
+              "width": 2560,
+              "height": 1810,
+              "caption": "",
+              "x": 1,
+              "y": 4,
+              "w": 31.33
+            },
+            {
+              "id": "msng971jg93mij",
+              "display": "photos/msng971jg93mij.jpg",
+              "thumb": "photos/msng971jg93mij-t.jpg",
+              "width": 2080,
+              "height": 1394,
+              "caption": "",
+              "x": 34.33,
+              "y": 4,
+              "w": 31.33
+            }
+          ]
         },
         {
           "id": "eva",
