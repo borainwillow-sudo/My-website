@@ -213,6 +213,17 @@
           "x": 64.63,
           "y": 104.91,
           "w": 34.26
+        },
+        {
+          "id": "msn3ytu0j7aiap",
+          "display": "photos/msn3ytu0j7aiap.jpg",
+          "thumb": "photos/msn3ytu0j7aiap-t.jpg",
+          "width": 2560,
+          "height": 2142,
+          "caption": "",
+          "x": 8,
+          "y": 383.8185601056803,
+          "w": 34
         }
       ]
     },
