@@ -406,7 +406,19 @@
             "quote": "",
             "description": ""
           },
-          "photos": []
+          "photos": [
+            {
+              "id": "msnbz9qakv5diz",
+              "display": "photos/msnbz9qakv5diz.jpg",
+              "thumb": "photos/msnbz9qakv5diz-t.jpg",
+              "width": 2560,
+              "height": 1623,
+              "caption": "",
+              "x": 1,
+              "y": 4,
+              "w": 31.33
+            }
+          ]
         }
       ]
     },
