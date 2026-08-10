@@ -1160,9 +1160,9 @@
               "width": 2560,
               "height": 1716,
               "caption": "",
-              "x": 46.470000000000006,
-              "y": 122.71991013948498,
-              "w": 32.67
+              "x": 50,
+              "y": 122.35,
+              "w": 51.06
             },
             {
               "id": "msnbwon12ofmbv",
@@ -1194,19 +1194,8 @@
               "height": 1716,
               "caption": "",
               "x": -2.91,
-              "y": 121.72,
+              "y": 127.59488264484979,
               "w": 52
-            },
-            {
-              "id": "msnbwpr69gjbex",
-              "display": "photos/msnbwpr69gjbex.jpg",
-              "thumb": "photos/msnbwpr69gjbex-t.jpg",
-              "width": 2560,
-              "height": 1716,
-              "caption": "",
-              "x": 42.66,
-              "y": 162.04,
-              "w": 31.33
             },
             {
               "id": "msnbx3wv7yuyc7",
