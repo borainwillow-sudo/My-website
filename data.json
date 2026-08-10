@@ -865,6 +865,12 @@
           "photos": []
         }
       ]
+    },
+    {
+      "id": "contact-2",
+      "title": "contact",
+      "type": "group",
+      "children": []
     }
   ],
   "cursor": {
