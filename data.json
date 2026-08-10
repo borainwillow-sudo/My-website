@@ -1399,7 +1399,41 @@
             "quote": "",
             "description": ""
           },
-          "photos": []
+          "photos": [
+            {
+              "id": "msnfes40kpgapv",
+              "display": "photos/msnfes40kpgapv.jpg",
+              "thumb": "photos/msnfes40kpgapv-t.jpg",
+              "width": 2560,
+              "height": 2084,
+              "caption": "",
+              "x": 43.71,
+              "y": 0,
+              "w": 56.29
+            },
+            {
+              "id": "msnfes9b1dm133",
+              "display": "photos/msnfes9b1dm133.jpg",
+              "thumb": "photos/msnfes9b1dm133-t.jpg",
+              "width": 2249,
+              "height": 1697,
+              "caption": "",
+              "x": 43.71,
+              "y": 31.44,
+              "w": 31.33
+            },
+            {
+              "id": "msnfestl4c6reo",
+              "display": "photos/msnfestl4c6reo.jpg",
+              "thumb": "photos/msnfestl4c6reo-t.jpg",
+              "width": 1873,
+              "height": 2560,
+              "caption": "",
+              "x": -0.7,
+              "y": 0,
+              "w": 41.86
+            }
+          ]
         },
         {
           "id": "sa-harvest",
