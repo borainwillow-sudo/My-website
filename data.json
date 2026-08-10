@@ -246,6 +246,17 @@
           "x": 47.97,
           "y": 314.08,
           "w": 48.76
+        },
+        {
+          "id": "msmvqyeezfr2sd",
+          "display": "photos/msmvqyeezfr2sd.jpg",
+          "thumb": "photos/msmvqyeezfr2sd-t.jpg",
+          "width": 2560,
+          "height": 1953,
+          "caption": "",
+          "x": 8,
+          "y": 408.50875833760904,
+          "w": 34
         }
       ]
     },
