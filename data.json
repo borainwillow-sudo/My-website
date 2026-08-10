@@ -1229,6 +1229,17 @@
               "x": -3.34,
               "y": 4.49,
               "w": 31.33
+            },
+            {
+              "id": "msnfzzltppwscu",
+              "display": "photos/msnfzzltppwscu.jpg",
+              "thumb": "photos/msnfzzltppwscu-t.jpg",
+              "width": 1977,
+              "height": 2560,
+              "caption": "",
+              "x": 24.295835568669528,
+              "y": 0,
+              "w": 31.33
             }
           ]
         },
