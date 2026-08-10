@@ -865,6 +865,18 @@
           "photos": []
         }
       ]
+    },
+    {
+      "id": "about",
+      "title": "about",
+      "type": "gallery",
+      "header": {
+        "title": "",
+        "meta": "",
+        "quote": "",
+        "description": ""
+      },
+      "photos": []
     }
   ],
   "cursor": {
