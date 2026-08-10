@@ -367,6 +367,28 @@
               "x": 1,
               "y": 34.2,
               "w": 31.33
+            },
+            {
+              "id": "msneynt6asxxal",
+              "display": "photos/msneynt6asxxal.jpg",
+              "thumb": "photos/msneynt6asxxal-t.jpg",
+              "width": 2560,
+              "height": 1716,
+              "caption": "",
+              "x": 1,
+              "y": 64.41,
+              "w": 31.33
+            },
+            {
+              "id": "msneywrolxwiyf",
+              "display": "photos/msneywrolxwiyf.jpg",
+              "thumb": "photos/msneywrolxwiyf-t.jpg",
+              "width": 2560,
+              "height": 2142,
+              "caption": "",
+              "x": 1,
+              "y": 89.41,
+              "w": 31.33
             }
           ]
         },
