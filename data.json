@@ -1143,17 +1143,6 @@
           },
           "photos": [
             {
-              "id": "msnbwnmvjq00pm",
-              "display": "photos/msnbwnmvjq00pm.jpg",
-              "thumb": "photos/msnbwnmvjq00pm-t.jpg",
-              "width": 2560,
-              "height": 1716,
-              "caption": "",
-              "x": -3.34,
-              "y": 60.34,
-              "w": 31.33
-            },
-            {
               "id": "msnbwnzsaq5pmp",
               "display": "photos/msnbwnzsaq5pmp.jpg",
               "thumb": "photos/msnbwnzsaq5pmp-t.jpg",
@@ -1249,7 +1238,7 @@
               "height": 2560,
               "caption": "",
               "x": -3.34,
-              "y": 1.6923383851931333,
+              "y": 1.1,
               "w": 31.33
             }
           ]
