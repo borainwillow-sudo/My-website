@@ -445,8 +445,8 @@
               "width": 2104,
               "height": 2560,
               "caption": "",
-              "x": 1,
-              "y": 46.47,
+              "x": 34.34,
+              "y": 173.12,
               "w": 31.33
             },
             {
@@ -472,14 +472,58 @@
               "w": 31.33
             },
             {
-              "id": "msnevkrox5dmlc",
-              "display": "photos/msnevkrox5dmlc.jpg",
-              "thumb": "photos/msnevkrox5dmlc-t.jpg",
-              "width": 2092,
+              "id": "msnevt6j48m0xr",
+              "display": "photos/msnevt6j48m0xr.jpg",
+              "thumb": "photos/msnevt6j48m0xr-t.jpg",
+              "width": 2098,
               "height": 2560,
               "caption": "",
               "x": 1,
-              "y": 88.59,
+              "y": 130.93,
+              "w": 31.33
+            },
+            {
+              "id": "msnevtdmb06jnn",
+              "display": "photos/msnevtdmb06jnn.jpg",
+              "thumb": "photos/msnevtdmb06jnn-t.jpg",
+              "width": 2130,
+              "height": 2560,
+              "caption": "",
+              "x": 34.33,
+              "y": 130.93,
+              "w": 31.33
+            },
+            {
+              "id": "msnevtlmqz0fjj",
+              "display": "photos/msnevtlmqz0fjj.jpg",
+              "thumb": "photos/msnevtlmqz0fjj-t.jpg",
+              "width": 2100,
+              "height": 2560,
+              "caption": "",
+              "x": 67.67,
+              "y": 130.93,
+              "w": 31.33
+            },
+            {
+              "id": "msnevtu5248zus",
+              "display": "photos/msnevtu5248zus.jpg",
+              "thumb": "photos/msnevtu5248zus-t.jpg",
+              "width": 2087,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 87.87,
+              "w": 31.33
+            },
+            {
+              "id": "msnevu34tohwj3",
+              "display": "photos/msnevu34tohwj3.jpg",
+              "thumb": "photos/msnevu34tohwj3-t.jpg",
+              "width": 2096,
+              "height": 2560,
+              "caption": "",
+              "x": 0,
+              "y": 46.17,
               "w": 31.33
             }
           ]
