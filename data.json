@@ -737,7 +737,19 @@
             "quote": "",
             "description": ""
           },
-          "photos": []
+          "photos": [
+            {
+              "id": "msnbug2r38wejz",
+              "display": "photos/msnbug2r38wejz.jpg",
+              "thumb": "photos/msnbug2r38wejz-t.jpg",
+              "width": 1716,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 4,
+              "w": 31.33
+            }
+          ]
         },
         {
           "id": "merwe-mode",
