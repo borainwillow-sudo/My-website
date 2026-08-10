@@ -234,12 +234,29 @@
     canvas.addEventListener("pointercancel", endDrag);
   }
 
-  // Places a newly added photo below everything else, at a sensible width.
+  var TOP_MARGIN = 4;
+  var GAP = 4;
+
+  // New photos go at the top of the page, where they can be seen and arranged
+  // without scrolling past everything already there.
+  function topPlacement() {
+    return { x: 8, y: TOP_MARGIN, w: 34 };
+  }
+
+  // Moves the named photos down to make room. Every one shifts by the same
+  // amount, so an arrangement keeps its exact shape — it just sits lower.
+  function shiftDown(photos, ids, amount) {
+    photos.forEach(function (p) {
+      if (ids[p.id]) p.y = Math.round((p.y + amount) * 100) / 100;
+    });
+  }
+
+  // Kept for callers that still want the old below-everything behaviour.
   function defaultPlacement(photos) {
     var bottom = contentBottom(photos);
     return {
       x: 8,
-      y: bottom > 0 ? bottom + 4 : 4,
+      y: bottom > 0 ? bottom + GAP : TOP_MARGIN,
       w: 34,
     };
   }
@@ -250,6 +267,9 @@
       applyPositions: applyPositions,
       enableEditing: enableEditing,
       defaultPlacement: defaultPlacement,
+      topPlacement: topPlacement,
+      shiftDown: shiftDown,
+      GAP: GAP,
       heightPct: heightPct,
       contentBottom: contentBottom,
     },
