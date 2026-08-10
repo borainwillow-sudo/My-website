@@ -218,7 +218,7 @@
     },
     {
       "id": "contact",
-      "title": "",
+      "title": "contact",
       "type": "text",
       "header": {
         "title": "Contact",
@@ -865,12 +865,6 @@
           "photos": []
         }
       ]
-    },
-    {
-      "id": "contact-2",
-      "title": "contact",
-      "type": "group",
-      "children": []
     }
   ],
   "cursor": {
