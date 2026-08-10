@@ -371,6 +371,78 @@
             "description": ""
           },
           "photos": []
+        },
+        {
+          "id": "superbalist",
+          "title": "Superbalist",
+          "type": "gallery",
+          "header": {
+            "title": "",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": []
+        },
+        {
+          "id": "yoco",
+          "title": "Yoco",
+          "type": "gallery",
+          "header": {
+            "title": "",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": []
+        },
+        {
+          "id": "merwe-mode",
+          "title": "Merwe Mode",
+          "type": "gallery",
+          "header": {
+            "title": "",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": []
+        },
+        {
+          "id": "repentance",
+          "title": "Repentance",
+          "type": "gallery",
+          "header": {
+            "title": "",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": []
+        },
+        {
+          "id": "slipped-up",
+          "title": "Slipped Up",
+          "type": "gallery",
+          "header": {
+            "title": "",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": []
+        },
+        {
+          "id": "deluxe-coffeeworks",
+          "title": "Deluxe Coffeeworks",
+          "type": "gallery",
+          "header": {
+            "title": "",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": []
         }
       ]
     },
