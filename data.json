@@ -334,7 +334,41 @@
             "quote": "",
             "description": ""
           },
-          "photos": []
+          "photos": [
+            {
+              "id": "msney9xs4aa1a6",
+              "display": "photos/msney9xs4aa1a6.jpg",
+              "thumb": "photos/msney9xs4aa1a6-t.jpg",
+              "width": 2560,
+              "height": 2101,
+              "caption": "",
+              "x": 1,
+              "y": 4,
+              "w": 31.33
+            },
+            {
+              "id": "msneya85vitsy0",
+              "display": "photos/msneya85vitsy0.jpg",
+              "thumb": "photos/msneya85vitsy0-t.jpg",
+              "width": 2560,
+              "height": 2141,
+              "caption": "",
+              "x": 34.33,
+              "y": 4,
+              "w": 31.33
+            },
+            {
+              "id": "msneygiqgwjo18",
+              "display": "photos/msneygiqgwjo18.jpg",
+              "thumb": "photos/msneygiqgwjo18-t.jpg",
+              "width": 2560,
+              "height": 2142,
+              "caption": "",
+              "x": 1,
+              "y": 34.2,
+              "w": 31.33
+            }
+          ]
         },
         {
           "id": "tayla-mike",
