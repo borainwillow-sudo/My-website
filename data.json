@@ -495,7 +495,7 @@
     "size": 64,
     "width": 64,
     "height": 64,
-    "hotspot": "center"
+    "hotspot": "topleft"
   },
   "footer": {
     "space": 0
