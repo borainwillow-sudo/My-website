@@ -129,16 +129,23 @@
     return { id: r.id, files: files };
   }
 
+  // Returns false if the files could only be held in memory. That still works
+  // for this session, but they'd be lost on reload, so the caller warns rather
+  // than letting it pass unnoticed.
   async function addPendingFiles(id, files) {
     var record = { id: id, files: files };
     pendingPhotos[id] = record;
     try {
       await idbPut(record);
+      return true;
     } catch (e) {
-      // Staying in memory still works for this session; publishing is the
-      // durable step either way.
       console.warn("Could not stage files to IndexedDB:", e);
+      return false;
     }
+  }
+
+  function hasPending(id) {
+    return !!pendingPhotos[id];
   }
 
   function addPendingPhoto(processed) {
@@ -263,6 +270,7 @@
     setEditing: setEditing,
     addPendingPhoto: addPendingPhoto,
     addPendingFiles: addPendingFiles,
+    hasPending: hasPending,
     getPendingPhotos: getPendingPhotos,
     clearPendingPhotos: clearPendingPhotos,
     pendingCount: pendingCount,
