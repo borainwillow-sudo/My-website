@@ -224,6 +224,17 @@
           "x": 0,
           "y": 300.1,
           "w": 41.84
+        },
+        {
+          "id": "msn4ahsfm19vzn",
+          "display": "photos/msn4ahsfm19vzn.jpg",
+          "thumb": "photos/msn4ahsfm19vzn-t.jpg",
+          "width": 1271,
+          "height": 1020,
+          "caption": "",
+          "x": 8,
+          "y": 406.95737489745693,
+          "w": 34
         }
       ]
     },
