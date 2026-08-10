@@ -417,6 +417,28 @@
               "x": 1,
               "y": 4,
               "w": 31.33
+            },
+            {
+              "id": "msnejfn9d96w96",
+              "display": "photos/msnejfn9d96w96.jpg",
+              "thumb": "photos/msnejfn9d96w96-t.jpg",
+              "width": 2096,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 27.86,
+              "w": 31.33
+            },
+            {
+              "id": "msnejfx8tyncik",
+              "display": "photos/msnejfx8tyncik.jpg",
+              "thumb": "photos/msnejfx8tyncik-t.jpg",
+              "width": 2099,
+              "height": 2560,
+              "caption": "",
+              "x": 34.33,
+              "y": 27.86,
+              "w": 31.33
             }
           ]
         }
