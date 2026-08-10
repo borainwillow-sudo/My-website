@@ -33,12 +33,26 @@ Click **Edit site** (bottom right). The first time you'll set a password;
 after that it asks for it. In edit mode you can:
 
 - **Add photos** — select many at once; each is resized and thumbnailed. New
-  photos land at the top of the page in the order you chose them, and the page
-  scrolls up to show them. Whatever is already on the page shifts down by the
-  same amount, so an existing arrangement keeps its shape.
-- **Drag photos** anywhere on the page; faint blue guides appear when an edge
-  or centre lines up with another photo, and it snaps into place
-- **Resize** with the square handle at a photo's bottom-right corner
+  photos are laid out in three columns at the end of the page, each going to
+  whichever column is currently shortest so tall photos don't leave gaps.
+  Nothing already on the page moves.
+- **Arrange** — reflows every photo on the page into three columns. Handy for
+  starting from a tidy grid; it replaces the current positions, so it asks
+  first.
+
+### Moving photos around
+
+- **Drag** a photo anywhere. Faint blue guides appear when an edge or centre
+  lines up with another photo.
+- **Drag near the top or bottom of the window** and the page scrolls, so a
+  photo can be moved right across a page several screens tall.
+- **Arrow keys** nudge the selected photo (the one with the blue outline) by a
+  hair; hold **Shift** for larger steps. Easier than dragging for fine
+  alignment.
+- **Resize** from the square handle at the bottom-right corner.
+
+### Everything else in edit mode
+
 - **Replace / Crop / Link / Front / Remove** from the buttons above a photo on hover
 - Edit any text directly on the page (titles, captions, body copy)
 - **Style** — set Helvetica weight and size for each kind of text, and upload a custom cursor
