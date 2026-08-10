@@ -443,6 +443,18 @@
             "description": ""
           },
           "photos": []
+        },
+        {
+          "id": "sa-harvest",
+          "title": "SA HARVEST",
+          "type": "gallery",
+          "header": {
+            "title": "",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": []
         }
       ]
     },
