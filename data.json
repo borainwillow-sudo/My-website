@@ -347,7 +347,63 @@
       "id": "client-work-2",
       "title": "client work",
       "type": "group",
-      "children": []
+      "children": [
+        {
+          "id": "scarlet-wednesday-bts",
+          "title": "Scarlet Wednesday BTS",
+          "type": "gallery",
+          "header": {
+            "title": "",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": []
+        },
+        {
+          "id": "4wks",
+          "title": "4wks",
+          "type": "gallery",
+          "header": {
+            "title": "",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": []
+        }
+      ]
+    },
+    {
+      "id": "zines",
+      "title": "zines",
+      "type": "group",
+      "children": [
+        {
+          "id": "001",
+          "title": "001",
+          "type": "gallery",
+          "header": {
+            "title": "",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": []
+        },
+        {
+          "id": "002",
+          "title": "002",
+          "type": "gallery",
+          "header": {
+            "title": "",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": []
+        }
+      ]
     }
   ],
   "cursor": {
