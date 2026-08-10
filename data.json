@@ -235,6 +235,17 @@
           "x": 17.85,
           "y": 277.54,
           "w": 36.08
+        },
+        {
+          "id": "msmvhv8bsn7ame",
+          "display": "photos/msmvhv8bsn7ame.jpg",
+          "thumb": "photos/msmvhv8bsn7ame-t.jpg",
+          "width": 1514,
+          "height": 1116,
+          "caption": "",
+          "x": 8,
+          "y": 375.6715751667522,
+          "w": 34
         }
       ]
     },
