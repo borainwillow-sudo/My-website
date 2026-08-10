@@ -395,6 +395,18 @@
             "description": ""
           },
           "photos": []
+        },
+        {
+          "id": "ashanti",
+          "title": "ashanti",
+          "type": "gallery",
+          "header": {
+            "title": "",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": []
         }
       ]
     },
