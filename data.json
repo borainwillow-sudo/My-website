@@ -6,7 +6,7 @@
       "size": 60
     },
     "nav": {
-      "weight": 400,
+      "weight": 500,
       "size": 13
     },
     "pageTitle": {
@@ -14,15 +14,15 @@
       "size": 14
     },
     "meta": {
-      "weight": 400,
+      "weight": 500,
       "size": 14
     },
     "body": {
-      "weight": 400,
+      "weight": 500,
       "size": 15
     },
     "caption": {
-      "weight": 400,
+      "weight": 500,
       "size": 12
     }
   },
