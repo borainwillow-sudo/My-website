@@ -1040,41 +1040,6 @@
           "texts": []
         },
         {
-          "id": "ashanti",
-          "title": "ashanti",
-          "type": "gallery",
-          "header": {
-            "title": "ASHANTI - in studio, 2024",
-            "meta": "",
-            "quote": "",
-            "description": "Polaroids and 35mm film scans"
-          },
-          "photos": [
-            {
-              "id": "msnejfn9d96w96",
-              "display": "photos/msnejfn9d96w96.jpg",
-              "thumb": "photos/msnejfn9d96w96-t.jpg",
-              "width": 2096,
-              "height": 2560,
-              "caption": "",
-              "x": 4.17,
-              "y": 0,
-              "w": 46.66
-            },
-            {
-              "id": "msnekloie7dava",
-              "display": "photos/msnekloie7dava.jpg",
-              "thumb": "photos/msnekloie7dava-t.jpg",
-              "width": 1805,
-              "height": 2560,
-              "caption": "",
-              "x": 53.96,
-              "y": 0,
-              "w": 40.26
-            }
-          ]
-        },
-        {
           "id": "portraits",
           "title": "Uncategorised",
           "type": "gallery",
@@ -1252,6 +1217,41 @@
             }
           ],
           "texts": []
+        },
+        {
+          "id": "ashanti",
+          "title": "ashanti",
+          "type": "gallery",
+          "header": {
+            "title": "ASHANTI - in studio, 2024",
+            "meta": "",
+            "quote": "",
+            "description": "Polaroids and 35mm film scans"
+          },
+          "photos": [
+            {
+              "id": "msnejfn9d96w96",
+              "display": "photos/msnejfn9d96w96.jpg",
+              "thumb": "photos/msnejfn9d96w96-t.jpg",
+              "width": 2096,
+              "height": 2560,
+              "caption": "",
+              "x": 4.17,
+              "y": 0,
+              "w": 46.66
+            },
+            {
+              "id": "msnekloie7dava",
+              "display": "photos/msnekloie7dava.jpg",
+              "thumb": "photos/msnekloie7dava-t.jpg",
+              "width": 1805,
+              "height": 2560,
+              "caption": "",
+              "x": 53.96,
+              "y": 0,
+              "w": 40.26
+            }
+          ]
         },
         {
           "id": "tattoo-convention-polaroids",
