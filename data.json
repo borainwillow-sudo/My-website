@@ -1583,6 +1583,72 @@
               "x": 67.67,
               "y": 54.74,
               "w": 31.33
+            },
+            {
+              "id": "msojq7pze0w124",
+              "display": "photos/msojq7pze0w124.jpg",
+              "thumb": "photos/msojq7pze0w124-t.jpg",
+              "width": 2560,
+              "height": 1716,
+              "caption": "",
+              "x": 1,
+              "y": 105.48,
+              "w": 31.33
+            },
+            {
+              "id": "msojq81wckrm0g",
+              "display": "photos/msojq81wckrm0g.jpg",
+              "thumb": "photos/msojq81wckrm0g-t.jpg",
+              "width": 2560,
+              "height": 1716,
+              "caption": "",
+              "x": 34.33,
+              "y": 105.48,
+              "w": 31.33
+            },
+            {
+              "id": "msojq8dm5bw8q1",
+              "display": "photos/msojq8dm5bw8q1.jpg",
+              "thumb": "photos/msojq8dm5bw8q1-t.jpg",
+              "width": 2560,
+              "height": 1716,
+              "caption": "",
+              "x": 67.67,
+              "y": 105.48,
+              "w": 31.33
+            },
+            {
+              "id": "msojq8nx036iy3",
+              "display": "photos/msojq8nx036iy3.jpg",
+              "thumb": "photos/msojq8nx036iy3-t.jpg",
+              "width": 1716,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 130.48,
+              "w": 31.33
+            },
+            {
+              "id": "msojq908kp0bcc",
+              "display": "photos/msojq908kp0bcc.jpg",
+              "thumb": "photos/msojq908kp0bcc-t.jpg",
+              "width": 1716,
+              "height": 2560,
+              "caption": "",
+              "x": 34.33,
+              "y": 130.48,
+              "w": 31.33
+            },
+            {
+              "id": "msojq9cigahwh3",
+              "display": "photos/msojq9cigahwh3.jpg",
+              "thumb": "photos/msojq9cigahwh3-t.jpg",
+              "width": 2560,
+              "height": 1716,
+              "caption": "",
+              "x": 67.67,
+              "y": 130.48,
+              "w": 31.33
             }
           ]
         },
