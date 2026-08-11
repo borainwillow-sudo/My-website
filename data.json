@@ -694,13 +694,13 @@
             },
             {
               "id": "msojp1dikiygl9",
-              "display": "photos/msojp1dikiygl9.jpg",
-              "thumb": "photos/msojp1dikiygl9-t.jpg",
-              "width": 2048,
-              "height": 1373,
+              "display": "photos/msok47k67xi53p.jpg",
+              "thumb": "photos/msok47k67xi53p-t.jpg",
+              "width": 853,
+              "height": 1169,
               "caption": "",
-              "x": -13.08,
-              "y": 142.92,
+              "x": 31.33,
+              "y": 145.53366751609443,
               "w": 31.33
             },
             {
@@ -710,9 +710,9 @@
               "width": 2048,
               "height": 1373,
               "caption": "",
-              "x": 16.11,
-              "y": 141.15,
-              "w": 58.64
+              "x": -1.31,
+              "y": 144.42,
+              "w": 51.31
             }
           ]
         },
