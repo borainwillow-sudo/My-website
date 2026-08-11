@@ -1135,18 +1135,7 @@
               "height": 2560,
               "caption": "",
               "x": 6.18,
-              "y": 141.49,
-              "w": 32.25
-            },
-            {
-              "id": "msor0dvjsvomq9",
-              "display": "photos/msor0dvjsvomq9.jpg",
-              "thumb": "photos/msor0dvjsvomq9-t.jpg",
-              "width": 2560,
-              "height": 1752,
-              "caption": "",
-              "x": 6.18,
-              "y": 180.44,
+              "y": 142.82,
               "w": 32.25
             },
             {
@@ -1157,7 +1146,7 @@
               "height": 1703,
               "caption": "",
               "x": 43.66,
-              "y": 131.54415234375,
+              "y": 131.54,
               "w": 44.79
             },
             {
@@ -1168,7 +1157,7 @@
               "height": 1229,
               "caption": "",
               "x": 41.13,
-              "y": 161.34,
+              "y": 163.58,
               "w": 46.96
             }
           ],
