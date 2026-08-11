@@ -1116,6 +1116,39 @@
               "x": 1,
               "y": 139.85,
               "w": 31.33
+            },
+            {
+              "id": "msojp19tbaz05x",
+              "display": "photos/msojp19tbaz05x.jpg",
+              "thumb": "photos/msojp19tbaz05x-t.jpg",
+              "width": 2048,
+              "height": 1448,
+              "caption": "",
+              "x": -0.65,
+              "y": 0,
+              "w": 48.945427172746776
+            },
+            {
+              "id": "msojp1dikiygl9",
+              "display": "photos/msojp1dikiygl9.jpg",
+              "thumb": "photos/msojp1dikiygl9-t.jpg",
+              "width": 2048,
+              "height": 1373,
+              "caption": "",
+              "x": 34.33,
+              "y": 187.29,
+              "w": 31.33
+            },
+            {
+              "id": "msojp1h0t3qb3y",
+              "display": "photos/msojp1h0t3qb3y.jpg",
+              "thumb": "photos/msojp1h0t3qb3y-t.jpg",
+              "width": 2048,
+              "height": 1373,
+              "caption": "",
+              "x": 67.67,
+              "y": 187.29,
+              "w": 31.33
             }
           ]
         },
