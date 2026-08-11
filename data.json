@@ -268,6 +268,17 @@
           "x": 34.34,
           "y": 401.58,
           "w": 28.37
+        },
+        {
+          "id": "msop62ap0czren",
+          "display": "photos/msop62ap0czren.jpg",
+          "thumb": "photos/msop62ap0czren-t.jpg",
+          "width": 2560,
+          "height": 2043,
+          "caption": "",
+          "x": 33.59,
+          "y": 403.766353943133,
+          "w": 31.33
         }
       ]
     },
