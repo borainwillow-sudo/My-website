@@ -1048,31 +1048,9 @@
             "title": "",
             "meta": "",
             "quote": "",
-            "description": "35mm half-frame scans & darkroom prints"
+            "description": "35mm half-frame scans"
           },
           "photos": [
-            {
-              "id": "msnetqresuivec",
-              "display": "photos/msnetqresuivec.jpg",
-              "thumb": "photos/msnetqresuivec-t.jpg",
-              "width": 2560,
-              "height": 1716,
-              "caption": "",
-              "x": 51.11,
-              "y": 0,
-              "w": 53.68
-            },
-            {
-              "id": "msneu2pajm22hq",
-              "display": "photos/msneu2pajm22hq.jpg",
-              "thumb": "photos/msneu2pajm22hq-t.jpg",
-              "width": 1271,
-              "height": 1020,
-              "caption": "",
-              "x": -3.79,
-              "y": 0,
-              "w": 54.9
-            },
             {
               "id": "msojoasoi7nn0q",
               "display": "photos/msojoasoi7nn0q.jpg",
@@ -1113,8 +1091,8 @@
               "width": 1426,
               "height": 2048,
               "caption": "",
-              "x": 1,
-              "y": 73.06,
+              "x": 58.87,
+              "y": 0,
               "w": 31.33
             },
             {
@@ -1126,6 +1104,17 @@
               "caption": "",
               "x": 67.67,
               "y": 91.99,
+              "w": 31.33
+            },
+            {
+              "id": "msojohofx89lbj",
+              "display": "photos/msojohofx89lbj.jpg",
+              "thumb": "photos/msojohofx89lbj-t.jpg",
+              "width": 1477,
+              "height": 2048,
+              "caption": "",
+              "x": 1,
+              "y": 139.85,
               "w": 31.33
             }
           ]
