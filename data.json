@@ -892,8 +892,8 @@
               "width": 2557,
               "height": 1449,
               "caption": "",
-              "x": 9.869999999999997,
-              "y": 195.70931263412018,
+              "x": 10.93,
+              "y": 194.44,
               "w": 54.48
             },
             {
@@ -1038,17 +1038,6 @@
               "x": 82.61,
               "y": 107.53,
               "w": 14.46
-            },
-            {
-              "id": "msokyquib5n4rh",
-              "display": "photos/msokyquib5n4rh.jpg",
-              "thumb": "photos/msokyquib5n4rh-t.jpg",
-              "width": 1976,
-              "height": 2560,
-              "caption": "",
-              "x": 65.98,
-              "y": 197.46,
-              "w": 25.75
             }
           ],
           "texts": []
