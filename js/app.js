@@ -1,7 +1,7 @@
 (function () {
   // Shown at the bottom of the Style panel. Bump alongside the ?v= query
   // strings in index.html so a stale copy can be identified at a glance.
-  var EDITOR_VERSION = "14";
+  var EDITOR_VERSION = "15";
   var data = null;
   var currentId = "home";
   var openGroups = {};
@@ -361,7 +361,53 @@
     return /^#/.test(href) || /^\/(?!\/)/.test(href);
   }
 
-  function photoHTML(photo) {
+  // Photos and text blocks share a canvas and a coordinate system, but live in
+  // separate arrays so nothing that walks the photos — publishing, cleaning up
+  // deleted image files, the lightbox — has to learn about text. This is the
+  // combined view the layout engine works on; the objects are the same ones,
+  // so the positions it writes land back in page.photos / page.texts.
+  function itemsOf(page) {
+    return (page.photos || []).concat(page.texts || []);
+  }
+
+  var ALIGNMENTS = ["left", "center", "right"];
+
+  function textHTML(item, order) {
+    var editing = window.WB.isEditing();
+    var align = ALIGNMENTS.indexOf(item.align) === -1 ? "left" : item.align;
+    var tools = editing
+      ? '<div class="photo-tools">' +
+        '<button data-text-action="align">Align: ' + align + "</button>" +
+        '<button data-text-action="remove" class="danger">Remove</button>' +
+        "</div>"
+      : "";
+    // Nearly all of a text block is contenteditable, and the drag engine has to
+    // leave that alone so a click can put the caret in it. The grip is the
+    // part you drag by.
+    var grip = editing ? '<div class="text-grip" title="Drag to move"></div>' : "";
+    var handle = editing ? '<div class="resize-handle"></div>' : "";
+
+    return (
+      '<div class="photo-block text-block" data-item-id="' +
+      esc(item.id) +
+      '" style="order:' +
+      order +
+      '">' +
+      tools +
+      grip +
+      '<div class="text-content" style="text-align:' +
+      align +
+      '"' +
+      (editing ? ' contenteditable="true" data-text-for="' + esc(item.id) + '"' : "") +
+      ">" +
+      esc(item.text || "") +
+      "</div>" +
+      handle +
+      "</div>"
+    );
+  }
+
+  function photoHTML(photo, order) {
     var editing = window.WB.isEditing();
     var thumb = window.WB.resolveSrc(photo.thumb);
     var tools = editing
@@ -422,8 +468,12 @@
         : "";
 
     return (
-      '<div class="photo-block" data-photo-id="' +
+      '<div class="photo-block" data-item-id="' +
       esc(photo.id) +
+      '" data-photo-id="' +
+      esc(photo.id) +
+      '" style="order:' +
+      order +
       '">' +
       tools +
       linkFlag +
@@ -457,17 +507,40 @@
     }
 
     var photos = page.photos || [];
-    var canvasInner = photos.map(photoHTML).join("");
+    var texts = page.texts || [];
+    var items = itemsOf(page);
+
+    // Blocks stay in array order in the DOM, so paint order — and with it the
+    // Front button — behaves exactly as before. `order` reorders them into
+    // reading order only in the stacked phone grid, where a free-form position
+    // means nothing and text would otherwise all pile up at the bottom.
+    var rank = {};
+    window.WB.layout.visualOrder(items).forEach(function (item, i) {
+      rank[item.id] = i;
+    });
+
+    var canvasInner =
+      photos
+        .map(function (p) {
+          return photoHTML(p, rank[p.id]);
+        })
+        .join("") +
+      texts
+        .map(function (t) {
+          return textHTML(t, rank[t.id]);
+        })
+        .join("");
+
     main.innerHTML =
       headerHTML(page) +
       '<div class="canvas" id="canvas">' +
       canvasInner +
       '<div class="snap-overlay"></div>' +
       "</div>" +
-      (photos.length === 0
+      (items.length === 0
         ? '<p class="empty-note">' +
           (window.WB.isEditing()
-            ? "No photos yet — use “Add photos” below."
+            ? "Nothing here yet — use “Add photos” or “Add text” below."
             : "Nothing here yet.") +
           "</p>"
         : "") +
@@ -475,9 +548,9 @@
 
     var canvas = $("canvas");
     if (!canvas) return;
-    window.WB.layout.applyPositions(canvas, photos);
+    window.WB.layout.applyPositions(canvas, items);
     if (window.WB.isEditing() && window.innerWidth > 820) {
-      window.WB.layout.enableEditing(canvas, photos, function () {
+      window.WB.layout.enableEditing(canvas, items, function () {
         markDirty();
       });
     }
@@ -1118,6 +1191,62 @@
     markDirty();
   }
 
+  function handleTextAction(action, textId) {
+    var page = findPage(data, currentId);
+    if (!page || !page.texts) return;
+    var idx = page.texts.findIndex(function (t) {
+      return t.id === textId;
+    });
+    if (idx === -1) return;
+    var item = page.texts[idx];
+
+    if (action === "remove") {
+      if (!confirm("Remove this text from the page?")) return;
+      page.texts.splice(idx, 1);
+      render();
+      markDirty();
+      return;
+    }
+
+    if (action === "align") {
+      var at = ALIGNMENTS.indexOf(item.align);
+      item.align = ALIGNMENTS[(at + 1) % ALIGNMENTS.length];
+      render();
+      markDirty();
+    }
+  }
+
+  function addTextBlock() {
+    var page = findPage(data, currentId);
+    if (!page || page.type !== "gallery") {
+      showNotice("Text blocks can only go on a photo page.");
+      return;
+    }
+    page.texts = page.texts || [];
+    var place = window.WB.layout.defaultTextPlacement(itemsOf(page));
+    var item = {
+      id: window.WB.uid(),
+      type: "text",
+      text: "",
+      align: "left",
+      x: place.x,
+      y: place.y,
+      w: place.w,
+    };
+    page.texts.push(item);
+    render();
+    markDirty();
+
+    // Drop the caret straight in, and bring it into view — a new block sits
+    // below everything else, which on a long page is off screen. Not a smooth
+    // scroll: focus() jumps to the element anyway, and the two fight.
+    var el = document.querySelector('[data-text-for="' + item.id + '"]');
+    if (el) {
+      el.focus();
+      el.scrollIntoView({ block: "center" });
+    }
+  }
+
   function handlePhotoAction(action, photoId) {
     var page = findPage(data, currentId);
     if (!page || !page.photos) return;
@@ -1258,6 +1387,15 @@
       handlePhotoAction(toolBtn.dataset.photoAction, block.dataset.photoId);
       return;
     }
+    var textBtn = e.target.closest("[data-text-action]");
+    if (textBtn) {
+      e.stopPropagation();
+      handleTextAction(
+        textBtn.dataset.textAction,
+        textBtn.closest("[data-item-id]").dataset.itemId
+      );
+      return;
+    }
     if (window.WB.isEditing()) return;
     // A linked photo follows its link; the lightbox would otherwise open on
     // top of the page just navigated to.
@@ -1288,6 +1426,13 @@
         return p.id === el.dataset.captionFor;
       });
       if (photo) photo.caption = text;
+    } else if (el.dataset.textFor) {
+      var block = (page.texts || []).find(function (t) {
+        return t.id === el.dataset.textFor;
+      });
+      // innerText, not textContent: it reports the line breaks the browser
+      // inserted as <div>/<br> while typing, so paragraphs survive a reload.
+      if (block) block.text = el.innerText.replace(/\s+$/, "");
     }
     markDirty();
   });
@@ -1364,25 +1509,37 @@
   $("btn-add-photo").addEventListener("click", function () {
     $("file-input").click();
   });
+  $("btn-add-text").addEventListener("click", addTextBlock);
 
   // One-click tidy: reflow the whole page into columns. Destroys a hand-made
   // arrangement, so it asks first.
   $("btn-arrange").addEventListener("click", function () {
     var page = findPage(data, currentId);
-    if (!page || page.type !== "gallery" || !(page.photos || []).length) {
+    var items = page ? itemsOf(page) : [];
+    if (!page || page.type !== "gallery" || !items.length) {
       showNotice("Nothing to arrange on this page.");
       return;
     }
     if (
       !confirm(
-        "Rearrange all " +
-          page.photos.length +
-          " photos on this page into three columns? This replaces their current positions."
+        "Rearrange everything on this page (" +
+          items.length +
+          " items) into three columns? This replaces their current positions."
       )
     ) {
       return;
     }
-    window.WB.layout.arrangeInColumns(page.photos);
+    // Flowed in reading order, not array order: text blocks live in their own
+    // array, so array order would sweep every one of them to the bottom. The
+    // order is fixed up front so the second pass keeps it.
+    var ordered = window.WB.layout.visualOrder(items);
+
+    // Twice, because narrowing a text block to a column makes it taller and
+    // the first pass can only pack it using its height at the old width. The
+    // render in between measures the new heights; the second pass uses them.
+    window.WB.layout.arrangeInColumns(ordered);
+    render();
+    window.WB.layout.arrangeInColumns(ordered);
     render();
     markDirty();
     window.scrollTo({ top: 0, behavior: "smooth" });

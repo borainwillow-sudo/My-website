@@ -36,9 +36,12 @@ after that it asks for it. In edit mode you can:
   photos are laid out in three columns at the end of the page, each going to
   whichever column is currently shortest so tall photos don't leave gaps.
   Nothing already on the page moves.
-- **Arrange** — reflows every photo on the page into three columns. Handy for
-  starting from a tidy grid; it replaces the current positions, so it asks
-  first.
+- **Add text** — drops a paragraph on the page, two columns wide, below
+  everything else, with the caret already in it. See below.
+- **Arrange** — reflows everything on the page, photos and text together, into
+  three columns. Handy for starting from a tidy grid; it replaces the current
+  positions, so it asks first. It flows things in reading order — down the
+  page, then across — rather than the order they were added.
 
 ### Moving photos around
 
@@ -68,6 +71,29 @@ out into the top-level menu. The arrows grey out at the ends of a list.
 
 Arrows rather than dragging, so it works the same on an iPad — dragging a list
 row there fights with scrolling the panel.
+
+## Text on a page
+
+**Add text** puts a paragraph on the canvas. It moves, resizes, snaps to the
+guides and takes arrow-key nudges exactly like a photo does — it's the same
+kind of object, it just holds words.
+
+- **Drag it by the dotted grip bar** along its top edge. The text itself isn't
+  a drag surface: clicking it has to put the caret in, or you couldn't type.
+- **Type straight into it.** Enter starts a new paragraph, and the line breaks
+  are kept.
+- **Resize** from the corner handle. Only the width is yours to set; the height
+  follows the words, so a narrower block gets taller and the page grows to fit.
+- **Align** cycles left → centre → right.
+- **Remove** deletes it.
+
+Text blocks use the **Body text** weight and size from **Style**, so all the
+paragraphs across the site stay consistent. They sit above photos where the two
+overlap, which is what you want for a caption laid over an image.
+
+On phones they take the full width of the screen and fall into place among the
+photos in reading order — down the page, then across — rather than all landing
+at the bottom.
 
 ## Photo links and hover labels
 

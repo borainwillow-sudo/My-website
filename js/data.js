@@ -40,6 +40,7 @@
       type: "gallery",
       header: emptyHeader(),
       photos: [],
+      texts: [],
     };
   }
 
