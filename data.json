@@ -715,7 +715,30 @@
             "quote": "",
             "description": ""
           },
-          "photos": []
+          "photos": [
+            {
+              "id": "msofasi3xokyrl",
+              "display": "photos/msofasi3xokyrl.jpg",
+              "thumb": "photos/msofasi3xokyrl-t.jpg",
+              "width": 1813,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 4,
+              "w": 31.33
+            },
+            {
+              "id": "msofaubdfa9nzg",
+              "display": "photos/msofaubdfa9nzg.jpg",
+              "thumb": "photos/msofaubdfa9nzg-t.jpg",
+              "width": 2064,
+              "height": 2560,
+              "caption": "",
+              "x": 34.33,
+              "y": 4,
+              "w": 31.33
+            }
+          ]
         },
         {
           "id": "lovers-cat",
