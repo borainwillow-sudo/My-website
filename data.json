@@ -1133,6 +1133,17 @@
               "x": 43.66,
               "y": 132.12,
               "w": 44.79
+            },
+            {
+              "id": "msorx72y18zs0e",
+              "display": "photos/msorx72y18zs0e.jpg",
+              "thumb": "photos/msorx72y18zs0e-t.jpg",
+              "width": 2560,
+              "height": 1892,
+              "caption": "",
+              "x": 6.18,
+              "y": 113.16,
+              "w": 34.95
             }
           ],
           "texts": []
