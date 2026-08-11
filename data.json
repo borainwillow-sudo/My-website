@@ -1673,7 +1673,7 @@
             "title": "YOCO - 2024",
             "meta": "",
             "quote": "",
-            "description": "Obi, The General Store & 4WKS for Yoco"
+            "description": "Obi Restaurant for Yoco"
           },
           "photos": [
             {
@@ -1686,17 +1686,6 @@
               "x": 45.88,
               "y": 40.55,
               "w": 41.47
-            },
-            {
-              "id": "msnbuv8squ5m5d",
-              "display": "photos/msnbuv8squ5m5d.jpg",
-              "thumb": "photos/msnbuv8squ5m5d-t.jpg",
-              "width": 1716,
-              "height": 2560,
-              "caption": "",
-              "x": 0,
-              "y": 84.56,
-              "w": 31.33
             },
             {
               "id": "msnbuvlocs7uwj",
@@ -1721,17 +1710,6 @@
               "w": 43.45
             },
             {
-              "id": "msnbv7dt5r88oa",
-              "display": "photos/msnbv7dt5r88oa.jpg",
-              "thumb": "photos/msnbv7dt5r88oa-t.jpg",
-              "width": 1716,
-              "height": 2560,
-              "caption": "",
-              "x": 65.66,
-              "y": 84.83,
-              "w": 31.33
-            },
-            {
               "id": "msojq81wckrm0g",
               "display": "photos/msoljack08iypi.jpg",
               "thumb": "photos/msoljack08iypi-t.jpg",
@@ -1741,50 +1719,6 @@
               "x": 18.68,
               "y": 44.7,
               "w": 24.28
-            },
-            {
-              "id": "msojq8nx036iy3",
-              "display": "photos/msojq8nx036iy3.jpg",
-              "thumb": "photos/msojq8nx036iy3-t.jpg",
-              "width": 1716,
-              "height": 2560,
-              "caption": "",
-              "x": 68.67,
-              "y": 164.91,
-              "w": 31.33
-            },
-            {
-              "id": "msojr02t9kien6",
-              "display": "photos/msojr02t9kien6.jpg",
-              "thumb": "photos/msojr02t9kien6-t.jpg",
-              "width": 1373,
-              "height": 2048,
-              "caption": "",
-              "x": 0,
-              "y": 152.96,
-              "w": 31.33
-            },
-            {
-              "id": "msojr0fdl6w052",
-              "display": "photos/msoln76gvthoqx.jpg",
-              "thumb": "photos/msoln76gvthoqx-t.jpg",
-              "width": 1713,
-              "height": 2541,
-              "caption": "",
-              "x": 32.67,
-              "y": 84.83,
-              "w": 31.33
-            },
-            {
-              "id": "msojra4ddgi4q0",
-              "display": "photos/msojra4ddgi4q0.jpg",
-              "thumb": "photos/msojra4ddgi4q0-t.jpg",
-              "width": 1705,
-              "height": 2560,
-              "caption": "",
-              "x": 34.34,
-              "y": 156.36,
-              "w": 31.33
             }
           ]
         },
