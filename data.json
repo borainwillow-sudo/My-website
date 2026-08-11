@@ -896,8 +896,8 @@
               "width": 2557,
               "height": 1449,
               "caption": "",
-              "x": 0.85,
-              "y": 198.52,
+              "x": 20.965,
+              "y": 196.92019782725322,
               "w": 53.09,
               "saturation": 0
             },
@@ -1032,17 +1032,6 @@
               "x": 82.61,
               "y": 107.53,
               "w": 14.46
-            },
-            {
-              "id": "msos759y75tiks",
-              "display": "photos/msos759y75tiks.jpg",
-              "thumb": "photos/msos759y75tiks-t.jpg",
-              "width": 2560,
-              "height": 1956,
-              "caption": "",
-              "x": 57.6,
-              "y": 198.52,
-              "w": 39.47
             }
           ],
           "texts": []
