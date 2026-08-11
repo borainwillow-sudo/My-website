@@ -1211,8 +1211,8 @@
               "width": 2560,
               "height": 1716,
               "caption": "",
-              "x": -2.33,
-              "y": 96.92,
+              "x": 1.91,
+              "y": 96.68,
               "w": 48.09
             },
             {
@@ -1234,7 +1234,7 @@
               "height": 2037,
               "caption": "",
               "x": 47.77,
-              "y": 179.56,
+              "y": 168.07,
               "w": 30.53
             },
             {
@@ -1267,7 +1267,7 @@
               "height": 1412,
               "caption": "",
               "x": 47.77,
-              "y": 144.64,
+              "y": 135.36,
               "w": 44.54
             },
             {
@@ -1277,9 +1277,9 @@
               "width": 2560,
               "height": 1716,
               "caption": "",
-              "x": 50.005,
-              "y": 98.18649476931331,
-              "w": 47.3
+              "x": 51.16,
+              "y": 96.92,
+              "w": 47.73
             },
             {
               "id": "msn5zuvrxd171d",
@@ -1294,14 +1294,15 @@
             },
             {
               "id": "msn608px2foxfd",
-              "display": "photos/msn6n99en0fvue.jpg",
-              "thumb": "photos/msn6n99en0fvue-t.jpg",
-              "width": 2256,
-              "height": 2560,
+              "display": "photos/msoot6uoqcpefs.jpg",
+              "thumb": "photos/msoot6uoqcpefs-t.jpg",
+              "width": 2107,
+              "height": 2253,
               "caption": "",
-              "x": 0,
-              "y": 46.33,
-              "w": 41.76
+              "x": -1.0649999999999964,
+              "y": 44.7085018776824,
+              "w": 54.04,
+              "rotate": 270
             },
             {
               "id": "msn5zatu195gng",
