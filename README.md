@@ -56,7 +56,18 @@ after that it asks for it. In edit mode you can:
 - **Replace / Crop / Link / Front / Remove** from the buttons above a photo on hover
 - Edit any text directly on the page (titles, captions, body copy)
 - **Style** — set Helvetica weight and size for each kind of text, and upload a custom cursor
-- **Pages** — rename, add, delete pages and sections
+- **Pages** — rename, reorder, add and delete pages and sections
+
+### Reordering pages
+
+**Pages** lists every page in menu order, with a **↑** and **↓** beside each
+one. The arrows move a page one step at a time and the menu updates
+immediately; the order in the panel is the order in the menu. A section's
+children move within their own section, so a sub-page can't accidentally jump
+out into the top-level menu. The arrows grey out at the ends of a list.
+
+Arrows rather than dragging, so it works the same on an iPad — dragging a list
+row there fights with scrolling the panel.
 
 ## Photo links and hover labels
 

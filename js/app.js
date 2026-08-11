@@ -1,7 +1,7 @@
 (function () {
   // Shown at the bottom of the Style panel. Bump alongside the ?v= query
   // strings in index.html so a stale copy can be identified at a glance.
-  var EDITOR_VERSION = "13";
+  var EDITOR_VERSION = "14";
   var data = null;
   var currentId = "home";
   var openGroups = {};
@@ -855,7 +855,9 @@
   // ---------- pages panel ----------
 
   function openPages() {
-    function rowHTML(page, isChild) {
+    // Buttons rather than drag-and-drop: reordering has to work on a
+    // touchscreen, where dragging a list row fights with scrolling the panel.
+    function rowHTML(page, isChild, index, total) {
       return (
         '<div class="page-row' +
         (isChild ? " child" : "") +
@@ -865,27 +867,34 @@
         '<input type="text" value="' +
         esc(page.title) +
         '" data-page-title>' +
+        '<button class="move-btn" data-move="up" title="Move up"' +
+        (index === 0 ? " disabled" : "") +
+        ">&uarr;</button>" +
+        '<button class="move-btn" data-move="down" title="Move down"' +
+        (index === total - 1 ? " disabled" : "") +
+        ">&darr;</button>" +
         '<button class="del-btn" data-page-delete title="Delete">&times;</button>' +
         "</div>"
       );
     }
 
     var html = "<h3>Pages</h3>" +
-      '<p class="hint">Rename pages, remove them, or add new ones. Deleting a page also deletes its photos from the site.</p>';
+      '<p class="hint">Rename pages, reorder them with the arrows, remove them, or add new ones. The order here is the order they appear in the menu. Deleting a page also deletes its photos from the site.</p>';
 
-    (data.pages || []).forEach(function (page) {
+    var topCount = (data.pages || []).length;
+    (data.pages || []).forEach(function (page, topIndex) {
       if (page.type === "group") {
         html += '<div class="group-heading">' + esc(page.title) + "</div>";
-        html += rowHTML(page, false);
-        (page.children || []).forEach(function (c) {
-          html += rowHTML(c, true);
+        html += rowHTML(page, false, topIndex, topCount);
+        (page.children || []).forEach(function (c, ci) {
+          html += rowHTML(c, true, ci, (page.children || []).length);
         });
         html +=
           '<div class="page-row child"><button class="pill-btn" data-add-child="' +
           esc(page.id) +
           '">+ Add page here</button></div>';
       } else {
-        html += rowHTML(page, false);
+        html += rowHTML(page, false, topIndex, topCount);
       }
     });
 
@@ -909,6 +918,27 @@
     });
 
     modal.addEventListener("click", function (e) {
+      var moveBtn = e.target.closest("[data-move]");
+      if (moveBtn) {
+        var mid = moveBtn.closest(".page-row").dataset.page;
+        // A page moves within its own list — top-level pages among top-level
+        // pages, children within their section.
+        var group = parentGroupOf(data, mid);
+        var list = group ? group.children : data.pages;
+        var from = list.findIndex(function (p) {
+          return p.id === mid;
+        });
+        var to = from + (moveBtn.dataset.move === "up" ? -1 : 1);
+        if (from === -1 || to < 0 || to >= list.length) return;
+        var moved = list.splice(from, 1)[0];
+        list.splice(to, 0, moved);
+        markDirty();
+        closeModal();
+        openPages();
+        render();
+        return;
+      }
+
       var delBtn = e.target.closest("[data-page-delete]");
       if (delBtn) {
         var id = delBtn.closest(".page-row").dataset.page;
