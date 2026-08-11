@@ -279,30 +279,6 @@
       ]
     },
     {
-      "id": "about",
-      "title": "contact",
-      "type": "gallery",
-      "header": {
-        "title": "",
-        "meta": "",
-        "quote": "",
-        "description": ""
-      },
-      "photos": [
-        {
-          "id": "msnbj2vmelu79p",
-          "display": "photos/msnbj2vmelu79p.jpg",
-          "thumb": "photos/msnbj2vmelu79p-t.jpg",
-          "width": 2047,
-          "height": 2560,
-          "caption": "",
-          "x": -2.12,
-          "y": 0,
-          "w": 30.01
-        }
-      ]
-    },
-    {
       "id": "pictures",
       "title": "Pictures",
       "type": "group",
@@ -2009,6 +1985,30 @@
               "w": 34.99
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "title": "contact",
+      "type": "gallery",
+      "header": {
+        "title": "",
+        "meta": "",
+        "quote": "",
+        "description": ""
+      },
+      "photos": [
+        {
+          "id": "msnbj2vmelu79p",
+          "display": "photos/msnbj2vmelu79p.jpg",
+          "thumb": "photos/msnbj2vmelu79p-t.jpg",
+          "width": 2047,
+          "height": 2560,
+          "caption": "",
+          "x": -2.12,
+          "y": 0,
+          "w": 30.01
         }
       ]
     }
