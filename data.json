@@ -1072,6 +1072,61 @@
               "x": -3.79,
               "y": 0,
               "w": 54.9
+            },
+            {
+              "id": "msojoasoi7nn0q",
+              "display": "photos/msojoasoi7nn0q.jpg",
+              "thumb": "photos/msojoasoi7nn0q-t.jpg",
+              "width": 2048,
+              "height": 1373,
+              "caption": "",
+              "x": 1,
+              "y": 48.06,
+              "w": 31.33
+            },
+            {
+              "id": "msojoay25lrnoi",
+              "display": "photos/msojoay25lrnoi.jpg",
+              "thumb": "photos/msojoay25lrnoi-t.jpg",
+              "width": 1373,
+              "height": 2048,
+              "caption": "",
+              "x": 34.33,
+              "y": 48.06,
+              "w": 31.33
+            },
+            {
+              "id": "msojob2piu7ozp",
+              "display": "photos/msojob2piu7ozp.jpg",
+              "thumb": "photos/msojob2piu7ozp-t.jpg",
+              "width": 1607,
+              "height": 2048,
+              "caption": "",
+              "x": 67.67,
+              "y": 48.06,
+              "w": 31.33
+            },
+            {
+              "id": "msojob8kqitlpq",
+              "display": "photos/msojob8kqitlpq.jpg",
+              "thumb": "photos/msojob8kqitlpq-t.jpg",
+              "width": 1426,
+              "height": 2048,
+              "caption": "",
+              "x": 1,
+              "y": 73.06,
+              "w": 31.33
+            },
+            {
+              "id": "msojobdstvg0e5",
+              "display": "photos/msojobdstvg0e5.jpg",
+              "thumb": "photos/msojobdstvg0e5-t.jpg",
+              "width": 1463,
+              "height": 2048,
+              "caption": "",
+              "x": 67.67,
+              "y": 91.99,
+              "w": 31.33
             }
           ]
         },
