@@ -166,8 +166,27 @@ background and uses it as the pointer across the whole site.
 Positions are stored as percentages, so a layout keeps its proportions at any
 window size. Outside edit mode photos are fixed and no longer draggable.
 
-On phones the free-form layout falls back to a simple stacked grid, since
-desktop coordinates don't translate to a narrow screen.
+## Phones
+
+**Style → On phones** chooses between two ways of showing a free-form page on
+a screen far narrower than the one it was composed on. Either way the top of
+the page is the usual mobile bar with the menu behind the hamburger — only the
+photos are affected.
+
+- **Same as desktop, shrunk** (the default) keeps every photo exactly where you
+  put it. The page is laid out at a desktop width and the whole thing is scaled
+  down as one piece, so the arrangement you composed is what a visitor sees.
+  The type comes down with it, which means captions get very small; readers can
+  pinch to zoom, and tapping a photo still opens it full-screen.
+- **Stacked grid** drops the arrangement and runs the photos one after another
+  at a readable size, two across (one on the narrowest phones), in reading
+  order — down the page, then across. Text blocks take the full width.
+
+Scaling rather than re-laying-out is what makes the first option faithful.
+Positions are proportional and would survive either way, but text is sized in
+pixels: laid out at a real 390px, captions would wrap differently and text
+blocks would grow taller, so the arrangement would no longer be the one you
+composed. Shrinking the whole canvas takes the type with it.
 
 ## How saving works
 
