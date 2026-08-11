@@ -770,6 +770,39 @@
               "x": 34.33,
               "y": 98.06,
               "w": 31.33
+            },
+            {
+              "id": "msofbk97avi6qa",
+              "display": "photos/msofbk97avi6qa.jpg",
+              "thumb": "photos/msofbk97avi6qa-t.jpg",
+              "width": 1918,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 143.32,
+              "w": 31.33
+            },
+            {
+              "id": "msofbkmibxnxkk",
+              "display": "photos/msofbkmibxnxkk.jpg",
+              "thumb": "photos/msofbkmibxnxkk-t.jpg",
+              "width": 2560,
+              "height": 1698,
+              "caption": "",
+              "x": 34.33,
+              "y": 143.32,
+              "w": 31.33
+            },
+            {
+              "id": "msofbteyhjnldy",
+              "display": "photos/msofbteyhjnldy.jpg",
+              "thumb": "photos/msofbteyhjnldy-t.jpg",
+              "width": 2049,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 189.14,
+              "w": 31.33
             }
           ]
         },
