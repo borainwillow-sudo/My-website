@@ -1157,8 +1157,8 @@
               "width": 2560,
               "height": 1716,
               "caption": "",
-              "x": 0,
-              "y": 96.83,
+              "x": -2.33,
+              "y": 96.92,
               "w": 48.09
             },
             {
@@ -1168,7 +1168,7 @@
               "width": 1870,
               "height": 2560,
               "caption": "",
-              "x": 29.31,
+              "x": 4.47,
               "y": 132.16,
               "w": 34.5
             },
@@ -1179,8 +1179,8 @@
               "width": 1531,
               "height": 2037,
               "caption": "",
-              "x": -2.6594581545064377,
-              "y": 136.3828929223848,
+              "x": 18.18,
+              "y": 184.62,
               "w": 29.15
             },
             {
@@ -1207,14 +1207,14 @@
             },
             {
               "id": "msn5zu79t76nyu",
-              "display": "photos/msn5zu79t76nyu.jpg",
-              "thumb": "photos/msn5zu79t76nyu-t.jpg",
-              "width": 2560,
-              "height": 1716,
+              "display": "photos/msogt9k42i2y5h.jpg",
+              "thumb": "photos/msogt9k42i2y5h-t.jpg",
+              "width": 2057,
+              "height": 1412,
               "caption": "",
-              "x": 48.82,
-              "y": 181.42,
-              "w": 54.42
+              "x": 51.44,
+              "y": 185.3,
+              "w": 43.97
             },
             {
               "id": "msn5zuk3egvcj5",
@@ -1223,9 +1223,9 @@
               "width": 2560,
               "height": 1716,
               "caption": "",
-              "x": 50.56,
-              "y": 96.92,
-              "w": 47.95
+              "x": 45.76,
+              "y": 92.8,
+              "w": 54.24
             },
             {
               "id": "msn5zuvrxd171d",
@@ -1278,20 +1278,9 @@
               "width": 1900,
               "height": 2560,
               "caption": "",
-              "x": 68.65,
+              "x": 43.18,
               "y": 134.65,
               "w": 31.35
-            },
-            {
-              "id": "msn6ty9itsmw1j",
-              "display": "photos/msn6ty9itsmw1j.jpg",
-              "thumb": "photos/msn6ty9itsmw1j-t.jpg",
-              "width": 2560,
-              "height": 1716,
-              "caption": "",
-              "x": -4.57,
-              "y": 181.32,
-              "w": 54.57
             }
           ]
         },
