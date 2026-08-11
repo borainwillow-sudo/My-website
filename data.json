@@ -890,7 +890,8 @@
               "caption": "",
               "x": 1,
               "y": 363.61,
-              "w": 31.33
+              "w": 31.33,
+              "rotate": 90
             },
             {
               "id": "msojs2rkuzkye9",
@@ -901,7 +902,8 @@
               "caption": "",
               "x": 34.33,
               "y": 363.61,
-              "w": 31.33
+              "w": 31.33,
+              "rotate": 90
             },
             {
               "id": "msojs336sguquz",
@@ -945,6 +947,17 @@
               "caption": "",
               "x": 67.67,
               "y": 388.61,
+              "w": 31.33
+            },
+            {
+              "id": "msojsb83vx2vfe",
+              "display": "photos/msojsb83vx2vfe.jpg",
+              "thumb": "photos/msojsb83vx2vfe-t.jpg",
+              "width": 2560,
+              "height": 1716,
+              "caption": "",
+              "x": 1,
+              "y": 413.61,
               "w": 31.33
             }
           ]
