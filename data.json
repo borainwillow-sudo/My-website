@@ -229,6 +229,30 @@
       "body": "borainwillow@gmail.com"
     },
     {
+      "id": "about",
+      "title": "about",
+      "type": "gallery",
+      "header": {
+        "title": "",
+        "meta": "",
+        "quote": "",
+        "description": ""
+      },
+      "photos": [
+        {
+          "id": "msnbj2vmelu79p",
+          "display": "photos/msnbj2vmelu79p.jpg",
+          "thumb": "photos/msnbj2vmelu79p-t.jpg",
+          "width": 2047,
+          "height": 2560,
+          "caption": "",
+          "x": -1.36,
+          "y": 0,
+          "w": 43.7
+        }
+      ]
+    },
+    {
       "id": "pictures",
       "title": "Pictures",
       "type": "group",
@@ -1701,30 +1725,6 @@
             "description": ""
           },
           "photos": []
-        }
-      ]
-    },
-    {
-      "id": "about",
-      "title": "about",
-      "type": "gallery",
-      "header": {
-        "title": "",
-        "meta": "",
-        "quote": "",
-        "description": ""
-      },
-      "photos": [
-        {
-          "id": "msnbj2vmelu79p",
-          "display": "photos/msnbj2vmelu79p.jpg",
-          "thumb": "photos/msnbj2vmelu79p-t.jpg",
-          "width": 2047,
-          "height": 2560,
-          "caption": "",
-          "x": -1.36,
-          "y": 0,
-          "w": 43.7
         }
       ]
     },
