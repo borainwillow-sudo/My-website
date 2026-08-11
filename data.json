@@ -1756,14 +1756,14 @@
           "photos": [
             {
               "id": "msnbug2r38wejz",
-              "display": "photos/msolih8m58osyb.jpg",
-              "thumb": "photos/msolih8m58osyb-t.jpg",
-              "width": 1512,
-              "height": 1819,
+              "display": "photos/msoliog345hekf.jpg",
+              "thumb": "photos/msoliog345hekf-t.jpg",
+              "width": 1344,
+              "height": 1817,
               "caption": "",
-              "x": 1,
-              "y": 4,
-              "w": 31.33
+              "x": 72.12,
+              "y": 0,
+              "w": 25.92
             },
             {
               "id": "msnbuv8squ5m5d",
@@ -1772,8 +1772,8 @@
               "width": 1716,
               "height": 2560,
               "caption": "",
-              "x": 34.33,
-              "y": 4,
+              "x": 31.45,
+              "y": 110.09,
               "w": 31.33
             },
             {
@@ -1783,8 +1783,8 @@
               "width": 1716,
               "height": 2560,
               "caption": "",
-              "x": 67.67,
-              "y": 4,
+              "x": -3.1,
+              "y": 0,
               "w": 31.33
             },
             {
@@ -1840,7 +1840,8 @@
               "caption": "",
               "x": 34.33,
               "y": 105.48,
-              "w": 31.33
+              "w": 31.33,
+              "rotate": 90
             },
             {
               "id": "msojq8dm5bw8q1",
