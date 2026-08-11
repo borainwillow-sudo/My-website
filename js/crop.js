@@ -137,6 +137,10 @@
     img.onload = function () {
       natW = img.naturalWidth;
       natH = img.naturalHeight;
+      // A rotated photo is handed in as a freshly rendered object URL. Once
+      // the image has decoded it no longer needs the URL, and holding it would
+      // leak the blob for the life of the page.
+      if (imageSrc.slice(0, 5) === "blob:") URL.revokeObjectURL(imageSrc);
       fitStage();
       resetRect(0);
     };

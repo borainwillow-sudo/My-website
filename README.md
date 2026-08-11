@@ -56,7 +56,8 @@ after that it asks for it. In edit mode you can:
 
 ### Everything else in edit mode
 
-- **Replace / Crop / Link / Front / Remove** from the buttons above a photo on hover
+- **Replace / Crop / Adjust / Link / Front / Remove** from the buttons above a
+  photo on hover
 - Edit any text directly on the page (titles, captions, body copy)
 - **Style** — set Helvetica weight and size for each kind of text, and upload a custom cursor
 - **Pages** — rename, reorder, add and delete pages and sections
@@ -71,6 +72,30 @@ out into the top-level menu. The arrows grey out at the ends of a list.
 
 Arrows rather than dragging, so it works the same on an iPad — dragging a list
 row there fights with scrolling the panel.
+
+## Rotating and desaturating a photo
+
+**Adjust** on a photo opens a panel with a live preview:
+
+- **Rotate left / right** turns the photo in quarter steps. The page reflows
+  around the new shape — a landscape photo turned upright takes an upright
+  slot — and four turns bring it back where it started.
+- **Saturation** runs from 0% (black and white) to 200%. 100% is the photo as
+  shot.
+- **Reset** puts both back to default.
+
+Neither is written into the image file. They're stored as two numbers and
+applied when the photo is drawn, which means changing them is instant, costs
+no upload, adds no files, loses no quality however many times you change your
+mind, and can always be undone. A photo you never adjust keeps exactly the
+entry it always had in `data.json`.
+
+The one place that can't work with a drawn-on rotation is **Crop**, which has
+to cut from what you actually see. So cropping a rotated photo turns it upright
+first and bakes the rotation into the new file — after which the photo is
+genuinely that way round and the rotation setting is back to zero. Saturation
+survives a crop untouched, since it was never baked in. **Replace** puts a
+different photo in the slot, so it clears both.
 
 ## Text on a page
 
