@@ -1662,7 +1662,7 @@
               "height": 1961,
               "caption": "",
               "x": 50,
-              "y": 65.74,
+              "y": 65.69,
               "w": 34.99
             },
             {
@@ -1684,7 +1684,7 @@
               "height": 2013,
               "caption": "",
               "x": 50,
-              "y": 33.54,
+              "y": 33.53,
               "w": 34.99
             },
             {
@@ -1710,17 +1710,6 @@
               "w": 31.33
             },
             {
-              "id": "msng796qb35not",
-              "display": "photos/msng796qb35not.jpg",
-              "thumb": "photos/msng796qb35not-t.jpg",
-              "width": 2121,
-              "height": 2560,
-              "caption": "",
-              "x": 50,
-              "y": 98.12,
-              "w": 27.29
-            },
-            {
               "id": "msng79fltnp1px",
               "display": "photos/msng79fltnp1px.jpg",
               "thumb": "photos/msng79fltnp1px-t.jpg",
@@ -1740,7 +1729,7 @@
               "caption": "",
               "x": 28.67,
               "y": 127.77,
-              "w": 26.860864404506437
+              "w": 26.68
             },
             {
               "id": "msng89u9ytblfo",
@@ -1749,8 +1738,8 @@
               "width": 2073,
               "height": 2560,
               "caption": "",
-              "x": 52.01,
-              "y": 136.86,
+              "x": 0.12,
+              "y": 165.39,
               "w": 31.33
             },
             {
@@ -1771,9 +1760,9 @@
               "width": 2113,
               "height": 2560,
               "caption": "",
-              "x": 67.67,
-              "y": 116.71,
-              "w": 31.33
+              "x": 59.08,
+              "y": 127.77,
+              "w": 26.71
             },
             {
               "id": "msng8jsbjk3chl",
@@ -1785,6 +1774,17 @@
               "x": 67.67,
               "y": 158.67,
               "w": 31.33
+            },
+            {
+              "id": "msogmzuifhxfbw",
+              "display": "photos/msogmzuifhxfbw.jpg",
+              "thumb": "photos/msogmzuifhxfbw-t.jpg",
+              "width": 2560,
+              "height": 1957,
+              "caption": "",
+              "x": 50,
+              "y": 96.79,
+              "w": 34.99
             }
           ]
         },
