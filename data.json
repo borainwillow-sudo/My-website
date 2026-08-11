@@ -1064,15 +1064,14 @@
             },
             {
               "id": "msojs4cd4cbmpi",
-              "display": "photos/msojs4cd4cbmpi.jpg",
-              "thumb": "photos/msojs4cd4cbmpi-t.jpg",
-              "width": 2560,
-              "height": 1716,
+              "display": "photos/msokbbdl1ewy60.jpg",
+              "thumb": "photos/msokbbdl1ewy60-t.jpg",
+              "width": 1522,
+              "height": 2282,
               "caption": "",
               "x": 1,
               "y": 388.61,
-              "w": 31.33,
-              "rotate": 90
+              "w": 23.42
             },
             {
               "id": "msojs4r34evbdt",
@@ -1100,14 +1099,14 @@
             },
             {
               "id": "msojsb83vx2vfe",
-              "display": "photos/msokaz5f00f584.jpg",
-              "thumb": "photos/msokaz5f00f584-t.jpg",
-              "width": 1526,
+              "display": "photos/msokb3tkqjxrpr.jpg",
+              "thumb": "photos/msokb3tkqjxrpr-t.jpg",
+              "width": 1510,
               "height": 2277,
               "caption": "",
-              "x": 32.08,
-              "y": 398.85,
-              "w": 31.33
+              "x": 49.84,
+              "y": 392.69,
+              "w": 25.58
             }
           ]
         },
