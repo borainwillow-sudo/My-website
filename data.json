@@ -1576,6 +1576,197 @@
           "photos": []
         },
         {
+          "id": "merwe-mode",
+          "title": "Merwe Mode",
+          "type": "gallery",
+          "header": {
+            "title": "MERWE MODE CLOTHING - 2025",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": [
+            {
+              "id": "msnbwnzsaq5pmp",
+              "display": "photos/msnbwnzsaq5pmp.jpg",
+              "thumb": "photos/msnbwnzsaq5pmp-t.jpg",
+              "width": 2560,
+              "height": 1716,
+              "caption": "",
+              "x": 48.85,
+              "y": 54.19,
+              "w": 52.3
+            },
+            {
+              "id": "msnbwob8izc3wn",
+              "display": "photos/msnbwob8izc3wn.jpg",
+              "thumb": "photos/msnbwob8izc3wn-t.jpg",
+              "width": 2560,
+              "height": 1716,
+              "caption": "",
+              "x": 49.66,
+              "y": 128.29,
+              "w": 52.28
+            },
+            {
+              "id": "msnbwon12ofmbv",
+              "display": "photos/msnbwon12ofmbv.jpg",
+              "thumb": "photos/msnbwon12ofmbv-t.jpg",
+              "width": 2560,
+              "height": 1716,
+              "caption": "",
+              "x": 49.09,
+              "y": 91.45,
+              "w": 52.06
+            },
+            {
+              "id": "msnbwoys1pqq65",
+              "display": "photos/msnbwoys1pqq65.jpg",
+              "thumb": "photos/msnbwoys1pqq65-t.jpg",
+              "width": 2560,
+              "height": 1716,
+              "caption": "",
+              "x": -2.91,
+              "y": 54.39,
+              "w": 52
+            },
+            {
+              "id": "msnbwpc4h4ls6t",
+              "display": "photos/msnbwpc4h4ls6t.jpg",
+              "thumb": "photos/msnbwpc4h4ls6t-t.jpg",
+              "width": 2560,
+              "height": 1716,
+              "caption": "",
+              "x": -2.91,
+              "y": 128.29,
+              "w": 52
+            },
+            {
+              "id": "msnbx3wv7yuyc7",
+              "display": "photos/msnbx3wv7yuyc7.jpg",
+              "thumb": "photos/msnbx3wv7yuyc7-t.jpg",
+              "width": 2560,
+              "height": 1716,
+              "caption": "",
+              "x": -2.97,
+              "y": 91.45,
+              "w": 52.06
+            },
+            {
+              "id": "msnez8uf6cpo44",
+              "display": "photos/msnez8uf6cpo44.jpg",
+              "thumb": "photos/msnez8uf6cpo44-t.jpg",
+              "width": 1716,
+              "height": 2560,
+              "caption": "",
+              "x": 12.41,
+              "y": 0,
+              "w": 31.33
+            },
+            {
+              "id": "msnfzzltppwscu",
+              "display": "photos/msnfzzltppwscu.jpg",
+              "thumb": "photos/msnfzzltppwscu-t.jpg",
+              "width": 1977,
+              "height": 2560,
+              "caption": "",
+              "x": 47.25,
+              "y": 0,
+              "w": 36.24
+            }
+          ]
+        },
+        {
+          "id": "deluxe-coffeeworks",
+          "title": "Deluxe Coffeeworks",
+          "type": "gallery",
+          "header": {
+            "title": "DELUXE COFFEEWORKS - 2026",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": [
+            {
+              "id": "msojuhupx6ghld",
+              "display": "photos/msolcji4yxsz85.jpg",
+              "thumb": "photos/msolcji4yxsz85-t.jpg",
+              "width": 1729,
+              "height": 2463,
+              "caption": "",
+              "x": 67.82,
+              "y": 46.68,
+              "w": 32.18
+            },
+            {
+              "id": "msojv2021l6a6b",
+              "display": "photos/msojv2021l6a6b.jpg",
+              "thumb": "photos/msojv2021l6a6b-t.jpg",
+              "width": 2560,
+              "height": 1716,
+              "caption": "",
+              "x": 62.51,
+              "y": 95.61,
+              "w": 31.33
+            },
+            {
+              "id": "msojv2cz7j8fu5",
+              "display": "photos/msoldbxfempbbb.jpg",
+              "thumb": "photos/msoldbxfempbbb-t.jpg",
+              "width": 1742,
+              "height": 2557,
+              "caption": "",
+              "x": 73,
+              "y": 0,
+              "w": 29.76
+            },
+            {
+              "id": "msojvimyy9dzn1",
+              "display": "photos/msojvimyy9dzn1.jpg",
+              "thumb": "photos/msojvimyy9dzn1-t.jpg",
+              "width": 2044,
+              "height": 2560,
+              "caption": "",
+              "x": -2.66,
+              "y": 0,
+              "w": 35.19
+            },
+            {
+              "id": "msojvj8rb9ncv5",
+              "display": "photos/msojvj8rb9ncv5.jpg",
+              "thumb": "photos/msojvj8rb9ncv5-t.jpg",
+              "width": 2044,
+              "height": 2560,
+              "caption": "",
+              "x": 35.1,
+              "y": 0,
+              "w": 35.14
+            },
+            {
+              "id": "msojvrv13mamln",
+              "display": "photos/msolbixc7u3ie2.jpg",
+              "thumb": "photos/msolbixc7u3ie2-t.jpg",
+              "width": 1713,
+              "height": 2258,
+              "caption": "",
+              "x": -2.18,
+              "y": 46.68,
+              "w": 34.71
+            },
+            {
+              "id": "msojvxpi0trj61",
+              "display": "photos/msolc7p1iyrl24.jpg",
+              "thumb": "photos/msolc7p1iyrl24-t.jpg",
+              "width": 1552,
+              "height": 2252,
+              "caption": "",
+              "x": 34.34,
+              "y": 47.06,
+              "w": 31.33
+            }
+          ]
+        },
+        {
           "id": "yoco",
           "title": "Yoco",
           "type": "gallery",
@@ -1782,197 +1973,6 @@
               "caption": "",
               "x": 1,
               "y": 256.95,
-              "w": 31.33
-            }
-          ]
-        },
-        {
-          "id": "merwe-mode",
-          "title": "Merwe Mode",
-          "type": "gallery",
-          "header": {
-            "title": "MERWE MODE CLOTHING - 2025",
-            "meta": "",
-            "quote": "",
-            "description": ""
-          },
-          "photos": [
-            {
-              "id": "msnbwnzsaq5pmp",
-              "display": "photos/msnbwnzsaq5pmp.jpg",
-              "thumb": "photos/msnbwnzsaq5pmp-t.jpg",
-              "width": 2560,
-              "height": 1716,
-              "caption": "",
-              "x": 48.85,
-              "y": 54.19,
-              "w": 52.3
-            },
-            {
-              "id": "msnbwob8izc3wn",
-              "display": "photos/msnbwob8izc3wn.jpg",
-              "thumb": "photos/msnbwob8izc3wn-t.jpg",
-              "width": 2560,
-              "height": 1716,
-              "caption": "",
-              "x": 49.66,
-              "y": 128.29,
-              "w": 52.28
-            },
-            {
-              "id": "msnbwon12ofmbv",
-              "display": "photos/msnbwon12ofmbv.jpg",
-              "thumb": "photos/msnbwon12ofmbv-t.jpg",
-              "width": 2560,
-              "height": 1716,
-              "caption": "",
-              "x": 49.09,
-              "y": 91.45,
-              "w": 52.06
-            },
-            {
-              "id": "msnbwoys1pqq65",
-              "display": "photos/msnbwoys1pqq65.jpg",
-              "thumb": "photos/msnbwoys1pqq65-t.jpg",
-              "width": 2560,
-              "height": 1716,
-              "caption": "",
-              "x": -2.91,
-              "y": 54.39,
-              "w": 52
-            },
-            {
-              "id": "msnbwpc4h4ls6t",
-              "display": "photos/msnbwpc4h4ls6t.jpg",
-              "thumb": "photos/msnbwpc4h4ls6t-t.jpg",
-              "width": 2560,
-              "height": 1716,
-              "caption": "",
-              "x": -2.91,
-              "y": 128.29,
-              "w": 52
-            },
-            {
-              "id": "msnbx3wv7yuyc7",
-              "display": "photos/msnbx3wv7yuyc7.jpg",
-              "thumb": "photos/msnbx3wv7yuyc7-t.jpg",
-              "width": 2560,
-              "height": 1716,
-              "caption": "",
-              "x": -2.97,
-              "y": 91.45,
-              "w": 52.06
-            },
-            {
-              "id": "msnez8uf6cpo44",
-              "display": "photos/msnez8uf6cpo44.jpg",
-              "thumb": "photos/msnez8uf6cpo44-t.jpg",
-              "width": 1716,
-              "height": 2560,
-              "caption": "",
-              "x": 12.41,
-              "y": 0,
-              "w": 31.33
-            },
-            {
-              "id": "msnfzzltppwscu",
-              "display": "photos/msnfzzltppwscu.jpg",
-              "thumb": "photos/msnfzzltppwscu-t.jpg",
-              "width": 1977,
-              "height": 2560,
-              "caption": "",
-              "x": 47.25,
-              "y": 0,
-              "w": 36.24
-            }
-          ]
-        },
-        {
-          "id": "deluxe-coffeeworks",
-          "title": "Deluxe Coffeeworks",
-          "type": "gallery",
-          "header": {
-            "title": "DELUXE COFFEEWORKS - 2026",
-            "meta": "",
-            "quote": "",
-            "description": ""
-          },
-          "photos": [
-            {
-              "id": "msojuhupx6ghld",
-              "display": "photos/msolcji4yxsz85.jpg",
-              "thumb": "photos/msolcji4yxsz85-t.jpg",
-              "width": 1729,
-              "height": 2463,
-              "caption": "",
-              "x": 67.82,
-              "y": 46.68,
-              "w": 32.18
-            },
-            {
-              "id": "msojv2021l6a6b",
-              "display": "photos/msojv2021l6a6b.jpg",
-              "thumb": "photos/msojv2021l6a6b-t.jpg",
-              "width": 2560,
-              "height": 1716,
-              "caption": "",
-              "x": 62.51,
-              "y": 95.61,
-              "w": 31.33
-            },
-            {
-              "id": "msojv2cz7j8fu5",
-              "display": "photos/msoldbxfempbbb.jpg",
-              "thumb": "photos/msoldbxfempbbb-t.jpg",
-              "width": 1742,
-              "height": 2557,
-              "caption": "",
-              "x": 73,
-              "y": 0,
-              "w": 29.76
-            },
-            {
-              "id": "msojvimyy9dzn1",
-              "display": "photos/msojvimyy9dzn1.jpg",
-              "thumb": "photos/msojvimyy9dzn1-t.jpg",
-              "width": 2044,
-              "height": 2560,
-              "caption": "",
-              "x": -2.66,
-              "y": 0,
-              "w": 35.19
-            },
-            {
-              "id": "msojvj8rb9ncv5",
-              "display": "photos/msojvj8rb9ncv5.jpg",
-              "thumb": "photos/msojvj8rb9ncv5-t.jpg",
-              "width": 2044,
-              "height": 2560,
-              "caption": "",
-              "x": 35.1,
-              "y": 0,
-              "w": 35.14
-            },
-            {
-              "id": "msojvrv13mamln",
-              "display": "photos/msolbixc7u3ie2.jpg",
-              "thumb": "photos/msolbixc7u3ie2-t.jpg",
-              "width": 1713,
-              "height": 2258,
-              "caption": "",
-              "x": -2.18,
-              "y": 46.68,
-              "w": 34.71
-            },
-            {
-              "id": "msojvxpi0trj61",
-              "display": "photos/msolc7p1iyrl24.jpg",
-              "thumb": "photos/msolc7p1iyrl24-t.jpg",
-              "width": 1552,
-              "height": 2252,
-              "caption": "",
-              "x": 34.34,
-              "y": 47.06,
               "w": 31.33
             }
           ]
