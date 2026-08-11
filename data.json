@@ -748,6 +748,28 @@
               "x": 1,
               "y": 52.24,
               "w": 31.33
+            },
+            {
+              "id": "msofbdh2imml1b",
+              "display": "photos/msofbdh2imml1b.jpg",
+              "thumb": "photos/msofbdh2imml1b-t.jpg",
+              "width": 1944,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 98.06,
+              "w": 31.33
+            },
+            {
+              "id": "msofbdubk1xnwo",
+              "display": "photos/msofbdubk1xnwo.jpg",
+              "thumb": "photos/msofbdubk1xnwo-t.jpg",
+              "width": 2560,
+              "height": 1716,
+              "caption": "",
+              "x": 34.33,
+              "y": 98.06,
+              "w": 31.33
             }
           ]
         },
