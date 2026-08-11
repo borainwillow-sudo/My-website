@@ -2011,37 +2011,6 @@
           ]
         }
       ]
-    },
-    {
-      "id": "zines",
-      "title": "zines",
-      "type": "group",
-      "children": [
-        {
-          "id": "001",
-          "title": "001",
-          "type": "gallery",
-          "header": {
-            "title": "",
-            "meta": "",
-            "quote": "",
-            "description": ""
-          },
-          "photos": []
-        },
-        {
-          "id": "002",
-          "title": "002",
-          "type": "gallery",
-          "header": {
-            "title": "",
-            "meta": "",
-            "quote": "",
-            "description": ""
-          },
-          "photos": []
-        }
-      ]
     }
   ],
   "cursor": {
