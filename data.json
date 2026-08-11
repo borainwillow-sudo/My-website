@@ -1781,8 +1781,8 @@
               "width": 1729,
               "height": 2463,
               "caption": "",
-              "x": 67.82,
-              "y": 46.68,
+              "x": 66.82,
+              "y": 134.3,
               "w": 32.18
             },
             {
@@ -1825,8 +1825,8 @@
               "width": 1713,
               "height": 2258,
               "caption": "",
-              "x": -2.18,
-              "y": 46.68,
+              "x": -2.42,
+              "y": 141.93,
               "w": 34.71
             },
             {
@@ -1836,8 +1836,52 @@
               "width": 1552,
               "height": 2252,
               "caption": "",
-              "x": 34.34,
+              "x": 45.61,
+              "y": 154.08,
+              "w": 31.33
+            },
+            {
+              "id": "msor0r6y2snhd0",
+              "display": "photos/msor0r6y2snhd0.jpg",
+              "thumb": "photos/msor0r6y2snhd0-t.jpg",
+              "width": 1922,
+              "height": 2560,
+              "caption": "",
+              "x": -2.66,
               "y": 47.06,
+              "w": 34.71
+            },
+            {
+              "id": "msor0rqf9swoqx",
+              "display": "photos/msor0rqf9swoqx.jpg",
+              "thumb": "photos/msor0rqf9swoqx-t.jpg",
+              "width": 2560,
+              "height": 2044,
+              "caption": "",
+              "x": 35.1,
+              "y": 47.06,
+              "w": 35.14
+            },
+            {
+              "id": "msor0s3r3rih55",
+              "display": "photos/msor0s3r3rih55.jpg",
+              "thumb": "photos/msor0s3r3rih55-t.jpg",
+              "width": 1716,
+              "height": 2560,
+              "caption": "",
+              "x": 73,
+              "y": 47.06,
+              "w": 29.78
+            },
+            {
+              "id": "msor0sf6wxnbfp",
+              "display": "photos/msor0sf6wxnbfp.jpg",
+              "thumb": "photos/msor0sf6wxnbfp-t.jpg",
+              "width": 1716,
+              "height": 2560,
+              "caption": "",
+              "x": 34.33,
+              "y": 125.54,
               "w": 31.33
             }
           ]
