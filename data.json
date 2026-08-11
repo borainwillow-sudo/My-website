@@ -858,6 +858,72 @@
               "x": 1,
               "y": 355.25,
               "w": 31.33
+            },
+            {
+              "id": "msoferszm21euk",
+              "display": "photos/msoferszm21euk.jpg",
+              "thumb": "photos/msoferszm21euk-t.jpg",
+              "width": 1900,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 398.28,
+              "w": 31.33
+            },
+            {
+              "id": "msofes4803eyik",
+              "display": "photos/msofes4803eyik.jpg",
+              "thumb": "photos/msofes4803eyik-t.jpg",
+              "width": 2560,
+              "height": 1921,
+              "caption": "",
+              "x": 34.33,
+              "y": 398.28,
+              "w": 31.33
+            },
+            {
+              "id": "msofesdki3xoz4",
+              "display": "photos/msofesdki3xoz4.jpg",
+              "thumb": "photos/msofesdki3xoz4-t.jpg",
+              "width": 1872,
+              "height": 2560,
+              "caption": "",
+              "x": 67.67,
+              "y": 398.28,
+              "w": 31.33
+            },
+            {
+              "id": "msofesy8hzt7q2",
+              "display": "photos/msofesy8hzt7q2.jpg",
+              "thumb": "photos/msofesy8hzt7q2-t.jpg",
+              "width": 1789,
+              "height": 2560,
+              "caption": "",
+              "x": 34.33,
+              "y": 425.79,
+              "w": 31.33
+            },
+            {
+              "id": "msofet83jb1ngl",
+              "display": "photos/msofet83jb1ngl.jpg",
+              "thumb": "photos/msofet83jb1ngl-t.jpg",
+              "width": 1777,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 444.49,
+              "w": 31.33
+            },
+            {
+              "id": "msofetqa6egtng",
+              "display": "photos/msofetqa6egtng.jpg",
+              "thumb": "photos/msofetqa6egtng-t.jpg",
+              "width": 1786,
+              "height": 2560,
+              "caption": "",
+              "x": 67.67,
+              "y": 445.12,
+              "w": 31.33
             }
           ]
         },
