@@ -1032,6 +1032,17 @@
               "x": 82.61,
               "y": 107.53,
               "w": 14.46
+            },
+            {
+              "id": "msosc04d4mtu9s",
+              "display": "photos/msosc04d4mtu9s.jpg",
+              "thumb": "photos/msosc04d4mtu9s-t.jpg",
+              "width": 1918,
+              "height": 2560,
+              "caption": "",
+              "x": 65.74,
+              "y": 197.01,
+              "w": 22.62
             }
           ],
           "texts": []
