@@ -265,9 +265,20 @@
           "width": 2560,
           "height": 2141,
           "caption": "",
+          "x": 19.72,
+          "y": 50.79,
+          "w": 31.33
+        },
+        {
+          "id": "msoeqkexlqjyux",
+          "display": "photos/msoeqkexlqjyux.jpg",
+          "thumb": "photos/msoeqkexlqjyux-t.jpg",
+          "width": 1713,
+          "height": 1179,
+          "caption": "",
           "x": 1,
           "y": 403.89,
-          "w": 31.33
+          "w": 86.13
         }
       ]
     },
