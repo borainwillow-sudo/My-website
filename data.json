@@ -1113,17 +1113,6 @@
               "w": 44.79
             },
             {
-              "id": "msor0djfpeh5yf",
-              "display": "photos/msor0djfpeh5yf.jpg",
-              "thumb": "photos/msor0djfpeh5yf-t.jpg",
-              "width": 2254,
-              "height": 2560,
-              "caption": "",
-              "x": 13.66,
-              "y": 113.91,
-              "w": 27.47
-            },
-            {
               "id": "msor0f9o42pzof",
               "display": "photos/msor0f9o42pzof.jpg",
               "thumb": "photos/msor0f9o42pzof-t.jpg",
@@ -1141,8 +1130,8 @@
               "width": 1818,
               "height": 1229,
               "caption": "",
-              "x": 43.66,
-              "y": 131.69,
+              "x": 6.18,
+              "y": 115.38517837982832,
               "w": 44.79
             }
           ],
