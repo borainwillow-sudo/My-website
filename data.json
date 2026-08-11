@@ -1057,7 +1057,7 @@
               "width": 2064,
               "height": 2560,
               "caption": "",
-              "x": 44.25,
+              "x": 59.15,
               "y": 0,
               "w": 29.3
             },
@@ -1068,20 +1068,9 @@
               "width": 2560,
               "height": 1953,
               "caption": "",
-              "x": 34.33,
-              "y": 38.37,
+              "x": 50,
+              "y": 40.37216268776824,
               "w": 31.33
-            },
-            {
-              "id": "msor07uerchvk8",
-              "display": "photos/msor07uerchvk8.jpg",
-              "thumb": "photos/msor07uerchvk8-t.jpg",
-              "width": 2113,
-              "height": 2560,
-              "caption": "",
-              "x": 73.55,
-              "y": 8.213832732795575,
-              "w": 23.09
             },
             {
               "id": "msor081po7o0hp",
@@ -1090,7 +1079,7 @@
               "width": 1219,
               "height": 979,
               "caption": "",
-              "x": -2.62,
+              "x": 6.18,
               "y": 0,
               "w": 45.06
             },
