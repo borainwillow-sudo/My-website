@@ -648,17 +648,6 @@
           },
           "photos": [
             {
-              "id": "msney9xs4aa1a6",
-              "display": "photos/msonbal44zx5m8.jpg",
-              "thumb": "photos/msonbal44zx5m8-t.jpg",
-              "width": 2560,
-              "height": 1748,
-              "caption": "",
-              "x": -2.26,
-              "y": 0,
-              "w": 56.7359180525751
-            },
-            {
               "id": "msneya85vitsy0",
               "display": "photos/msneya85vitsy0.jpg",
               "thumb": "photos/msneya85vitsy0-t.jpg",
@@ -701,6 +690,17 @@
               "x": 66.6,
               "y": 68.02,
               "w": 31.33
+            },
+            {
+              "id": "msney9xs4aa1a6",
+              "display": "photos/msonbal44zx5m8.jpg",
+              "thumb": "photos/msonbal44zx5m8-t.jpg",
+              "width": 2560,
+              "height": 1748,
+              "caption": "",
+              "x": -2.26,
+              "y": 0,
+              "w": 61.48
             }
           ]
         },
