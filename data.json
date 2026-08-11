@@ -250,20 +250,8 @@
       ]
     },
     {
-      "id": "contact",
-      "title": "contact",
-      "type": "text",
-      "header": {
-        "title": "Contact",
-        "meta": "",
-        "quote": "",
-        "description": ""
-      },
-      "body": "borainwillow@gmail.com"
-    },
-    {
       "id": "about",
-      "title": "about",
+      "title": "contact",
       "type": "gallery",
       "header": {
         "title": "",
