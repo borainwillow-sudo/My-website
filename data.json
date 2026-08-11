@@ -246,6 +246,17 @@
           "x": 51.05,
           "y": 322.44,
           "w": 48.76
+        },
+        {
+          "id": "msoedlbs8lix1r",
+          "display": "photos/msoedlbs8lix1r.jpg",
+          "thumb": "photos/msoedlbs8lix1r-t.jpg",
+          "width": 2560,
+          "height": 2101,
+          "caption": "",
+          "x": 1,
+          "y": 403.89,
+          "w": 31.33
         }
       ]
     },
