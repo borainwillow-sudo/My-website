@@ -1966,18 +1966,6 @@
           ]
         },
         {
-          "id": "superbalist",
-          "title": "Superbalist",
-          "type": "gallery",
-          "header": {
-            "title": "",
-            "meta": "",
-            "quote": "",
-            "description": ""
-          },
-          "photos": []
-        },
-        {
           "id": "repentance",
           "title": "Repentance",
           "type": "gallery",
@@ -2121,6 +2109,18 @@
               "w": 34.99
             }
           ]
+        },
+        {
+          "id": "superbalist",
+          "title": "Superbalist",
+          "type": "gallery",
+          "header": {
+            "title": "",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": []
         },
         {
           "id": "sa-harvest",
