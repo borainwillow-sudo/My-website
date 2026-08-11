@@ -235,6 +235,17 @@
           "x": -2.87,
           "y": 367.29,
           "w": 55.61
+        },
+        {
+          "id": "msodouvjutjfab",
+          "display": "photos/msodouvjutjfab.jpg",
+          "thumb": "photos/msodouvjutjfab-t.jpg",
+          "width": 2048,
+          "height": 1644,
+          "caption": "",
+          "x": 26.22,
+          "y": 368.52,
+          "w": 66.73
         }
       ]
     },
