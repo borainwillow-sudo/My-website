@@ -199,7 +199,7 @@
           "width": 2560,
           "height": 2141,
           "caption": "",
-          "x": 60.59,
+          "x": 57.31,
           "y": 50.79,
           "w": 40.06
         },
@@ -248,26 +248,26 @@
           "w": 48.76
         },
         {
-          "id": "msoenz672ip5hz",
-          "display": "photos/msoenz672ip5hz.jpg",
-          "thumb": "photos/msoenz672ip5hz-t.jpg",
-          "width": 2560,
-          "height": 1748,
-          "caption": "",
-          "x": -2.01,
-          "y": 53.42,
-          "w": 68.82
-        },
-        {
           "id": "msoeqad1esekvw",
           "display": "photos/msoeqad1esekvw.jpg",
           "thumb": "photos/msoeqad1esekvw-t.jpg",
           "width": 2560,
           "height": 2141,
           "caption": "",
-          "x": 56.67,
-          "y": 53.42,
+          "x": 57.31,
+          "y": 55.34,
           "w": 31.33
+        },
+        {
+          "id": "msoenz672ip5hz",
+          "display": "photos/msoenz672ip5hz.jpg",
+          "thumb": "photos/msoenz672ip5hz-t.jpg",
+          "width": 2560,
+          "height": 1748,
+          "caption": "",
+          "x": 0,
+          "y": 50.79,
+          "w": 52.01
         }
       ]
     },
