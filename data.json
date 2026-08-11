@@ -2081,6 +2081,28 @@
               "x": 1,
               "y": 4,
               "w": 31.33
+            },
+            {
+              "id": "msojv2021l6a6b",
+              "display": "photos/msojv2021l6a6b.jpg",
+              "thumb": "photos/msojv2021l6a6b-t.jpg",
+              "width": 2560,
+              "height": 1716,
+              "caption": "",
+              "x": 1,
+              "y": 54.33,
+              "w": 31.33
+            },
+            {
+              "id": "msojv2cz7j8fu5",
+              "display": "photos/msojv2cz7j8fu5.jpg",
+              "thumb": "photos/msojv2cz7j8fu5-t.jpg",
+              "width": 2013,
+              "height": 2560,
+              "caption": "",
+              "x": 34.33,
+              "y": 54.33,
+              "w": 31.33
             }
           ]
         },
