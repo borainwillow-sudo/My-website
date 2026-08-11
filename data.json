@@ -886,17 +886,6 @@
               "w": 35.03
             },
             {
-              "id": "msofb21n5eucqj",
-              "display": "photos/msofb21n5eucqj.jpg",
-              "thumb": "photos/msofb21n5eucqj-t.jpg",
-              "width": 1918,
-              "height": 2560,
-              "caption": "",
-              "x": 65.86,
-              "y": 277.18,
-              "w": 28.31
-            },
-            {
               "id": "msofbdubk1xnwo",
               "display": "photos/msofrqcl0t6w0m.jpg",
               "thumb": "photos/msofrqcl0t6w0m-t.jpg",
@@ -1068,9 +1057,9 @@
               "width": 1557,
               "height": 2061,
               "caption": "",
-              "x": 42.12,
-              "y": 273.49,
-              "w": 31.33
+              "x": 65.28,
+              "y": 273.19,
+              "w": 29.49
             },
             {
               "id": "msojs2fm2x9p8y",
