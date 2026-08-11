@@ -246,6 +246,17 @@
           "x": -0.3,
           "y": 359.73,
           "w": 51.35
+        },
+        {
+          "id": "msof8ouxujk5ep",
+          "display": "photos/msof8ouxujk5ep.jpg",
+          "thumb": "photos/msof8ouxujk5ep-t.jpg",
+          "width": 2560,
+          "height": 1770,
+          "caption": "",
+          "x": 1,
+          "y": 401.58,
+          "w": 31.33
         }
       ]
     },
