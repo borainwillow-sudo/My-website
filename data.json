@@ -737,6 +737,17 @@
               "x": 34.33,
               "y": 4,
               "w": 31.33
+            },
+            {
+              "id": "msofb21n5eucqj",
+              "display": "photos/msofb21n5eucqj.jpg",
+              "thumb": "photos/msofb21n5eucqj-t.jpg",
+              "width": 1918,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 52.24,
+              "w": 31.33
             }
           ]
         },
