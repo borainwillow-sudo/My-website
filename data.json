@@ -1499,15 +1499,14 @@
           "photos": [
             {
               "id": "msnbwnzsaq5pmp",
-              "display": "photos/msnbwnzsaq5pmp.jpg",
-              "thumb": "photos/msnbwnzsaq5pmp-t.jpg",
-              "width": 2560,
-              "height": 1716,
+              "display": "photos/mson01m2xxhim9.jpg",
+              "thumb": "photos/mson01m2xxhim9-t.jpg",
+              "width": 1713,
+              "height": 2535,
               "caption": "",
-              "x": 3.41,
-              "y": 83.74,
-              "w": 44.27,
-              "rotate": 90
+              "x": 2.76,
+              "y": 83.14,
+              "w": 36.77352065450644
             },
             {
               "id": "msnbwob8izc3wn",
