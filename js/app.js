@@ -1,7 +1,7 @@
 (function () {
   // Shown at the bottom of the Style panel. Bump alongside the ?v= query
   // strings in index.html so a stale copy can be identified at a glance.
-  var EDITOR_VERSION = "15";
+  var EDITOR_VERSION = "16";
   var data = null;
   var currentId = "home";
   var openGroups = {};
@@ -361,6 +361,71 @@
     return /^#/.test(href) || /^\/(?!\/)/.test(href);
   }
 
+  // ---------- photo adjustments ----------
+  //
+  // Rotation and saturation are stored as numbers and applied when the photo
+  // is drawn, never written into the image file. Re-encoding a JPEG on every
+  // tweak would lose a little quality each time, leave orphaned files behind
+  // and make each nudge a slow upload; this way they are instant, free and
+  // reversible. The one place that can't work with a drawn-on rotation is the
+  // cropper, which has to cut from what is on screen — see the crop action.
+
+  var ROTATIONS = [0, 90, 180, 270];
+
+  function rotationOf(photo) {
+    var r = Number(photo.rotate) || 0;
+    return ROTATIONS.indexOf(r) === -1 ? 0 : r;
+  }
+
+  function saturationOf(photo) {
+    var s = Number(photo.saturation);
+    return isFinite(s) && s >= 0 && s <= 200 ? s : 100;
+  }
+
+  function filterCSS(photo) {
+    var s = saturationOf(photo);
+    return s === 100 ? "" : "saturate(" + s + "%)";
+  }
+
+  // A half turn needs nothing but a transform. A quarter turn changes the box
+  // the photo occupies, so the media element declares the turned box's
+  // aspect-ratio — which is simply the stored dimensions the other way round —
+  // and the image is sized against that before being turned into it. --ar is
+  // the image's own width as a fraction of the box width it needs.
+  //
+  // aspect-ratio rather than the usual percentage-padding trick: a percentage
+  // padding resolves against the CONTAINING BLOCK's width, which is the same
+  // as the element's own width on the canvas but not in the fixed-width
+  // preview inside the Adjust panel.
+  function rotationCSS(photo) {
+    var r = rotationOf(photo);
+    if (!r) return { cls: "", mediaStyle: "", transform: "" };
+    if (r === 180) return { cls: "", mediaStyle: "", transform: "rotate(180deg)" };
+    var w = photo.width || 1;
+    var h = photo.height || 1;
+    return {
+      cls: " is-rotated",
+      mediaStyle:
+        "aspect-ratio:" + h + "/" + w +
+        ";--ar:" + Math.round((w / h) * 10000) / 10000 +
+        ";--rot:" + r + "deg",
+      transform: "",
+    };
+  }
+
+  function styleAttr(css) {
+    return css ? ' style="' + esc(css) + '"' : "";
+  }
+
+  function imgStyleFor(photo) {
+    var rot = rotationCSS(photo);
+    var f = filterCSS(photo);
+    return (
+      (rot.transform ? "transform:" + rot.transform + ";" : "") +
+      (f ? "filter:" + f + ";" : "")
+    );
+  }
+
   // Photos and text blocks share a canvas and a coordinate system, but live in
   // separate arrays so nothing that walks the photos — publishing, cleaning up
   // deleted image files, the lightbox — has to learn about text. This is the
@@ -414,6 +479,7 @@
       ? '<div class="photo-tools">' +
         '<button data-photo-action="replace">Replace</button>' +
         '<button data-photo-action="crop">Crop</button>' +
+        '<button data-photo-action="adjust">Adjust</button>' +
         '<button data-photo-action="link">Link</button>' +
         '<button data-photo-action="front">Front</button>' +
         '<button data-photo-action="remove" class="danger">Remove</button>' +
@@ -433,6 +499,7 @@
       ? '<span class="photo-label"><span>' + esc(photo.title) + "</span></span>"
       : "";
 
+    var rot = rotationCSS(photo);
     var img =
       '<img src="' +
       esc(thumb) +
@@ -442,7 +509,9 @@
       (photo.width || "") +
       '" height="' +
       (photo.height || "") +
-      '" loading="lazy" decoding="async">';
+      '" loading="lazy" decoding="async"' +
+      styleAttr(imgStyleFor(photo)) +
+      ">";
 
     // The link is only live outside edit mode — inside it, an anchor would
     // swallow the drag. A marker keeps it visible while editing.
@@ -450,7 +519,11 @@
     if (photo.link && !editing) {
       var external = !isInternalLink(photo.link);
       media =
-        '<a class="photo-media" href="' +
+        '<a class="photo-media' +
+        rot.cls +
+        '"' +
+        styleAttr(rot.mediaStyle) +
+        ' href="' +
         esc(photo.link) +
         '"' +
         (external ? ' target="_blank" rel="noopener noreferrer"' : "") +
@@ -459,7 +532,15 @@
         label +
         "</a>";
     } else {
-      media = '<span class="photo-media">' + img + label + "</span>";
+      media =
+        '<span class="photo-media' +
+        rot.cls +
+        '"' +
+        styleAttr(rot.mediaStyle) +
+        ">" +
+        img +
+        label +
+        "</span>";
     }
 
     var linkFlag =
@@ -1191,6 +1272,103 @@
     markDirty();
   }
 
+  // Both are stored only when they differ from the default, so a page of
+  // untouched photos stays exactly as it was in data.json.
+  function setRotation(photo, deg) {
+    if (deg) photo.rotate = deg;
+    else delete photo.rotate;
+  }
+
+  function setSaturation(photo, pct) {
+    if (pct === 100) delete photo.saturation;
+    else photo.saturation = pct;
+  }
+
+  function openAdjust(photo) {
+    function previewHTML() {
+      var rot = rotationCSS(photo);
+      return (
+        '<span class="photo-media' +
+        rot.cls +
+        '"' +
+        styleAttr(rot.mediaStyle) +
+        '><img src="' +
+        esc(window.WB.resolveSrc(photo.thumb)) +
+        '" alt=""' +
+        styleAttr(imgStyleFor(photo)) +
+        "></span>"
+      );
+    }
+
+    var modal = openModal(
+      "<h3>Adjust photo</h3>" +
+        '<div class="adjust-preview">' +
+        previewHTML() +
+        "</div>" +
+        '<label>Rotation <span class="typo-value" id="rot-readout"></span></label>' +
+        '<div class="adjust-rotate">' +
+        '<button class="pill-btn" data-turn="-90">&#8634; Left</button>' +
+        '<button class="pill-btn" data-turn="90">&#8635; Right</button>' +
+        "</div>" +
+        '<label>Saturation <span class="typo-value" id="sat-readout"></span></label>' +
+        '<input type="range" min="0" max="200" step="1" id="sat-range">' +
+        '<p class="hint">0% is black and white, 100% is the photo as shot. Both settings are applied when the photo is drawn rather than written into the file, so they cost nothing, never lose quality, and can be undone at any time.</p>' +
+        '<div class="modal-actions">' +
+        '<button class="pill-btn" id="adjust-reset">Reset</button>' +
+        '<button class="pill-btn pill-solid" id="adjust-done">Done</button>' +
+        "</div>"
+    );
+
+    var range = modal.querySelector("#sat-range");
+
+    function refresh() {
+      modal.querySelector(".adjust-preview").innerHTML = previewHTML();
+      modal.querySelector("#rot-readout").textContent = rotationOf(photo) + "°";
+      modal.querySelector("#sat-readout").textContent = saturationOf(photo) + "%";
+      range.value = String(saturationOf(photo));
+    }
+    refresh();
+
+    // Saturation slides continuously, and re-rendering a page of two hundred
+    // photos per frame would crawl. The filter is written straight onto the
+    // elements already on screen instead, and only the release is saved.
+    function liveFilter() {
+      var f = filterCSS(photo);
+      document
+        .querySelectorAll('[data-photo-id="' + photo.id + '"] img, .adjust-preview img')
+        .forEach(function (el) {
+          el.style.filter = f;
+        });
+    }
+
+    range.addEventListener("input", function () {
+      setSaturation(photo, Number(range.value));
+      modal.querySelector("#sat-readout").textContent = saturationOf(photo) + "%";
+      liveFilter();
+    });
+    range.addEventListener("change", markDirty);
+
+    modal.addEventListener("click", function (e) {
+      var turn = e.target.closest("[data-turn]");
+      if (turn) {
+        setRotation(photo, (rotationOf(photo) + Number(turn.dataset.turn) + 360) % 360);
+        render();
+        refresh();
+        markDirty();
+        return;
+      }
+      if (e.target.id === "adjust-reset") {
+        setRotation(photo, 0);
+        setSaturation(photo, 100);
+        render();
+        refresh();
+        markDirty();
+        return;
+      }
+      if (e.target.id === "adjust-done") closeModal();
+    });
+  }
+
   function handleTextAction(action, textId) {
     var page = findPage(data, currentId);
     if (!page || !page.texts) return;
@@ -1283,15 +1461,40 @@
       return;
     }
 
-    if (action === "crop") {
-      var src = window.WB.resolveSrc(photo.display);
-      var startAspect = photo.height && photo.width ? photo.height / photo.width : 1;
-      window.WB.openCropper(src, startAspect, async function (dataUrl) {
-        setStatus("Processing crop…", "is-saving");
-        var processed = await window.WB.processDataUrl(dataUrl);
-        applyProcessedTo(photo, processed);
-      });
+    if (action === "adjust") {
+      openAdjust(photo);
+      return;
     }
+
+    if (action === "crop") {
+      cropPhoto(photo);
+    }
+  }
+
+  async function cropPhoto(photo) {
+    var src = window.WB.resolveSrc(photo.display);
+    var turned = rotationOf(photo);
+    // A crop has to be taken from what is on screen. Rotation is normally only
+    // drawn on, so it is rendered into the source first — and since the cropped
+    // file then comes out upright, the stored rotation is cleared with it.
+    if (turned) {
+      setStatus("Preparing crop…", "is-saving");
+      try {
+        src = await window.WB.rotateToObjectUrl(src, turned);
+      } catch (err) {
+        showNotice("Could not prepare that photo for cropping: " + err.message);
+        setStatus("Editing", "");
+        return;
+      }
+      setStatus("Editing", "");
+    }
+    var startAspect = photo.height && photo.width ? photo.height / photo.width : 1;
+    window.WB.openCropper(src, startAspect, async function (dataUrl) {
+      setStatus("Processing crop…", "is-saving");
+      var processed = await window.WB.processDataUrl(dataUrl);
+      setRotation(photo, 0);
+      applyProcessedTo(photo, processed);
+    });
   }
 
   // Per-photo hover label and click-through link.
@@ -1365,9 +1568,20 @@
 
   function openLightbox(photo) {
     var root = $("modal-root");
+    var r = rotationOf(photo);
+    var f = filterCSS(photo);
+    // The transform doesn't change the layout box, so a quarter-turned photo
+    // is constrained by the opposite axis to keep the rotated result on screen.
+    var quarter = r === 90 || r === 270;
+    var css =
+      (r ? "transform:rotate(" + r + "deg);" : "") + (f ? "filter:" + f + ";" : "");
     root.innerHTML =
       '<div class="lightbox"><button class="lightbox-close" aria-label="Close">&times;</button>' +
-      '<img src="' +
+      '<img class="lightbox-img' +
+      (quarter ? " quarter" : "") +
+      '"' +
+      styleAttr(css) +
+      ' src="' +
       esc(window.WB.resolveSrc(photo.display)) +
       '" alt="' +
       esc(photo.caption || "") +
@@ -1628,6 +1842,10 @@
     if (!photo) return;
     setStatus("Processing…", "is-saving");
     var processed = await window.WB.processFile(file);
+    // A different photo in the same slot: a rotation and a saturation chosen
+    // for the old one mean nothing for the new one.
+    setRotation(photo, 0);
+    setSaturation(photo, 100);
     applyProcessedTo(photo, processed);
   });
 

@@ -314,6 +314,23 @@ img {
   background: #f4f4f4;
 }
 
+/* A quarter-turned photo. A transform doesn't change the layout box, so the
+   media element declares the turned box's shape itself with an aspect-ratio
+   written inline, and the image is sized against that before being turned into
+   it. --ar is the image's own width as a fraction of that box's width. */
+.photo-media.is-rotated {
+  overflow: hidden;
+}
+
+.photo-media.is-rotated img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(var(--ar) * 100%);
+  height: auto;
+  transform: translate(-50%, -50%) rotate(var(--rot));
+}
+
 /* Hover label. Gated on real hover support so it can't get stuck visible
    after a tap on a touchscreen. */
 .photo-label {
@@ -448,6 +465,25 @@ body.is-editing .text-block .text-grip {
 
 body.is-editing .text-block.dragging .text-grip {
   cursor: grabbing;
+}
+
+/* Adjust panel */
+
+.adjust-preview {
+  width: 210px;
+  margin: 4px auto 14px;
+}
+
+.adjust-preview img {
+  width: 100%;
+  height: auto;
+  background: #f4f4f4;
+}
+
+.adjust-rotate {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 6px;
 }
 
 .snap-overlay {
@@ -931,6 +967,13 @@ body.is-editing {
   max-width: 100%;
   max-height: 86vh;
   object-fit: contain;
+}
+
+/* Rotating doesn't change the layout box, so a quarter-turned photo has to be
+   constrained by the opposite axis or the turned result overflows the window. */
+.lightbox img.quarter {
+  max-width: 86vh;
+  max-height: 90vw;
 }
 
 .lightbox-close {

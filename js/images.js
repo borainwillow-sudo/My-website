@@ -23,6 +23,52 @@
     });
   }
 
+  function loadImageFromSrc(src) {
+    return new Promise(function (resolve, reject) {
+      var img = new Image();
+      img.onload = function () {
+        resolve(img);
+      };
+      img.onerror = function () {
+        reject(new Error("Could not load that image."));
+      };
+      img.src = src;
+    });
+  }
+
+  // Bakes a quarter/half turn into a new image file. Rotation is normally only
+  // applied when a photo is drawn, but the cropper has to work on what is on
+  // screen, so a rotated photo is turned upright-as-displayed before cropping.
+  // Returns an object URL; the cropper revokes it once it has loaded.
+  async function rotateToObjectUrl(src, degrees) {
+    var img = await loadImageFromSrc(src);
+    var w = img.naturalWidth;
+    var h = img.naturalHeight;
+    var quarter = degrees === 90 || degrees === 270;
+    var canvas = document.createElement("canvas");
+    canvas.width = quarter ? h : w;
+    canvas.height = quarter ? w : h;
+    var ctx = canvas.getContext("2d");
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "high";
+    ctx.translate(canvas.width / 2, canvas.height / 2);
+    ctx.rotate((degrees * Math.PI) / 180);
+    ctx.drawImage(img, -w / 2, -h / 2);
+    var blob = await new Promise(function (resolve, reject) {
+      canvas.toBlob(
+        function (b) {
+          if (!b) reject(new Error("The browser ran out of memory rotating this image."));
+          else resolve(b);
+          canvas.width = 0;
+          canvas.height = 0;
+        },
+        "image/jpeg",
+        0.95
+      );
+    });
+    return URL.createObjectURL(blob);
+  }
+
   function scaleTo(img, maxDim) {
     var w = img.naturalWidth || img.width;
     var h = img.naturalHeight || img.height;
@@ -237,6 +283,7 @@
   Object.assign(window.WB, {
     processFile: processFile,
     processDataUrl: processDataUrl,
+    rotateToObjectUrl: rotateToObjectUrl,
     processCursorFile: processCursorFile,
     processLogoFile: processLogoFile,
     detectAnimated: detectAnimated,

@@ -42,6 +42,11 @@
 
   function aspect(photo) {
     if (!photo.width || !photo.height) return 1;
+    // A quarter turn is applied when the photo is drawn rather than baked into
+    // the file, so the stored width and height are still the original way
+    // round — but the box the photo occupies on the page is not.
+    var r = photo.rotate || 0;
+    if (r === 90 || r === 270) return photo.width / photo.height;
     return photo.height / photo.width;
   }
 
