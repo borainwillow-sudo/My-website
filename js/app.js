@@ -1,7 +1,7 @@
 (function () {
   // Shown at the bottom of the Style panel. Bump alongside the ?v= query
   // strings in index.html so a stale copy can be identified at a glance.
-  var EDITOR_VERSION = "17";
+  var EDITOR_VERSION = "18";
   var data = null;
   var currentId = "home";
   var openGroups = {};
@@ -98,6 +98,15 @@
       value = 'url("' + src + '") ' + hx + " " + hy + ", auto";
     }
     document.documentElement.style.setProperty("--site-cursor", value);
+  }
+
+  // The mobile bar's height depends on the size of the name and whether it
+  // wraps onto a second line, so the menu drawer can't be positioned under it
+  // with a fixed guess — it gets measured and handed to the stylesheet.
+  function measureMobileBar() {
+    var bar = document.querySelector(".mobile-bar");
+    var h = bar ? bar.offsetHeight : 0;
+    document.documentElement.style.setProperty("--mobile-bar-h", h + "px");
   }
 
   // On a phone, either keep the desktop arrangement (shrunk to fit) or fall
@@ -684,6 +693,7 @@
     renderNav();
     renderPage();
     updateEditUI();
+    measureMobileBar();
   }
 
   // ---------- routing ----------
@@ -1893,6 +1903,9 @@
 
   var resizeTimer = null;
   window.addEventListener("resize", function () {
+    // Not debounced: turning the phone changes whether the name wraps, and the
+    // drawer must never be left sitting behind the bar, even briefly.
+    measureMobileBar();
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(renderPage, 180);
   });
