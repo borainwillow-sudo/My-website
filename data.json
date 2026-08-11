@@ -2033,18 +2033,6 @@
           ]
         },
         {
-          "id": "slipped-up",
-          "title": "Slipped Up",
-          "type": "gallery",
-          "header": {
-            "title": "",
-            "meta": "",
-            "quote": "",
-            "description": ""
-          },
-          "photos": []
-        },
-        {
           "id": "deluxe-coffeeworks",
           "title": "Deluxe Coffeeworks",
           "type": "gallery",
