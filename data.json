@@ -676,8 +676,8 @@
               "width": 2560,
               "height": 2142,
               "caption": "",
-              "x": 12.48,
-              "y": 43.35,
+              "x": 41.87,
+              "y": 77.52,
               "w": 46.74
             },
             {
@@ -690,6 +690,17 @@
               "x": 59.22,
               "y": 34.29,
               "w": 44.32
+            },
+            {
+              "id": "msonbo667tzccy",
+              "display": "photos/msonbo667tzccy.jpg",
+              "thumb": "photos/msonbo667tzccy-t.jpg",
+              "width": 2560,
+              "height": 1735,
+              "caption": "",
+              "x": -2.26,
+              "y": 43.94600120708154,
+              "w": 31.33
             }
           ]
         },
