@@ -670,17 +670,6 @@
               "w": 38.74
             },
             {
-              "id": "msneygiqgwjo18",
-              "display": "photos/msneygiqgwjo18.jpg",
-              "thumb": "photos/msneygiqgwjo18-t.jpg",
-              "width": 2560,
-              "height": 2142,
-              "caption": "",
-              "x": 41.87,
-              "y": 77.52,
-              "w": 46.74
-            },
-            {
               "id": "msneynt6asxxal",
               "display": "photos/msneynt6asxxal.jpg",
               "thumb": "photos/msneynt6asxxal-t.jpg",
@@ -699,8 +688,8 @@
               "height": 1735,
               "caption": "",
               "x": -2.26,
-              "y": 43.94600120708154,
-              "w": 31.33
+              "y": 44.34,
+              "w": 61.48
             }
           ]
         },
