@@ -266,7 +266,9 @@
           "caption": "",
           "x": 32.75,
           "y": 112.16,
-          "w": 27.37
+          "w": 27.37,
+          "title": "",
+          "link": "#/untititled-project"
         },
         {
           "id": "msop62ap0czren",
