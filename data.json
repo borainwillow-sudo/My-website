@@ -246,6 +246,17 @@
           "x": 0.12,
           "y": 55.56,
           "w": 57.55
+        },
+        {
+          "id": "msof09xrnwa4vq",
+          "display": "photos/msof09xrnwa4vq.jpg",
+          "thumb": "photos/msof09xrnwa4vq-t.jpg",
+          "width": 2560,
+          "height": 2141,
+          "caption": "",
+          "x": 41.779999999999994,
+          "y": 76.69699034334764,
+          "w": 31.33
         }
       ]
     },
