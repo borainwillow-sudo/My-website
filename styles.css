@@ -994,12 +994,19 @@ body.is-editing {
     display: flex;
   }
 
+  /* The drawer starts below the bar, not behind it. The bar's height depends
+     on the size of the name and whether it wraps, so it is measured and
+     published as --mobile-bar-h rather than guessed at: a fixed guess left the
+     first few menu items hidden underneath an opaque bar once the name grew
+     enough to wrap onto two lines. */
   .sidebar {
     transform: translateX(-100%);
     transition: transform 0.24s ease;
     width: min(300px, 84vw);
     border-right: 1px solid var(--line);
-    padding-top: 26px;
+    top: var(--mobile-bar-h, 64px);
+    padding-top: 22px;
+    overscroll-behavior: contain;
   }
 
   .sidebar.open {
