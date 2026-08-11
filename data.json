@@ -1144,6 +1144,17 @@
               "x": 6.18,
               "y": 113.16,
               "w": 34.95
+            },
+            {
+              "id": "msorygo3nth6w3",
+              "display": "photos/msorygo3nth6w3.jpg",
+              "thumb": "photos/msorygo3nth6w3-t.jpg",
+              "width": 1514,
+              "height": 1116,
+              "caption": "",
+              "x": 6.18,
+              "y": 135.71242608045483,
+              "w": 31.33
             }
           ],
           "texts": []
