@@ -26,6 +26,14 @@
   box-sizing: border-box;
 }
 
+/* The browser's default `[hidden] { display: none }` is a plain element rule,
+   so any class that sets `display` beats it and the element stays on screen
+   while the code believes it is hidden. That is how the problem notice above
+   the edit bar ended up permanently visible and empty. */
+[hidden] {
+  display: none !important;
+}
+
 html,
 body {
   margin: 0;
@@ -388,6 +396,58 @@ img {
   font-size: var(--f-caption-size);
   color: var(--muted);
   margin-top: 0.5rem;
+}
+
+/* ---------- text blocks on the canvas ---------- */
+
+/* A text block is a photo-block as far as positioning, selection, dragging and
+   resizing go — it just holds words instead of an image. */
+.text-block .text-content {
+  font-weight: var(--f-body-weight);
+  font-size: var(--f-body-size);
+  line-height: 1.62;
+  color: var(--ink);
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+/* Selecting and scrolling text has to keep working even though the block it
+   sits in is set up for dragging. */
+body.is-editing .text-block .text-content {
+  cursor: text;
+  touch-action: auto;
+  outline: none;
+  min-height: 1.62em;
+}
+
+body.is-editing .text-block .text-content:empty::before {
+  content: "Type here";
+  color: var(--faint);
+}
+
+/* The drag surface. The text itself can't be one, or clicking to type would
+   move the block instead. */
+.text-grip {
+  display: none;
+  height: 14px;
+  margin-bottom: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--line) 0 3px,
+    transparent 3px 6px
+  );
+  background-size: auto 2px;
+  background-position: 0 50%;
+  background-repeat: repeat-x;
+  cursor: grab;
+}
+
+body.is-editing .text-block .text-grip {
+  display: block;
+}
+
+body.is-editing .text-block.dragging .text-grip {
+  cursor: grabbing;
 }
 
 .snap-overlay {
@@ -949,6 +1009,16 @@ body.is-editing {
   .photo-block {
     position: static !important;
     width: auto !important;
+  }
+
+  /* A paragraph squeezed into half a phone screen is unreadable, so text
+     blocks break out of the grid and take the full width. */
+  .text-block {
+    grid-column: 1 / -1;
+  }
+
+  .text-grip {
+    display: none !important;
   }
 
   .snap-overlay {

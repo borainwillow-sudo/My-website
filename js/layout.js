@@ -1,6 +1,11 @@
 (function () {
-  // All photo geometry is stored in percentages of the canvas WIDTH — including
-  // y — so a layout keeps its exact proportions at any screen size.
+  // Everything on a canvas — photos and text blocks alike — is an "item" with
+  // the same {id, x, y, w} geometry, so one drag/snap/arrange engine serves
+  // both. Blocks are found by [data-item-id]; photos additionally carry
+  // [data-photo-id] for the things only a photo can do.
+  //
+  // All geometry is stored in percentages of the canvas WIDTH — including y —
+  // so a layout keeps its exact proportions at any screen size.
   //
   // y therefore cannot be written to CSS `top` as a percentage: for an
   // absolutely positioned element a percentage top resolves against the
@@ -11,10 +16,10 @@
   var selectedId = null;
   var activeKeyHandler = null;
 
-  function selectPhoto(canvas, id) {
+  function selectItem(canvas, id) {
     selectedId = id;
-    canvas.querySelectorAll("[data-photo-id]").forEach(function (el) {
-      el.classList.toggle("selected", el.dataset.photoId === id);
+    canvas.querySelectorAll("[data-item-id]").forEach(function (el) {
+      el.classList.toggle("selected", el.dataset.itemId === id);
     });
   }
 
@@ -27,18 +32,30 @@
   }
   var MIN_WIDTH_PCT = 4;
 
+  // A photo's height follows from its aspect ratio, but a text block's follows
+  // from its content and the width it's been given, which only the browser
+  // knows. applyPositions measures every block it lays out and records the
+  // result here, so snapping and column packing have a real height to work
+  // with. Keyed by item id, in percent of canvas width like everything else.
+  var measuredHeight = {};
+  var TEXT_HEIGHT_GUESS = 6;
+
   function aspect(photo) {
     if (!photo.width || !photo.height) return 1;
     return photo.height / photo.width;
   }
 
-  function heightPct(photo) {
-    return photo.w * aspect(photo);
+  function heightPct(item) {
+    if (item.type === "text") {
+      var m = measuredHeight[item.id];
+      return typeof m === "number" && m > 0 ? m : TEXT_HEIGHT_GUESS;
+    }
+    return item.w * aspect(item);
   }
 
-  function contentBottom(photos) {
+  function contentBottom(items) {
     var max = 0;
-    photos.forEach(function (p) {
+    items.forEach(function (p) {
       var b = p.y + heightPct(p);
       if (b > max) max = b;
     });
@@ -51,9 +68,9 @@
     return window.matchMedia("(max-width: 820px)").matches;
   }
 
-  // Lays photos out and sizes the canvas to fit them.
-  function applyPositions(canvas, photos) {
-    var blocks = canvas.querySelectorAll("[data-photo-id]");
+  // Lays items out and sizes the canvas to fit them.
+  function applyPositions(canvas, items) {
+    var blocks = canvas.querySelectorAll("[data-item-id]");
 
     if (isStacked()) {
       // Hand layout back to the grid.
@@ -68,29 +85,31 @@
 
     var width = canvas.clientWidth;
     blocks.forEach(function (el) {
-      var photo = photos.find(function (p) {
-        return p.id === el.dataset.photoId;
+      var item = items.find(function (p) {
+        return p.id === el.dataset.itemId;
       });
-      if (!photo) return;
-      el.style.left = photo.x + "%";
-      el.style.top = (photo.y / 100) * width + "px";
-      el.style.width = photo.w + "%";
+      if (!item) return;
+      el.style.left = item.x + "%";
+      el.style.top = (item.y / 100) * width + "px";
+      el.style.width = item.w + "%";
     });
 
     // Measure the real blocks rather than trusting the image ratios: a caption
     // adds height below the photo and would otherwise be clipped off the end.
+    // The same pass records each block's height for heightPct above.
     var bottom = 0;
     blocks.forEach(function (el) {
       var b = el.offsetTop + el.offsetHeight;
       if (b > bottom) bottom = b;
+      if (width) measuredHeight[el.dataset.itemId] = (el.offsetHeight / width) * 100;
     });
     canvas.style.height = bottom > 0 ? bottom + "px" : "";
   }
 
-  function candidatesFor(photos, movingId) {
+  function candidatesFor(items, movingId) {
     var vertical = [0, 50, 100];
     var horizontal = [0];
-    photos.forEach(function (p) {
+    items.forEach(function (p) {
       if (p.id === movingId) return;
       vertical.push(p.x, p.x + p.w / 2, p.x + p.w);
       var h = heightPct(p);
@@ -125,7 +144,7 @@
     overlay.innerHTML = html;
   }
 
-  function enableEditing(canvas, photos, onChange) {
+  function enableEditing(canvas, items, onChange) {
     var overlay = canvas.querySelector(".snap-overlay");
     var active = null;
     var autoScrollFrame = null;
@@ -169,9 +188,10 @@
     }
 
     function onPointerDown(e) {
-      // The tool buttons and the editable caption live inside the photo block,
-      // and the preventDefault below would swallow their click and focus. Let
-      // those through untouched.
+      // The tool buttons and the editable caption live inside the block, and
+      // the preventDefault below would swallow their click and focus. Let
+      // those through untouched. A text block is nearly all contenteditable,
+      // which is why it carries a grip bar to drag by.
       if (
         e.target.closest(".photo-tools") ||
         e.target.closest(".link-flag") ||
@@ -180,24 +200,30 @@
         return;
       }
       var handle = e.target.closest(".resize-handle");
-      var block = e.target.closest("[data-photo-id]");
+      var block = e.target.closest("[data-item-id]");
       if (!block || !canvas.contains(block)) return;
-      var photo = photos.find(function (p) {
-        return p.id === block.dataset.photoId;
+      var item = items.find(function (p) {
+        return p.id === block.dataset.itemId;
       });
-      if (!photo) return;
+      if (!item) return;
+
+      // The preventDefault below stops the browser moving focus, so a caption
+      // or text block that is still being typed in would never fire focusout
+      // and its edit would never be written down. Take focus away by hand.
+      var open = document.activeElement;
+      if (open && open.isContentEditable) open.blur();
 
       e.preventDefault();
       var scale = pctPerPx();
       active = {
-        photo: photo,
+        item: item,
         block: block,
         mode: handle ? "resize" : "move",
         startX: e.clientX,
         startY: e.clientY,
-        origX: photo.x,
-        origY: photo.y,
-        origW: photo.w,
+        origX: item.x,
+        origY: item.y,
+        origW: item.w,
         scale: scale,
         startScrollY: window.scrollY,
         clientX: e.clientX,
@@ -205,7 +231,7 @@
       };
       block.classList.add("dragging");
       block.setPointerCapture(e.pointerId);
-      selectPhoto(canvas, photo.id);
+      selectItem(canvas, item.id);
       startAutoScroll();
     }
 
@@ -231,15 +257,15 @@
         (clientY - active.startY + (window.scrollY - active.startScrollY)) *
         active.scale;
       var threshold = SNAP_PX * active.scale;
-      var cands = candidatesFor(photos, active.photo.id);
+      var cands = candidatesFor(items, active.item.id);
       var vGuides = [];
       var hGuides = [];
 
       if (active.mode === "move") {
         var nx = active.origX + dxPct;
         var ny = active.origY + dyPct;
-        var w = active.photo.w;
-        var h = heightPct(active.photo);
+        var w = active.item.w;
+        var h = heightPct(active.item);
 
         var vSnap = snapAxis(
           [
@@ -269,23 +295,23 @@
           hGuides.push(hSnap.guide);
         }
 
-        active.photo.x = Math.max(-w + MIN_WIDTH_PCT, Math.min(100 - MIN_WIDTH_PCT, nx));
-        active.photo.y = Math.max(0, ny);
+        active.item.x = Math.max(-w + MIN_WIDTH_PCT, Math.min(100 - MIN_WIDTH_PCT, nx));
+        active.item.y = Math.max(0, ny);
       } else {
         var nw = active.origW + dxPct;
-        nw = Math.max(MIN_WIDTH_PCT, Math.min(100 - active.photo.x, nw));
-        var rightEdge = active.photo.x + nw;
+        nw = Math.max(MIN_WIDTH_PCT, Math.min(100 - active.item.x, nw));
+        var rightEdge = active.item.x + nw;
         var rSnap = snapAxis([{ value: rightEdge }], cands.vertical, threshold);
         if (rSnap) {
           nw += rSnap.delta;
           nw = Math.max(MIN_WIDTH_PCT, nw);
           vGuides.push(rSnap.guide);
         }
-        active.photo.w = nw;
+        active.item.w = nw;
       }
 
       renderGuides(overlay, vGuides, hGuides);
-      applyPositions(canvas, photos);
+      applyPositions(canvas, items);
     }
 
     function endDrag(e) {
@@ -293,12 +319,12 @@
       stopAutoScroll();
       active.block.classList.remove("dragging");
       // Round so the saved JSON stays readable and diffs stay small.
-      active.photo.x = Math.round(active.photo.x * 100) / 100;
-      active.photo.y = Math.round(active.photo.y * 100) / 100;
-      active.photo.w = Math.round(active.photo.w * 100) / 100;
+      active.item.x = Math.round(active.item.x * 100) / 100;
+      active.item.y = Math.round(active.item.y * 100) / 100;
+      active.item.w = Math.round(active.item.w * 100) / 100;
       active = null;
       overlay.innerHTML = "";
-      applyPositions(canvas, photos);
+      applyPositions(canvas, items);
       if (onChange) onChange();
     }
 
@@ -309,7 +335,7 @@
       var dirs = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] };
       var d = dirs[e.key];
       if (!d) return;
-      var target = photos.find(function (p) {
+      var target = items.find(function (p) {
         return p.id === selectedId;
       });
       if (!target) return;
@@ -317,7 +343,7 @@
       var stepPct = (e.shiftKey ? 2 : 0.25);
       target.x = Math.round((target.x + d[0] * stepPct) * 100) / 100;
       target.y = Math.max(0, Math.round((target.y + d[1] * stepPct) * 100) / 100);
-      applyPositions(canvas, photos);
+      applyPositions(canvas, items);
       if (onChange) onChange();
     }
     if (activeKeyHandler) document.removeEventListener("keydown", activeKeyHandler);
@@ -346,8 +372,8 @@
   }
 
   // One cursor per column, all starting below whatever is already there.
-  function newColumnCursors(photos, n) {
-    var bottom = contentBottom(photos);
+  function newColumnCursors(items, n) {
+    var bottom = contentBottom(items);
     var start = bottom > 0 ? bottom + GAP : TOP_MARGIN;
     var cursors = [];
     for (var i = 0; i < (n || COLUMNS); i++) cursors.push(start);
@@ -365,12 +391,12 @@
   // Reflows every photo into columns, in their current order. Photos vary in
   // height, so each one goes to whichever column is currently shortest —
   // that's what stops one column running far ahead of the others.
-  function arrangeInColumns(photos, n) {
+  function arrangeInColumns(items, n) {
     n = n || COLUMNS;
     var geo = columnGeometry(n);
     var cursors = [];
     for (var i = 0; i < n; i++) cursors.push(TOP_MARGIN);
-    photos.forEach(function (p) {
+    items.forEach(function (p) {
       var col = shortestColumn(cursors);
       p.x = Math.round(geo.xs[col] * 100) / 100;
       p.y = Math.round(cursors[col] * 100) / 100;
@@ -380,13 +406,34 @@
   }
 
   // Kept for callers that still want a single below-everything slot.
-  function defaultPlacement(photos) {
-    var bottom = contentBottom(photos);
+  function defaultPlacement(items) {
+    var bottom = contentBottom(items);
     return {
       x: 8,
       y: bottom > 0 ? bottom + GAP : TOP_MARGIN,
       w: 34,
     };
+  }
+
+  // A new paragraph goes below everything, two columns wide. One column is a
+  // sensible width for a photo but a cramped measure for prose.
+  function defaultTextPlacement(items) {
+    var geo = columnGeometry();
+    var bottom = contentBottom(items);
+    return {
+      x: geo.xs[0],
+      y: Math.round((bottom > 0 ? bottom + GAP : TOP_MARGIN) * 100) / 100,
+      w: Math.round((geo.width * 2 + COL_GAP) * 100) / 100,
+    };
+  }
+
+  // Reading order: down the page, then across. Used for the stacked phone
+  // layout and as the input order for Arrange, so both follow the arrangement
+  // on screen rather than the order things happened to be added in.
+  function visualOrder(items) {
+    return items.slice().sort(function (a, b) {
+      return a.y - b.y || a.x - b.x;
+    });
   }
 
   window.WB = window.WB || {};
@@ -395,6 +442,8 @@
       applyPositions: applyPositions,
       enableEditing: enableEditing,
       defaultPlacement: defaultPlacement,
+      defaultTextPlacement: defaultTextPlacement,
+      visualOrder: visualOrder,
       arrangeInColumns: arrangeInColumns,
       columnGeometry: columnGeometry,
       newColumnCursors: newColumnCursors,
