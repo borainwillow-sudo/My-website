@@ -1568,18 +1568,6 @@
           ]
         },
         {
-          "id": "superbalist",
-          "title": "Superbalist",
-          "type": "gallery",
-          "header": {
-            "title": "",
-            "meta": "",
-            "quote": "",
-            "description": ""
-          },
-          "photos": []
-        },
-        {
           "id": "turtle-concervancy",
           "title": "Turtle Concervancy",
           "type": "gallery",
@@ -1624,6 +1612,18 @@
               "w": 41.86
             }
           ]
+        },
+        {
+          "id": "superbalist",
+          "title": "Superbalist",
+          "type": "gallery",
+          "header": {
+            "title": "",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": []
         },
         {
           "id": "yoco",
