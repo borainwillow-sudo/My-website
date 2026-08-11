@@ -1087,26 +1087,26 @@
               "rotate": 270
             },
             {
-              "id": "msojsb83vx2vfe",
-              "display": "photos/msokb3tkqjxrpr.jpg",
-              "thumb": "photos/msokb3tkqjxrpr-t.jpg",
-              "width": 1510,
-              "height": 2277,
-              "caption": "",
-              "x": 73.96,
-              "y": 381.43,
-              "w": 15.47
-            },
-            {
               "id": "msojs2fm2x9p8y",
               "display": "photos/msok9hh69pblvo.jpg",
               "thumb": "photos/msok9hh69pblvo-t.jpg",
               "width": 1535,
               "height": 2269,
               "caption": "",
-              "x": 59.91,
-              "y": 382.22,
+              "x": 58.17,
+              "y": 376.76,
               "w": 18.27
+            },
+            {
+              "id": "msojsb83vx2vfe",
+              "display": "photos/msokb3tkqjxrpr.jpg",
+              "thumb": "photos/msokb3tkqjxrpr-t.jpg",
+              "width": 1510,
+              "height": 2277,
+              "caption": "",
+              "x": 82.18897934549355,
+              "y": 373.6091067782893,
+              "w": 14.46
             }
           ],
           "texts": []
