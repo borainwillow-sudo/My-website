@@ -789,8 +789,8 @@
               "width": 2560,
               "height": 1698,
               "caption": "",
-              "x": 34.33,
-              "y": 143.32,
+              "x": 59.66446217811159,
+              "y": 0,
               "w": 31.33
             },
             {
@@ -871,17 +871,6 @@
               "w": 31.33
             },
             {
-              "id": "msofes4803eyik",
-              "display": "photos/msofes4803eyik.jpg",
-              "thumb": "photos/msofes4803eyik-t.jpg",
-              "width": 2560,
-              "height": 1921,
-              "caption": "",
-              "x": 34.33,
-              "y": 398.28,
-              "w": 31.33
-            },
-            {
               "id": "msofesdki3xoz4",
               "display": "photos/msofesdki3xoz4.jpg",
               "thumb": "photos/msofesdki3xoz4-t.jpg",
@@ -915,14 +904,14 @@
               "w": 31.33
             },
             {
-              "id": "msofetqa6egtng",
-              "display": "photos/msofetqa6egtng.jpg",
-              "thumb": "photos/msofetqa6egtng-t.jpg",
-              "width": 1786,
+              "id": "msoffeegkxeqpu",
+              "display": "photos/msoffeegkxeqpu.jpg",
+              "thumb": "photos/msoffeegkxeqpu-t.jpg",
+              "width": 1949,
               "height": 2560,
               "caption": "",
-              "x": 67.67,
-              "y": 445.12,
+              "x": 1,
+              "y": 493.62,
               "w": 31.33
             }
           ]
