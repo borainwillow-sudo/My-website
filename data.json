@@ -896,8 +896,8 @@
               "width": 2557,
               "height": 1449,
               "caption": "",
-              "x": 7.26,
-              "y": 197.01,
+              "x": 20.04471633583691,
+              "y": 196.72769246244636,
               "w": 53.09,
               "saturation": 0
             },
@@ -1032,18 +1032,6 @@
               "x": 82.61,
               "y": 107.53,
               "w": 14.46
-            },
-            {
-              "id": "msosc04d4mtu9s",
-              "display": "photos/msosc04d4mtu9s.jpg",
-              "thumb": "photos/msosc04d4mtu9s-t.jpg",
-              "width": 1918,
-              "height": 2560,
-              "caption": "",
-              "x": 62.33,
-              "y": 197.01,
-              "w": 22.62,
-              "saturation": 0
             }
           ],
           "texts": []
