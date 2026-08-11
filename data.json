@@ -2103,6 +2103,28 @@
               "x": 34.33,
               "y": 54.33,
               "w": 31.33
+            },
+            {
+              "id": "msojvimyy9dzn1",
+              "display": "photos/msojvimyy9dzn1.jpg",
+              "thumb": "photos/msojvimyy9dzn1-t.jpg",
+              "width": 2044,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 98.17,
+              "w": 31.33
+            },
+            {
+              "id": "msojvj8rb9ncv5",
+              "display": "photos/msojvj8rb9ncv5.jpg",
+              "thumb": "photos/msojvj8rb9ncv5-t.jpg",
+              "width": 2044,
+              "height": 2560,
+              "caption": "",
+              "x": 34.33,
+              "y": 98.17,
+              "w": 31.33
             }
           ]
         },
