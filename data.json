@@ -1934,7 +1934,52 @@
             "quote": "",
             "description": ""
           },
-          "photos": []
+          "photos": [
+            {
+              "id": "msogcvy1zvvrx7",
+              "display": "photos/msogcvy1zvvrx7.jpg",
+              "thumb": "photos/msogcvy1zvvrx7-t.jpg",
+              "width": 2560,
+              "height": 1911,
+              "caption": "",
+              "x": 1,
+              "y": 4,
+              "w": 31.33
+            },
+            {
+              "id": "msogcwfsnfs5zs",
+              "display": "photos/msogcwfsnfs5zs.jpg",
+              "thumb": "photos/msogcwfsnfs5zs-t.jpg",
+              "width": 2560,
+              "height": 1855,
+              "caption": "",
+              "x": 34.33,
+              "y": 4,
+              "w": 31.33
+            },
+            {
+              "id": "msogdbyajf3ggc",
+              "display": "photos/msogdbyajf3ggc.jpg",
+              "thumb": "photos/msogdbyajf3ggc-t.jpg",
+              "width": 2016,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 31.39,
+              "w": 31.33
+            },
+            {
+              "id": "msogdd212b9kk5",
+              "display": "photos/msogdd212b9kk5.jpg",
+              "thumb": "photos/msogdd212b9kk5-t.jpg",
+              "width": 2085,
+              "height": 2560,
+              "caption": "",
+              "x": 34.33,
+              "y": 31.39,
+              "w": 31.33
+            }
+          ]
         }
       ]
     },
