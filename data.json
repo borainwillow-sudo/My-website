@@ -257,6 +257,17 @@
           "x": 0,
           "y": 50.79,
           "w": 56.45
+        },
+        {
+          "id": "msoeqad1esekvw",
+          "display": "photos/msoeqad1esekvw.jpg",
+          "thumb": "photos/msoeqad1esekvw-t.jpg",
+          "width": 2560,
+          "height": 2141,
+          "caption": "",
+          "x": 1,
+          "y": 403.89,
+          "w": 31.33
         }
       ]
     },
