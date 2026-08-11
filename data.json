@@ -1665,18 +1665,6 @@
           ]
         },
         {
-          "id": "superbalist",
-          "title": "Superbalist",
-          "type": "gallery",
-          "header": {
-            "title": "",
-            "meta": "",
-            "quote": "",
-            "description": ""
-          },
-          "photos": []
-        },
-        {
           "id": "deluxe-coffeeworks",
           "title": "Deluxe Coffeeworks",
           "type": "gallery",
@@ -1976,6 +1964,18 @@
               "w": 31.33
             }
           ]
+        },
+        {
+          "id": "superbalist",
+          "title": "Superbalist",
+          "type": "gallery",
+          "header": {
+            "title": "",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": []
         },
         {
           "id": "repentance",
