@@ -968,16 +968,116 @@
           ]
         },
         {
-          "id": "lovers-cat",
-          "title": "untitled project",
+          "id": "untititled-project",
+          "title": "lovers & cat",
           "type": "gallery",
           "header": {
             "title": "",
             "meta": "",
             "quote": "",
-            "description": ""
+            "description": "35mm half-frame scans"
           },
-          "photos": []
+          "photos": [
+            {
+              "id": "msojoasoi7nn0q",
+              "display": "photos/msojoasoi7nn0q.jpg",
+              "thumb": "photos/msojoasoi7nn0q-t.jpg",
+              "width": 2048,
+              "height": 1373,
+              "caption": "",
+              "x": 1,
+              "y": 48.06,
+              "w": 31.33
+            },
+            {
+              "id": "msojoay25lrnoi",
+              "display": "photos/msojoay25lrnoi.jpg",
+              "thumb": "photos/msojoay25lrnoi-t.jpg",
+              "width": 1373,
+              "height": 2048,
+              "caption": "",
+              "x": 34.33,
+              "y": 48.06,
+              "w": 31.33
+            },
+            {
+              "id": "msojob2piu7ozp",
+              "display": "photos/msojob2piu7ozp.jpg",
+              "thumb": "photos/msojob2piu7ozp-t.jpg",
+              "width": 1607,
+              "height": 2048,
+              "caption": "",
+              "x": 67.67,
+              "y": 48.06,
+              "w": 31.33
+            },
+            {
+              "id": "msojob8kqitlpq",
+              "display": "photos/msojob8kqitlpq.jpg",
+              "thumb": "photos/msojob8kqitlpq-t.jpg",
+              "width": 1426,
+              "height": 2048,
+              "caption": "",
+              "x": 54.09,
+              "y": 0,
+              "w": 31.33
+            },
+            {
+              "id": "msojobdstvg0e5",
+              "display": "photos/msojobdstvg0e5.jpg",
+              "thumb": "photos/msojobdstvg0e5-t.jpg",
+              "width": 1463,
+              "height": 2048,
+              "caption": "",
+              "x": 67.67,
+              "y": 91.99,
+              "w": 31.33
+            },
+            {
+              "id": "msojohofx89lbj",
+              "display": "photos/msojohofx89lbj.jpg",
+              "thumb": "photos/msojohofx89lbj-t.jpg",
+              "width": 1477,
+              "height": 2048,
+              "caption": "",
+              "x": 1,
+              "y": 139.85,
+              "w": 31.33
+            },
+            {
+              "id": "msojp19tbaz05x",
+              "display": "photos/msojp19tbaz05x.jpg",
+              "thumb": "photos/msojp19tbaz05x-t.jpg",
+              "width": 2048,
+              "height": 1448,
+              "caption": "",
+              "x": 3.16,
+              "y": 0,
+              "w": 45.13
+            },
+            {
+              "id": "msojp1dikiygl9",
+              "display": "photos/msojp1dikiygl9.jpg",
+              "thumb": "photos/msojp1dikiygl9-t.jpg",
+              "width": 2048,
+              "height": 1373,
+              "caption": "",
+              "x": 34.33,
+              "y": 187.29,
+              "w": 31.33
+            },
+            {
+              "id": "msojp1h0t3qb3y",
+              "display": "photos/msojp1h0t3qb3y.jpg",
+              "thumb": "photos/msojp1h0t3qb3y-t.jpg",
+              "width": 2048,
+              "height": 1373,
+              "caption": "",
+              "x": 67.67,
+              "y": 187.29,
+              "w": 31.33
+            }
+          ]
         },
         {
           "id": "tattoo-convention-polaroids",
@@ -1120,118 +1220,6 @@
               "caption": "",
               "x": 1,
               "y": 130.57,
-              "w": 31.33
-            }
-          ]
-        },
-        {
-          "id": "untititled-project",
-          "title": "lovers & cat",
-          "type": "gallery",
-          "header": {
-            "title": "",
-            "meta": "",
-            "quote": "",
-            "description": "35mm half-frame scans"
-          },
-          "photos": [
-            {
-              "id": "msojoasoi7nn0q",
-              "display": "photos/msojoasoi7nn0q.jpg",
-              "thumb": "photos/msojoasoi7nn0q-t.jpg",
-              "width": 2048,
-              "height": 1373,
-              "caption": "",
-              "x": 1,
-              "y": 48.06,
-              "w": 31.33
-            },
-            {
-              "id": "msojoay25lrnoi",
-              "display": "photos/msojoay25lrnoi.jpg",
-              "thumb": "photos/msojoay25lrnoi-t.jpg",
-              "width": 1373,
-              "height": 2048,
-              "caption": "",
-              "x": 34.33,
-              "y": 48.06,
-              "w": 31.33
-            },
-            {
-              "id": "msojob2piu7ozp",
-              "display": "photos/msojob2piu7ozp.jpg",
-              "thumb": "photos/msojob2piu7ozp-t.jpg",
-              "width": 1607,
-              "height": 2048,
-              "caption": "",
-              "x": 67.67,
-              "y": 48.06,
-              "w": 31.33
-            },
-            {
-              "id": "msojob8kqitlpq",
-              "display": "photos/msojob8kqitlpq.jpg",
-              "thumb": "photos/msojob8kqitlpq-t.jpg",
-              "width": 1426,
-              "height": 2048,
-              "caption": "",
-              "x": 54.09,
-              "y": 0,
-              "w": 31.33
-            },
-            {
-              "id": "msojobdstvg0e5",
-              "display": "photos/msojobdstvg0e5.jpg",
-              "thumb": "photos/msojobdstvg0e5-t.jpg",
-              "width": 1463,
-              "height": 2048,
-              "caption": "",
-              "x": 67.67,
-              "y": 91.99,
-              "w": 31.33
-            },
-            {
-              "id": "msojohofx89lbj",
-              "display": "photos/msojohofx89lbj.jpg",
-              "thumb": "photos/msojohofx89lbj-t.jpg",
-              "width": 1477,
-              "height": 2048,
-              "caption": "",
-              "x": 1,
-              "y": 139.85,
-              "w": 31.33
-            },
-            {
-              "id": "msojp19tbaz05x",
-              "display": "photos/msojp19tbaz05x.jpg",
-              "thumb": "photos/msojp19tbaz05x-t.jpg",
-              "width": 2048,
-              "height": 1448,
-              "caption": "",
-              "x": 3.16,
-              "y": 0,
-              "w": 45.13
-            },
-            {
-              "id": "msojp1dikiygl9",
-              "display": "photos/msojp1dikiygl9.jpg",
-              "thumb": "photos/msojp1dikiygl9-t.jpg",
-              "width": 2048,
-              "height": 1373,
-              "caption": "",
-              "x": 34.33,
-              "y": 187.29,
-              "w": 31.33
-            },
-            {
-              "id": "msojp1h0t3qb3y",
-              "display": "photos/msojp1h0t3qb3y.jpg",
-              "thumb": "photos/msojp1h0t3qb3y-t.jpg",
-              "width": 2048,
-              "height": 1373,
-              "caption": "",
-              "x": 67.67,
-              "y": 187.29,
               "w": 31.33
             }
           ]
