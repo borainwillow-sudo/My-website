@@ -1655,17 +1655,6 @@
           },
           "photos": [
             {
-              "id": "msng6n5pyakgvi",
-              "display": "photos/msng6n5pyakgvi.jpg",
-              "thumb": "photos/msng6n5pyakgvi-t.jpg",
-              "width": 2560,
-              "height": 1957,
-              "caption": "",
-              "x": 1,
-              "y": 4,
-              "w": 31.33
-            },
-            {
               "id": "msng6nhbi50nhm",
               "display": "photos/msng6nhbi50nhm.jpg",
               "thumb": "photos/msng6nhbi50nhm-t.jpg",
@@ -1673,17 +1662,6 @@
               "height": 1961,
               "caption": "",
               "x": 34.33,
-              "y": 4,
-              "w": 31.33
-            },
-            {
-              "id": "msng6nwdo7fxzj",
-              "display": "photos/msng6nwdo7fxzj.jpg",
-              "thumb": "photos/msng6nwdo7fxzj-t.jpg",
-              "width": 2560,
-              "height": 1805,
-              "caption": "",
-              "x": 67.67,
               "y": 4,
               "w": 31.33
             },
@@ -1707,17 +1685,6 @@
               "caption": "",
               "x": 1,
               "y": 31.95,
-              "w": 31.33
-            },
-            {
-              "id": "msng6whehvcqjh",
-              "display": "photos/msng6whehvcqjh.jpg",
-              "thumb": "photos/msng6whehvcqjh-t.jpg",
-              "width": 2560,
-              "height": 1882,
-              "caption": "",
-              "x": 34.33,
-              "y": 32,
               "w": 31.33
             },
             {
@@ -1762,28 +1729,6 @@
               "caption": "",
               "x": 34.33,
               "y": 101.12,
-              "w": 31.33
-            },
-            {
-              "id": "msng79ltuwpuy4",
-              "display": "photos/msng79ltuwpuy4.jpg",
-              "thumb": "photos/msng79ltuwpuy4-t.jpg",
-              "width": 2560,
-              "height": 1953,
-              "caption": "",
-              "x": 67.67,
-              "y": 102.25,
-              "w": 31.33
-            },
-            {
-              "id": "msng7nxuhkxrh2",
-              "display": "photos/msng7nxuhkxrh2.jpg",
-              "thumb": "photos/msng7nxuhkxrh2-t.jpg",
-              "width": 1826,
-              "height": 2560,
-              "caption": "",
-              "x": 1,
-              "y": 102.4,
               "w": 31.33
             },
             {
@@ -1965,8 +1910,8 @@
               "height": 2560,
               "caption": "",
               "x": -1.75,
-              "y": 26.45,
-              "w": 31.33
+              "y": 25.57,
+              "w": 40.81
             },
             {
               "id": "msogdd212b9kk5",
@@ -1977,7 +1922,7 @@
               "caption": "",
               "x": 65.6,
               "y": 0,
-              "w": 34.40000000000001
+              "w": 34.4
             }
           ]
         }
