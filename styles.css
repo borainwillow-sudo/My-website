@@ -1040,23 +1040,37 @@ body.is-editing {
     padding: 22px 18px 6rem;
   }
 
-  /* Free-form positions don't translate to a narrow screen, so photos fall
-     back to a simple two-column grid — matching the reference site. */
-  .canvas {
+  /* Two ways to show a free-form page on a phone, chosen in Style → On phones.
+
+     Shrunk (the default): the canvas is laid out at a desktop width by the
+     layout engine and scaled down as one piece, so the arrangement survives
+     intact. The frame is given the shrunk height, because a transform leaves
+     the layout box its original size and the page would otherwise scroll a
+     screen's worth of nothing. */
+  body.phone-desktop-layout .canvas-frame {
+    overflow: hidden;
+  }
+
+  body.phone-desktop-layout .canvas {
+    transform-origin: 0 0;
+  }
+
+  /* Stacked: the arrangement is dropped and photos run one after another. */
+  body:not(.phone-desktop-layout) .canvas {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 26px 16px;
     padding-bottom: 0 !important;
   }
 
-  .photo-block {
+  body:not(.phone-desktop-layout) .photo-block {
     position: static !important;
     width: auto !important;
   }
 
   /* A paragraph squeezed into half a phone screen is unreadable, so text
      blocks break out of the grid and take the full width. */
-  .text-block {
+  body:not(.phone-desktop-layout) .text-block {
     grid-column: 1 / -1;
   }
 
@@ -1082,7 +1096,7 @@ body.is-editing {
 }
 
 @media (max-width: 420px) {
-  .canvas {
+  body:not(.phone-desktop-layout) .canvas {
     grid-template-columns: 1fr;
   }
 }

@@ -67,17 +67,45 @@
     return max;
   }
 
-  // Below this width the canvas becomes a plain stacked grid and the
-  // free-form coordinates don't apply.
-  function isStacked() {
+  // Below this width the canvas either keeps the free-form arrangement,
+  // shrunk to fit, or falls back to a plain stacked grid — see below.
+  function isNarrow() {
     return window.matchMedia("(max-width: 820px)").matches;
+  }
+
+  // Reproducing the desktop arrangement on a phone means laying the canvas out
+  // at a desktop width and scaling the whole thing down, rather than laying it
+  // out narrow. Positions are proportional and would survive either way, but
+  // text is sized in pixels: at a real 390px the captions would wrap
+  // differently, text blocks would grow taller and the arrangement would no
+  // longer be the one that was composed. Scaling shrinks type along with
+  // everything else, so what you get is exactly the desktop page, smaller.
+  //
+  // 1100px is about what the canvas measures on a 1440px laptop, which is what
+  // a layout is most likely to have been composed at.
+  var PHONE_DESIGN_WIDTH = 1100;
+
+  function isScaledPhone() {
+    return isNarrow() && document.body.classList.contains("phone-desktop-layout");
+  }
+
+  function frameOf(canvas) {
+    var p = canvas.parentElement;
+    return p && p.classList.contains("canvas-frame") ? p : null;
   }
 
   // Lays items out and sizes the canvas to fit them.
   function applyPositions(canvas, items) {
     var blocks = canvas.querySelectorAll("[data-item-id]");
+    var frame = frameOf(canvas);
+    var scaled = isScaledPhone();
 
-    if (isStacked()) {
+    // Anything left over from the other mode would fight with this one.
+    canvas.style.transform = "";
+    canvas.style.width = "";
+    if (frame) frame.style.height = "";
+
+    if (isNarrow() && !scaled) {
       // Hand layout back to the grid.
       canvas.style.height = "";
       blocks.forEach(function (el) {
@@ -88,7 +116,14 @@
       return;
     }
 
-    var width = canvas.clientWidth;
+    var width;
+    if (scaled) {
+      canvas.style.width = PHONE_DESIGN_WIDTH + "px";
+      width = PHONE_DESIGN_WIDTH;
+    } else {
+      width = canvas.clientWidth;
+    }
+
     blocks.forEach(function (el) {
       var item = items.find(function (p) {
         return p.id === el.dataset.itemId;
@@ -109,6 +144,14 @@
       if (width) measuredHeight[el.dataset.itemId] = (el.offsetHeight / width) * 100;
     });
     canvas.style.height = bottom > 0 ? bottom + "px" : "";
+
+    if (scaled && frame) {
+      // A transform doesn't change the layout box, so the frame has to be told
+      // how tall the shrunk canvas actually looks or the page scrolls wrong.
+      var k = frame.clientWidth / PHONE_DESIGN_WIDTH;
+      canvas.style.transform = "scale(" + k + ")";
+      frame.style.height = bottom > 0 ? bottom * k + "px" : "";
+    }
   }
 
   function candidatesFor(items, movingId) {

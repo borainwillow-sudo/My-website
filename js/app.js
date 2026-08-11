@@ -1,7 +1,7 @@
 (function () {
   // Shown at the bottom of the Style panel. Bump alongside the ?v= query
   // strings in index.html so a stale copy can be identified at a glance.
-  var EDITOR_VERSION = "16";
+  var EDITOR_VERSION = "17";
   var data = null;
   var currentId = "home";
   var openGroups = {};
@@ -98,6 +98,16 @@
       value = 'url("' + src + '") ' + hx + " " + hy + ", auto";
     }
     document.documentElement.style.setProperty("--site-cursor", value);
+  }
+
+  // On a phone, either keep the desktop arrangement (shrunk to fit) or fall
+  // back to the stacked grid. Both the stylesheet and the layout engine read
+  // this class.
+  function applyPhoneLayout() {
+    document.body.classList.toggle(
+      "phone-desktop-layout",
+      (data.phoneLayout || "desktop") === "desktop"
+    );
   }
 
   // Blank space below the last photo, as a proportion of screen height.
@@ -614,10 +624,12 @@
 
     main.innerHTML =
       headerHTML(page) +
-      '<div class="canvas" id="canvas">' +
+      // The frame is what holds the page's height open on a phone, where the
+      // canvas itself is laid out wide and then scaled down.
+      '<div class="canvas-frame"><div class="canvas" id="canvas">' +
       canvasInner +
       '<div class="snap-overlay"></div>' +
-      "</div>" +
+      "</div></div>" +
       (items.length === 0
         ? '<p class="empty-note">' +
           (window.WB.isEditing()
@@ -664,6 +676,7 @@
     applyTypography();
     applyCursor();
     applyFooterSpace();
+    applyPhoneLayout();
     renderHeading();
     document.title = data.siteName;
     var group = parentGroupOf(data, currentId);
@@ -834,6 +847,7 @@
       : '<span class="hint" style="margin:0">No logo — showing the name as text.</span>';
     var footerSpace =
       data.footer && typeof data.footer.space === "number" ? data.footer.space : 45;
+    var phoneLayout = data.phoneLayout === "stacked" ? "stacked" : "desktop";
     var cursor = data.cursor || {};
     var cursorPreview = cursor.image
       ? '<img class="cursor-preview" src="' + esc(window.WB.resolveSrc(cursor.image)) + '" alt="">'
@@ -892,6 +906,18 @@
         '<input type="number" id="footer-space-num" min="0" max="100" step="5" value="' +
         footerSpace +
         '"></div>' +
+        '<div class="group-heading">On phones</div>' +
+        '<p class="hint">A phone screen is far narrower than the one a layout is composed on, so either the whole arrangement is shrunk to fit, or the photos are stacked into a simple grid instead.</p>' +
+        '<div class="typo-row"><span>Layout</span>' +
+        '<select id="phone-layout">' +
+        '<option value="desktop"' +
+        (phoneLayout === "desktop" ? " selected" : "") +
+        ">Same as desktop, shrunk</option>" +
+        '<option value="stacked"' +
+        (phoneLayout === "stacked" ? " selected" : "") +
+        ">Stacked grid</option>" +
+        "</select></div>" +
+        '<p class="hint">Shrunk keeps every photo exactly where you put it, but the type comes down with it and captions get very small — readers can pinch to zoom. Stacked drops the arrangement and shows the photos one after another at a readable size.</p>' +
         '<p class="hint" style="margin-top:18px">Editor version ' +
         EDITOR_VERSION +
         "</p>" +
@@ -955,6 +981,13 @@
     spaceNum.addEventListener("input", function () {
       if (this.value === "") return;
       setFooterSpace(this.value);
+    });
+
+    modal.querySelector("#phone-layout").addEventListener("change", function () {
+      data.phoneLayout = this.value === "stacked" ? "stacked" : "desktop";
+      applyPhoneLayout();
+      renderPage();
+      markDirty();
     });
 
     modal.querySelector("#cursor-upload").addEventListener("click", function () {
