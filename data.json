@@ -246,6 +246,17 @@
           "x": 51.05,
           "y": 322.44,
           "w": 48.76
+        },
+        {
+          "id": "msoecf6wisixxc",
+          "display": "photos/msoecf6wisixxc.jpg",
+          "thumb": "photos/msoecf6wisixxc-t.jpg",
+          "width": 2560,
+          "height": 2141,
+          "caption": "",
+          "x": 62.705,
+          "y": 152.89,
+          "w": 31.33
         }
       ]
     },
