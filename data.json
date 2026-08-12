@@ -352,7 +352,9 @@
           "caption": "",
           "x": 55.32,
           "y": 904.16,
-          "w": 34.9
+          "w": 34.9,
+          "title": "",
+          "link": "#/dorps"
         },
         {
           "id": "mspwh4yqjef9js",
