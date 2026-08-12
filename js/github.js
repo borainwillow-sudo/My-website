@@ -18,7 +18,11 @@
       var repo = seg || owner + ".github.io";
       return { owner: owner, repo: repo, branch: "main" };
     }
-    return null;
+    // Served from a custom domain, where the address says nothing about where
+    // the site lives. This is that repository, so fall back to it rather than
+    // making someone type it in — anything stored above still wins, so it can
+    // be pointed elsewhere from the Connect panel if it ever moves.
+    return { owner: "borainwillow-sudo", repo: "My-website", branch: "main" };
   }
 
   function setRepo(owner, repo, branch) {
