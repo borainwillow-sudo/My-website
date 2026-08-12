@@ -146,12 +146,34 @@
     canvas.style.height = bottom > 0 ? bottom + "px" : "";
 
     if (scaled && frame) {
+      // Photos are free to hang past the canvas edges — on a desktop they
+      // bleed into the page's side gutters and are seen in full. What gets
+      // scaled to the phone's width is therefore the full extent of the
+      // content, not the canvas: fitting the canvas alone would push that
+      // bleed off the screen and cut the photos.
+      var span = contentSpan(items);
+      var leftPx = (span.left / 100) * PHONE_DESIGN_WIDTH;
+      var k = frame.clientWidth / (((span.right - span.left) / 100) * PHONE_DESIGN_WIDTH);
+      // Origin is the top-left, so the shift is applied in canvas coordinates
+      // and scaled with everything else.
+      canvas.style.transform = "scale(" + k + ") translateX(" + -leftPx + "px)";
       // A transform doesn't change the layout box, so the frame has to be told
       // how tall the shrunk canvas actually looks or the page scrolls wrong.
-      var k = frame.clientWidth / PHONE_DESIGN_WIDTH;
-      canvas.style.transform = "scale(" + k + ")";
       frame.style.height = bottom > 0 ? bottom * k + "px" : "";
     }
+  }
+
+  // How far the content actually reaches sideways, in percent of canvas width.
+  // Never narrower than the canvas itself, so a page whose photos all sit
+  // inside it is unaffected.
+  function contentSpan(items) {
+    var left = 0;
+    var right = 100;
+    items.forEach(function (p) {
+      if (p.x < left) left = p.x;
+      if (p.x + p.w > right) right = p.x + p.w;
+    });
+    return { left: left, right: right };
   }
 
   function candidatesFor(items, movingId) {
