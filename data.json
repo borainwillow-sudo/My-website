@@ -1258,6 +1258,18 @@
               "x": 8.46,
               "y": 166.81,
               "w": 34.95
+            },
+            {
+              "id": "msq0lop0nkgsgk",
+              "display": "photos/msq0lop0nkgsgk.jpg",
+              "thumb": "photos/msq0lop0nkgsgk-t.jpg",
+              "width": 2560,
+              "height": 1717,
+              "caption": "",
+              "x": 1,
+              "y": 202.23,
+              "w": 31.33,
+              "saturation": 94
             }
           ],
           "texts": []
