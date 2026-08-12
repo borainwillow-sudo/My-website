@@ -329,6 +329,17 @@
           "x": 55.39,
           "y": 916.73,
           "w": 34.9
+        },
+        {
+          "id": "mspwh4yqjef9js",
+          "display": "photos/mspwh4yqjef9js.jpg",
+          "thumb": "photos/mspwh4yqjef9js-t.jpg",
+          "width": 2102,
+          "height": 2560,
+          "caption": "",
+          "x": 55.650000000000006,
+          "y": 962.743716469957,
+          "w": 31.33
         }
       ]
     },
