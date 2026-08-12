@@ -262,6 +262,17 @@
           "x": -0.19,
           "y": 625.09,
           "w": 49.02
+        },
+        {
+          "id": "mspvaayln4fb9i",
+          "display": "photos/mspvaayln4fb9i.jpg",
+          "thumb": "photos/mspvaayln4fb9i-t.jpg",
+          "width": 2384,
+          "height": 2442,
+          "caption": "",
+          "x": 10.84,
+          "y": 797.8901166845493,
+          "w": 31.33
         }
       ]
     },
