@@ -110,8 +110,8 @@
           "width": 2560,
           "height": 1748,
           "caption": "",
-          "x": 52.79,
-          "y": 938.41,
+          "x": 52.95,
+          "y": 945.0537251877682,
           "w": 37.22,
           "title": "",
           "link": "#/portraits"
@@ -263,19 +263,6 @@
           "x": 57.7,
           "y": 426.02,
           "w": 29.85,
-          "title": "",
-          "link": "#/portraits"
-        },
-        {
-          "id": "mspvcr16yhfxs3",
-          "display": "photos/mspvcr16yhfxs3.jpg",
-          "thumb": "photos/mspvcr16yhfxs3-t.jpg",
-          "width": 1219,
-          "height": 979,
-          "caption": "",
-          "x": 53,
-          "y": 965.98,
-          "w": 37.32,
           "title": "",
           "link": "#/portraits"
         },
