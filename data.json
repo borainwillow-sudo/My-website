@@ -284,6 +284,17 @@
           "x": 13.64,
           "y": 710.71,
           "w": 70.39
+        },
+        {
+          "id": "mspvscic82bp0q",
+          "display": "photos/mspvscic82bp0q.jpg",
+          "thumb": "photos/mspvscic82bp0q-t.jpg",
+          "width": 2016,
+          "height": 2560,
+          "caption": "",
+          "x": 1,
+          "y": 895.6,
+          "w": 55.34
         }
       ]
     },
