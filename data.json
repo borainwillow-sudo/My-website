@@ -375,6 +375,17 @@
           "x": 14.98,
           "y": 653.53,
           "w": 34.68
+        },
+        {
+          "id": "msq3asxm9yljqx",
+          "display": "photos/msq3asxm9yljqx.jpg",
+          "thumb": "photos/msq3asxm9yljqx-t.jpg",
+          "width": 1826,
+          "height": 2560,
+          "caption": "",
+          "x": 1,
+          "y": 960.19,
+          "w": 31.33
         }
       ]
     },
