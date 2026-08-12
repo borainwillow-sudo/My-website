@@ -296,7 +296,9 @@
           "caption": "",
           "x": 62.79,
           "y": 109.93,
-          "w": 28.26
+          "w": 28.26,
+          "title": "",
+          "link": "#/client-work"
         },
         {
           "id": "mspwc2hgpwpkby",
