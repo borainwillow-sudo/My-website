@@ -1,7 +1,7 @@
 (function () {
   // Shown at the bottom of the Style panel. Bump alongside the ?v= query
   // strings in index.html so a stale copy can be identified at a glance.
-  var EDITOR_VERSION = "20";
+  var EDITOR_VERSION = "21";
   var data = null;
   var currentId = "home";
   var openGroups = {};
@@ -584,7 +584,18 @@
     );
   }
 
+  // Rebuilding the page throws away everything in it and puts it back. Where
+  // that happens under a reader who is part-way down — a rotation, a photo
+  // edited from the panel — the browser can land them somewhere else, so the
+  // scroll position is put back afterwards. Navigation still goes to the top:
+  // onHashChange does that after this returns.
   function renderPage() {
+    var keepScroll = window.scrollY;
+    renderPageInner();
+    if (keepScroll && window.scrollY !== keepScroll) window.scrollTo(0, keepScroll);
+  }
+
+  function renderPageInner() {
     var page = findPage(data, currentId);
     var main = $("main");
 
@@ -717,7 +728,11 @@
   function updateEditUI() {
     var editing = window.WB.isEditing();
     $("edit-bar").hidden = !editing;
-    $("edit-site-btn").hidden = editing;
+    // Visitors never see the button. This is about keeping it out of the way,
+    // not about security — the site is public and anyone can read this file.
+    // What actually protects the site is the GitHub token, which exists only
+    // in this browser; without it nothing can be published, button or no.
+    $("edit-site-btn").hidden = editing || !window.WB.editorShown();
     document.body.classList.toggle("is-editing", editing);
   }
 
@@ -1902,10 +1917,20 @@
   });
 
   var resizeTimer = null;
+  var lastWidth = window.innerWidth;
   window.addEventListener("resize", function () {
     // Not debounced: turning the phone changes whether the name wraps, and the
     // drawer must never be left sitting behind the bar, even briefly.
     measureMobileBar();
+
+    // A phone hides its address bar as you scroll down and shows it again as
+    // you scroll back, and each of those fires a resize with the width
+    // unchanged. Rebuilding the page there replaces everything the reader is
+    // scrolling through mid-gesture, which is what made a fast scroll stutter
+    // and jump. Only a real width change can alter the layout, so only a real
+    // width change earns a re-render.
+    if (window.innerWidth === lastWidth) return;
+    lastWidth = window.innerWidth;
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(renderPage, 180);
   });
@@ -1913,6 +1938,9 @@
   // ---------- boot ----------
 
   (async function init() {
+    // A device that doesn't show the editor has no business being left in edit
+    // mode — otherwise ?edit=off would hide the button but leave the toolbar.
+    if (!window.WB.editorShown()) window.WB.setEditing(false);
     data = await window.WB.getData();
     var cleaned = pruneTypography();
     // Restore photos staged but not yet published in an earlier session, so

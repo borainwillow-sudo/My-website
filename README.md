@@ -29,6 +29,23 @@ Then open `http://localhost:8000/`.
 
 ## Editing
 
+**Edit site** is hidden by default, so visitors see a plain portfolio with no
+sign that the site is editable. To show the button on a device, load the site
+once with `?edit` on the address:
+
+```
+https://borainwillow-sudo.github.io/My-website/?edit
+```
+
+The button then stays on that device until you load `?edit=off`. The marker is
+taken straight back out of the address bar, so it can't be carried into a
+bookmark you share or read over your shoulder. Each device is separate — the
+same as the password and the GitHub token.
+
+This is tidiness, not a lock. The site is public and anyone can read this code
+and find `?edit`. What actually protects the site is the **token**, which lives
+only in your browser: without it nothing can be published, button or no.
+
 Click **Edit site** (bottom right). The first time you'll set a password;
 after that it asks for it. In edit mode you can:
 
