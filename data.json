@@ -366,19 +366,6 @@
           "w": 34.68
         },
         {
-          "id": "mspv8lfq9dmge8",
-          "display": "photos/mspvwjwuqjbwys.jpg",
-          "thumb": "photos/mspvwjwuqjbwys-t.jpg",
-          "width": 1728,
-          "height": 2334,
-          "caption": "",
-          "x": 62.171610783261805,
-          "y": 987.3030083154507,
-          "w": 35.12,
-          "title": "",
-          "link": "#/turtle-concervancy"
-        },
-        {
           "id": "msq2z45yrcu0so",
           "display": "photos/msq2z45yrcu0so.jpg",
           "thumb": "photos/msq2z45yrcu0so-t.jpg",
@@ -388,17 +375,6 @@
           "x": 14.98,
           "y": 653.53,
           "w": 34.68
-        },
-        {
-          "id": "msq31c27g529io",
-          "display": "photos/msq31c27g529io.jpg",
-          "thumb": "photos/msq31c27g529io-t.jpg",
-          "width": 1949,
-          "height": 2560,
-          "caption": "",
-          "x": 7.89,
-          "y": 952.88,
-          "w": 37.01
         }
       ]
     },
