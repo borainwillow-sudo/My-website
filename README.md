@@ -4,7 +4,9 @@ Willow Borain's photography portfolio — a static site (plain HTML/CSS/JS,
 Helvetica throughout, no build step and no framework) with an in-browser
 editor that publishes straight to this repository.
 
-Live at **https://borainwillow-sudo.github.io/My-website/**
+Live at **https://willowborain.com** — the `CNAME` file at the root is what
+points the domain here. The old `borainwillow-sudo.github.io/My-website/`
+address still works and redirects to it.
 
 ## Structure
 
@@ -34,7 +36,7 @@ sign that the site is editable. To show the button on a device, load the site
 once with `?edit` on the address:
 
 ```
-https://borainwillow-sudo.github.io/My-website/?edit
+https://willowborain.com/?edit
 ```
 
 The button then stays on that device until you load `?edit=off`. The marker is
@@ -217,10 +219,11 @@ with **Repository access: only `My-website`** and
 click **Connect**, check the repository field says
 `borainwillow-sudo/My-website`, and paste the token.
 
-The repository field is filled in automatically when the site is served from
-`*.github.io`. On any other host — Netlify, a custom domain, or a local
-server — type it in as `owner/repository` (pasting the full GitHub URL works
-too). It's remembered afterwards.
+The repository field fills itself in, on the custom domain and on
+`*.github.io` alike. It only needs typing — as `owner/repository`, or by
+pasting the full GitHub URL — if the site is ever served from somewhere else,
+or moves to a different repository. Whatever is typed there is remembered and
+takes priority afterwards.
 
 After that, saving is automatic: about 2.5 seconds after you stop making
 changes, `data.json` and any new photos are committed in a single commit. The
