@@ -318,6 +318,17 @@
           "x": 34.44,
           "y": 875.75,
           "w": 55.78
+        },
+        {
+          "id": "mspwfw2iz7qde1",
+          "display": "photos/mspwfw2iz7qde1.jpg",
+          "thumb": "photos/mspwfw2iz7qde1-t.jpg",
+          "width": 2049,
+          "height": 2560,
+          "caption": "",
+          "x": 57.71,
+          "y": 917.5539894045065,
+          "w": 31.33
         }
       ]
     },
