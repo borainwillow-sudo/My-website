@@ -228,7 +228,9 @@
           "caption": "",
           "x": 11.51,
           "y": 129.77,
-          "w": 40.25
+          "w": 40.25,
+          "title": "",
+          "link": "#/portraits"
         },
         {
           "id": "mspv7hsljvsluh",
