@@ -273,6 +273,17 @@
           "x": 2.91,
           "y": 816.06,
           "w": 31.33
+        },
+        {
+          "id": "mspvcr16yhfxs3",
+          "display": "photos/mspvcr16yhfxs3.jpg",
+          "thumb": "photos/mspvcr16yhfxs3-t.jpg",
+          "width": 1219,
+          "height": 979,
+          "caption": "",
+          "x": 51.415,
+          "y": 804.0644816255365,
+          "w": 50.47
         }
       ]
     },
