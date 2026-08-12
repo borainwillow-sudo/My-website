@@ -1,7 +1,7 @@
 (function () {
   // Shown at the bottom of the Style panel. Bump alongside the ?v= query
   // strings in index.html so a stale copy can be identified at a glance.
-  var EDITOR_VERSION = "19";
+  var EDITOR_VERSION = "20";
   var data = null;
   var currentId = "home";
   var openGroups = {};
