@@ -288,7 +288,9 @@
           "caption": "",
           "x": 0,
           "y": 950.65,
-          "w": 52.9
+          "w": 52.9,
+          "title": "",
+          "link": "#/portraits"
         },
         {
           "id": "mspvscic82bp0q",
@@ -365,7 +367,9 @@
           "caption": "",
           "x": 55.46,
           "y": 950.65,
-          "w": 34.83
+          "w": 34.83,
+          "title": "",
+          "link": "#/repentance"
         }
       ]
     },
