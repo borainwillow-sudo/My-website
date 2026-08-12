@@ -1,6 +1,8 @@
 :root {
-  /* Side inset on a phone. The canvas cancels it to run edge to edge. */
+  /* Side inset on a phone: the wider one for text, a narrow one for the
+     photos, which want as much of the screen as they can get. */
   --main-pad-x: 18px;
+  --canvas-pad-x: 8px;
   --ink: #111;
   --muted: #6f6f6f;
   --faint: #b9b9b9;
@@ -1056,13 +1058,14 @@ body.is-editing {
      intact. The frame is given the shrunk height, because a transform leaves
      the layout box its original size and the page would otherwise scroll a
      screen's worth of nothing. */
-  /* Edge to edge. The photos are the page here, and the layout engine has
-     already reserved room for any that hang past the canvas edge, so the side
-     inset would only make them smaller. Cancelled on the canvas alone — the
-     page's heading and captions keep their margin. */
+  /* The photos get a much narrower inset than the text does — the layout
+     engine has already reserved room for any that hang past the canvas edge,
+     so a wide margin here would only make them smaller for no reason. The
+     page's own inset is pulled back to --canvas-pad-x on the canvas alone; the
+     heading and captions keep the wider one. */
   body.phone-desktop-layout .canvas-frame {
-    margin-left: calc(-1 * var(--main-pad-x));
-    margin-right: calc(-1 * var(--main-pad-x));
+    margin-left: calc(var(--canvas-pad-x) - var(--main-pad-x));
+    margin-right: calc(var(--canvas-pad-x) - var(--main-pad-x));
     overflow: hidden;
   }
 
