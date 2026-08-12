@@ -414,6 +414,17 @@
           "x": 14.98,
           "y": 466.1,
           "w": 34.68
+        },
+        {
+          "id": "mspyzbyd67rctg",
+          "display": "photos/mspyzbyd67rctg.jpg",
+          "thumb": "photos/mspyzbyd67rctg-t.jpg",
+          "width": 1716,
+          "height": 2560,
+          "caption": "",
+          "x": 1,
+          "y": 1105.16,
+          "w": 31.33
         }
       ]
     },
