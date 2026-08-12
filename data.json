@@ -240,6 +240,17 @@
           "x": -0.7,
           "y": 543.85,
           "w": 49.53
+        },
+        {
+          "id": "mspv6z97nm9y0e",
+          "display": "photos/mspv6z97nm9y0e.jpg",
+          "thumb": "photos/mspv6z97nm9y0e-t.jpg",
+          "width": 2104,
+          "height": 2560,
+          "caption": "",
+          "x": 1,
+          "y": 895.55,
+          "w": 93.44
         }
       ]
     },
