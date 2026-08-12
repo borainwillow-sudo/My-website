@@ -403,6 +403,17 @@
           "x": 60.14,
           "y": 214.06,
           "w": 27.41
+        },
+        {
+          "id": "mspynqolw15h83",
+          "display": "photos/mspynqolw15h83.jpg",
+          "thumb": "photos/mspynqolw15h83-t.jpg",
+          "width": 2560,
+          "height": 1931,
+          "caption": "",
+          "x": 58.18,
+          "y": 879.583939453125,
+          "w": 31.33
         }
       ]
     },
