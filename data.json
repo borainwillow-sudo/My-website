@@ -287,7 +287,9 @@
           "caption": "",
           "x": 50.9,
           "y": 360.21,
-          "w": 43.89
+          "w": 43.89,
+          "title": "",
+          "link": "#/portraits"
         },
         {
           "id": "mspw5fihqtlb80",
