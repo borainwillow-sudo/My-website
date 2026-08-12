@@ -307,6 +307,17 @@
           "y": 823.71,
           "w": 36.58,
           "saturation": 0
+        },
+        {
+          "id": "mspwdy7r73jkal",
+          "display": "photos/mspwdy7r73jkal.jpg",
+          "thumb": "photos/mspwdy7r73jkal-t.jpg",
+          "width": 2560,
+          "height": 1770,
+          "caption": "",
+          "x": 1,
+          "y": 921.03,
+          "w": 31.33
         }
       ]
     },
