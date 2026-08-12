@@ -284,6 +284,17 @@
           "x": 50.89,
           "y": 361.29,
           "w": 43.89
+        },
+        {
+          "id": "mspw573mxryww5",
+          "display": "photos/mspw573mxryww5.jpg",
+          "thumb": "photos/mspw573mxryww5-t.jpg",
+          "width": 2041,
+          "height": 2560,
+          "caption": "",
+          "x": 1,
+          "y": 933.96,
+          "w": 31.33
         }
       ]
     },
