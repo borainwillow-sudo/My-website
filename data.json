@@ -22,7 +22,7 @@
       "size": 13
     },
     "caption": {
-      "weight": 400,
+      "weight": 700,
       "size": 50
     }
   },
@@ -2145,7 +2145,7 @@
           "text": "borainwillow@gmail.com",
           "align": "center",
           "x": 37.82,
-          "y": 37.39,
+          "y": 47.36,
           "w": 24.36
         }
       ]
