@@ -240,6 +240,17 @@
           "x": -0.7,
           "y": 543.85,
           "w": 49.53
+        },
+        {
+          "id": "mspv7hsljvsluh",
+          "display": "photos/mspv7hsljvsluh.jpg",
+          "thumb": "photos/mspv7hsljvsluh-t.jpg",
+          "width": 2560,
+          "height": 2141,
+          "caption": "",
+          "x": 25.185,
+          "y": 620.8006370708154,
+          "w": 31.33
         }
       ]
     },
