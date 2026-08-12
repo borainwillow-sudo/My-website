@@ -70,7 +70,7 @@
           "height": 2560,
           "caption": "",
           "x": 54.89,
-          "y": 491.41015423819744,
+          "y": 491.79,
           "w": 41.02
         },
         {
@@ -80,8 +80,8 @@
           "width": 2064,
           "height": 2560,
           "caption": "",
-          "x": 38.99,
-          "y": 529.46,
+          "x": 1.23,
+          "y": 533.9,
           "w": 41.67
         },
         {
@@ -229,17 +229,6 @@
           "x": 54.33,
           "y": 122.91,
           "w": 42.14
-        },
-        {
-          "id": "mspv52g3l22xrm",
-          "display": "photos/mspv52g3l22xrm.jpg",
-          "thumb": "photos/mspv52g3l22xrm-t.jpg",
-          "width": 1970,
-          "height": 2560,
-          "caption": "",
-          "x": -0.7,
-          "y": 543.85,
-          "w": 49.53
         },
         {
           "id": "mspv7hsljvsluh",
