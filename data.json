@@ -381,6 +381,17 @@
           "x": 7.44,
           "y": 61.83,
           "w": 28.18
+        },
+        {
+          "id": "mspxnspzp72rpn",
+          "display": "photos/mspxnspzp72rpn.jpg",
+          "thumb": "photos/mspxnspzp72rpn-t.jpg",
+          "width": 2560,
+          "height": 1958,
+          "caption": "",
+          "x": 11.660000000000004,
+          "y": 893.97872265625,
+          "w": 31.33
         }
       ]
     },
