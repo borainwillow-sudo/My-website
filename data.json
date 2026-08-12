@@ -117,17 +117,6 @@
           "link": "#/portraits"
         },
         {
-          "id": "msmvqyeezfr2sd",
-          "display": "photos/mspz5f9asauzsh.jpg",
-          "thumb": "photos/mspz5f9asauzsh-t.jpg",
-          "width": 2560,
-          "height": 1790,
-          "caption": "",
-          "x": 14.88,
-          "y": 653.51,
-          "w": 34.78
-        },
-        {
           "id": "msn2s24kgrvi0u",
           "display": "photos/msoq31p9cnp91h.jpg",
           "thumb": "photos/msoq31p9cnp91h-t.jpg",
@@ -396,8 +385,8 @@
           "width": 2560,
           "height": 1816,
           "caption": "",
-          "x": 53.05,
-          "y": 936.1,
+          "x": 21.988606491416306,
+          "y": 649.1205539163091,
           "w": 37.07
         },
         {
