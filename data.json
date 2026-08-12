@@ -2157,7 +2157,7 @@
           "caption": "",
           "x": 17.67,
           "y": 15.26,
-          "w": 30.57
+          "w": 30.86
         }
       ],
       "texts": [
@@ -2175,9 +2175,9 @@
           "type": "text",
           "text": "film photographer\nphoto & lighting assist",
           "align": "left",
-          "x": 1,
-          "y": 57.49,
-          "w": 66.46
+          "x": 34.44,
+          "y": 28.57,
+          "w": 49.69204466201716
         }
       ]
     }
