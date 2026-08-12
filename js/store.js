@@ -2,6 +2,7 @@
   var DRAFT_KEY = "wb_draft";
   var AUTH_KEY = "wb_auth";
   var EDITING_KEY = "wb_editing";
+  var EDITOR_SHOWN_KEY = "wb_editor_shown";
   var PENDING_KEY = "wb_pending_photos";
 
   // Photos that have been processed in the browser but not yet committed.
@@ -256,6 +257,39 @@
     localStorage.setItem(EDITING_KEY, v ? "true" : "false");
   }
 
+  // Whether this browser shows the Edit site button at all. Off everywhere by
+  // default, so a visitor sees a plain portfolio; turned on for a device by
+  // loading the site once with ?edit on the address, and off again with
+  // ?edit=off. Remembered per browser, like the password and the token.
+  //
+  // A convenience, not a lock: the site is public and this file can be read by
+  // anyone. Publishing needs the GitHub token, which never leaves this device.
+  function readEditorShown() {
+    var q = new URLSearchParams(location.search);
+    if (q.has("edit")) {
+      var on = q.get("edit") !== "off";
+      localStorage.setItem(EDITOR_SHOWN_KEY, on ? "true" : "false");
+      // Take it back out of the address bar so it isn't carried into a
+      // bookmark that gets shared, or left showing over someone's shoulder.
+      if (history.replaceState) {
+        q.delete("edit");
+        var rest = q.toString();
+        history.replaceState(
+          null,
+          "",
+          location.pathname + (rest ? "?" + rest : "") + location.hash
+        );
+      }
+    }
+    return localStorage.getItem(EDITOR_SHOWN_KEY) === "true";
+  }
+
+  var editorShownValue = readEditorShown();
+
+  function editorShown() {
+    return editorShownValue;
+  }
+
   window.WB = window.WB || {};
   Object.assign(window.WB, {
     getData: getData,
@@ -268,6 +302,7 @@
     getAuth: getAuth,
     isEditing: isEditing,
     setEditing: setEditing,
+    editorShown: editorShown,
     addPendingPhoto: addPendingPhoto,
     addPendingFiles: addPendingFiles,
     hasPending: hasPending,
