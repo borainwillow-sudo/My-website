@@ -73,7 +73,9 @@
           "caption": "",
           "x": 55.39,
           "y": 486.48,
-          "w": 34.43
+          "w": 34.43,
+          "title": "",
+          "link": "#/portraits"
         },
         {
           "id": "mshq6j7wht2jid",
@@ -318,7 +320,9 @@
           "x": 14.89,
           "y": 552.66,
           "w": 35.11,
-          "saturation": 0
+          "saturation": 0,
+          "title": "",
+          "link": "#/tayla-mike"
         },
         {
           "id": "mspwdy7r73jkal",
