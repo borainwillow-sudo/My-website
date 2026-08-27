@@ -2103,9 +2103,31 @@
           "width": 2237,
           "height": 2560,
           "caption": "",
-          "x": -1.53,
+          "x": -3.45,
           "y": 73.65,
-          "w": 31.33
+          "w": 32.31
+        },
+        {
+          "id": "mtbn0oj1epzm35",
+          "display": "photos/mtbn0oj1epzm35.jpg",
+          "thumb": "photos/mtbn0oj1epzm35-t.jpg",
+          "width": 2237,
+          "height": 2560,
+          "caption": "",
+          "x": 64.55,
+          "y": 73.65,
+          "w": 32.52505124056095
+        },
+        {
+          "id": "mtbn0xgygaaftx",
+          "display": "photos/mtbn0xgygaaftx.jpg",
+          "thumb": "photos/mtbn0xgygaaftx-t.jpg",
+          "width": 2237,
+          "height": 2560,
+          "caption": "",
+          "x": 30.55,
+          "y": 73.65,
+          "w": 32.19
         }
       ],
       "texts": []
