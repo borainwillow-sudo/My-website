@@ -2105,7 +2105,9 @@
           "caption": "",
           "x": -2.7,
           "y": 73.65,
-          "w": 32.31
+          "w": 32.31,
+          "title": "",
+          "link": "#/turtle-concervancy"
         },
         {
           "id": "mtbn0oj1epzm35",
@@ -2115,8 +2117,10 @@
           "height": 2560,
           "caption": "",
           "x": 32.02,
-          "y": 73.39823424228878,
-          "w": 32.53
+          "y": 73.4,
+          "w": 32.53,
+          "title": "",
+          "link": "#/yoco"
         },
         {
           "id": "mtbn0xgygaaftx",
@@ -2126,7 +2130,7 @@
           "height": 2560,
           "caption": "",
           "x": 67.69,
-          "y": 73.9,
+          "y": 73.65,
           "w": 32.31
         },
         {
@@ -2138,7 +2142,9 @@
           "caption": "",
           "x": -2.7,
           "y": 113.58,
-          "w": 32.31
+          "w": 32.31,
+          "title": "",
+          "link": "https://www.dazeddigital.com/art-photography/article/66567/1/willow-borain-girlhood-photograph-series-teenage-adolescence-portraits"
         },
         {
           "id": "mtbn2do4u9ptix",
@@ -2148,7 +2154,7 @@
           "height": 2560,
           "caption": "",
           "x": 32.02,
-          "y": 113.58,
+          "y": 113.33,
           "w": 32.53
         },
         {
@@ -2159,7 +2165,7 @@
           "height": 2560,
           "caption": "",
           "x": 67.47,
-          "y": 113.58,
+          "y": 113.33,
           "w": 32.53
         },
         {
@@ -2181,7 +2187,7 @@
           "height": 2560,
           "caption": "",
           "x": 32.02,
-          "y": 154.21,
+          "y": 153.96,
           "w": 32.53
         },
         {
@@ -2191,7 +2197,7 @@
           "width": 2237,
           "height": 2560,
           "caption": "",
-          "x": 67.69,
+          "x": 67.47,
           "y": 154.21,
           "w": 32.53
         }
