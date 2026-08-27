@@ -2092,9 +2092,9 @@
           "width": 2041,
           "height": 1256,
           "caption": "film photographer for hire borainwillow@gmail.com",
-          "x": 12.58,
+          "x": 15.08,
           "y": 0,
-          "w": 68.2
+          "w": 66.42
         },
         {
           "id": "mtbmzq6k7ui06w",
@@ -2208,17 +2208,7 @@
           "w": 32.53
         }
       ],
-      "texts": [
-        {
-          "id": "mtbn8txqtylyxj",
-          "type": "text",
-          "text": "PREVIOUS WORK",
-          "align": "left",
-          "x": 42,
-          "y": 66.03,
-          "w": 16
-        }
-      ]
+      "texts": []
     }
   ],
   "cursor": {
