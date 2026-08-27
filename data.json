@@ -2115,7 +2115,7 @@
           "height": 2560,
           "caption": "",
           "x": 32.02,
-          "y": 73.77,
+          "y": 73.39823424228878,
           "w": 32.53
         },
         {
@@ -2158,9 +2158,9 @@
           "width": 2237,
           "height": 2560,
           "caption": "",
-          "x": 67.69,
-          "y": 114.14,
-          "w": 31.33
+          "x": 67.47,
+          "y": 113.58,
+          "w": 32.53
         },
         {
           "id": "mtbn3r62f4slv9",
@@ -2172,6 +2172,28 @@
           "x": -2.7,
           "y": 154.21,
           "w": 32.31
+        },
+        {
+          "id": "mtbn4a463nkzf8",
+          "display": "photos/mtbn4a463nkzf8.jpg",
+          "thumb": "photos/mtbn4a463nkzf8-t.jpg",
+          "width": 2237,
+          "height": 2560,
+          "caption": "",
+          "x": 32.02,
+          "y": 154.21,
+          "w": 32.53
+        },
+        {
+          "id": "mtbn4s8pplllhc",
+          "display": "photos/mtbn4s8pplllhc.jpg",
+          "thumb": "photos/mtbn4s8pplllhc-t.jpg",
+          "width": 2237,
+          "height": 2560,
+          "caption": "",
+          "x": 67.69,
+          "y": 154.21,
+          "w": 32.53
         }
       ],
       "texts": []
