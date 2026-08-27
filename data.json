@@ -2091,10 +2091,10 @@
           "thumb": "photos/msq2f75ohyiuv8-t.jpg",
           "width": 2043,
           "height": 1324,
-          "caption": "film photographer for hire borainwillow@gmail.com",
-          "x": 12.21,
+          "caption": "film photographer for hire borainwillow@gmail.com",
+          "x": 11.22,
           "y": 0,
-          "w": 68
+          "w": 71.41
         },
         {
           "id": "mtbmzq6k7ui06w",
@@ -2155,7 +2155,9 @@
           "caption": "",
           "x": 32.02,
           "y": 113.33,
-          "w": 32.53
+          "w": 32.53,
+          "title": "",
+          "link": "#/deluxe-coffeeworks"
         },
         {
           "id": "mtbn3fk24bap8h",
@@ -2166,7 +2168,9 @@
           "caption": "",
           "x": 67.47,
           "y": 113.33,
-          "w": 32.53
+          "w": 32.53,
+          "title": "",
+          "link": "#/4wks"
         },
         {
           "id": "mtbn3r62f4slv9",
@@ -2204,7 +2208,17 @@
           "w": 32.53
         }
       ],
-      "texts": []
+      "texts": [
+        {
+          "id": "mtbn8txqtylyxj",
+          "type": "text",
+          "text": "",
+          "align": "left",
+          "x": 16.73,
+          "y": 66.33,
+          "w": 64.66
+        }
+      ]
     }
   ],
   "cursor": {
