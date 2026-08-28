@@ -438,6 +438,17 @@
           "x": 32.72,
           "y": 1234.59,
           "w": 32.45
+        },
+        {
+          "id": "mtcvjyj6cksrz4",
+          "display": "photos/mtcvjyj6cksrz4.jpg",
+          "thumb": "photos/mtcvjyj6cksrz4-t.jpg",
+          "width": 2057,
+          "height": 2560,
+          "caption": "",
+          "x": 32.72,
+          "y": 1280.5154517259978,
+          "w": 31.33
         }
       ]
     },
