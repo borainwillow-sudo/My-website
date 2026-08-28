@@ -2122,6 +2122,19 @@
               "w": 34.99
             }
           ]
+        },
+        {
+          "id": "slipped-up",
+          "title": "Slipped Up",
+          "type": "gallery",
+          "header": {
+            "title": "",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": [],
+          "texts": []
         }
       ]
     },
