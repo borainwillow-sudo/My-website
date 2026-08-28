@@ -2442,7 +2442,9 @@
           "caption": "",
           "x": 32.02,
           "y": 73.65,
-          "w": 32.31
+          "w": 32.31,
+          "title": "",
+          "link": "#/slipped-up"
         },
         {
           "id": "mtbn248bvx5wyl",
