@@ -1705,6 +1705,39 @@
               "x": 1,
               "y": 4,
               "w": 31.33
+            },
+            {
+              "id": "mtcxfrm588ts04",
+              "display": "photos/mtcxfrm588ts04.jpg",
+              "thumb": "photos/mtcxfrm588ts04-t.jpg",
+              "width": 1716,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 33.24,
+              "w": 31.33
+            },
+            {
+              "id": "mtcxfry57fkiie",
+              "display": "photos/mtcxfry57fkiie.jpg",
+              "thumb": "photos/mtcxfry57fkiie-t.jpg",
+              "width": 2560,
+              "height": 1829,
+              "caption": "",
+              "x": 34.33,
+              "y": 33.24,
+              "w": 31.33
+            },
+            {
+              "id": "mtcxfskbd99pi1",
+              "display": "photos/mtcxfskbd99pi1.jpg",
+              "thumb": "photos/mtcxfskbd99pi1-t.jpg",
+              "width": 1716,
+              "height": 2560,
+              "caption": "",
+              "x": 67.67,
+              "y": 33.24,
+              "w": 31.33
             }
           ],
           "texts": []
