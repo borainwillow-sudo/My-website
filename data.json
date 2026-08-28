@@ -550,8 +550,8 @@
               "width": 1373,
               "height": 2048,
               "caption": "",
-              "x": -1.62,
-              "y": 292,
+              "x": -1.49,
+              "y": 287.14,
               "w": 57.31
             },
             {
@@ -561,8 +561,8 @@
               "width": 1607,
               "height": 1948,
               "caption": "",
-              "x": 59.81,
-              "y": 294.95,
+              "x": 58.22,
+              "y": 290.31,
               "w": 41.04
             },
             {
@@ -583,8 +583,8 @@
               "width": 1463,
               "height": 2048,
               "caption": "",
-              "x": 12.110000000000001,
-              "y": 173.60711708690988,
+              "x": 11.44,
+              "y": 173.54,
               "w": 75.77
             },
             {
@@ -1752,26 +1752,15 @@
               "w": 31.33
             },
             {
-              "id": "mtcxg0a87da7l1",
-              "display": "photos/mtcxg0a87da7l1.jpg",
-              "thumb": "photos/mtcxg0a87da7l1-t.jpg",
-              "width": 2560,
-              "height": 1829,
-              "caption": "",
-              "x": 25.13,
-              "y": 308.18,
-              "w": 48.16
-            },
-            {
               "id": "mtcxg0oogjj527",
               "display": "photos/mtd1wkm5prm9er.jpg",
               "thumb": "photos/mtd1wkm5prm9er-t.jpg",
               "width": 1828,
               "height": 2560,
               "caption": "",
-              "x": 25.08,
-              "y": 234.21,
-              "w": 48.16
+              "x": 13.77,
+              "y": 237.83,
+              "w": 72.34
             },
             {
               "id": "mtcy5eovzwr8jh",
