@@ -2099,8 +2099,8 @@
               "width": 1956,
               "height": 2560,
               "caption": "",
-              "x": 1,
-              "y": 4,
+              "x": 61.79080606223176,
+              "y": 182.0126743562232,
               "w": 31.33
             },
             {
@@ -2110,7 +2110,7 @@
               "width": 1880,
               "height": 2560,
               "caption": "",
-              "x": 34.33,
+              "x": 34.34,
               "y": 4,
               "w": 31.33
             },
@@ -2134,6 +2134,72 @@
               "caption": "",
               "x": 1,
               "y": 49,
+              "w": 31.33
+            },
+            {
+              "id": "mtcxxp1x6tlyqw",
+              "display": "photos/mtcxxp1x6tlyqw.jpg",
+              "thumb": "photos/mtcxxp1x6tlyqw-t.jpg",
+              "width": 1716,
+              "height": 2560,
+              "caption": "",
+              "x": 67.67,
+              "y": 49.99,
+              "w": 31.33
+            },
+            {
+              "id": "mtcxxpcfffvwbn",
+              "display": "photos/mtcxxpcfffvwbn.jpg",
+              "thumb": "photos/mtcxxpcfffvwbn-t.jpg",
+              "width": 1908,
+              "height": 2560,
+              "caption": "",
+              "x": 34.33,
+              "y": 50.66,
+              "w": 31.33
+            },
+            {
+              "id": "mtcxxpp9i6k2k2",
+              "display": "photos/mtcxxpp9i6k2k2.jpg",
+              "thumb": "photos/mtcxxpp9i6k2k2-t.jpg",
+              "width": 1716,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 95.24,
+              "w": 31.33
+            },
+            {
+              "id": "mtcxxq08e0z5g7",
+              "display": "photos/mtcxxq08e0z5g7.jpg",
+              "thumb": "photos/mtcxxq08e0z5g7-t.jpg",
+              "width": 1900,
+              "height": 2560,
+              "caption": "",
+              "x": 34.33,
+              "y": 96.7,
+              "w": 31.33
+            },
+            {
+              "id": "mtcxxqagar8dyr",
+              "display": "photos/mtcxxqagar8dyr.jpg",
+              "thumb": "photos/mtcxxqagar8dyr-t.jpg",
+              "width": 1937,
+              "height": 2560,
+              "caption": "",
+              "x": 67.67,
+              "y": 100.73,
+              "w": 31.33
+            },
+            {
+              "id": "mtcxxqlguofze0",
+              "display": "photos/mtcxxqlguofze0.jpg",
+              "thumb": "photos/mtcxxqlguofze0-t.jpg",
+              "width": 1922,
+              "height": 2560,
+              "caption": "",
+              "x": 34.33,
+              "y": 142.91,
               "w": 31.33
             }
           ],
