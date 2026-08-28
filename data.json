@@ -1648,6 +1648,28 @@
               "x": 52.87,
               "y": 138.9,
               "w": 43.46
+            },
+            {
+              "id": "mtd1lyikh1nexv",
+              "display": "photos/mtd1lyikh1nexv.jpg",
+              "thumb": "photos/mtd1lyikh1nexv-t.jpg",
+              "width": 1731,
+              "height": 2560,
+              "caption": "",
+              "x": 2.94,
+              "y": 207.72,
+              "w": 31.33
+            },
+            {
+              "id": "mtd1lytknbu2sg",
+              "display": "photos/mtd1lytknbu2sg.jpg",
+              "thumb": "photos/mtd1lytknbu2sg-t.jpg",
+              "width": 1731,
+              "height": 2560,
+              "caption": "",
+              "x": 34.33,
+              "y": 207.72,
+              "w": 31.33
             }
           ]
         },
