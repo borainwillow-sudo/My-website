@@ -1015,17 +1015,6 @@
               "w": 37.1
             },
             {
-              "id": "msofbdubk1xnwo",
-              "display": "photos/msofrqcl0t6w0m.jpg",
-              "thumb": "photos/msofrqcl0t6w0m-t.jpg",
-              "width": 2291,
-              "height": 982,
-              "caption": "",
-              "x": 27.94,
-              "y": 311.92,
-              "w": 42.56
-            },
-            {
               "id": "msofbteyhjnldy",
               "display": "photos/msofbteyhjnldy.jpg",
               "thumb": "photos/msofbteyhjnldy-t.jpg",
@@ -1092,17 +1081,6 @@
               "w": 32.94
             },
             {
-              "id": "msoffeegkxeqpu",
-              "display": "photos/msol6h9xi6l2ef.jpg",
-              "thumb": "photos/msol6h9xi6l2ef-t.jpg",
-              "width": 1949,
-              "height": 2425,
-              "caption": "",
-              "x": 7.63,
-              "y": 0,
-              "w": 36.66
-            },
-            {
               "id": "msojs2rkuzkye9",
               "display": "photos/msokwxsxqn092p.jpg",
               "thumb": "photos/msokwxsxqn092p-t.jpg",
@@ -1156,6 +1134,17 @@
               "x": 82.61,
               "y": 107.53,
               "w": 14.46
+            },
+            {
+              "id": "mtd0mko2dtgvfc",
+              "display": "photos/mtd0mko2dtgvfc.jpg",
+              "thumb": "photos/mtd0mko2dtgvfc-t.jpg",
+              "width": 2560,
+              "height": 1843,
+              "caption": "",
+              "x": 1.06,
+              "y": 0,
+              "w": 50.91196418991416
             }
           ],
           "texts": []
