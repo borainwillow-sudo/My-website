@@ -2008,6 +2008,28 @@
               "x": 2.67,
               "y": 198.19,
               "w": 46.04
+            },
+            {
+              "id": "mtd1iqcw82sn5c",
+              "display": "photos/mtd1iqcw82sn5c.jpg",
+              "thumb": "photos/mtd1iqcw82sn5c-t.jpg",
+              "width": 1926,
+              "height": 2560,
+              "caption": "",
+              "x": 50.92,
+              "y": 311.64,
+              "w": 46.03
+            },
+            {
+              "id": "mtd1iqp6i7dicl",
+              "display": "photos/mtd1iqp6i7dicl.jpg",
+              "thumb": "photos/mtd1iqp6i7dicl-t.jpg",
+              "width": 1716,
+              "height": 2560,
+              "caption": "",
+              "x": 2.67,
+              "y": 322.38,
+              "w": 46.04
             }
           ]
         },
