@@ -999,9 +999,9 @@
               "width": 1637,
               "height": 2025,
               "caption": "",
-              "x": 27.5,
-              "y": 314.52,
-              "w": 42.72
+              "x": 20.4,
+              "y": 405.53,
+              "w": 54.22
             },
             {
               "id": "msofaubdfa9nzg",
@@ -1043,9 +1043,9 @@
               "width": 1854,
               "height": 2244,
               "caption": "",
-              "x": 49.54,
-              "y": 284.58,
-              "w": 20.96
+              "x": 20.4,
+              "y": 331.56,
+              "w": 54.22
             },
             {
               "id": "msofdv2l0ce46k",
@@ -1059,25 +1059,14 @@
               "w": 88.91
             },
             {
-              "id": "msofesdki3xoz4",
-              "display": "photos/msq1l4st8ktcb9.jpg",
-              "thumb": "photos/msq1l4st8ktcb9-t.jpg",
-              "width": 1871,
-              "height": 2404,
-              "caption": "",
-              "x": 65.46,
-              "y": 385.64,
-              "w": 19.57
-            },
-            {
               "id": "msofesy8hzt7q2",
               "display": "photos/msofoz71chc1ne.jpg",
               "thumb": "photos/msofoz71chc1ne-t.jpg",
               "width": 1714,
               "height": 2205,
               "caption": "",
-              "x": 9.18,
-              "y": 281.58,
+              "x": 2.43,
+              "y": 281.38,
               "w": 32.94
             },
             {
@@ -1143,8 +1132,8 @@
               "height": 1843,
               "caption": "",
               "x": 39.89,
-              "y": 281.58,
-              "w": 60.11
+              "y": 281.38,
+              "w": 58.58
             }
           ],
           "texts": []
@@ -1269,6 +1258,17 @@
               "x": 8.46,
               "y": 411.85,
               "w": 38.23
+            },
+            {
+              "id": "mtd0vzwqndy98l",
+              "display": "photos/mtd0vzwqndy98l.jpg",
+              "thumb": "photos/mtd0vzwqndy98l-t.jpg",
+              "width": 1949,
+              "height": 2560,
+              "caption": "",
+              "x": 8.46,
+              "y": 643.483589055794,
+              "w": 31.33
             }
           ],
           "texts": []
