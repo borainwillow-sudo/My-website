@@ -2219,17 +2219,7 @@
           "w": 76.25
         }
       ],
-      "texts": [
-        {
-          "id": "mtbnn6bkcyw7if",
-          "type": "text",
-          "text": "",
-          "align": "left",
-          "x": 1,
-          "y": 195.44,
-          "w": 64.66
-        }
-      ]
+      "texts": []
     }
   ],
   "cursor": {
