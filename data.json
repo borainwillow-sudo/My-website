@@ -1005,14 +1005,14 @@
             },
             {
               "id": "msofaubdfa9nzg",
-              "display": "photos/msofaubdfa9nzg.jpg",
-              "thumb": "photos/msofaubdfa9nzg-t.jpg",
-              "width": 2064,
-              "height": 2560,
+              "display": "photos/mtd0od8he9qhpu.jpg",
+              "thumb": "photos/mtd0od8he9qhpu-t.jpg",
+              "width": 1990,
+              "height": 1101,
               "caption": "",
-              "x": 18.88,
-              "y": 52.63,
-              "w": 47.6
+              "x": -2.92,
+              "y": 0,
+              "w": 104.92
             },
             {
               "id": "msofbteyhjnldy",
@@ -1054,8 +1054,8 @@
               "width": 2052,
               "height": 1459,
               "caption": "",
-              "x": 19.76,
-              "y": 223.89,
+              "x": -2.92,
+              "y": 60.3,
               "w": 53.1
             },
             {
@@ -1142,8 +1142,8 @@
               "width": 2560,
               "height": 1843,
               "caption": "",
-              "x": 18.88,
-              "y": 0,
+              "x": 27.94,
+              "y": 158.8,
               "w": 51.62
             }
           ],
