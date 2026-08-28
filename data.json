@@ -251,7 +251,7 @@
           "caption": "",
           "x": 7.23,
           "y": 1436.72,
-          "w": 84.42999999999999,
+          "w": 83.49,
           "title": "",
           "link": "#/client-work"
         },
@@ -343,20 +343,9 @@
           "width": 1219,
           "height": 979,
           "caption": "",
-          "x": 8.12,
-          "y": 1653.06,
-          "w": 83.18
-        },
-        {
-          "id": "mtcvetm0h17ls1",
-          "display": "photos/mtcvetm0h17ls1.jpg",
-          "thumb": "photos/mtcvetm0h17ls1-t.jpg",
-          "width": 1883,
-          "height": 2560,
-          "caption": "",
-          "x": 13.61,
-          "y": 1736.12,
-          "w": 39.45
+          "x": 7.23,
+          "y": 1655.87,
+          "w": 86.7
         },
         {
           "id": "mtcvfraudqyzlv",
@@ -398,9 +387,9 @@
           "width": 2057,
           "height": 2560,
           "caption": "",
-          "x": 18.04,
-          "y": 1626.53,
-          "w": 66.41
+          "x": 7.23,
+          "y": 1542.87,
+          "w": 86.7
         },
         {
           "id": "mtcvuk0qmtf72t",
@@ -434,6 +423,17 @@
           "x": 7.23,
           "y": 1152.52,
           "w": 83.27
+        },
+        {
+          "id": "mtd14s0adjfhqz",
+          "display": "photos/mtd14s0adjfhqz.jpg",
+          "thumb": "photos/mtd14s0adjfhqz-t.jpg",
+          "width": 1949,
+          "height": 2560,
+          "caption": "",
+          "x": 7.23,
+          "y": 1729.13,
+          "w": 86.7
         }
       ]
     },
