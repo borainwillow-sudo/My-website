@@ -1702,9 +1702,9 @@
               "width": 2560,
               "height": 2062,
               "caption": "",
-              "x": 1,
-              "y": 4,
-              "w": 31.33
+              "x": 4.76,
+              "y": 0,
+              "w": 86.11
             },
             {
               "id": "mtcxfrm588ts04",
@@ -1724,8 +1724,8 @@
               "width": 2560,
               "height": 1829,
               "caption": "",
-              "x": 34.33,
-              "y": 33.24,
+              "x": 47.815,
+              "y": 147.06276019313304,
               "w": 31.33
             },
             {
@@ -1737,6 +1737,50 @@
               "caption": "",
               "x": 67.67,
               "y": 33.24,
+              "w": 31.33
+            },
+            {
+              "id": "mtcxfzbdqkvcgb",
+              "display": "photos/mtcxfzbdqkvcgb.jpg",
+              "thumb": "photos/mtcxfzbdqkvcgb-t.jpg",
+              "width": 1829,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 83.98,
+              "w": 31.33
+            },
+            {
+              "id": "mtcxfzqeiwdtm5",
+              "display": "photos/mtcxfzqeiwdtm5.jpg",
+              "thumb": "photos/mtcxfzqeiwdtm5-t.jpg",
+              "width": 1829,
+              "height": 2560,
+              "caption": "",
+              "x": 34.33,
+              "y": 83.98,
+              "w": 31.33
+            },
+            {
+              "id": "mtcxg0a87da7l1",
+              "display": "photos/mtcxg0a87da7l1.jpg",
+              "thumb": "photos/mtcxg0a87da7l1-t.jpg",
+              "width": 2560,
+              "height": 1829,
+              "caption": "",
+              "x": 67.67,
+              "y": 83.98,
+              "w": 31.33
+            },
+            {
+              "id": "mtcxg0oogjj527",
+              "display": "photos/mtcxg0oogjj527.jpg",
+              "thumb": "photos/mtcxg0oogjj527-t.jpg",
+              "width": 2560,
+              "height": 1716,
+              "caption": "",
+              "x": 67.67,
+              "y": 110.36,
               "w": 31.33
             }
           ],
