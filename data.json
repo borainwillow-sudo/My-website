@@ -1697,12 +1697,12 @@
           "photos": [
             {
               "id": "mtcxfm72y31eae",
-              "display": "photos/mtcxjpysirxw8y.jpg",
-              "thumb": "photos/mtcxjpysirxw8y-t.jpg",
-              "width": 2558,
+              "display": "photos/mtcxjx3pqeqpon.jpg",
+              "thumb": "photos/mtcxjx3pqeqpon-t.jpg",
+              "width": 2367,
               "height": 1464,
               "caption": "",
-              "x": 5.831875,
+              "x": 6.94,
               "y": 0,
               "w": 86.11
             },
@@ -1713,8 +1713,8 @@
               "width": 1716,
               "height": 2560,
               "caption": "",
-              "x": 1,
-              "y": 33.24,
+              "x": 6.94,
+              "y": 55.274686829399144,
               "w": 31.33
             },
             {
