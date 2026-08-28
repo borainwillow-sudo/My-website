@@ -1758,8 +1758,8 @@
               "width": 2560,
               "height": 1829,
               "caption": "",
-              "x": 6.2,
-              "y": 59.24,
+              "x": 30.83,
+              "y": 266.89,
               "w": 56.29
             },
             {
@@ -1769,9 +1769,9 @@
               "width": 1828,
               "height": 2560,
               "caption": "",
-              "x": 8.83,
-              "y": 222.77,
-              "w": 82.43
+              "x": 23.05,
+              "y": 266.89,
+              "w": 55.71
             },
             {
               "id": "mtcy5eovzwr8jh",
@@ -1827,6 +1827,18 @@
               "x": 52.23,
               "y": 476.24,
               "w": 39.48
+            },
+            {
+              "id": "mtd1x4gcdekrgf",
+              "display": "photos/mtd1x4gcdekrgf.jpg",
+              "thumb": "photos/mtd1x4gcdekrgf-t.jpg",
+              "width": 1715,
+              "height": 2560,
+              "caption": "",
+              "x": 9.16,
+              "y": 71.31283203124998,
+              "w": 55.45,
+              "rotate": 270
             }
           ],
           "texts": []
