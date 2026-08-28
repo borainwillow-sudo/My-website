@@ -1685,6 +1685,19 @@
           ]
         },
         {
+          "id": "slipped-up",
+          "title": "Slipped Up",
+          "type": "gallery",
+          "header": {
+            "title": "",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": [],
+          "texts": []
+        },
+        {
           "id": "merwe-mode",
           "title": "Merwe Mode",
           "type": "gallery",
@@ -1762,19 +1775,6 @@
               "w": 42.83
             }
           ]
-        },
-        {
-          "id": "slipped-up",
-          "title": "Slipped Up",
-          "type": "gallery",
-          "header": {
-            "title": "",
-            "meta": "",
-            "quote": "",
-            "description": ""
-          },
-          "photos": [],
-          "texts": []
         },
         {
           "id": "deluxe-coffeeworks",
