@@ -2091,7 +2091,52 @@
             "quote": "",
             "description": "35mm film scans"
           },
-          "photos": [],
+          "photos": [
+            {
+              "id": "mtcxxiq709l0ac",
+              "display": "photos/mtcxxiq709l0ac.jpg",
+              "thumb": "photos/mtcxxiq709l0ac-t.jpg",
+              "width": 1956,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 4,
+              "w": 31.33
+            },
+            {
+              "id": "mtcxxj1c5a3oo9",
+              "display": "photos/mtcxxj1c5a3oo9.jpg",
+              "thumb": "photos/mtcxxj1c5a3oo9-t.jpg",
+              "width": 1880,
+              "height": 2560,
+              "caption": "",
+              "x": 34.33,
+              "y": 4,
+              "w": 31.33
+            },
+            {
+              "id": "mtcxxjbi40uwzl",
+              "display": "photos/mtcxxjbi40uwzl.jpg",
+              "thumb": "photos/mtcxxjbi40uwzl-t.jpg",
+              "width": 1910,
+              "height": 2560,
+              "caption": "",
+              "x": 67.67,
+              "y": 4,
+              "w": 31.33
+            },
+            {
+              "id": "mtcxxjk9imfcq9",
+              "display": "photos/mtcxxjk9imfcq9.jpg",
+              "thumb": "photos/mtcxxjk9imfcq9-t.jpg",
+              "width": 1899,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 49,
+              "w": 31.33
+            }
+          ],
           "texts": []
         },
         {
