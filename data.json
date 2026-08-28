@@ -405,6 +405,17 @@
           "x": 32.72,
           "y": 1100.65,
           "w": 32.45
+        },
+        {
+          "id": "mtcvfraudqyzlv",
+          "display": "photos/mtcvfraudqyzlv.jpg",
+          "thumb": "photos/mtcvfraudqyzlv-t.jpg",
+          "width": 2115,
+          "height": 2560,
+          "caption": "",
+          "x": 32.72,
+          "y": 1147.8753971143474,
+          "w": 31.33
         }
       ]
     },
