@@ -434,6 +434,17 @@
           "x": 7.23,
           "y": 1152.52,
           "w": 83.27
+        },
+        {
+          "id": "mtd1277n4ae6am",
+          "display": "photos/mtd1277n4ae6am.jpg",
+          "thumb": "photos/mtd1277n4ae6am-t.jpg",
+          "width": 1899,
+          "height": 2560,
+          "caption": "",
+          "x": 1,
+          "y": 1723.86,
+          "w": 31.33
         }
       ]
     },
