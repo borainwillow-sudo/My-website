@@ -1687,6 +1687,129 @@
           ]
         },
         {
+          "id": "merwe-mode",
+          "title": "Merwe Mode",
+          "type": "gallery",
+          "header": {
+            "title": "MERWE MODE CLOTHING - 2025",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": [
+            {
+              "id": "msnbwnzsaq5pmp",
+              "display": "photos/mtn7y5i44sgyw3.jpg",
+              "thumb": "photos/mtn7y5i44sgyw3-t.jpg",
+              "width": 2560,
+              "height": 1828,
+              "caption": "",
+              "x": 6.01,
+              "y": 182.19,
+              "w": 87.99
+            },
+            {
+              "id": "msnbwon12ofmbv",
+              "display": "photos/mtn7x4cz87ityz.jpg",
+              "thumb": "photos/mtn7x4cz87ityz-t.jpg",
+              "width": 2560,
+              "height": 1716,
+              "caption": "",
+              "x": 46.59,
+              "y": 128.49,
+              "w": 53.41
+            },
+            {
+              "id": "msnbwpc4h4ls6t",
+              "display": "photos/mtn7txr8b8fok8.jpg",
+              "thumb": "photos/mtn7txr8b8fok8-t.jpg",
+              "width": 2560,
+              "height": 1701,
+              "caption": "",
+              "x": 6,
+              "y": 50.93,
+              "w": 87.99
+            },
+            {
+              "id": "msnbx3wv7yuyc7",
+              "display": "photos/mtn7wqy6ydvd6l.jpg",
+              "thumb": "photos/mtn7wqy6ydvd6l-t.jpg",
+              "width": 1891,
+              "height": 2560,
+              "caption": "",
+              "x": 0,
+              "y": 118.21,
+              "w": 41.63
+            },
+            {
+              "id": "mtn7vffd0nnx6c",
+              "display": "photos/mtn7vffd0nnx6c.jpg",
+              "thumb": "photos/mtn7vffd0nnx6c-t.jpg",
+              "width": 2560,
+              "height": 1716,
+              "caption": "",
+              "x": 36.87,
+              "y": 0,
+              "w": 62.37
+            },
+            {
+              "id": "mtn7vuw572gxns",
+              "display": "photos/mtn7vuw572gxns.jpg",
+              "thumb": "photos/mtn7vuw572gxns-t.jpg",
+              "width": 2103,
+              "height": 2560,
+              "caption": "",
+              "x": 0,
+              "y": 0,
+              "w": 34.11
+            },
+            {
+              "id": "mtn7zsioaf1nh9",
+              "display": "photos/mtn7zsioaf1nh9.jpg",
+              "thumb": "photos/mtn7zsioaf1nh9-t.jpg",
+              "width": 1829,
+              "height": 2560,
+              "caption": "",
+              "x": 0,
+              "y": 254.16,
+              "w": 47.68
+            },
+            {
+              "id": "mtn803j9undvl7",
+              "display": "photos/mtn803j9undvl7.jpg",
+              "thumb": "photos/mtn803j9undvl7-t.jpg",
+              "width": 1860,
+              "height": 2560,
+              "caption": "",
+              "x": 50.9,
+              "y": 254.16,
+              "w": 48.34
+            },
+            {
+              "id": "mtn816f4qilbzp",
+              "display": "photos/mtn816f4qilbzp.jpg",
+              "thumb": "photos/mtn816f4qilbzp-t.jpg",
+              "width": 2560,
+              "height": 1948,
+              "caption": "",
+              "x": 12.73,
+              "y": 407.77,
+              "w": 74.52
+            },
+            {
+              "id": "mtn81luvz9mmkr",
+              "display": "photos/mtn81luvz9mmkr.jpg",
+              "thumb": "photos/mtn81luvz9mmkr-t.jpg",
+              "width": 2009,
+              "height": 2560,
+              "caption": "",
+              "x": 16.85,
+              "y": 320.9,
+              "w": 66.3
+            }
+          ]
+        },
+        {
           "id": "slipped-up",
           "title": "Slipped Up",
           "type": "gallery",
@@ -1844,129 +1967,6 @@
             }
           ],
           "texts": []
-        },
-        {
-          "id": "merwe-mode",
-          "title": "Merwe Mode",
-          "type": "gallery",
-          "header": {
-            "title": "MERWE MODE CLOTHING - 2025",
-            "meta": "",
-            "quote": "",
-            "description": ""
-          },
-          "photos": [
-            {
-              "id": "msnbwnzsaq5pmp",
-              "display": "photos/mtn7y5i44sgyw3.jpg",
-              "thumb": "photos/mtn7y5i44sgyw3-t.jpg",
-              "width": 2560,
-              "height": 1828,
-              "caption": "",
-              "x": 6.01,
-              "y": 182.19,
-              "w": 87.99
-            },
-            {
-              "id": "msnbwon12ofmbv",
-              "display": "photos/mtn7x4cz87ityz.jpg",
-              "thumb": "photos/mtn7x4cz87ityz-t.jpg",
-              "width": 2560,
-              "height": 1716,
-              "caption": "",
-              "x": 46.59,
-              "y": 128.49,
-              "w": 53.41
-            },
-            {
-              "id": "msnbwpc4h4ls6t",
-              "display": "photos/mtn7txr8b8fok8.jpg",
-              "thumb": "photos/mtn7txr8b8fok8-t.jpg",
-              "width": 2560,
-              "height": 1701,
-              "caption": "",
-              "x": 6,
-              "y": 50.93,
-              "w": 87.99
-            },
-            {
-              "id": "msnbx3wv7yuyc7",
-              "display": "photos/mtn7wqy6ydvd6l.jpg",
-              "thumb": "photos/mtn7wqy6ydvd6l-t.jpg",
-              "width": 1891,
-              "height": 2560,
-              "caption": "",
-              "x": 0,
-              "y": 118.21,
-              "w": 41.63
-            },
-            {
-              "id": "mtn7vffd0nnx6c",
-              "display": "photos/mtn7vffd0nnx6c.jpg",
-              "thumb": "photos/mtn7vffd0nnx6c-t.jpg",
-              "width": 2560,
-              "height": 1716,
-              "caption": "",
-              "x": 36.87,
-              "y": 0,
-              "w": 62.37
-            },
-            {
-              "id": "mtn7vuw572gxns",
-              "display": "photos/mtn7vuw572gxns.jpg",
-              "thumb": "photos/mtn7vuw572gxns-t.jpg",
-              "width": 2103,
-              "height": 2560,
-              "caption": "",
-              "x": 0,
-              "y": 0,
-              "w": 34.11
-            },
-            {
-              "id": "mtn7zsioaf1nh9",
-              "display": "photos/mtn7zsioaf1nh9.jpg",
-              "thumb": "photos/mtn7zsioaf1nh9-t.jpg",
-              "width": 1829,
-              "height": 2560,
-              "caption": "",
-              "x": 0,
-              "y": 254.16,
-              "w": 47.68
-            },
-            {
-              "id": "mtn803j9undvl7",
-              "display": "photos/mtn803j9undvl7.jpg",
-              "thumb": "photos/mtn803j9undvl7-t.jpg",
-              "width": 1860,
-              "height": 2560,
-              "caption": "",
-              "x": 50.9,
-              "y": 254.16,
-              "w": 48.34
-            },
-            {
-              "id": "mtn816f4qilbzp",
-              "display": "photos/mtn816f4qilbzp.jpg",
-              "thumb": "photos/mtn816f4qilbzp-t.jpg",
-              "width": 2560,
-              "height": 1948,
-              "caption": "",
-              "x": 12.73,
-              "y": 407.77,
-              "w": 74.52
-            },
-            {
-              "id": "mtn81luvz9mmkr",
-              "display": "photos/mtn81luvz9mmkr.jpg",
-              "thumb": "photos/mtn81luvz9mmkr-t.jpg",
-              "width": 2009,
-              "height": 2560,
-              "caption": "",
-              "x": 16.85,
-              "y": 320.9,
-              "w": 66.3
-            }
-          ]
         },
         {
           "id": "deluxe-coffeeworks",
