@@ -641,6 +641,94 @@
               "x": 67.67,
               "y": 146.05,
               "w": 31.33
+            },
+            {
+              "id": "mtn87ux78pnyh3",
+              "display": "photos/mtn87ux78pnyh3.jpg",
+              "thumb": "photos/mtn87ux78pnyh3-t.jpg",
+              "width": 2560,
+              "height": 1716,
+              "caption": "",
+              "x": 1,
+              "y": 196.82,
+              "w": 31.33
+            },
+            {
+              "id": "mtn87vbtv51d77",
+              "display": "photos/mtn87vbtv51d77.jpg",
+              "thumb": "photos/mtn87vbtv51d77-t.jpg",
+              "width": 2010,
+              "height": 2560,
+              "caption": "",
+              "x": 34.33,
+              "y": 196.82,
+              "w": 31.33
+            },
+            {
+              "id": "mtn87vkx18350w",
+              "display": "photos/mtn87vkx18350w.jpg",
+              "thumb": "photos/mtn87vkx18350w-t.jpg",
+              "width": 2009,
+              "height": 2560,
+              "caption": "",
+              "x": 67.67,
+              "y": 196.82,
+              "w": 31.33
+            },
+            {
+              "id": "mtn87vt1i9i65q",
+              "display": "photos/mtn87vt1i9i65q.jpg",
+              "thumb": "photos/mtn87vt1i9i65q-t.jpg",
+              "width": 2009,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 221.82,
+              "w": 31.33
+            },
+            {
+              "id": "mtn87w31xx6340",
+              "display": "photos/mtn87w31xx6340.jpg",
+              "thumb": "photos/mtn87w31xx6340-t.jpg",
+              "width": 2009,
+              "height": 2560,
+              "caption": "",
+              "x": 34.33,
+              "y": 240.72,
+              "w": 31.33
+            },
+            {
+              "id": "mtn87wdw5igld4",
+              "display": "photos/mtn87wdw5igld4.jpg",
+              "thumb": "photos/mtn87wdw5igld4-t.jpg",
+              "width": 1965,
+              "height": 2560,
+              "caption": "",
+              "x": 67.67,
+              "y": 240.74,
+              "w": 31.33
+            },
+            {
+              "id": "mtn87wn986ekbn",
+              "display": "photos/mtn87wn986ekbn.jpg",
+              "thumb": "photos/mtn87wn986ekbn-t.jpg",
+              "width": 1871,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 265.74,
+              "w": 31.33
+            },
+            {
+              "id": "mtn8813s5aumte",
+              "display": "photos/mtn8813s5aumte.jpg",
+              "thumb": "photos/mtn8813s5aumte-t.jpg",
+              "width": 2010,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 312.61,
+              "w": 31.33
             }
           ],
           "texts": []
