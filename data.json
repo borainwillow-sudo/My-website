@@ -1938,9 +1938,20 @@
               "width": 2560,
               "height": 1948,
               "caption": "",
-              "x": 0,
-              "y": 326.31,
+              "x": 23.84,
+              "y": 364.43240142167383,
               "w": 47.68
+            },
+            {
+              "id": "mtn81luvz9mmkr",
+              "display": "photos/mtn81luvz9mmkr.jpg",
+              "thumb": "photos/mtn81luvz9mmkr-t.jpg",
+              "width": 2009,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 366.59,
+              "w": 58.65
             }
           ]
         },
