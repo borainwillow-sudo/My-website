@@ -1916,9 +1916,20 @@
               "width": 1829,
               "height": 2560,
               "caption": "",
-              "x": 1,
-              "y": 249.02,
-              "w": 31.33
+              "x": 0,
+              "y": 254.16,
+              "w": 41.67
+            },
+            {
+              "id": "mtn803j9undvl7",
+              "display": "photos/mtn803j9undvl7.jpg",
+              "thumb": "photos/mtn803j9undvl7-t.jpg",
+              "width": 1860,
+              "height": 2560,
+              "caption": "",
+              "x": 41.97,
+              "y": 254.16,
+              "w": 42.61202119098712
             }
           ]
         },
