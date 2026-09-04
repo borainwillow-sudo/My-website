@@ -638,8 +638,8 @@
               "width": 2009,
               "height": 2560,
               "caption": "",
-              "x": -15.66,
-              "y": 384.74,
+              "x": 0,
+              "y": 343.28870842274677,
               "w": 31.33
             },
             {
@@ -652,28 +652,6 @@
               "x": 52.38,
               "y": 73.83,
               "w": 45
-            },
-            {
-              "id": "mtn87wn986ekbn",
-              "display": "photos/mtn87wn986ekbn.jpg",
-              "thumb": "photos/mtn87wn986ekbn-t.jpg",
-              "width": 1871,
-              "height": 2560,
-              "caption": "",
-              "x": 61.88,
-              "y": 414.23,
-              "w": 31.33
-            },
-            {
-              "id": "mtn8813s5aumte",
-              "display": "photos/mtn8813s5aumte.jpg",
-              "thumb": "photos/mtn8813s5aumte-t.jpg",
-              "width": 2010,
-              "height": 2560,
-              "caption": "",
-              "x": 6.35,
-              "y": 465.04,
-              "w": 31.33
             }
           ],
           "texts": []
