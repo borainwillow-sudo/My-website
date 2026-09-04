@@ -522,116 +522,17 @@
           ]
         },
         {
-          "id": "untititled-project",
-          "title": "Izzy & Bryony",
+          "id": "still-life-studies",
+          "title": "still life studies",
           "type": "gallery",
           "header": {
-            "title": "IZZY AND BRYONY - WOODSTOCK, 2024",
+            "title": "",
             "meta": "",
             "quote": "",
-            "description": "35mm half-frame film scans"
+            "description": ""
           },
-          "photos": [
-            {
-              "id": "msojoasoi7nn0q",
-              "display": "photos/msojoasoi7nn0q.jpg",
-              "thumb": "photos/msojoasoi7nn0q-t.jpg",
-              "width": 2048,
-              "height": 1373,
-              "caption": "",
-              "x": -1.49,
-              "y": 0,
-              "w": 102.97
-            },
-            {
-              "id": "msojoay25lrnoi",
-              "display": "photos/msojoay25lrnoi.jpg",
-              "thumb": "photos/msojoay25lrnoi-t.jpg",
-              "width": 1373,
-              "height": 2048,
-              "caption": "",
-              "x": -1.49,
-              "y": 287.14,
-              "w": 57.31
-            },
-            {
-              "id": "msojob2piu7ozp",
-              "display": "photos/msok66mkonnyrg.jpg",
-              "thumb": "photos/msok66mkonnyrg-t.jpg",
-              "width": 1607,
-              "height": 1948,
-              "caption": "",
-              "x": 58.22,
-              "y": 290.31,
-              "w": 41.04
-            },
-            {
-              "id": "msojob8kqitlpq",
-              "display": "photos/msok0k5m4ydetj.jpg",
-              "thumb": "photos/msok0k5m4ydetj-t.jpg",
-              "width": 1423,
-              "height": 1851,
-              "caption": "",
-              "x": 11.33,
-              "y": 116.24,
-              "w": 37.99
-            },
-            {
-              "id": "msojobdstvg0e5",
-              "display": "photos/msojobdstvg0e5.jpg",
-              "thumb": "photos/msojobdstvg0e5-t.jpg",
-              "width": 1463,
-              "height": 2048,
-              "caption": "",
-              "x": 11.44,
-              "y": 173.54,
-              "w": 75.77
-            },
-            {
-              "id": "msojohofx89lbj",
-              "display": "photos/msojohofx89lbj.jpg",
-              "thumb": "photos/msojohofx89lbj-t.jpg",
-              "width": 1477,
-              "height": 2048,
-              "caption": "",
-              "x": 51.73,
-              "y": 116.46,
-              "w": 35.48
-            },
-            {
-              "id": "msojp19tbaz05x",
-              "display": "photos/msojp19tbaz05x.jpg",
-              "thumb": "photos/msojp19tbaz05x-t.jpg",
-              "width": 2048,
-              "height": 1448,
-              "caption": "",
-              "x": 0.78,
-              "y": 73.97,
-              "w": 45.58
-            },
-            {
-              "id": "msojp1dikiygl9",
-              "display": "photos/msok47k67xi53p.jpg",
-              "thumb": "photos/msok47k67xi53p-t.jpg",
-              "width": 853,
-              "height": 1169,
-              "caption": "",
-              "x": 76.33,
-              "y": 73.73,
-              "w": 23.67
-            },
-            {
-              "id": "msojp1h0t3qb3y",
-              "display": "photos/msok4q4vq4m31q.jpg",
-              "thumb": "photos/msok4q4vq4m31q-t.jpg",
-              "width": 854,
-              "height": 1224,
-              "caption": "",
-              "x": 50,
-              "y": 73.73,
-              "w": 22.65
-            }
-          ]
+          "photos": [],
+          "texts": []
         },
         {
           "id": "client-work",
@@ -834,6 +735,118 @@
           ]
         },
         {
+          "id": "untititled-project",
+          "title": "Izzy & Bryony",
+          "type": "gallery",
+          "header": {
+            "title": "IZZY AND BRYONY - WOODSTOCK, 2024",
+            "meta": "",
+            "quote": "",
+            "description": "35mm half-frame film scans"
+          },
+          "photos": [
+            {
+              "id": "msojoasoi7nn0q",
+              "display": "photos/msojoasoi7nn0q.jpg",
+              "thumb": "photos/msojoasoi7nn0q-t.jpg",
+              "width": 2048,
+              "height": 1373,
+              "caption": "",
+              "x": -1.49,
+              "y": 0,
+              "w": 102.97
+            },
+            {
+              "id": "msojoay25lrnoi",
+              "display": "photos/msojoay25lrnoi.jpg",
+              "thumb": "photos/msojoay25lrnoi-t.jpg",
+              "width": 1373,
+              "height": 2048,
+              "caption": "",
+              "x": -1.49,
+              "y": 287.14,
+              "w": 57.31
+            },
+            {
+              "id": "msojob2piu7ozp",
+              "display": "photos/msok66mkonnyrg.jpg",
+              "thumb": "photos/msok66mkonnyrg-t.jpg",
+              "width": 1607,
+              "height": 1948,
+              "caption": "",
+              "x": 58.22,
+              "y": 290.31,
+              "w": 41.04
+            },
+            {
+              "id": "msojob8kqitlpq",
+              "display": "photos/msok0k5m4ydetj.jpg",
+              "thumb": "photos/msok0k5m4ydetj-t.jpg",
+              "width": 1423,
+              "height": 1851,
+              "caption": "",
+              "x": 11.33,
+              "y": 116.24,
+              "w": 37.99
+            },
+            {
+              "id": "msojobdstvg0e5",
+              "display": "photos/msojobdstvg0e5.jpg",
+              "thumb": "photos/msojobdstvg0e5-t.jpg",
+              "width": 1463,
+              "height": 2048,
+              "caption": "",
+              "x": 11.44,
+              "y": 173.54,
+              "w": 75.77
+            },
+            {
+              "id": "msojohofx89lbj",
+              "display": "photos/msojohofx89lbj.jpg",
+              "thumb": "photos/msojohofx89lbj-t.jpg",
+              "width": 1477,
+              "height": 2048,
+              "caption": "",
+              "x": 51.73,
+              "y": 116.46,
+              "w": 35.48
+            },
+            {
+              "id": "msojp19tbaz05x",
+              "display": "photos/msojp19tbaz05x.jpg",
+              "thumb": "photos/msojp19tbaz05x-t.jpg",
+              "width": 2048,
+              "height": 1448,
+              "caption": "",
+              "x": 0.78,
+              "y": 73.97,
+              "w": 45.58
+            },
+            {
+              "id": "msojp1dikiygl9",
+              "display": "photos/msok47k67xi53p.jpg",
+              "thumb": "photos/msok47k67xi53p-t.jpg",
+              "width": 853,
+              "height": 1169,
+              "caption": "",
+              "x": 76.33,
+              "y": 73.73,
+              "w": 23.67
+            },
+            {
+              "id": "msojp1h0t3qb3y",
+              "display": "photos/msok4q4vq4m31q.jpg",
+              "thumb": "photos/msok4q4vq4m31q-t.jpg",
+              "width": 854,
+              "height": 1224,
+              "caption": "",
+              "x": 50,
+              "y": 73.73,
+              "w": 22.65
+            }
+          ]
+        },
+        {
           "id": "eva",
           "title": "Eva",
           "type": "gallery",
@@ -889,19 +902,6 @@
               "w": 80.61
             }
           ]
-        },
-        {
-          "id": "still-life-studies",
-          "title": "still life studies",
-          "type": "gallery",
-          "header": {
-            "title": "",
-            "meta": "",
-            "quote": "",
-            "description": ""
-          },
-          "photos": [],
-          "texts": []
         },
         {
           "id": "tayla-mike",
