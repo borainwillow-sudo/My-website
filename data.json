@@ -608,6 +608,39 @@
               "x": 1,
               "y": 95.31,
               "w": 31.33
+            },
+            {
+              "id": "mtn87nfofqlv4k",
+              "display": "photos/mtn87nfofqlv4k.jpg",
+              "thumb": "photos/mtn87nfofqlv4k-t.jpg",
+              "width": 1715,
+              "height": 2560,
+              "caption": "",
+              "x": 1,
+              "y": 146.05,
+              "w": 31.33
+            },
+            {
+              "id": "mtn87nufixethi",
+              "display": "photos/mtn87nufixethi.jpg",
+              "thumb": "photos/mtn87nufixethi-t.jpg",
+              "width": 1715,
+              "height": 2560,
+              "caption": "",
+              "x": 34.33,
+              "y": 146.05,
+              "w": 31.33
+            },
+            {
+              "id": "mtn87o8icy64k0",
+              "display": "photos/mtn87o8icy64k0.jpg",
+              "thumb": "photos/mtn87o8icy64k0-t.jpg",
+              "width": 1715,
+              "height": 2560,
+              "caption": "",
+              "x": 67.67,
+              "y": 146.05,
+              "w": 31.33
             }
           ],
           "texts": []
