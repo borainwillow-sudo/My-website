@@ -2429,56 +2429,6 @@
           "x": 24.12,
           "y": 0,
           "w": 48.34
-        },
-        {
-          "id": "mtbn3fk24bap8h",
-          "display": "photos/mtbn3fk24bap8h.jpg",
-          "thumb": "photos/mtbn3fk24bap8h-t.jpg",
-          "width": 2237,
-          "height": 2560,
-          "caption": "",
-          "x": -2.7,
-          "y": 153.36,
-          "w": 32.53,
-          "title": "",
-          "link": "#/4wks"
-        },
-        {
-          "id": "mtbn3r62f4slv9",
-          "display": "photos/mtbn3r62f4slv9.jpg",
-          "thumb": "photos/mtbn3r62f4slv9-t.jpg",
-          "width": 2237,
-          "height": 2560,
-          "caption": "",
-          "x": 66.89,
-          "y": 153.36,
-          "w": 32.53,
-          "title": "",
-          "link": "https://superbalist.com/thewayofus/2015/12/22/do-not-enter/474"
-        },
-        {
-          "id": "mtbn4a463nkzf8",
-          "display": "photos/mtbn4a463nkzf8.jpg",
-          "thumb": "photos/mtbn4a463nkzf8-t.jpg",
-          "width": 2237,
-          "height": 2560,
-          "caption": "",
-          "x": 32.02,
-          "y": 153.36,
-          "w": 32.53,
-          "title": "",
-          "link": "#/cape-film-supply"
-        },
-        {
-          "id": "mtbn4s8pplllhc",
-          "display": "photos/mtbn4s8pplllhc.jpg",
-          "thumb": "photos/mtbn4s8pplllhc-t.jpg",
-          "width": 2237,
-          "height": 2560,
-          "caption": "",
-          "x": 66.89,
-          "y": 113.46,
-          "w": 32.53
         }
       ],
       "texts": []
