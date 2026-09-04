@@ -599,17 +599,6 @@
               "w": 48.62
             },
             {
-              "id": "mtn866votuov4g",
-              "display": "photos/mtn866votuov4g.jpg",
-              "thumb": "photos/mtn866votuov4g-t.jpg",
-              "width": 1716,
-              "height": 2560,
-              "caption": "",
-              "x": 48.94,
-              "y": 388.92,
-              "w": 31.33
-            },
-            {
               "id": "mtn87nfofqlv4k",
               "display": "photos/mtn87nfofqlv4k.jpg",
               "thumb": "photos/mtn87nfofqlv4k-t.jpg",
@@ -654,28 +643,6 @@
               "w": 31.33
             },
             {
-              "id": "mtn87vbtv51d77",
-              "display": "photos/mtn87vbtv51d77.jpg",
-              "thumb": "photos/mtn87vbtv51d77-t.jpg",
-              "width": 2010,
-              "height": 2560,
-              "caption": "",
-              "x": 9.31,
-              "y": 383.22,
-              "w": 31.33
-            },
-            {
-              "id": "mtn87vkx18350w",
-              "display": "photos/mtn87vkx18350w.jpg",
-              "thumb": "photos/mtn87vkx18350w-t.jpg",
-              "width": 2009,
-              "height": 2560,
-              "caption": "",
-              "x": 23.22,
-              "y": 400.98,
-              "w": 31.33
-            },
-            {
               "id": "mtn87vt1i9i65q",
               "display": "photos/mtn87vt1i9i65q.jpg",
               "thumb": "photos/mtn87vt1i9i65q-t.jpg",
@@ -693,8 +660,8 @@
               "width": 2009,
               "height": 2560,
               "caption": "",
-              "x": 32.23,
-              "y": 368.96,
+              "x": -15.66,
+              "y": 384.74,
               "w": 31.33
             },
             {
