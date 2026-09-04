@@ -414,6 +414,17 @@
           "w": 83.6
         },
         {
+          "id": "mtn8d00s43ndhw",
+          "display": "photos/mtn8d00s43ndhw.jpg",
+          "thumb": "photos/mtn8d00s43ndhw-t.jpg",
+          "width": 1715,
+          "height": 2560,
+          "caption": "",
+          "x": 52.65,
+          "y": 1599.94,
+          "w": 39.26
+        },
+        {
           "id": "mtn8ciwd9i5tsa",
           "display": "photos/mtn8crn701aana.jpg",
           "thumb": "photos/mtn8crn701aana-t.jpg",
@@ -423,17 +434,6 @@
           "x": 7.23,
           "y": 1601.44,
           "w": 44.87
-        },
-        {
-          "id": "mtn8d00s43ndhw",
-          "display": "photos/mtn8d00s43ndhw.jpg",
-          "thumb": "photos/mtn8d00s43ndhw-t.jpg",
-          "width": 1715,
-          "height": 2560,
-          "caption": "",
-          "x": 53.76,
-          "y": 1598.708125,
-          "w": 39.26
         }
       ]
     },
