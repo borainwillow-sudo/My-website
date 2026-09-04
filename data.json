@@ -1463,6 +1463,19 @@
               "w": 26.4
             }
           ]
+        },
+        {
+          "id": "still-life-studies",
+          "title": "still life studies",
+          "type": "gallery",
+          "header": {
+            "title": "",
+            "meta": "",
+            "quote": "",
+            "description": ""
+          },
+          "photos": [],
+          "texts": []
         }
       ]
     },
