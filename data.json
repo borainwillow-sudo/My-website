@@ -412,6 +412,17 @@
           "x": 7.23,
           "y": 1152.52,
           "w": 83.27
+        },
+        {
+          "id": "mtn8bszzl10bdm",
+          "display": "photos/mtn8bszzl10bdm.jpg",
+          "thumb": "photos/mtn8bszzl10bdm-t.jpg",
+          "width": 2560,
+          "height": 1716,
+          "caption": "",
+          "x": 28.730000000000004,
+          "y": 1581.8039330740344,
+          "w": 31.33
         }
       ]
     },
