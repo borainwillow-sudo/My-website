@@ -1586,107 +1586,6 @@
           ]
         },
         {
-          "id": "4wks",
-          "title": "4wks",
-          "type": "gallery",
-          "header": {
-            "title": "4WKS COFFEE - 2026",
-            "meta": "",
-            "quote": "",
-            "description": "35mm film scans"
-          },
-          "photos": [
-            {
-              "id": "msn74quh1ll66x",
-              "display": "photos/msn74quh1ll66x.jpg",
-              "thumb": "photos/msn74quh1ll66x-t.jpg",
-              "width": 1341,
-              "height": 2000,
-              "caption": "",
-              "x": 2.94,
-              "y": 0,
-              "w": 43.46
-            },
-            {
-              "id": "msn74rh6mb02w0",
-              "display": "photos/msn74rh6mb02w0.jpg",
-              "thumb": "photos/msn74rh6mb02w0-t.jpg",
-              "width": 1341,
-              "height": 2000,
-              "caption": "",
-              "x": 2.94,
-              "y": 69.23,
-              "w": 43.46
-            },
-            {
-              "id": "msn74rz5gvlq5n",
-              "display": "photos/msn74rz5gvlq5n.jpg",
-              "thumb": "photos/msn74rz5gvlq5n-t.jpg",
-              "width": 1341,
-              "height": 2000,
-              "caption": "",
-              "x": 52.87,
-              "y": 0,
-              "w": 43.46
-            },
-            {
-              "id": "msn74sdcx4tjqw",
-              "display": "photos/msn74sdcx4tjqw.jpg",
-              "thumb": "photos/msn74sdcx4tjqw-t.jpg",
-              "width": 1341,
-              "height": 2000,
-              "caption": "",
-              "x": 52.87,
-              "y": 69.23,
-              "w": 43.46
-            },
-            {
-              "id": "mta7s3v9bfib8a",
-              "display": "photos/mta7s3v9bfib8a.jpg",
-              "thumb": "photos/mta7s3v9bfib8a-t.jpg",
-              "width": 1341,
-              "height": 2000,
-              "caption": "",
-              "x": 2.94,
-              "y": 138.9,
-              "w": 43.46
-            },
-            {
-              "id": "mta7sjhrmzd4ul",
-              "display": "photos/mta7sjhrmzd4ul.jpg",
-              "thumb": "photos/mta7sjhrmzd4ul-t.jpg",
-              "width": 1352,
-              "height": 2000,
-              "caption": "",
-              "x": 52.87,
-              "y": 209.29,
-              "w": 43.46
-            },
-            {
-              "id": "mtd1lyikh1nexv",
-              "display": "photos/mtd1lyikh1nexv.jpg",
-              "thumb": "photos/mtd1lyikh1nexv-t.jpg",
-              "width": 1731,
-              "height": 2560,
-              "caption": "",
-              "x": 2.94,
-              "y": 209.31,
-              "w": 43.46
-            },
-            {
-              "id": "mtd1lytknbu2sg",
-              "display": "photos/mtd1lytknbu2sg.jpg",
-              "thumb": "photos/mtd1lytknbu2sg-t.jpg",
-              "width": 1731,
-              "height": 2560,
-              "caption": "",
-              "x": 52.87,
-              "y": 139.17,
-              "w": 43.46
-            }
-          ]
-        },
-        {
           "id": "merwe-mode",
           "title": "Merwe Mode",
           "type": "gallery",
@@ -1806,6 +1705,107 @@
               "x": 16.85,
               "y": 320.9,
               "w": 66.3
+            }
+          ]
+        },
+        {
+          "id": "4wks",
+          "title": "4wks",
+          "type": "gallery",
+          "header": {
+            "title": "4WKS COFFEE - 2026",
+            "meta": "",
+            "quote": "",
+            "description": "35mm film scans"
+          },
+          "photos": [
+            {
+              "id": "msn74quh1ll66x",
+              "display": "photos/msn74quh1ll66x.jpg",
+              "thumb": "photos/msn74quh1ll66x-t.jpg",
+              "width": 1341,
+              "height": 2000,
+              "caption": "",
+              "x": 2.94,
+              "y": 0,
+              "w": 43.46
+            },
+            {
+              "id": "msn74rh6mb02w0",
+              "display": "photos/msn74rh6mb02w0.jpg",
+              "thumb": "photos/msn74rh6mb02w0-t.jpg",
+              "width": 1341,
+              "height": 2000,
+              "caption": "",
+              "x": 2.94,
+              "y": 69.23,
+              "w": 43.46
+            },
+            {
+              "id": "msn74rz5gvlq5n",
+              "display": "photos/msn74rz5gvlq5n.jpg",
+              "thumb": "photos/msn74rz5gvlq5n-t.jpg",
+              "width": 1341,
+              "height": 2000,
+              "caption": "",
+              "x": 52.87,
+              "y": 0,
+              "w": 43.46
+            },
+            {
+              "id": "msn74sdcx4tjqw",
+              "display": "photos/msn74sdcx4tjqw.jpg",
+              "thumb": "photos/msn74sdcx4tjqw-t.jpg",
+              "width": 1341,
+              "height": 2000,
+              "caption": "",
+              "x": 52.87,
+              "y": 69.23,
+              "w": 43.46
+            },
+            {
+              "id": "mta7s3v9bfib8a",
+              "display": "photos/mta7s3v9bfib8a.jpg",
+              "thumb": "photos/mta7s3v9bfib8a-t.jpg",
+              "width": 1341,
+              "height": 2000,
+              "caption": "",
+              "x": 2.94,
+              "y": 138.9,
+              "w": 43.46
+            },
+            {
+              "id": "mta7sjhrmzd4ul",
+              "display": "photos/mta7sjhrmzd4ul.jpg",
+              "thumb": "photos/mta7sjhrmzd4ul-t.jpg",
+              "width": 1352,
+              "height": 2000,
+              "caption": "",
+              "x": 52.87,
+              "y": 209.29,
+              "w": 43.46
+            },
+            {
+              "id": "mtd1lyikh1nexv",
+              "display": "photos/mtd1lyikh1nexv.jpg",
+              "thumb": "photos/mtd1lyikh1nexv-t.jpg",
+              "width": 1731,
+              "height": 2560,
+              "caption": "",
+              "x": 2.94,
+              "y": 209.31,
+              "w": 43.46
+            },
+            {
+              "id": "mtd1lytknbu2sg",
+              "display": "photos/mtd1lytknbu2sg.jpg",
+              "thumb": "photos/mtd1lytknbu2sg-t.jpg",
+              "width": 1731,
+              "height": 2560,
+              "caption": "",
+              "x": 52.87,
+              "y": 139.17,
+              "w": 43.46
             }
           ]
         },
