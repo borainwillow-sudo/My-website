@@ -422,7 +422,18 @@
           "caption": "",
           "x": 7.23,
           "y": 1601.44,
-          "w": 42.425
+          "w": 42.43
+        },
+        {
+          "id": "mtn8d00s43ndhw",
+          "display": "photos/mtn8d00s43ndhw.jpg",
+          "thumb": "photos/mtn8d00s43ndhw-t.jpg",
+          "width": 1715,
+          "height": 2560,
+          "caption": "",
+          "x": 50.77,
+          "y": 1599.82,
+          "w": 38.275329265021455
         }
       ]
     },
