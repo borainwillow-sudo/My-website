@@ -337,17 +337,6 @@
           "w": 83.37
         },
         {
-          "id": "mta7llpdarzqak",
-          "display": "photos/mta7llpdarzqak.jpg",
-          "thumb": "photos/mta7llpdarzqak-t.jpg",
-          "width": 1219,
-          "height": 979,
-          "caption": "",
-          "x": 7.23,
-          "y": 1655.87,
-          "w": 86.7
-        },
-        {
           "id": "mtcvfraudqyzlv",
           "display": "photos/mtcvfraudqyzlv.jpg",
           "thumb": "photos/mtcvfraudqyzlv-t.jpg",
@@ -420,8 +409,8 @@
           "width": 2560,
           "height": 1716,
           "caption": "",
-          "x": 7.23,
-          "y": 1542,
+          "x": 7.06,
+          "y": 1542.67,
           "w": 83.6
         }
       ]
