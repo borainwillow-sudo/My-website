@@ -1,7 +1,7 @@
 (function () {
   // Shown at the bottom of the Style panel. Bump alongside the ?v= query
   // strings in index.html so a stale copy can be identified at a glance.
-  var EDITOR_VERSION = "22";
+  var EDITOR_VERSION = "23";
   var data = null;
   var currentId = "home";
   var openGroups = {};
@@ -1934,6 +1934,28 @@
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(renderPage, 180);
   });
+
+  // A photo <img> can fail to load right after it's published — the CDN
+  // edge serving this visitor hasn't picked up the new file yet — and some
+  // in-app browsers (Instagram's among them) also just drop the ball on a
+  // lazy-loaded image that's already on screen when it's inserted via
+  // innerHTML, leaving it broken until the page is reloaded from scratch.
+  // Image error events don't bubble, so this has to listen during capture.
+  document.addEventListener(
+    "error",
+    function (e) {
+      var img = e.target;
+      if (!img || img.tagName !== "IMG" || !img.closest(".photo-media")) return;
+      var tries = (Number(img.dataset.retries) || 0) + 1;
+      if (tries > 5) return;
+      img.dataset.retries = tries;
+      var base = img.src.split("?")[0];
+      setTimeout(function () {
+        img.src = base + "?retry=" + tries;
+      }, 1000 * tries);
+    },
+    true
+  );
 
   // ---------- boot ----------
 
