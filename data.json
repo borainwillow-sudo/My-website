@@ -58,9 +58,9 @@
           "width": 2087,
           "height": 2560,
           "caption": "",
-          "x": 57.44,
-          "y": 74.54,
-          "w": 37.88,
+          "x": 7.31,
+          "y": 133.23,
+          "w": 32.56,
           "title": "",
           "link": "#/tattoo-convention-polaroids"
         },
@@ -71,9 +71,9 @@
           "width": 2064,
           "height": 2560,
           "caption": "",
-          "x": 15.08,
-          "y": 504.21,
-          "w": 34.78,
+          "x": 15.42,
+          "y": 499.2,
+          "w": 34.18,
           "title": "",
           "link": "#/portraits"
         },
@@ -110,8 +110,8 @@
           "width": 2560,
           "height": 1774,
           "caption": "",
-          "x": 8.55,
-          "y": 181.89,
+          "x": 8.62,
+          "y": 182.84,
           "w": 55.78,
           "title": "",
           "link": "#/personal-work"
@@ -173,9 +173,9 @@
           "width": 2506,
           "height": 1746,
           "caption": "",
-          "x": 15.03,
-          "y": 427.92,
-          "w": 34.57,
+          "x": 15.42,
+          "y": 424.09,
+          "w": 34.12,
           "title": "",
           "link": "#/personal-work"
         },
@@ -223,9 +223,9 @@
           "width": 1883,
           "height": 2560,
           "caption": "",
-          "x": 15.08,
-          "y": 454.63,
-          "w": 34.68,
+          "x": 15.42,
+          "y": 450.06,
+          "w": 34.18,
           "title": "",
           "link": "#/tayla-mike"
         },
@@ -236,8 +236,8 @@
           "width": 2406,
           "height": 1625,
           "caption": "",
-          "x": 39.67,
-          "y": 144,
+          "x": 45.35,
+          "y": 143.44,
           "w": 51.05,
           "title": "",
           "link": "https://www.dazeddigital.com/art-photography/article/66567/1/willow-borain-girlhood-photograph-series-teenage-adolescence-portraits"
@@ -271,20 +271,9 @@
           "width": 2403,
           "height": 1637,
           "caption": "",
-          "x": 4.2,
-          "y": 354.98,
-          "w": 91.12
-        },
-        {
-          "id": "msq2z45yrcu0so",
-          "display": "photos/msq2z45yrcu0so.jpg",
-          "thumb": "photos/msq2z45yrcu0so-t.jpg",
-          "width": 2560,
-          "height": 1816,
-          "caption": "",
-          "x": 4.93,
-          "y": 603.86,
-          "w": 36.37
+          "x": 5.89,
+          "y": 354.83,
+          "w": 86.3
         },
         {
           "id": "mta7f9b8so9bpt",
@@ -309,26 +298,15 @@
           "w": 83.22
         },
         {
-          "id": "mtcvuk0qmtf72t",
-          "display": "photos/mtcvuk0qmtf72t.jpg",
-          "thumb": "photos/mtcvuk0qmtf72t-t.jpg",
-          "width": 1818,
-          "height": 1229,
-          "caption": "",
-          "x": 43.92,
-          "y": 603.86,
-          "w": 38.18
-        },
-        {
           "id": "mtd0x6a4nvc1sm",
           "display": "photos/mtr1z7hfpiayw6.jpg",
           "thumb": "photos/mtr1z7hfpiayw6-t.jpg",
           "width": 2009,
           "height": 2386,
           "caption": "",
-          "x": 15.08,
-          "y": 550.41,
-          "w": 35.16
+          "x": 15.48,
+          "y": 543.95,
+          "w": 34.28
         },
         {
           "id": "mtn8bszzl10bdm",
@@ -349,7 +327,7 @@
           "height": 1882,
           "caption": "",
           "x": 15.13,
-          "y": 557.15,
+          "y": 635.13,
           "w": 35.11
         },
         {
@@ -359,8 +337,8 @@
           "width": 1936,
           "height": 2560,
           "caption": "",
-          "x": 14.87,
-          "y": 631.75,
+          "x": 15.48,
+          "y": 587.13,
           "w": 34.52
         }
       ]
