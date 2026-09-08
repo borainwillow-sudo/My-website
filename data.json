@@ -58,9 +58,9 @@
           "width": 2087,
           "height": 2560,
           "caption": "",
-          "x": 51.15,
-          "y": 543.95,
-          "w": 32.56,
+          "x": 15.07,
+          "y": 587.98,
+          "w": 35.11,
           "title": "",
           "link": "#/tattoo-convention-polaroids"
         },
@@ -304,8 +304,8 @@
           "width": 2009,
           "height": 2386,
           "caption": "",
-          "x": 15.48,
-          "y": 543.95,
+          "x": 15.07,
+          "y": 544.5107899678112,
           "w": 34.28
         },
         {
@@ -326,20 +326,9 @@
           "width": 1518,
           "height": 1882,
           "caption": "",
-          "x": 15.13,
-          "y": 635.13,
+          "x": 15.07,
+          "y": 634.18,
           "w": 35.11
-        },
-        {
-          "id": "mtr21c8jdnahqn",
-          "display": "photos/mtr21c8jdnahqn.jpg",
-          "thumb": "photos/mtr21c8jdnahqn-t.jpg",
-          "width": 1936,
-          "height": 2560,
-          "caption": "",
-          "x": 15.48,
-          "y": 587.13,
-          "w": 34.52
         }
       ]
     },
