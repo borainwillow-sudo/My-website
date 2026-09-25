@@ -314,9 +314,9 @@
           "width": 1790,
           "height": 2560,
           "caption": "",
-          "x": 28.19,
-          "y": 12.44,
-          "w": 31.33
+          "x": 21.89,
+          "y": 12.78,
+          "w": 52.347888277897
         }
       ],
       "texts": [
@@ -325,7 +325,7 @@
           "type": "text",
           "text": "Click here to email me here",
           "align": "left",
-          "x": 21.890000000000004,
+          "x": 21.89,
           "y": 0,
           "w": 56.22,
           "link": "mailto:borainwillow@gmail.com"
