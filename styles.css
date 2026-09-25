@@ -446,6 +446,17 @@ body.is-editing .text-block .text-content:empty::before {
   color: var(--faint);
 }
 
+/* A linked text block. Underlined, because a line of words that does
+   something when clicked has to look like it will — the site's links are
+   otherwise undecorated. */
+.text-link {
+  display: block;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
 /* The drag surface. The text itself can't be one, or clicking to type would
    move the block instead. */
 .text-grip {
