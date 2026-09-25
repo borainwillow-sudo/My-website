@@ -204,6 +204,26 @@ background and uses it as the pointer across the whole site.
 Positions are stored as percentages, so a layout keeps its proportions at any
 window size. Outside edit mode photos are fixed and no longer draggable.
 
+## Editing on a phone
+
+Everything works on a phone, with one difference in how photos are handled:
+there is no hover, and the canvas is shrunk to fit, so the buttons that appear
+above a photo on a desktop would come out tiny and run off the screen.
+
+- **Tap a photo to pick it up.** Its buttons — Replace, Crop, Adjust, Link,
+  Front, Remove — appear in a bar of their own above the toolbar, at a size a
+  finger can hit. Text blocks get Align, Link and Remove the same way.
+- **Drag the photo you've picked up** to move it, and the corner handle to
+  resize. Only the picked-up photo takes the gesture over; a swipe anywhere
+  else still scrolls the page, which is why picking up is a separate step.
+- **Press anywhere off a photo, or Done in that bar, to put it down** and get
+  scrolling back.
+- Pinch to zoom in for fine positioning — the page is shown at about a third
+  of its real size, and dragging works the same at any zoom.
+
+A mouse is unaffected: hover still shows the buttons on the photo itself, and a
+press starts a drag straight away with no picking up.
+
 ## Phones
 
 **Style → On phones** chooses between two ways of showing a free-form page on

@@ -1,7 +1,7 @@
 (function () {
   // Shown at the bottom of the Style panel. Bump alongside the ?v= query
   // strings in index.html so a stale copy can be identified at a glance.
-  var EDITOR_VERSION = "24";
+  var EDITOR_VERSION = "26";
   var data = null;
   var currentId = "home";
   var openGroups = {};
@@ -107,6 +107,12 @@
     var bar = document.querySelector(".mobile-bar");
     var h = bar ? bar.offsetHeight : 0;
     document.documentElement.style.setProperty("--mobile-bar-h", h + "px");
+    // The editing toolbar wraps onto more rows on a narrow screen, and the
+    // picked-up item's buttons stack on top of it, so its height is measured
+    // rather than assumed too.
+    var eb = document.getElementById("edit-bar");
+    var ebh = eb && !eb.hidden ? eb.offsetHeight : 0;
+    document.documentElement.style.setProperty("--edit-bar-h", ebh + "px");
   }
 
   // On a phone, either keep the desktop arrangement (shrunk to fit) or fall
@@ -692,7 +698,7 @@
     var canvas = $("canvas");
     if (!canvas) return;
     window.WB.layout.applyPositions(canvas, items);
-    if (window.WB.isEditing() && window.innerWidth > 820) {
+    if (window.WB.isEditing() && window.WB.layout.freeformActive()) {
       window.WB.layout.enableEditing(canvas, items, function () {
         markDirty();
       });
@@ -1724,6 +1730,96 @@
       if (e.target.tagName !== "IMG") root.innerHTML = "";
     });
   }
+
+  // ---------- the picked-up item's buttons ----------
+
+  // On a touchscreen the buttons above a photo can't be used: they appear on
+  // hover, and on a phone they are drawn inside a canvas shrunk to a third of
+  // its size, so they come out tiny and run off the edge of the screen. The
+  // same buttons are put in a bar of their own instead, outside the canvas,
+  // for whatever is currently picked up.
+  function usingTouchTools() {
+    return (
+      window.matchMedia("(pointer: coarse)").matches ||
+      window.matchMedia("(max-width: 820px)").matches
+    );
+  }
+
+  function renderSelectionTools(id) {
+    var bar = $("sel-tools");
+    if (!bar) return;
+    document.body.classList.toggle("touch-tools", usingTouchTools());
+    if (!id || !usingTouchTools() || !window.WB.isEditing()) {
+      bar.hidden = true;
+      bar.innerHTML = "";
+      return;
+    }
+    var page = findPage(data, currentId);
+    if (!page) return;
+    var photo = (page.photos || []).find(function (p) {
+      return p.id === id;
+    });
+    var text = (page.texts || []).find(function (t) {
+      return t.id === id;
+    });
+    if (!photo && !text) {
+      bar.hidden = true;
+      return;
+    }
+    var buttons = photo
+      ? [
+          ["replace", "Replace"],
+          ["crop", "Crop"],
+          ["adjust", "Adjust"],
+          ["link", "Link"],
+          ["front", "Front"],
+          ["remove", "Remove"],
+        ]
+      : [
+          ["align", "Align"],
+          ["link", "Link"],
+          ["remove", "Remove"],
+        ];
+    bar.innerHTML =
+      '<span class="sel-tools-label">' +
+      (photo ? "Photo" : "Text") +
+      "</span>" +
+      buttons
+        .map(function (b) {
+          return (
+            '<button data-sel-action="' +
+            b[0] +
+            '"' +
+            (b[0] === "remove" ? ' class="danger"' : "") +
+            ">" +
+            b[1] +
+            "</button>"
+          );
+        })
+        .join("") +
+      '<button data-sel-action="done" class="sel-done">Done</button>';
+    bar.dataset.itemId = id;
+    bar.hidden = false;
+  }
+
+  $("sel-tools").addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-sel-action]");
+    if (!btn) return;
+    var id = $("sel-tools").dataset.itemId;
+    var action = btn.dataset.selAction;
+    if (action === "done") {
+      window.WB.layout.clearSelection($("canvas"));
+      return;
+    }
+    var page = findPage(data, currentId);
+    var isText = (page.texts || []).some(function (t) {
+      return t.id === id;
+    });
+    if (isText) handleTextAction(action, id);
+    else handlePhotoAction(action, id);
+  });
+
+  window.WB.layout.onSelectionChange(renderSelectionTools);
 
   // ---------- events ----------
 

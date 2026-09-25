@@ -15,20 +15,34 @@
   var SNAP_PX = 6;
   var selectedId = null;
   var activeKeyHandler = null;
+  var activeDocHandler = null;
+  var selectionListener = null;
+
+  function onSelectionChange(fn) {
+    selectionListener = fn;
+  }
+
+  function announceSelection() {
+    if (selectionListener) selectionListener(selectedId);
+  }
 
   function selectItem(canvas, id) {
     selectedId = id;
     canvas.querySelectorAll("[data-item-id]").forEach(function (el) {
       el.classList.toggle("selected", el.dataset.itemId === id);
     });
+    announceSelection();
   }
 
   function clearSelection(canvas) {
+    var had = selectedId;
     selectedId = null;
-    if (!canvas) return;
-    canvas.querySelectorAll(".selected").forEach(function (el) {
-      el.classList.remove("selected");
-    });
+    if (canvas) {
+      canvas.querySelectorAll(".selected").forEach(function (el) {
+        el.classList.remove("selected");
+      });
+    }
+    if (had) announceSelection();
   }
   var MIN_WIDTH_PCT = 4;
 
@@ -89,6 +103,13 @@
     return isNarrow() && document.body.classList.contains("phone-desktop-layout");
   }
 
+  // Where the free-form coordinates are actually in use: any wide screen, and
+  // a phone showing the shrunk desktop layout. Never the stacked grid, where
+  // a position means nothing.
+  function freeformActive() {
+    return !isNarrow() || isScaledPhone();
+  }
+
   function frameOf(canvas) {
     var p = canvas.parentElement;
     return p && p.classList.contains("canvas-frame") ? p : null;
@@ -103,6 +124,7 @@
     // Anything left over from the other mode would fight with this one.
     canvas.style.transform = "";
     canvas.style.width = "";
+    canvas.style.setProperty("--canvas-scale", 1);
     if (frame) frame.style.height = "";
 
     if (isNarrow() && !scaled) {
@@ -157,6 +179,9 @@
       // Origin is the top-left, so the shift is applied in canvas coordinates
       // and scaled with everything else.
       canvas.style.transform = "scale(" + k + ") translateX(" + -leftPx + "px)";
+      // The controls counter-scale by this, so a handle stays a usable size
+      // however far the page is shrunk.
+      canvas.style.setProperty("--canvas-scale", k);
       // A transform doesn't change the layout box, so the frame has to be told
       // how tall the shrunk canvas actually looks or the page scrolls wrong.
       frame.style.height = bottom > 0 ? bottom * k + "px" : "";
@@ -271,11 +296,24 @@
       }
       var handle = e.target.closest(".resize-handle");
       var block = e.target.closest("[data-item-id]");
-      if (!block || !canvas.contains(block)) return;
+      if (!block || !canvas.contains(block)) {
+        // A tap on the bare canvas puts everything down again.
+        if (!handle) clearSelection(canvas);
+        return;
+      }
       var item = items.find(function (p) {
         return p.id === block.dataset.itemId;
       });
       if (!item) return;
+
+      // On a touchscreen a press has to be able to mean "scroll the page", so
+      // the first tap only picks a photo up — which is also what reveals its
+      // buttons, there being no hover to do it. Dragging then works on the one
+      // that is picked up. A mouse keeps dragging straight away.
+      if (e.pointerType === "touch" && !handle && selectedId !== item.id) {
+        selectItem(canvas, item.id);
+        return;
+      }
 
       // The preventDefault below stops the browser moving focus, so a caption
       // or text block that is still being typed in would never fire focusout
@@ -420,6 +458,24 @@
     activeKeyHandler = onKeyDown;
     document.addEventListener("keydown", onKeyDown);
 
+    // A picked-up photo takes over the swipe gesture, so putting it down has
+    // to be easy: a press anywhere that isn't a photo does it, not just on a
+    // bare patch of canvas between them. The toolbar and the open panels are
+    // excluded — pressing those is not "I've finished with this photo".
+    function onDocDown(e) {
+      if (
+        e.target.closest("[data-item-id]") ||
+        e.target.closest("#edit-bar") ||
+        e.target.closest("#modal-root")
+      ) {
+        return;
+      }
+      clearSelection(canvas);
+    }
+    if (activeDocHandler) document.removeEventListener("pointerdown", activeDocHandler, true);
+    activeDocHandler = onDocDown;
+    document.addEventListener("pointerdown", onDocDown, true);
+
     canvas.addEventListener("pointerdown", onPointerDown);
     canvas.addEventListener("pointermove", onPointerMove);
     canvas.addEventListener("pointerup", endDrag);
@@ -519,6 +575,11 @@
       newColumnCursors: newColumnCursors,
       shortestColumn: shortestColumn,
       clearSelection: clearSelection,
+      freeformActive: freeformActive,
+      onSelectionChange: onSelectionChange,
+      selectedId: function () {
+        return selectedId;
+      },
       COLUMNS: COLUMNS,
       GAP: GAP,
       heightPct: heightPct,

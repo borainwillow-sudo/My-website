@@ -546,6 +546,13 @@ body.is-editing .text-block.dragging .text-grip {
 
 body.is-editing .photo-block {
   cursor: grab;
+  /* A press on a photo has to be able to mean "scroll the page" on a
+     touchscreen, or a page of photos can't be scrolled at all. Only the photo
+     that has been picked up takes the gesture over. */
+  touch-action: auto;
+}
+
+body.is-editing .photo-block.selected {
   touch-action: none;
 }
 
@@ -593,8 +600,50 @@ body.is-editing .photo-block .resize-handle {
   z-index: 12;
 }
 
-body.is-editing .photo-block:hover .photo-tools {
+body.is-editing .photo-block:hover .photo-tools,
+body.is-editing .photo-block.selected .photo-tools {
   display: flex;
+}
+
+/* Where the buttons live in their own bar, the ones drawn inside the canvas
+   would only clip and overlap. */
+body.touch-tools .photo-block .photo-tools {
+  display: none !important;
+}
+
+/* The canvas is shrunk to fit a phone, which would shrink the controls with
+   it — a 13px handle becomes 4px. They scale back up by the same amount, so a
+   handle is a handle whatever the page is doing. */
+.photo-tools,
+.resize-handle {
+  transform: scale(calc(1 / var(--canvas-scale, 1)));
+}
+
+.photo-tools {
+  transform-origin: 0 100%;
+}
+
+.resize-handle {
+  transform-origin: 100% 100%;
+}
+
+/* Fingers need a bigger target than a pointer does. */
+@media (pointer: coarse) {
+  .resize-handle {
+    width: 22px;
+    height: 22px;
+    right: -11px;
+    bottom: -11px;
+  }
+
+  .photo-tools button {
+    font-size: 11px;
+    padding: 5px 9px;
+  }
+
+  .text-grip {
+    height: 22px;
+  }
 }
 
 .photo-tools button {
@@ -1119,7 +1168,7 @@ body.is-editing {
     grid-column: 1 / -1;
   }
 
-  .text-grip {
+  body:not(.phone-desktop-layout) .text-grip {
     display: none !important;
   }
 
@@ -1127,7 +1176,7 @@ body.is-editing {
     display: none;
   }
 
-  .resize-handle {
+  body:not(.phone-desktop-layout) .resize-handle {
     display: none !important;
   }
 
@@ -1144,4 +1193,57 @@ body.is-editing {
   body:not(.phone-desktop-layout) .canvas {
     grid-template-columns: 1fr;
   }
+}
+
+/* ---------- buttons for the picked-up item (touch) ---------- */
+
+.sel-tools {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 75;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  background: #fff;
+  border-top: 1px solid var(--line);
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* It sits above the editing toolbar, which is itself fixed to the bottom. */
+body.is-editing .sel-tools {
+  bottom: var(--edit-bar-h, 96px);
+}
+
+.sel-tools-label {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-right: 2px;
+}
+
+.sel-tools button {
+  font-family: inherit;
+  font-size: 13px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 9px 14px;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.sel-tools button.danger {
+  color: var(--danger);
+}
+
+.sel-tools button.sel-done {
+  margin-left: auto;
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
 }
