@@ -189,14 +189,30 @@ img {
   border-bottom: 1px solid var(--line);
   padding: 14px 18px;
   align-items: center;
-  justify-content: space-between;
+  /* The name is centred in the bar and the menu button sits over the right
+     edge, rather than the two sharing the row — so the name is centred on the
+     screen, not on whatever space the button leaves. */
+  justify-content: center;
+  position: relative;
+}
+
+.mobile-bar #nav-toggle {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .mobile-name {
   font-weight: var(--f-siteName-weight);
-  font-size: calc(var(--f-siteName-size) * 0.62);
+  /* Always one line. The vw cap is what keeps it to one: at the sizes the
+     heading is set to, the name would otherwise be wider than a phone and
+     wrap. It only ever shrinks the name — the first value wins whenever it
+     fits. */
+  font-size: min(calc(var(--f-siteName-size) * 0.62), 9vw);
   line-height: 1.08;
-  max-width: 6em;
+  white-space: nowrap;
+  text-align: center;
 }
 
 .icon-btn {
