@@ -306,7 +306,19 @@
         "quote": "",
         "description": ""
       },
-      "photos": [],
+      "photos": [
+        {
+          "id": "muh8pb3x0lkhe5",
+          "display": "photos/muh8pb3x0lkhe5.jpg",
+          "thumb": "photos/muh8pb3x0lkhe5-t.jpg",
+          "width": 1790,
+          "height": 2560,
+          "caption": "",
+          "x": 1,
+          "y": 4,
+          "w": 31.33
+        }
+      ],
       "texts": [
         {
           "id": "muh8nwye56r6i6",
