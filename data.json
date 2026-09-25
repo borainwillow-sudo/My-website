@@ -325,9 +325,9 @@
           "type": "text",
           "text": "Click here to email me here",
           "align": "left",
-          "x": 1,
-          "y": 4,
-          "w": 64.66,
+          "x": 21.890000000000004,
+          "y": 0,
+          "w": 56.22,
           "link": "mailto:borainwillow@gmail.com"
         }
       ]
