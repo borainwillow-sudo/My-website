@@ -65,19 +65,6 @@
           "link": "#/tattoo-convention-polaroids"
         },
         {
-          "id": "mshps4tv04glh5",
-          "display": "photos/mshps4tv04glh5.jpg",
-          "thumb": "photos/mshps4tv04glh5-t.jpg",
-          "width": 2064,
-          "height": 2560,
-          "caption": "",
-          "x": 30.41,
-          "y": 569.25,
-          "w": 38.99,
-          "title": "",
-          "link": "#/portraits"
-        },
-        {
           "id": "mshq6j7wht2jid",
           "display": "photos/mshq6j7wht2jid.jpg",
           "thumb": "photos/mshq6j7wht2jid-t.jpg",
@@ -110,8 +97,8 @@
           "width": 2560,
           "height": 1774,
           "caption": "",
-          "x": 19.01,
-          "y": 620.11,
+          "x": 20.15,
+          "y": 720.8,
           "w": 64.29,
           "title": "",
           "link": "#/personal-work"
@@ -313,8 +300,8 @@
           "width": 1872,
           "height": 2560,
           "caption": "",
-          "x": 12.85,
-          "y": 666.54,
+          "x": 34.745,
+          "y": 642.5331623931623,
           "w": 35.11
         },
         {
