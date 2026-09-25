@@ -236,8 +236,8 @@
           "width": 2406,
           "height": 1625,
           "caption": "",
-          "x": 51.15,
-          "y": 123.42,
+          "x": 15.23,
+          "y": 211.5105478809013,
           "w": 51.05,
           "title": "",
           "link": "https://www.dazeddigital.com/art-photography/article/66567/1/willow-borain-girlhood-photograph-series-teenage-adolescence-portraits"
@@ -372,6 +372,17 @@
           "caption": "",
           "x": 61.07,
           "y": 0,
+          "w": 31.33
+        },
+        {
+          "id": "muh6s5dcly09pg",
+          "display": "photos/muh6s5dcly09pg.jpg",
+          "thumb": "photos/muh6s5dcly09pg-t.jpg",
+          "width": 2560,
+          "height": 1994,
+          "caption": "",
+          "x": 24.35,
+          "y": 80,
           "w": 31.33
         }
       ]
