@@ -129,6 +129,7 @@ kind of object, it just holds words.
 - **Resize** from the corner handle. Only the width is yours to set; the height
   follows the words, so a narrower block gets taller and the page grows to fit.
 - **Align** cycles left → centre → right.
+- **Link** makes the whole block clickable — see below.
 - **Remove** deletes it.
 
 Text blocks use the **Body text** weight and size from **Style**, so all the
@@ -138,6 +139,24 @@ overlap, which is what you want for a caption laid over an image.
 On phones they take the full width of the screen and fall into place among the
 photos in reading order — down the page, then across — rather than all landing
 at the bottom.
+
+## Linking text, and email links
+
+**Link** on a text block makes the whole block clickable, so a short block on
+its own — "Click here to email me" — becomes a link. Keep such a block brief
+rather than burying the link in a paragraph, since all of it is clickable. A
+linked block is underlined, because a line of words that does something when
+clicked has to look like it will.
+
+Type an **email address** into the link field of either a text block or a
+photo and it becomes a mail link: clicking it opens a new message in whatever
+mail app the reader uses, rather than going to a web page. Writing `mailto:`
+yourself works too but isn't needed. Anything else without `https://` in front
+is assumed to be a web address.
+
+While editing, the block shows the same small blue `link` marker a photo does,
+and isn't clickable — otherwise a click would follow the link instead of
+putting the caret in the text.
 
 ## Photo links and hover labels
 
