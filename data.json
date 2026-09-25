@@ -323,11 +323,11 @@
         {
           "id": "muh8nwye56r6i6",
           "type": "text",
-          "text": "Click here to email me here",
+          "text": "Click here to email me.",
           "align": "left",
-          "x": 21.89,
+          "x": 23.8,
           "y": 0,
-          "w": 52.41,
+          "w": 43.37952119098712,
           "link": "mailto:borainwillow@gmail.com"
         }
       ]
