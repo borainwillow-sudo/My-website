@@ -307,17 +307,7 @@
         "description": ""
       },
       "photos": [],
-      "texts": [
-        {
-          "id": "muh8a9biev3myx",
-          "type": "text",
-          "text": "click here to email me",
-          "align": "left",
-          "x": 1,
-          "y": 4,
-          "w": 64.66
-        }
-      ]
+      "texts": []
     }
   ],
   "cursor": {
