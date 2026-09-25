@@ -307,17 +307,7 @@
         "description": ""
       },
       "photos": [],
-      "texts": [
-        {
-          "id": "muh8f1w3dzpw0s",
-          "type": "text",
-          "text": "",
-          "align": "left",
-          "x": 1,
-          "y": 4,
-          "w": 64.66
-        }
-      ]
+      "texts": []
     }
   ],
   "cursor": {
