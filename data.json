@@ -316,6 +316,17 @@
           "x": 51.91,
           "y": 833.35,
           "w": 36.63
+        },
+        {
+          "id": "muiajbu6tjta7r",
+          "display": "photos/muiajbu6tjta7r.jpg",
+          "thumb": "photos/muiajbu6tjta7r-t.jpg",
+          "width": 400,
+          "height": 400,
+          "caption": "",
+          "x": 1,
+          "y": 963.22,
+          "w": 31.33
         }
       ]
     },
