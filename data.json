@@ -2,11 +2,11 @@
   "siteName": "Willow Borain",
   "typography": {
     "siteName": {
-      "weight": 700,
+      "weight": 500,
       "size": 60
     },
     "nav": {
-      "weight": 700,
+      "weight": 400,
       "size": 13
     },
     "pageTitle": {
@@ -18,8 +18,8 @@
       "size": 14
     },
     "body": {
-      "weight": 400,
-      "size": 13
+      "weight": 500,
+      "size": 40
     },
     "caption": {
       "weight": 700,
@@ -45,9 +45,9 @@
           "width": 1820,
           "height": 1390,
           "caption": "",
-          "x": 51.24,
-          "y": 940.83,
-          "w": 39.48,
+          "x": 20.98,
+          "y": 959.74,
+          "w": 30.72,
           "title": "",
           "link": ""
         },
@@ -58,74 +58,22 @@
           "width": 2087,
           "height": 2560,
           "caption": "",
-          "x": 7.31,
-          "y": 58.42,
-          "w": 32.54,
+          "x": 29.92,
+          "y": 730.26,
+          "w": 39.48,
           "title": "",
           "link": "#/tattoo-convention-polaroids"
         },
         {
-          "id": "mshps4tv04glh5",
-          "display": "photos/mshps4tv04glh5.jpg",
-          "thumb": "photos/mshps4tv04glh5-t.jpg",
-          "width": 2064,
-          "height": 2560,
-          "caption": "",
-          "x": 14.93,
-          "y": 513.01,
-          "w": 34.78,
-          "title": "",
-          "link": "#/portraits"
-        },
-        {
-          "id": "mshq6j7wht2jid",
-          "display": "photos/mshq6j7wht2jid.jpg",
-          "thumb": "photos/mshq6j7wht2jid-t.jpg",
-          "width": 2064,
-          "height": 2560,
-          "caption": "",
-          "x": 51.24,
-          "y": 680.02,
-          "w": 40.67,
-          "title": "",
-          "link": "#/dorps"
-        },
-        {
-          "id": "msmv33om8tj9q7",
-          "display": "photos/mtcyenkbvpmhib.jpg",
-          "thumb": "photos/mtcyenkbvpmhib-t.jpg",
-          "width": 1859,
-          "height": 2509,
-          "caption": "",
-          "x": 8.76,
-          "y": 370.79,
-          "w": 47.12,
-          "title": "",
-          "link": "#/portraits"
-        },
-        {
-          "id": "msmv4v4p3vdd8k",
-          "display": "photos/msq35myex1jsgw.jpg",
-          "thumb": "photos/msq35myex1jsgw-t.jpg",
-          "width": 1792,
-          "height": 2560,
-          "caption": "",
-          "x": 14.98,
-          "y": 680.38,
-          "w": 34.68,
-          "title": "",
-          "link": "#/portraits"
-        },
-        {
           "id": "msn2s24kgrvi0u",
-          "display": "photos/mtcyczar4gymlm.jpg",
-          "thumb": "photos/mtcyczar4gymlm-t.jpg",
+          "display": "photos/mtr20wpkts0g4o.jpg",
+          "thumb": "photos/mtr20wpkts0g4o-t.jpg",
           "width": 2560,
-          "height": 1908,
+          "height": 1774,
           "caption": "",
-          "x": 7.31,
-          "y": 165.53,
-          "w": 64.26,
+          "x": 2.41,
+          "y": 790.87,
+          "w": 58.82,
           "title": "",
           "link": "#/personal-work"
         },
@@ -136,8 +84,8 @@
           "width": 2136,
           "height": 2560,
           "caption": "",
-          "x": 51.24,
-          "y": 784.39,
+          "x": 29.92,
+          "y": 462.49,
           "w": 39.48,
           "title": "",
           "link": "#/personal-work"
@@ -149,48 +97,9 @@
           "width": 1994,
           "height": 2560,
           "caption": "",
-          "x": 51.24,
-          "y": 887.75,
+          "x": 30.23,
+          "y": 569.64,
           "w": 39.29
-        },
-        {
-          "id": "msod51v2b52qss",
-          "display": "photos/msopuzn152beiu.jpg",
-          "thumb": "photos/msopuzn152beiu-t.jpg",
-          "width": 2560,
-          "height": 1952,
-          "caption": "",
-          "x": 12.83,
-          "y": 234.09,
-          "w": 73.65,
-          "title": "Girlhood",
-          "link": "https://www.dazeddigital.com/art-photography/article/66567/1/willow-borain-girlhood-photograph-series-teenage-adolescence-portraits"
-        },
-        {
-          "id": "msop29lph47qpf",
-          "display": "photos/msop7hgdgmb0un.jpg",
-          "thumb": "photos/msop7hgdgmb0un-t.jpg",
-          "width": 1423,
-          "height": 1855,
-          "caption": "",
-          "x": 14.98,
-          "y": 558.41,
-          "w": 34.68,
-          "title": "",
-          "link": "#/untititled-project"
-        },
-        {
-          "id": "msop62ap0czren",
-          "display": "photos/mspwq6bnwpgpsj.jpg",
-          "thumb": "photos/mspwq6bnwpgpsj-t.jpg",
-          "width": 2506,
-          "height": 1746,
-          "caption": "",
-          "x": 51.24,
-          "y": 20.33,
-          "w": 46.08,
-          "title": "",
-          "link": "#/personal-work"
         },
         {
           "id": "mskb791sp52vu2",
@@ -199,9 +108,9 @@
           "width": 2560,
           "height": 1706,
           "caption": "",
-          "x": 12.83,
-          "y": 293.55,
-          "w": 73.65,
+          "x": 2.41,
+          "y": 838.82,
+          "w": 94.84,
           "title": "Girlhood",
           "link": "https://www.dazeddigital.com/art-photography/article/66567/1/willow-borain-girlhood-photograph-series-teenage-adolescence-portraits"
         },
@@ -212,48 +121,11 @@
           "width": 2085,
           "height": 2560,
           "caption": "",
-          "x": 51.24,
-          "y": 732.99,
-          "w": 39.48,
+          "x": 46.4,
+          "y": 146.03,
+          "w": 50.51,
           "title": "",
           "link": "#/portraits"
-        },
-        {
-          "id": "mspv7hsljvsluh",
-          "display": "photos/mspv7hsljvsluh.jpg",
-          "thumb": "photos/mspv7hsljvsluh-t.jpg",
-          "width": 2560,
-          "height": 2141,
-          "caption": "",
-          "x": 1.53,
-          "y": 0,
-          "w": 46.39
-        },
-        {
-          "id": "mspvscic82bp0q",
-          "display": "photos/mtcwnxkaopvjxc.jpg",
-          "thumb": "photos/mtcwnxkaopvjxc-t.jpg",
-          "width": 413,
-          "height": 445,
-          "caption": "",
-          "x": 60.03,
-          "y": 365.24,
-          "w": 30.47,
-          "title": "",
-          "link": "#/portraits"
-        },
-        {
-          "id": "mspw5fihqtlb80",
-          "display": "photos/mspy8izxd4ain0.jpg",
-          "thumb": "photos/mspy8izxd4ain0-t.jpg",
-          "width": 2096,
-          "height": 2560,
-          "caption": "",
-          "x": 7.23,
-          "y": 1436.72,
-          "w": 83.49,
-          "title": "",
-          "link": "#/client-work"
         },
         {
           "id": "mspwc2hgpwpkby",
@@ -262,112 +134,44 @@
           "width": 1883,
           "height": 2560,
           "caption": "",
-          "x": 15.03,
-          "y": 463.2,
-          "w": 34.68,
+          "x": 29.92,
+          "y": 512.63,
+          "w": 39.48,
           "title": "",
           "link": "#/tayla-mike"
         },
         {
-          "id": "mspwdy7r73jkal",
-          "display": "photos/mspwe6qw9kpe3w.jpg",
-          "thumb": "photos/mspwe6qw9kpe3w-t.jpg",
-          "width": 2406,
-          "height": 1625,
-          "caption": "",
-          "x": 26.02,
-          "y": 117.1,
-          "w": 64.7,
-          "title": "",
-          "link": "https://www.dazeddigital.com/art-photography/article/66567/1/willow-borain-girlhood-photograph-series-teenage-adolescence-portraits"
-        },
-        {
           "id": "mspxifoihwzbqa",
-          "display": "photos/mspxifoihwzbqa.jpg",
-          "thumb": "photos/mspxifoihwzbqa-t.jpg",
-          "width": 1644,
-          "height": 2048,
+          "display": "photos/muh7kyt7tow4nw.jpg",
+          "thumb": "photos/muh7kyt7tow4nw-t.jpg",
+          "width": 1209,
+          "height": 1926,
           "caption": "",
-          "x": 14.93,
-          "y": 634.65,
-          "w": 34.78
-        },
-        {
-          "id": "mspy9jp5lgkb1y",
-          "display": "photos/mspy9jp5lgkb1y.jpg",
-          "thumb": "photos/mspy9jp5lgkb1y-t.jpg",
-          "width": 2560,
-          "height": 2141,
-          "caption": "",
-          "x": 53.76,
-          "y": 66.12,
-          "w": 40.17
+          "x": 57.82,
+          "y": 920.61,
+          "w": 30.72
         },
         {
           "id": "mspyvp5pdj7ed7",
-          "display": "photos/mspyvp5pdj7ed7.jpg",
-          "thumb": "photos/mspyvp5pdj7ed7-t.jpg",
-          "width": 1607,
-          "height": 2048,
+          "display": "photos/mtn8asutwhsb05.jpg",
+          "thumb": "photos/mtn8asutwhsb05-t.jpg",
+          "width": 2403,
+          "height": 1637,
           "caption": "",
-          "x": 51.24,
-          "y": 834.59,
-          "w": 39.48
-        },
-        {
-          "id": "msq2z45yrcu0so",
-          "display": "photos/msq2z45yrcu0so.jpg",
-          "thumb": "photos/msq2z45yrcu0so-t.jpg",
-          "width": 2560,
-          "height": 1816,
-          "caption": "",
-          "x": 4.93,
-          "y": 605.95,
-          "w": 36.37
+          "x": 14.76,
+          "y": 401.88,
+          "w": 70.47
         },
         {
           "id": "mta7f9b8so9bpt",
-          "display": "photos/mta7f9b8so9bpt.jpg",
-          "thumb": "photos/mta7f9b8so9bpt-t.jpg",
+          "display": "photos/mtn8994prgdd4h.jpg",
+          "thumb": "photos/mtn8994prgdd4h-t.jpg",
           "width": 2560,
-          "height": 1830,
+          "height": 1828,
           "caption": "",
-          "x": 7.35,
-          "y": 973.69,
-          "w": 83.37
-        },
-        {
-          "id": "mta7llpdarzqak",
-          "display": "photos/mta7llpdarzqak.jpg",
-          "thumb": "photos/mta7llpdarzqak-t.jpg",
-          "width": 1219,
-          "height": 979,
-          "caption": "",
-          "x": 7.23,
-          "y": 1655.87,
-          "w": 86.7
-        },
-        {
-          "id": "mtcvfraudqyzlv",
-          "display": "photos/mtcvfraudqyzlv.jpg",
-          "thumb": "photos/mtcvfraudqyzlv-t.jpg",
-          "width": 2115,
-          "height": 2560,
-          "caption": "",
-          "x": 60.06,
-          "y": 401.77,
-          "w": 30.47
-        },
-        {
-          "id": "mtcvhab9rh5gn4",
-          "display": "photos/mtcvhab9rh5gn4.jpg",
-          "thumb": "photos/mtcvhab9rh5gn4-t.jpg",
-          "width": 1970,
-          "height": 2560,
-          "caption": "",
-          "x": 7.23,
-          "y": 1264.62,
-          "w": 83.49
+          "x": 17.97,
+          "y": 268.09,
+          "w": 63.2
         },
         {
           "id": "mtcvhrrk2j6y1c",
@@ -376,2035 +180,119 @@
           "width": 1710,
           "height": 2274,
           "caption": "",
-          "x": 7.31,
-          "y": 1037.28,
-          "w": 83.22
-        },
-        {
-          "id": "mtcvjyj6cksrz4",
-          "display": "photos/mtcvjyj6cksrz4.jpg",
-          "thumb": "photos/mtcvjyj6cksrz4-t.jpg",
-          "width": 2057,
-          "height": 2560,
-          "caption": "",
-          "x": 7.23,
-          "y": 1542.87,
-          "w": 86.7
-        },
-        {
-          "id": "mtcvuk0qmtf72t",
-          "display": "photos/mtcvuk0qmtf72t.jpg",
-          "thumb": "photos/mtcvuk0qmtf72t-t.jpg",
-          "width": 1818,
-          "height": 1229,
-          "caption": "",
-          "x": 43.92,
-          "y": 605.95,
-          "w": 38.18
-        },
-        {
-          "id": "mtcwwg3o2avy6m",
-          "display": "photos/mtcwwg3o2avy6m.jpg",
-          "thumb": "photos/mtcwwg3o2avy6m-t.jpg",
-          "width": 2560,
-          "height": 1707,
-          "caption": "",
-          "x": 7.23,
-          "y": 1376.97,
-          "w": 83.49
+          "x": 66.33,
+          "y": 790.87,
+          "w": 30.92
         },
         {
           "id": "mtd0x6a4nvc1sm",
-          "display": "photos/mtd0x6a4nvc1sm.jpg",
-          "thumb": "photos/mtd0x6a4nvc1sm-t.jpg",
-          "width": 1977,
+          "display": "photos/mtr1z7hfpiayw6.jpg",
+          "thumb": "photos/mtr1z7hfpiayw6-t.jpg",
+          "width": 2009,
+          "height": 2386,
+          "caption": "",
+          "x": 30.41,
+          "y": 623.9,
+          "w": 38.99
+        },
+        {
+          "id": "mtn8bszzl10bdm",
+          "display": "photos/mtn8bszzl10bdm.jpg",
+          "thumb": "photos/mtn8bszzl10bdm-t.jpg",
+          "width": 2560,
+          "height": 1716,
+          "caption": "",
+          "x": 17.97,
+          "y": 221.4,
+          "w": 63.2
+        },
+        {
+          "id": "mtn8d00s43ndhw",
+          "display": "photos/muh7fdn7dr3d53.jpg",
+          "thumb": "photos/muh7fdn7dr3d53-t.jpg",
+          "width": 1872,
           "height": 2560,
           "caption": "",
-          "x": 7.23,
-          "y": 1152.52,
-          "w": 83.27
+          "x": 30.41,
+          "y": 673.61,
+          "w": 38.99
         },
         {
-          "id": "mtd14s0adjfhqz",
-          "display": "photos/mtd14s0adjfhqz.jpg",
-          "thumb": "photos/mtd14s0adjfhqz-t.jpg",
-          "width": 1949,
+          "id": "muh6qw29wcye2u",
+          "display": "photos/muh8czmtcfxpz8.jpg",
+          "thumb": "photos/muh8czmtcfxpz8-t.jpg",
+          "width": 1603,
+          "height": 2171,
+          "caption": "",
+          "x": 2.18,
+          "y": 0,
+          "w": 45.25
+        },
+        {
+          "id": "muh6r8dxhpqgjs",
+          "display": "photos/muh6r8dxhpqgjs.jpg",
+          "thumb": "photos/muh6r8dxhpqgjs-t.jpg",
+          "width": 1953,
           "height": 2560,
           "caption": "",
-          "x": 7.23,
-          "y": 1729.13,
-          "w": 86.7
-        }
-      ]
-    },
-    {
-      "id": "pictures",
-      "title": "Pictures",
-      "type": "group",
-      "children": [
-        {
-          "id": "personal-work",
-          "title": "volumetwospace",
-          "type": "gallery",
-          "header": {
-            "title": "AMBER AKA VOLUMETWOSPACE - RONDEBOSCH COMMONS, 2025",
-            "meta": "",
-            "quote": "",
-            "description": "120 film scans and darkroom prints"
-          },
-          "photos": [
-            {
-              "id": "msn7o3gjoxju2z",
-              "display": "photos/msn7o3gjoxju2z.jpg",
-              "thumb": "photos/msn7o3gjoxju2z-t.jpg",
-              "width": 2560,
-              "height": 2044,
-              "caption": "",
-              "x": 42.49,
-              "y": 202.63,
-              "w": 56.8
-            },
-            {
-              "id": "msn7pjnghe1pyw",
-              "display": "photos/msn7pjnghe1pyw.jpg",
-              "thumb": "photos/msn7pjnghe1pyw-t.jpg",
-              "width": 2136,
-              "height": 2560,
-              "caption": "",
-              "x": 0,
-              "y": 0,
-              "w": 38.49
-            },
-            {
-              "id": "msn7pksuwhmqbz",
-              "display": "photos/mtd25guceycj0q.jpg",
-              "thumb": "photos/mtd25guceycj0q-t.jpg",
-              "width": 2560,
-              "height": 1947,
-              "caption": "",
-              "x": 1.52,
-              "y": 118.91,
-              "w": 46.51
-            },
-            {
-              "id": "msn7pl5qbjy81d",
-              "display": "photos/mtd25yarklabov.jpg",
-              "thumb": "photos/mtd25yarklabov-t.jpg",
-              "width": 2503,
-              "height": 1763,
-              "caption": "",
-              "x": 20.05,
-              "y": 159.43,
-              "w": 53.29
-            },
-            {
-              "id": "mspzus3jgsdbwz",
-              "display": "photos/mspzus3jgsdbwz.jpg",
-              "thumb": "photos/mspzus3jgsdbwz-t.jpg",
-              "width": 2560,
-              "height": 2044,
-              "caption": "",
-              "x": 42.49,
-              "y": 0,
-              "w": 57.69
-            },
-            {
-              "id": "mspzvteqbpzufd",
-              "display": "photos/mspzvteqbpzufd.jpg",
-              "thumb": "photos/mspzvteqbpzufd-t.jpg",
-              "width": 2560,
-              "height": 2044,
-              "caption": "",
-              "x": 14.21,
-              "y": 55.05,
-              "w": 69.26
-            }
-          ]
+          "x": 50,
+          "y": 0,
+          "w": 46.84
         },
         {
-          "id": "untititled-project",
-          "title": "Izzy & Bryony",
-          "type": "gallery",
-          "header": {
-            "title": "IZZY AND BRYONY - WOODSTOCK, 2024",
-            "meta": "",
-            "quote": "",
-            "description": "35mm half-frame film scans"
-          },
-          "photos": [
-            {
-              "id": "msojoasoi7nn0q",
-              "display": "photos/msojoasoi7nn0q.jpg",
-              "thumb": "photos/msojoasoi7nn0q-t.jpg",
-              "width": 2048,
-              "height": 1373,
-              "caption": "",
-              "x": -1.49,
-              "y": 0,
-              "w": 102.97
-            },
-            {
-              "id": "msojoay25lrnoi",
-              "display": "photos/msojoay25lrnoi.jpg",
-              "thumb": "photos/msojoay25lrnoi-t.jpg",
-              "width": 1373,
-              "height": 2048,
-              "caption": "",
-              "x": -1.49,
-              "y": 287.14,
-              "w": 57.31
-            },
-            {
-              "id": "msojob2piu7ozp",
-              "display": "photos/msok66mkonnyrg.jpg",
-              "thumb": "photos/msok66mkonnyrg-t.jpg",
-              "width": 1607,
-              "height": 1948,
-              "caption": "",
-              "x": 58.22,
-              "y": 290.31,
-              "w": 41.04
-            },
-            {
-              "id": "msojob8kqitlpq",
-              "display": "photos/msok0k5m4ydetj.jpg",
-              "thumb": "photos/msok0k5m4ydetj-t.jpg",
-              "width": 1423,
-              "height": 1851,
-              "caption": "",
-              "x": 11.33,
-              "y": 116.24,
-              "w": 37.99
-            },
-            {
-              "id": "msojobdstvg0e5",
-              "display": "photos/msojobdstvg0e5.jpg",
-              "thumb": "photos/msojobdstvg0e5-t.jpg",
-              "width": 1463,
-              "height": 2048,
-              "caption": "",
-              "x": 11.44,
-              "y": 173.54,
-              "w": 75.77
-            },
-            {
-              "id": "msojohofx89lbj",
-              "display": "photos/msojohofx89lbj.jpg",
-              "thumb": "photos/msojohofx89lbj-t.jpg",
-              "width": 1477,
-              "height": 2048,
-              "caption": "",
-              "x": 51.73,
-              "y": 116.46,
-              "w": 35.48
-            },
-            {
-              "id": "msojp19tbaz05x",
-              "display": "photos/msojp19tbaz05x.jpg",
-              "thumb": "photos/msojp19tbaz05x-t.jpg",
-              "width": 2048,
-              "height": 1448,
-              "caption": "",
-              "x": 0.78,
-              "y": 73.97,
-              "w": 45.58
-            },
-            {
-              "id": "msojp1dikiygl9",
-              "display": "photos/msok47k67xi53p.jpg",
-              "thumb": "photos/msok47k67xi53p-t.jpg",
-              "width": 853,
-              "height": 1169,
-              "caption": "",
-              "x": 76.33,
-              "y": 73.73,
-              "w": 23.67
-            },
-            {
-              "id": "msojp1h0t3qb3y",
-              "display": "photos/msok4q4vq4m31q.jpg",
-              "thumb": "photos/msok4q4vq4m31q-t.jpg",
-              "width": 854,
-              "height": 1224,
-              "caption": "",
-              "x": 50,
-              "y": 73.73,
-              "w": 22.65
-            }
-          ]
+          "id": "muh6ri9ea6i43c",
+          "display": "photos/muh6ri9ea6i43c.jpg",
+          "thumb": "photos/muh6ri9ea6i43c-t.jpg",
+          "width": 1726,
+          "height": 2560,
+          "caption": "",
+          "x": 2.18,
+          "y": 146.03,
+          "w": 41.9
         },
         {
-          "id": "client-work",
-          "title": "girlhood",
-          "type": "gallery",
-          "header": {
-            "title": "GIRLHOOD",
-            "meta": "",
-            "quote": "",
-            "description": "Photographs taken in 2015, revisited in 2024. Published on Dazed. 35mm film scans and darkroom prints"
-          },
-          "photos": [
-            {
-              "id": "msng96xdovd2sm",
-              "display": "photos/msq1eokaj36dsh.jpg",
-              "thumb": "photos/msq1eokaj36dsh-t.jpg",
-              "width": 2400,
-              "height": 1810,
-              "caption": "",
-              "x": 11.28,
-              "y": 165.75,
-              "w": 75.73
-            },
-            {
-              "id": "msng971jg93mij",
-              "display": "photos/msng971jg93mij.jpg",
-              "thumb": "photos/msng971jg93mij-t.jpg",
-              "width": 2080,
-              "height": 1394,
-              "caption": "",
-              "x": 11.28,
-              "y": 436.2,
-              "w": 75.73
-            },
-            {
-              "id": "msng9cb041p1xx",
-              "display": "photos/msng9cb041p1xx.jpg",
-              "thumb": "photos/msng9cb041p1xx-t.jpg",
-              "width": 1710,
-              "height": 2274,
-              "caption": "",
-              "x": 11.28,
-              "y": 545.21,
-              "w": 36.54
-            },
-            {
-              "id": "msng9sovgg954w",
-              "display": "photos/msng9sovgg954w.jpg",
-              "thumb": "photos/msng9sovgg954w-t.jpg",
-              "width": 2560,
-              "height": 1921,
-              "caption": "",
-              "x": 11.28,
-              "y": 375.77,
-              "w": 75.73
-            },
-            {
-              "id": "msnga7nx1u3fhq",
-              "display": "photos/msomaucmqsirb7.jpg",
-              "thumb": "photos/msomaucmqsirb7-t.jpg",
-              "width": 2425,
-              "height": 1714,
-              "caption": "",
-              "x": 11.28,
-              "y": 109.13,
-              "w": 75.73
-            },
-            {
-              "id": "msngafv79gr0oi",
-              "display": "photos/msngafv79gr0oi.jpg",
-              "thumb": "photos/msngafv79gr0oi-t.jpg",
-              "width": 2560,
-              "height": 1975,
-              "caption": "",
-              "x": 11.28,
-              "y": 758.63,
-              "w": 75.73
-            },
-            {
-              "id": "msngb1no7pkaxh",
-              "display": "photos/msngb1no7pkaxh.jpg",
-              "thumb": "photos/msngb1no7pkaxh-t.jpg",
-              "width": 2560,
-              "height": 1737,
-              "caption": "",
-              "x": 11.28,
-              "y": 597.32,
-              "w": 77.84
-            },
-            {
-              "id": "msngbhy0ydhg5y",
-              "display": "photos/msodzszyomjtla.jpg",
-              "thumb": "photos/msodzszyomjtla-t.jpg",
-              "width": 2446,
-              "height": 1670,
-              "caption": "",
-              "x": 11.28,
-              "y": 53.89,
-              "w": 75.73
-            },
-            {
-              "id": "msngbjxz7pdb12",
-              "display": "photos/msngbjxz7pdb12.jpg",
-              "thumb": "photos/msngbjxz7pdb12-t.jpg",
-              "width": 2560,
-              "height": 1715,
-              "caption": "",
-              "x": 50.68,
-              "y": 279.65,
-              "w": 49.33
-            },
-            {
-              "id": "msngbyae49wjxs",
-              "display": "photos/msngbyae49wjxs.jpg",
-              "thumb": "photos/msngbyae49wjxs-t.jpg",
-              "width": 1644,
-              "height": 2048,
-              "caption": "",
-              "x": 49.97,
-              "y": 545.21,
-              "w": 39.15
-            },
-            {
-              "id": "msngc9j529qn4j",
-              "display": "photos/msq07kc8o78stx.jpg",
-              "thumb": "photos/msq07kc8o78stx-t.jpg",
-              "width": 2393,
-              "height": 1595,
-              "caption": "",
-              "x": 11.28,
-              "y": 490.67,
-              "w": 77.84
-            },
-            {
-              "id": "msngc9v0tm51s2",
-              "display": "photos/msomajfwzm9us3.jpg",
-              "thumb": "photos/msomajfwzm9us3-t.jpg",
-              "width": 2310,
-              "height": 1714,
-              "caption": "",
-              "x": 11.28,
-              "y": 316.06,
-              "w": 75.73
-            },
-            {
-              "id": "msngcrvmsxvkcp",
-              "display": "photos/msq06j9j94gfzd.jpg",
-              "thumb": "photos/msq06j9j94gfzd-t.jpg",
-              "width": 2558,
-              "height": 1734,
-              "caption": "",
-              "x": -0.72,
-              "y": 279.33,
-              "w": 49.23
-            },
-            {
-              "id": "msod9jibq131ut",
-              "display": "photos/msod9jibq131ut.jpg",
-              "thumb": "photos/msod9jibq131ut-t.jpg",
-              "width": 2560,
-              "height": 1716,
-              "caption": "",
-              "x": 11.28,
-              "y": 226.05,
-              "w": 75.73
-            },
-            {
-              "id": "msod9kmqkcg3gx",
-              "display": "photos/msq1f3a3l7ypzv.jpg",
-              "thumb": "photos/msq1f3a3l7ypzv-t.jpg",
-              "width": 2558,
-              "height": 1550,
-              "caption": "",
-              "x": 11.28,
-              "y": 653.6,
-              "w": 77.84
-            },
-            {
-              "id": "msq0a4ft1xpz38",
-              "display": "photos/msq0a4ft1xpz38.jpg",
-              "thumb": "photos/msq0a4ft1xpz38-t.jpg",
-              "width": 2560,
-              "height": 1716,
-              "caption": "",
-              "x": 11.28,
-              "y": 704.25,
-              "w": 75.73
-            },
-            {
-              "id": "mtcwxl203ni9h6",
-              "display": "photos/mtcwxl203ni9h6.jpg",
-              "thumb": "photos/mtcwxl203ni9h6-t.jpg",
-              "width": 2560,
-              "height": 1707,
-              "caption": "",
-              "x": 11.28,
-              "y": 0,
-              "w": 75.73
-            }
-          ]
+          "id": "muh6ruc6g6cea8",
+          "display": "photos/muh6ruc6g6cea8.jpg",
+          "thumb": "photos/muh6ruc6g6cea8-t.jpg",
+          "width": 1784,
+          "height": 2560,
+          "caption": "",
+          "x": 5,
+          "y": 325.25,
+          "w": 43.99
         },
         {
-          "id": "eva",
-          "title": "Eva",
-          "type": "gallery",
-          "header": {
-            "title": "EVA - ABANDONED ZOO, 2025",
-            "meta": "",
-            "quote": "",
-            "description": "35mm film scan and darkroom prints"
-          },
-          "photos": [
-            {
-              "id": "msneynt6asxxal",
-              "display": "photos/msneynt6asxxal.jpg",
-              "thumb": "photos/msneynt6asxxal-t.jpg",
-              "width": 2560,
-              "height": 1716,
-              "caption": "",
-              "x": 5.61,
-              "y": 117.71,
-              "w": 86.55
-            },
-            {
-              "id": "msonbo667tzccy",
-              "display": "photos/msonbo667tzccy.jpg",
-              "thumb": "photos/msonbo667tzccy-t.jpg",
-              "width": 2560,
-              "height": 1735,
-              "caption": "",
-              "x": 8.03,
-              "y": 58.88,
-              "w": 80.61
-            },
-            {
-              "id": "msonc3db9sj0kb",
-              "display": "photos/msonc3db9sj0kb.jpg",
-              "thumb": "photos/msonc3db9sj0kb-t.jpg",
-              "width": 2560,
-              "height": 2141,
-              "caption": "",
-              "x": 8.03,
-              "y": 178.82,
-              "w": 80.61
-            },
-            {
-              "id": "msney9xs4aa1a6",
-              "display": "photos/msonbal44zx5m8.jpg",
-              "thumb": "photos/msonbal44zx5m8-t.jpg",
-              "width": 2560,
-              "height": 1748,
-              "caption": "",
-              "x": 8.03,
-              "y": 0,
-              "w": 80.61
-            }
-          ]
+          "id": "muh6s5dcly09pg",
+          "display": "photos/muh6s5dcly09pg.jpg",
+          "thumb": "photos/muh6s5dcly09pg-t.jpg",
+          "width": 2560,
+          "height": 1994,
+          "caption": "",
+          "x": 9.91,
+          "y": 74.23,
+          "w": 79.33
         },
         {
-          "id": "tayla-mike",
-          "title": "tayla & mike",
-          "type": "gallery",
-          "header": {
-            "title": "TAYLA & MIKE - Gardens, 2026",
-            "meta": "",
-            "quote": "",
-            "description": "35mm film scans and polaroids"
-          },
-          "photos": [
-            {
-              "id": "msnex3jsx5cf9l",
-              "display": "photos/msq0e6xak1m2f1.jpg",
-              "thumb": "photos/msq0e6xak1m2f1-t.jpg",
-              "width": 1507,
-              "height": 1855,
-              "caption": "",
-              "x": 50,
-              "y": 59.01,
-              "w": 38.26,
-              "saturation": 0
-            },
-            {
-              "id": "msnex56e2kkwpd",
-              "display": "photos/mta7umrj40otol.jpg",
-              "thumb": "photos/mta7umrj40otol-t.jpg",
-              "width": 1883,
-              "height": 2560,
-              "caption": "",
-              "x": 10.95,
-              "y": 0,
-              "w": 34.43
-            },
-            {
-              "id": "msnex5h5pmvmpk",
-              "display": "photos/mta7uqscwmqd7i.jpg",
-              "thumb": "photos/mta7uqscwmqd7i-t.jpg",
-              "width": 1883,
-              "height": 2560,
-              "caption": "",
-              "x": 50.92,
-              "y": 0,
-              "w": 34.55
-            },
-            {
-              "id": "msnex6dje9yey3",
-              "display": "photos/msnex6dje9yey3.jpg",
-              "thumb": "photos/msnex6dje9yey3-t.jpg",
-              "width": 1922,
-              "height": 2560,
-              "caption": "",
-              "x": 10.95,
-              "y": 241.38,
-              "w": 74.52
-            },
-            {
-              "id": "msnex6li4qno1w",
-              "display": "photos/msq0efn4le601k.jpg",
-              "thumb": "photos/msq0efn4le601k-t.jpg",
-              "width": 1851,
-              "height": 2525,
-              "caption": "",
-              "x": 10.95,
-              "y": 59.07,
-              "w": 34.43
-            },
-            {
-              "id": "msnf74w77ibsbx",
-              "display": "photos/msnf74w77ibsbx.jpg",
-              "thumb": "photos/msnf74w77ibsbx-t.jpg",
-              "width": 2084,
-              "height": 2560,
-              "caption": "",
-              "x": 10.95,
-              "y": 121.92,
-              "w": 37.61
-            },
-            {
-              "id": "msnf7hwiho7jpq",
-              "display": "photos/msnf7hwiho7jpq.jpg",
-              "thumb": "photos/msnf7hwiho7jpq-t.jpg",
-              "width": 2104,
-              "height": 2560,
-              "caption": "",
-              "x": 50.03,
-              "y": 121.92,
-              "w": 38.23
-            },
-            {
-              "id": "mtcx9ofx1x1kix",
-              "display": "photos/mtcxa0gt28wwp2.jpg",
-              "thumb": "photos/mtcxa0gt28wwp2-t.jpg",
-              "width": 2440,
-              "height": 1705,
-              "caption": "",
-              "x": 10.95,
-              "y": 178.91,
-              "w": 77.31
-            }
-          ]
+          "id": "muh72f6k199fs6",
+          "display": "photos/muh72f6k199fs6.jpg",
+          "thumb": "photos/muh72f6k199fs6-t.jpg",
+          "width": 1966,
+          "height": 2560,
+          "caption": "",
+          "x": 53.5,
+          "y": 329.83,
+          "w": 41.45
         },
         {
-          "id": "dorps",
-          "title": "dorps",
-          "type": "gallery",
-          "header": {
-            "title": "DORPS - HESSEQUA LOCAL MUNICIPALITY, 2024",
-            "meta": "",
-            "quote": "",
-            "description": "35mm film scans and darkroom prints"
-          },
-          "photos": [
-            {
-              "id": "msofasi3xokyrl",
-              "display": "photos/msofqt1jvoptzp.jpg",
-              "thumb": "photos/msofqt1jvoptzp-t.jpg",
-              "width": 1637,
-              "height": 2025,
-              "caption": "",
-              "x": 20.4,
-              "y": 405.53,
-              "w": 54.22
-            },
-            {
-              "id": "msofaubdfa9nzg",
-              "display": "photos/mtd0od8he9qhpu.jpg",
-              "thumb": "photos/mtd0od8he9qhpu-t.jpg",
-              "width": 1990,
-              "height": 1101,
-              "caption": "",
-              "x": 2.43,
-              "y": 220.98,
-              "w": 96.04
-            },
-            {
-              "id": "msofbteyhjnldy",
-              "display": "photos/msofbteyhjnldy.jpg",
-              "thumb": "photos/msofbteyhjnldy-t.jpg",
-              "width": 2049,
-              "height": 2560,
-              "caption": "",
-              "x": 52.02,
-              "y": 155.26,
-              "w": 46.45
-            },
-            {
-              "id": "msofcem72cwpyh",
-              "display": "photos/msol7658id2887.jpg",
-              "thumb": "photos/msol7658id2887-t.jpg",
-              "width": 1701,
-              "height": 2214,
-              "caption": "",
-              "x": 2.43,
-              "y": 155.26,
-              "w": 44.51
-            },
-            {
-              "id": "msofcqw84s1j12",
-              "display": "photos/msq1ktov5me4oo.jpg",
-              "thumb": "photos/msq1ktov5me4oo-t.jpg",
-              "width": 1854,
-              "height": 2244,
-              "caption": "",
-              "x": 20.4,
-              "y": 331.56,
-              "w": 54.22
-            },
-            {
-              "id": "msofdv2l0ce46k",
-              "display": "photos/mspzmj3osqnkrz.jpg",
-              "thumb": "photos/mspzmj3osqnkrz-t.jpg",
-              "width": 2052,
-              "height": 1459,
-              "caption": "",
-              "x": 5.08,
-              "y": 14.14,
-              "w": 88.91
-            },
-            {
-              "id": "msofesy8hzt7q2",
-              "display": "photos/msofoz71chc1ne.jpg",
-              "thumb": "photos/msofoz71chc1ne-t.jpg",
-              "width": 1714,
-              "height": 2205,
-              "caption": "",
-              "x": 2.43,
-              "y": 281.38,
-              "w": 32.94
-            },
-            {
-              "id": "msojs2rkuzkye9",
-              "display": "photos/msokwxsxqn092p.jpg",
-              "thumb": "photos/msokwxsxqn092p-t.jpg",
-              "width": 1508,
-              "height": 2272,
-              "caption": "",
-              "x": -0.44,
-              "y": 99.27,
-              "w": 23.88
-            },
-            {
-              "id": "msojs336sguquz",
-              "display": "photos/msoka1vfakqfnm.jpg",
-              "thumb": "photos/msoka1vfakqfnm-t.jpg",
-              "width": 1549,
-              "height": 2270,
-              "caption": "",
-              "x": 15.56,
-              "y": 101.64,
-              "w": 25.35
-            },
-            {
-              "id": "msojs4cd4cbmpi",
-              "display": "photos/msol4qapol60f9.jpg",
-              "thumb": "photos/msol4qapol60f9-t.jpg",
-              "width": 1519,
-              "height": 2102,
-              "caption": "",
-              "x": 34.67,
-              "y": 105.04,
-              "w": 25.68
-            },
-            {
-              "id": "msojs2fm2x9p8y",
-              "display": "photos/msok9hh69pblvo.jpg",
-              "thumb": "photos/msok9hh69pblvo-t.jpg",
-              "width": 1535,
-              "height": 2269,
-              "caption": "",
-              "x": 67.68,
-              "y": 107.12,
-              "w": 19.03
-            },
-            {
-              "id": "msojsb83vx2vfe",
-              "display": "photos/msokb3tkqjxrpr.jpg",
-              "thumb": "photos/msokb3tkqjxrpr-t.jpg",
-              "width": 1510,
-              "height": 2277,
-              "caption": "",
-              "x": 82.61,
-              "y": 107.53,
-              "w": 14.46
-            },
-            {
-              "id": "mtd0mko2dtgvfc",
-              "display": "photos/mtd0mko2dtgvfc.jpg",
-              "thumb": "photos/mtd0mko2dtgvfc-t.jpg",
-              "width": 2560,
-              "height": 1843,
-              "caption": "",
-              "x": 39.89,
-              "y": 281.38,
-              "w": 58.58
-            }
-          ],
-          "texts": []
-        },
-        {
-          "id": "portraits",
-          "title": "Uncategorised",
-          "type": "gallery",
-          "header": {
-            "title": "",
-            "meta": "",
-            "quote": "",
-            "description": ""
-          },
-          "photos": [
-            {
-              "id": "msor06t4ukmx1e",
-              "display": "photos/msor06t4ukmx1e.jpg",
-              "thumb": "photos/msor06t4ukmx1e-t.jpg",
-              "width": 2064,
-              "height": 2560,
-              "caption": "",
-              "x": 50.63,
-              "y": 411.88,
-              "w": 40.15
-            },
-            {
-              "id": "msor081po7o0hp",
-              "display": "photos/msor081po7o0hp.jpg",
-              "thumb": "photos/msor081po7o0hp-t.jpg",
-              "width": 1219,
-              "height": 979,
-              "caption": "",
-              "x": 8.46,
-              "y": 465.27,
-              "w": 82.32
-            },
-            {
-              "id": "msor09p00si92o",
-              "display": "photos/msor09p00si92o.jpg",
-              "thumb": "photos/msor09p00si92o-t.jpg",
-              "width": 2016,
-              "height": 2560,
-              "caption": "",
-              "x": 8.46,
-              "y": 534.91,
-              "w": 82.32
-            },
-            {
-              "id": "msor0at8ejsfll",
-              "display": "photos/msor0at8ejsfll.jpg",
-              "thumb": "photos/msor0at8ejsfll-t.jpg",
-              "width": 2085,
-              "height": 2560,
-              "caption": "",
-              "x": 8.46,
-              "y": 122,
-              "w": 82.32
-            },
-            {
-              "id": "msor0cz910p3py",
-              "display": "photos/msor0cz910p3py.jpg",
-              "thumb": "photos/msor0cz910p3py-t.jpg",
-              "width": 2560,
-              "height": 1748,
-              "caption": "",
-              "x": 8.46,
-              "y": 0,
-              "w": 82.32
-            },
-            {
-              "id": "msor0fcz4zz7gc",
-              "display": "photos/msor0fcz4zz7gc.jpg",
-              "thumb": "photos/msor0fcz4zz7gc-t.jpg",
-              "width": 1818,
-              "height": 1229,
-              "caption": "",
-              "x": 8.46,
-              "y": 226.5,
-              "w": 82.32
-            },
-            {
-              "id": "msorygo3nth6w3",
-              "display": "photos/msorygo3nth6w3.jpg",
-              "thumb": "photos/msorygo3nth6w3-t.jpg",
-              "width": 1514,
-              "height": 1116,
-              "caption": "",
-              "x": 8.46,
-              "y": 285.81,
-              "w": 82.32
-            },
-            {
-              "id": "msq0l52aephcrx",
-              "display": "photos/msq0l52aephcrx.jpg",
-              "thumb": "photos/msq0l52aephcrx-t.jpg",
-              "width": 2560,
-              "height": 1816,
-              "caption": "",
-              "x": 8.46,
-              "y": 349.67,
-              "w": 82.32
-            },
-            {
-              "id": "mta7ns6kezbhbc",
-              "display": "photos/mta7ns6kezbhbc.jpg",
-              "thumb": "photos/mta7ns6kezbhbc-t.jpg",
-              "width": 2560,
-              "height": 1830,
-              "caption": "",
-              "x": 8.84,
-              "y": 59.67,
-              "w": 82.32
-            },
-            {
-              "id": "mta7og0msusjkx",
-              "display": "photos/mta7og0msusjkx.jpg",
-              "thumb": "photos/mta7og0msusjkx-t.jpg",
-              "width": 1964,
-              "height": 2560,
-              "caption": "",
-              "x": 8.46,
-              "y": 411.85,
-              "w": 38.23
-            },
-            {
-              "id": "mtd0vzwqndy98l",
-              "display": "photos/mtd0vzwqndy98l.jpg",
-              "thumb": "photos/mtd0vzwqndy98l-t.jpg",
-              "width": 1949,
-              "height": 2560,
-              "caption": "",
-              "x": 8.46,
-              "y": 643.86,
-              "w": 82.7
-            }
-          ],
-          "texts": []
-        },
-        {
-          "id": "ashanti",
-          "title": "ashanti",
-          "type": "gallery",
-          "header": {
-            "title": "ASHANTI - in studio, 2024",
-            "meta": "",
-            "quote": "",
-            "description": "Polaroids and 35mm film scans"
-          },
-          "photos": [
-            {
-              "id": "msnejfn9d96w96",
-              "display": "photos/msnejfn9d96w96.jpg",
-              "thumb": "photos/msnejfn9d96w96-t.jpg",
-              "width": 2096,
-              "height": 2560,
-              "caption": "",
-              "x": 4.17,
-              "y": 0,
-              "w": 46.66
-            },
-            {
-              "id": "msnekloie7dava",
-              "display": "photos/msnekloie7dava.jpg",
-              "thumb": "photos/msnekloie7dava-t.jpg",
-              "width": 1805,
-              "height": 2560,
-              "caption": "",
-              "x": 53.96,
-              "y": 0,
-              "w": 40.26
-            }
-          ]
-        },
-        {
-          "id": "tattoo-convention-polaroids",
-          "title": "tattoo convention polaroids",
-          "type": "gallery",
-          "header": {
-            "title": "SOUTH AFRICAN INTERNATIONAL TATTOO CONVENTION 2025",
-            "meta": "",
-            "quote": "",
-            "description": "Polaroids"
-          },
-          "photos": [
-            {
-              "id": "msnevj7wz125h5",
-              "display": "photos/msnevj7wz125h5.jpg",
-              "thumb": "photos/msnevj7wz125h5-t.jpg",
-              "width": 2085,
-              "height": 2560,
-              "caption": "",
-              "x": 5.42,
-              "y": 0,
-              "w": 25.9
-            },
-            {
-              "id": "msnevjfrvleohu",
-              "display": "photos/msnevjfrvleohu.jpg",
-              "thumb": "photos/msnevjfrvleohu-t.jpg",
-              "width": 2129,
-              "height": 2560,
-              "caption": "",
-              "x": 35.56,
-              "y": 0,
-              "w": 26.61
-            },
-            {
-              "id": "msnevjml4cpuvv",
-              "display": "photos/msnevjml4cpuvv.jpg",
-              "thumb": "photos/msnevjml4cpuvv-t.jpg",
-              "width": 2101,
-              "height": 2560,
-              "caption": "",
-              "x": 65.66,
-              "y": 0,
-              "w": 26.85
-            },
-            {
-              "id": "msnevjtiksyege",
-              "display": "photos/msnevjtiksyege.jpg",
-              "thumb": "photos/msnevjtiksyege-t.jpg",
-              "width": 2093,
-              "height": 2560,
-              "caption": "",
-              "x": 35.56,
-              "y": 36.22,
-              "w": 26.61
-            },
-            {
-              "id": "msnevk0p6z1xx4",
-              "display": "photos/msnevk0p6z1xx4.jpg",
-              "thumb": "photos/msnevk0p6z1xx4-t.jpg",
-              "width": 2109,
-              "height": 2560,
-              "caption": "",
-              "x": 65.66,
-              "y": 36.17,
-              "w": 26.85
-            },
-            {
-              "id": "msnevke5oltlim",
-              "display": "photos/msnevke5oltlim.jpg",
-              "thumb": "photos/msnevke5oltlim-t.jpg",
-              "width": 2086,
-              "height": 2560,
-              "caption": "",
-              "x": 4.91,
-              "y": 35.95,
-              "w": 26.91
-            },
-            {
-              "id": "msnevkl0pwjk3t",
-              "display": "photos/msnevkl0pwjk3t.jpg",
-              "thumb": "photos/msnevkl0pwjk3t-t.jpg",
-              "width": 2124,
-              "height": 2560,
-              "caption": "",
-              "x": 35.56,
-              "y": 74.09,
-              "w": 26.61
-            },
-            {
-              "id": "msnevt6j48m0xr",
-              "display": "photos/msnevt6j48m0xr.jpg",
-              "thumb": "photos/msnevt6j48m0xr-t.jpg",
-              "width": 2098,
-              "height": 2560,
-              "caption": "",
-              "x": 65.66,
-              "y": 73.74,
-              "w": 26.85
-            },
-            {
-              "id": "msnevtdmb06jnn",
-              "display": "photos/msnevtdmb06jnn.jpg",
-              "thumb": "photos/msnevtdmb06jnn-t.jpg",
-              "width": 2130,
-              "height": 2560,
-              "caption": "",
-              "x": 5.42,
-              "y": 73.4,
-              "w": 26.4
-            },
-            {
-              "id": "msnevtlmqz0fjj",
-              "display": "photos/msnevtlmqz0fjj.jpg",
-              "thumb": "photos/msnevtlmqz0fjj-t.jpg",
-              "width": 2100,
-              "height": 2560,
-              "caption": "",
-              "x": 35.56,
-              "y": 110.31,
-              "w": 26.61
-            },
-            {
-              "id": "msnevtu5248zus",
-              "display": "photos/msnevtu5248zus.jpg",
-              "thumb": "photos/msnevtu5248zus-t.jpg",
-              "width": 2087,
-              "height": 2560,
-              "caption": "",
-              "x": 65.66,
-              "y": 110.31,
-              "w": 26.85
-            },
-            {
-              "id": "msnevu34tohwj3",
-              "display": "photos/msnevu34tohwj3.jpg",
-              "thumb": "photos/msnevu34tohwj3-t.jpg",
-              "width": 2096,
-              "height": 2560,
-              "caption": "",
-              "x": 5.42,
-              "y": 110.06,
-              "w": 26.4
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "client-work-2",
-      "title": "commercial work",
-      "type": "group",
-      "children": [
-        {
-          "id": "scarlet-wednesday-bts",
-          "title": "Scarlet Wednesday BTS",
-          "type": "gallery",
-          "header": {
-            "title": "SCARLET WEDNESDAY SHORT FILM BTS - 2026",
-            "meta": "",
-            "quote": "",
-            "description": "35mm film scans"
-          },
-          "photos": [
-            {
-              "id": "msn5zb7fsiier5",
-              "display": "photos/msn5zb7fsiier5.jpg",
-              "thumb": "photos/msn5zb7fsiier5-t.jpg",
-              "width": 2560,
-              "height": 1716,
-              "caption": "",
-              "x": 0.78,
-              "y": 215.93,
-              "w": 50.82
-            },
-            {
-              "id": "msn5zbg0cvcy0x",
-              "display": "photos/mtcyl6xxgvkp6d.jpg",
-              "thumb": "photos/mtcyl6xxgvkp6d-t.jpg",
-              "width": 1870,
-              "height": 2375,
-              "caption": "",
-              "x": 53.95,
-              "y": 190.8,
-              "w": 46.05
-            },
-            {
-              "id": "msn5zcuxghhtkq",
-              "display": "photos/msogspjd43iows.jpg",
-              "thumb": "photos/msogspjd43iows-t.jpg",
-              "width": 1531,
-              "height": 2037,
-              "caption": "",
-              "x": 0,
-              "y": 70.56,
-              "w": 51.6
-            },
-            {
-              "id": "msn5zlqre4ecv7",
-              "display": "photos/msn5zlqre4ecv7.jpg",
-              "thumb": "photos/msn5zlqre4ecv7-t.jpg",
-              "width": 1970,
-              "height": 2560,
-              "caption": "",
-              "x": -0.02,
-              "y": 0,
-              "w": 51.62
-            },
-            {
-              "id": "msn5zuvrxd171d",
-              "display": "photos/msn5zuvrxd171d.jpg",
-              "thumb": "photos/msn5zuvrxd171d-t.jpg",
-              "width": 2054,
-              "height": 2560,
-              "caption": "",
-              "x": 53.95,
-              "y": 65.12,
-              "w": 46.05
-            },
-            {
-              "id": "msn5zatu195gng",
-              "display": "photos/msq1o8n7ghorn1.jpg",
-              "thumb": "photos/msq1o8n7ghorn1-t.jpg",
-              "width": 1359,
-              "height": 1876,
-              "caption": "",
-              "x": 0,
-              "y": 142.26,
-              "w": 51.6
-            },
-            {
-              "id": "msn6tx31bvk5kr",
-              "display": "photos/msn6tx31bvk5kr.jpg",
-              "thumb": "photos/msn6tx31bvk5kr-t.jpg",
-              "width": 1911,
-              "height": 2560,
-              "caption": "",
-              "x": 53.95,
-              "y": 0,
-              "w": 46.05
-            },
-            {
-              "id": "msn6txu0ubzx8t",
-              "display": "photos/msn6txu0ubzx8t.jpg",
-              "thumb": "photos/msn6txu0ubzx8t-t.jpg",
-              "width": 1900,
-              "height": 2560,
-              "caption": "",
-              "x": 53.95,
-              "y": 125.43,
-              "w": 46.05
-            }
-          ]
-        },
-        {
-          "id": "4wks",
-          "title": "4wks",
-          "type": "gallery",
-          "header": {
-            "title": "4WKS COFFEE - 2026",
-            "meta": "",
-            "quote": "",
-            "description": "35mm film scans"
-          },
-          "photos": [
-            {
-              "id": "msn74quh1ll66x",
-              "display": "photos/msn74quh1ll66x.jpg",
-              "thumb": "photos/msn74quh1ll66x-t.jpg",
-              "width": 1341,
-              "height": 2000,
-              "caption": "",
-              "x": 2.94,
-              "y": 0,
-              "w": 43.46
-            },
-            {
-              "id": "msn74rh6mb02w0",
-              "display": "photos/msn74rh6mb02w0.jpg",
-              "thumb": "photos/msn74rh6mb02w0-t.jpg",
-              "width": 1341,
-              "height": 2000,
-              "caption": "",
-              "x": 2.94,
-              "y": 69.23,
-              "w": 43.46
-            },
-            {
-              "id": "msn74rz5gvlq5n",
-              "display": "photos/msn74rz5gvlq5n.jpg",
-              "thumb": "photos/msn74rz5gvlq5n-t.jpg",
-              "width": 1341,
-              "height": 2000,
-              "caption": "",
-              "x": 52.87,
-              "y": 0,
-              "w": 43.46
-            },
-            {
-              "id": "msn74sdcx4tjqw",
-              "display": "photos/msn74sdcx4tjqw.jpg",
-              "thumb": "photos/msn74sdcx4tjqw-t.jpg",
-              "width": 1341,
-              "height": 2000,
-              "caption": "",
-              "x": 52.87,
-              "y": 69.23,
-              "w": 43.46
-            },
-            {
-              "id": "mta7s3v9bfib8a",
-              "display": "photos/mta7s3v9bfib8a.jpg",
-              "thumb": "photos/mta7s3v9bfib8a-t.jpg",
-              "width": 1341,
-              "height": 2000,
-              "caption": "",
-              "x": 2.94,
-              "y": 138.9,
-              "w": 43.46
-            },
-            {
-              "id": "mta7sjhrmzd4ul",
-              "display": "photos/mta7sjhrmzd4ul.jpg",
-              "thumb": "photos/mta7sjhrmzd4ul-t.jpg",
-              "width": 1352,
-              "height": 2000,
-              "caption": "",
-              "x": 52.87,
-              "y": 209.29,
-              "w": 43.46
-            },
-            {
-              "id": "mtd1lyikh1nexv",
-              "display": "photos/mtd1lyikh1nexv.jpg",
-              "thumb": "photos/mtd1lyikh1nexv-t.jpg",
-              "width": 1731,
-              "height": 2560,
-              "caption": "",
-              "x": 2.94,
-              "y": 209.31,
-              "w": 43.46
-            },
-            {
-              "id": "mtd1lytknbu2sg",
-              "display": "photos/mtd1lytknbu2sg.jpg",
-              "thumb": "photos/mtd1lytknbu2sg-t.jpg",
-              "width": 1731,
-              "height": 2560,
-              "caption": "",
-              "x": 52.87,
-              "y": 139.17,
-              "w": 43.46
-            }
-          ]
-        },
-        {
-          "id": "slipped-up",
-          "title": "Slipped Up",
-          "type": "gallery",
-          "header": {
-            "title": "SLIPPED UP APP - 2026",
-            "meta": "",
-            "quote": "",
-            "description": "35mm film scans"
-          },
-          "photos": [
-            {
-              "id": "mtcxfm72y31eae",
-              "display": "photos/mtcxjx3pqeqpon.jpg",
-              "thumb": "photos/mtcxjx3pqeqpon-t.jpg",
-              "width": 2367,
-              "height": 1464,
-              "caption": "",
-              "x": 4.03,
-              "y": 0,
-              "w": 91.81
-            },
-            {
-              "id": "mtcxfrm588ts04",
-              "display": "photos/mtcxfrm588ts04.jpg",
-              "thumb": "photos/mtcxfrm588ts04-t.jpg",
-              "width": 1716,
-              "height": 2560,
-              "caption": "",
-              "x": 5.37,
-              "y": 170.46,
-              "w": 87.68,
-              "rotate": 270
-            },
-            {
-              "id": "mtcxfry57fkiie",
-              "display": "photos/mtcxo1ohvbl8el.jpg",
-              "thumb": "photos/mtcxo1ohvbl8el-t.jpg",
-              "width": 1829,
-              "height": 2517,
-              "caption": "",
-              "x": 66.97,
-              "y": 63.51,
-              "w": 28.87
-            },
-            {
-              "id": "mtcxfskbd99pi1",
-              "display": "photos/mtcyryli2b8yl0.jpg",
-              "thumb": "photos/mtcyryli2b8yl0-t.jpg",
-              "width": 1716,
-              "height": 2560,
-              "caption": "",
-              "x": 7.32,
-              "y": 346.64,
-              "w": 41.84
-            },
-            {
-              "id": "mtcxfzbdqkvcgb",
-              "display": "photos/mtcxfzbdqkvcgb.jpg",
-              "thumb": "photos/mtcxfzbdqkvcgb-t.jpg",
-              "width": 1829,
-              "height": 2560,
-              "caption": "",
-              "x": 16.62,
-              "y": 116.4,
-              "w": 31.33
-            },
-            {
-              "id": "mtcxfzqeiwdtm5",
-              "display": "photos/mtcxfzqeiwdtm5.jpg",
-              "thumb": "photos/mtcxfzqeiwdtm5-t.jpg",
-              "width": 1829,
-              "height": 2560,
-              "caption": "",
-              "x": 52.23,
-              "y": 116.4,
-              "w": 31.33
-            },
-            {
-              "id": "mtcxg0oogjj527",
-              "display": "photos/mtd1wkm5prm9er.jpg",
-              "thumb": "photos/mtd1wkm5prm9er-t.jpg",
-              "width": 1828,
-              "height": 2560,
-              "caption": "",
-              "x": 13.77,
-              "y": 237.83,
-              "w": 72.34
-            },
-            {
-              "id": "mtcy5eovzwr8jh",
-              "display": "photos/mtcy5eovzwr8jh.jpg",
-              "thumb": "photos/mtcy5eovzwr8jh-t.jpg",
-              "width": 1715,
-              "height": 2560,
-              "caption": "",
-              "x": 50.9,
-              "y": 346.64,
-              "w": 41.72
-            },
-            {
-              "id": "mtcy5f66attwwp",
-              "display": "photos/mtcy5f66attwwp.jpg",
-              "thumb": "photos/mtcy5f66attwwp-t.jpg",
-              "width": 1715,
-              "height": 2560,
-              "caption": "",
-              "x": 7.32,
-              "y": 410,
-              "w": 41.84
-            },
-            {
-              "id": "mtcy5fnrac2r9r",
-              "display": "photos/mtcygtjy44rwil.jpg",
-              "thumb": "photos/mtcygtjy44rwil-t.jpg",
-              "width": 1537,
-              "height": 2287,
-              "caption": "",
-              "x": 8.21,
-              "y": 476.24,
-              "w": 39.74
-            },
-            {
-              "id": "mtcy5g666kzify",
-              "display": "photos/mtcy5g666kzify.jpg",
-              "thumb": "photos/mtcy5g666kzify-t.jpg",
-              "width": 1715,
-              "height": 2560,
-              "caption": "",
-              "x": 50.9,
-              "y": 410,
-              "w": 42.15
-            },
-            {
-              "id": "mtcy5gyt1qbh6e",
-              "display": "photos/mtcyh62v7a8zxa.jpg",
-              "thumb": "photos/mtcyh62v7a8zxa-t.jpg",
-              "width": 1515,
-              "height": 2271,
-              "caption": "",
-              "x": 52.23,
-              "y": 476.24,
-              "w": 39.48
-            },
-            {
-              "id": "mtd1x4gcdekrgf",
-              "display": "photos/mtd1x4gcdekrgf.jpg",
-              "thumb": "photos/mtd1x4gcdekrgf-t.jpg",
-              "width": 1715,
-              "height": 2560,
-              "caption": "",
-              "x": 4.03,
-              "y": 62.96,
-              "w": 60.12,
-              "rotate": 270
-            }
-          ],
-          "texts": []
-        },
-        {
-          "id": "merwe-mode",
-          "title": "Merwe Mode",
-          "type": "gallery",
-          "header": {
-            "title": "MERWE MODE CLOTHING - 2025",
-            "meta": "",
-            "quote": "",
-            "description": ""
-          },
-          "photos": [
-            {
-              "id": "msnbwnzsaq5pmp",
-              "display": "photos/mson01m2xxhim9.jpg",
-              "thumb": "photos/mson01m2xxhim9-t.jpg",
-              "width": 1713,
-              "height": 2535,
-              "caption": "",
-              "x": 7.22,
-              "y": 173.69,
-              "w": 42.78
-            },
-            {
-              "id": "msnbwon12ofmbv",
-              "display": "photos/msq0tryri6bq21.jpg",
-              "thumb": "photos/msq0tryri6bq21-t.jpg",
-              "width": 1715,
-              "height": 2531,
-              "caption": "",
-              "x": 51.69,
-              "y": 173.69,
-              "w": 42.93
-            },
-            {
-              "id": "msnbwpc4h4ls6t",
-              "display": "photos/msomxy6rt2ms2g.jpg",
-              "thumb": "photos/msomxy6rt2ms2g-t.jpg",
-              "width": 2324,
-              "height": 1231,
-              "caption": "",
-              "x": 8.02,
-              "y": 60.6,
-              "w": 85.63
-            },
-            {
-              "id": "msnbx3wv7yuyc7",
-              "display": "photos/msnbx3wv7yuyc7.jpg",
-              "thumb": "photos/msnbx3wv7yuyc7-t.jpg",
-              "width": 2560,
-              "height": 1716,
-              "caption": "",
-              "x": 5.48,
-              "y": 111.28,
-              "w": 90.69
-            },
-            {
-              "id": "msnez8uf6cpo44",
-              "display": "photos/msnez8uf6cpo44.jpg",
-              "thumb": "photos/msnez8uf6cpo44-t.jpg",
-              "width": 1716,
-              "height": 2560,
-              "caption": "",
-              "x": 8.02,
-              "y": 0,
-              "w": 37.33
-            },
-            {
-              "id": "msnfzzltppwscu",
-              "display": "photos/msnfzzltppwscu.jpg",
-              "thumb": "photos/msnfzzltppwscu-t.jpg",
-              "width": 1977,
-              "height": 2560,
-              "caption": "",
-              "x": 50.82,
-              "y": 0,
-              "w": 42.83
-            }
-          ]
-        },
-        {
-          "id": "deluxe-coffeeworks",
-          "title": "Deluxe Coffeeworks",
-          "type": "gallery",
-          "header": {
-            "title": "DELUXE COFFEEWORKS - 2026",
-            "meta": "",
-            "quote": "",
-            "description": ""
-          },
-          "photos": [
-            {
-              "id": "msojuhupx6ghld",
-              "display": "photos/msolcji4yxsz85.jpg",
-              "thumb": "photos/msolcji4yxsz85-t.jpg",
-              "width": 1729,
-              "height": 2463,
-              "caption": "",
-              "x": 50.92,
-              "y": 242.98,
-              "w": 46.03
-            },
-            {
-              "id": "msojv2cz7j8fu5",
-              "display": "photos/msoldbxfempbbb.jpg",
-              "thumb": "photos/msoldbxfempbbb-t.jpg",
-              "width": 1742,
-              "height": 2557,
-              "caption": "",
-              "x": 50.92,
-              "y": 172.28,
-              "w": 46.03
-            },
-            {
-              "id": "msojvimyy9dzn1",
-              "display": "photos/msojvimyy9dzn1.jpg",
-              "thumb": "photos/msojvimyy9dzn1-t.jpg",
-              "width": 2044,
-              "height": 2560,
-              "caption": "",
-              "x": 2.67,
-              "y": 0,
-              "w": 46.04
-            },
-            {
-              "id": "msojvj8rb9ncv5",
-              "display": "photos/msojvj8rb9ncv5.jpg",
-              "thumb": "photos/msojvj8rb9ncv5-t.jpg",
-              "width": 2044,
-              "height": 2560,
-              "caption": "",
-              "x": 50.92,
-              "y": 0,
-              "w": 46.03
-            },
-            {
-              "id": "msojvrv13mamln",
-              "display": "photos/msolbixc7u3ie2.jpg",
-              "thumb": "photos/msolbixc7u3ie2-t.jpg",
-              "width": 1713,
-              "height": 2258,
-              "caption": "",
-              "x": 2.67,
-              "y": 258.83,
-              "w": 46.04
-            },
-            {
-              "id": "msojvxpi0trj61",
-              "display": "photos/msolc7p1iyrl24.jpg",
-              "thumb": "photos/msolc7p1iyrl24-t.jpg",
-              "width": 1552,
-              "height": 2252,
-              "caption": "",
-              "x": 50.92,
-              "y": 62.02,
-              "w": 46.03
-            },
-            {
-              "id": "msor0r6y2snhd0",
-              "display": "photos/msor0r6y2snhd0.jpg",
-              "thumb": "photos/msor0r6y2snhd0-t.jpg",
-              "width": 1922,
-              "height": 2560,
-              "caption": "",
-              "x": 2.67,
-              "y": 62.02,
-              "w": 46.04
-            },
-            {
-              "id": "msor0rqf9swoqx",
-              "display": "photos/msor0rqf9swoqx.jpg",
-              "thumb": "photos/msor0rqf9swoqx-t.jpg",
-              "width": 2560,
-              "height": 2044,
-              "caption": "",
-              "x": 50.92,
-              "y": 132.62,
-              "w": 46.03
-            },
-            {
-              "id": "msor0s3r3rih55",
-              "display": "photos/msor0s3r3rih55.jpg",
-              "thumb": "photos/msor0s3r3rih55-t.jpg",
-              "width": 1716,
-              "height": 2560,
-              "caption": "",
-              "x": 2.67,
-              "y": 126.33,
-              "w": 46.04
-            },
-            {
-              "id": "msor0sf6wxnbfp",
-              "display": "photos/msor67agtvbqv3.jpg",
-              "thumb": "photos/msor67agtvbqv3-t.jpg",
-              "width": 1713,
-              "height": 2138,
-              "caption": "",
-              "x": 2.67,
-              "y": 198.19,
-              "w": 46.04
-            },
-            {
-              "id": "mtd1iqcw82sn5c",
-              "display": "photos/mtd1iqcw82sn5c.jpg",
-              "thumb": "photos/mtd1iqcw82sn5c-t.jpg",
-              "width": 1926,
-              "height": 2560,
-              "caption": "",
-              "x": 50.92,
-              "y": 311.64,
-              "w": 46.03
-            },
-            {
-              "id": "mtd1iqp6i7dicl",
-              "display": "photos/mtd1iqp6i7dicl.jpg",
-              "thumb": "photos/mtd1iqp6i7dicl-t.jpg",
-              "width": 1716,
-              "height": 2560,
-              "caption": "",
-              "x": 2.67,
-              "y": 322.38,
-              "w": 46.04
-            },
-            {
-              "id": "mtd1kihg82yjek",
-              "display": "photos/mtd1kihg82yjek.jpg",
-              "thumb": "photos/mtd1kihg82yjek-t.jpg",
-              "width": 1731,
-              "height": 2560,
-              "caption": "",
-              "x": 50.92,
-              "y": 375.49,
-              "w": 46.03
-            }
-          ]
-        },
-        {
-          "id": "yoco",
-          "title": "Yoco",
-          "type": "gallery",
-          "header": {
-            "title": "YOCO - 2024",
-            "meta": "",
-            "quote": "",
-            "description": "Obi for Yoco"
-          },
-          "photos": [
-            {
-              "id": "msnbuvlocs7uwj",
-              "display": "photos/msq0vznvyls0gn.jpg",
-              "thumb": "photos/msq0vznvyls0gn-t.jpg",
-              "width": 1528,
-              "height": 2157,
-              "caption": "",
-              "x": 4.33,
-              "y": 0,
-              "w": 43.04
-            },
-            {
-              "id": "msnbv71gqpv01s",
-              "display": "photos/msq1rf9ko22iuw.jpg",
-              "thumb": "photos/msq1rf9ko22iuw-t.jpg",
-              "width": 2020,
-              "height": 898,
-              "caption": "",
-              "x": 4.33,
-              "y": 63.87,
-              "w": 89.72
-            },
-            {
-              "id": "msojq81wckrm0g",
-              "display": "photos/msq0wauxh26kku.jpg",
-              "thumb": "photos/msq0wauxh26kku-t.jpg",
-              "width": 1526,
-              "height": 2105,
-              "caption": "",
-              "x": 50,
-              "y": 0,
-              "w": 44.05
-            }
-          ]
-        },
-        {
-          "id": "turtle-concervancy",
-          "title": "the Turtle Concervancy",
-          "type": "gallery",
-          "header": {
-            "title": "TURTLE CONCERVANCY - 2024",
-            "meta": "",
-            "quote": "",
-            "description": "Members of the Black Mambas and a Leopard Tortoise"
-          },
-          "photos": [
-            {
-              "id": "msnfes40kpgapv",
-              "display": "photos/msnfes40kpgapv.jpg",
-              "thumb": "photos/msnfes40kpgapv-t.jpg",
-              "width": 2560,
-              "height": 2084,
-              "caption": "",
-              "x": 6.47,
-              "y": 112.73,
-              "w": 80.88
-            },
-            {
-              "id": "msnfes9b1dm133",
-              "display": "photos/msnfes9b1dm133.jpg",
-              "thumb": "photos/msnfes9b1dm133-t.jpg",
-              "width": 2249,
-              "height": 1697,
-              "caption": "",
-              "x": 6.47,
-              "y": 181.52,
-              "w": 80.88
-            },
-            {
-              "id": "msnfestl4c6reo",
-              "display": "photos/msnfestl4c6reo.jpg",
-              "thumb": "photos/msnfestl4c6reo-t.jpg",
-              "width": 1873,
-              "height": 2560,
-              "caption": "",
-              "x": 6.47,
-              "y": 0,
-              "w": 80.88
-            }
-          ]
-        },
-        {
-          "id": "cape-film-supply",
-          "title": "Cape Film supply",
-          "type": "gallery",
-          "header": {
-            "title": "cape film supply, social media content -2025",
-            "meta": "",
-            "quote": "",
-            "description": "35mm film scans"
-          },
-          "photos": [
-            {
-              "id": "mtcxxiq709l0ac",
-              "display": "photos/mtcxxiq709l0ac.jpg",
-              "thumb": "photos/mtcxxiq709l0ac-t.jpg",
-              "width": 1956,
-              "height": 2560,
-              "caption": "",
-              "x": 51.75,
-              "y": 202.36,
-              "w": 46.43
-            },
-            {
-              "id": "mtcxxj1c5a3oo9",
-              "display": "photos/mtcxxj1c5a3oo9.jpg",
-              "thumb": "photos/mtcxxj1c5a3oo9-t.jpg",
-              "width": 1880,
-              "height": 2560,
-              "caption": "",
-              "x": 2.85,
-              "y": 0,
-              "w": 45.29
-            },
-            {
-              "id": "mtcxxjbi40uwzl",
-              "display": "photos/mtcxxjbi40uwzl.jpg",
-              "thumb": "photos/mtcxxjbi40uwzl-t.jpg",
-              "width": 1910,
-              "height": 2560,
-              "caption": "",
-              "x": 2.85,
-              "y": 202.36,
-              "w": 45.29
-            },
-            {
-              "id": "mtcxxjk9imfcq9",
-              "display": "photos/mtcxxjk9imfcq9.jpg",
-              "thumb": "photos/mtcxxjk9imfcq9-t.jpg",
-              "width": 1899,
-              "height": 2560,
-              "caption": "",
-              "x": 51.75,
-              "y": 0,
-              "w": 45.5
-            },
-            {
-              "id": "mtcxxp1x6tlyqw",
-              "display": "photos/mtcxxp1x6tlyqw.jpg",
-              "thumb": "photos/mtcxxp1x6tlyqw-t.jpg",
-              "width": 1716,
-              "height": 2560,
-              "caption": "",
-              "x": 51.75,
-              "y": 65.34,
-              "w": 45.5
-            },
-            {
-              "id": "mtcxxpp9i6k2k2",
-              "display": "photos/mtcygcp0r825tx.jpg",
-              "thumb": "photos/mtcygcp0r825tx-t.jpg",
-              "width": 1369,
-              "height": 2030,
-              "caption": "",
-              "x": 2.85,
-              "y": 65.34,
-              "w": 45.29
-            },
-            {
-              "id": "mtcxxqagar8dyr",
-              "display": "photos/mtcxxqagar8dyr.jpg",
-              "thumb": "photos/mtcxxqagar8dyr-t.jpg",
-              "width": 1937,
-              "height": 2560,
-              "caption": "",
-              "x": 51.75,
-              "y": 137.81,
-              "w": 45.5
-            },
-            {
-              "id": "mtcxxqlguofze0",
-              "display": "photos/mtcxxqlguofze0.jpg",
-              "thumb": "photos/mtcxxqlguofze0-t.jpg",
-              "width": 1922,
-              "height": 2560,
-              "caption": "",
-              "x": 2.85,
-              "y": 137.81,
-              "w": 45.29
-            }
-          ],
-          "texts": []
-        },
-        {
-          "id": "repentance",
-          "title": "Repentance",
-          "type": "gallery",
-          "header": {
-            "title": "REPENTANCE EVENT PHOTOGRAPHY - 2025",
-            "meta": "",
-            "quote": "",
-            "description": ""
-          },
-          "photos": [
-            {
-              "id": "msng6nhbi50nhm",
-              "display": "photos/msng6nhbi50nhm.jpg",
-              "thumb": "photos/msng6nhbi50nhm-t.jpg",
-              "width": 2560,
-              "height": 1961,
-              "caption": "",
-              "x": 50,
-              "y": 65.69,
-              "w": 34.99
-            },
-            {
-              "id": "msng6o8u9kmamd",
-              "display": "photos/msng6o8u9kmamd.jpg",
-              "thumb": "photos/msng6o8u9kmamd-t.jpg",
-              "width": 2560,
-              "height": 2125,
-              "caption": "",
-              "x": 50,
-              "y": 0,
-              "w": 34.99
-            },
-            {
-              "id": "msng6w27kflu5g",
-              "display": "photos/msng6w27kflu5g.jpg",
-              "thumb": "photos/msng6w27kflu5g-t.jpg",
-              "width": 2560,
-              "height": 2013,
-              "caption": "",
-              "x": 50,
-              "y": 33.53,
-              "w": 34.99
-            },
-            {
-              "id": "msng78ncrwt76x",
-              "display": "photos/msng78ncrwt76x.jpg",
-              "thumb": "photos/msng78ncrwt76x-t.jpg",
-              "width": 2106,
-              "height": 2560,
-              "caption": "",
-              "x": 13.01,
-              "y": 42.67,
-              "w": 31.33
-            },
-            {
-              "id": "msng78x6oi37lc",
-              "display": "photos/msng78x6oi37lc.jpg",
-              "thumb": "photos/msng78x6oi37lc-t.jpg",
-              "width": 2102,
-              "height": 2560,
-              "caption": "",
-              "x": 13.01,
-              "y": 0,
-              "w": 31.33
-            },
-            {
-              "id": "msng79fltnp1px",
-              "display": "photos/msng79fltnp1px.jpg",
-              "thumb": "photos/msng79fltnp1px-t.jpg",
-              "width": 2087,
-              "height": 2560,
-              "caption": "",
-              "x": 13.01,
-              "y": 85.11,
-              "w": 31.33
-            },
-            {
-              "id": "msng89mpklzef3",
-              "display": "photos/msng89mpklzef3.jpg",
-              "thumb": "photos/msng89mpklzef3-t.jpg",
-              "width": 2115,
-              "height": 2560,
-              "caption": "",
-              "x": 33.93,
-              "y": 127.84,
-              "w": 26.68
-            },
-            {
-              "id": "msng89u9ytblfo",
-              "display": "photos/msng89u9ytblfo.jpg",
-              "thumb": "photos/msng89u9ytblfo-t.jpg",
-              "width": 2073,
-              "height": 2560,
-              "caption": "",
-              "x": 4.45,
-              "y": 127.45,
-              "w": 26.47
-            },
-            {
-              "id": "msng8a22cz3ft7",
-              "display": "photos/msng8a22cz3ft7.jpg",
-              "thumb": "photos/msng8a22cz3ft7-t.jpg",
-              "width": 2101,
-              "height": 2560,
-              "caption": "",
-              "x": 18.78,
-              "y": 163.62,
-              "w": 26.47
-            },
-            {
-              "id": "msng8a96v723wc",
-              "display": "photos/msng8a96v723wc.jpg",
-              "thumb": "photos/msng8a96v723wc-t.jpg",
-              "width": 2113,
-              "height": 2560,
-              "caption": "",
-              "x": 63.55,
-              "y": 127.81,
-              "w": 26.71
-            },
-            {
-              "id": "msng8jsbjk3chl",
-              "display": "photos/msng8jsbjk3chl.jpg",
-              "thumb": "photos/msng8jsbjk3chl-t.jpg",
-              "width": 2092,
-              "height": 2560,
-              "caption": "",
-              "x": 48.99,
-              "y": 163.62,
-              "w": 26.14
-            },
-            {
-              "id": "msogmzuifhxfbw",
-              "display": "photos/msogmzuifhxfbw.jpg",
-              "thumb": "photos/msogmzuifhxfbw-t.jpg",
-              "width": 2560,
-              "height": 1957,
-              "caption": "",
-              "x": 50,
-              "y": 96.79,
-              "w": 34.99
-            }
-          ]
+          "id": "muh7k34sln7qdz",
+          "display": "photos/muh7k34sln7qdz.jpg",
+          "thumb": "photos/muh7k34sln7qdz-t.jpg",
+          "width": 2560,
+          "height": 1950,
+          "caption": "",
+          "x": 9.13,
+          "y": 920.61,
+          "w": 42.57
         }
       ]
     },
@@ -2413,151 +301,36 @@
       "title": "contact",
       "type": "gallery",
       "header": {
-        "title": "BORAINWILLOW@GMAIL.COM",
+        "title": "",
         "meta": "",
         "quote": "",
-        "description": "FILM PHOTOGRAPHER"
+        "description": ""
       },
       "photos": [
         {
-          "id": "msnbj2vmelu79p",
-          "display": "photos/mtcyov142om1w2.jpg",
-          "thumb": "photos/mtcyov142om1w2-t.jpg",
-          "width": 1204,
-          "height": 1256,
-          "caption": "",
-          "x": 24.12,
-          "y": 0,
-          "w": 48.34
-        },
-        {
-          "id": "mtbmzq6k7ui06w",
-          "display": "photos/mtbmzq6k7ui06w.jpg",
-          "thumb": "photos/mtbmzq6k7ui06w-t.jpg",
-          "width": 2237,
+          "id": "muh8pb3x0lkhe5",
+          "display": "photos/muh8pb3x0lkhe5.jpg",
+          "thumb": "photos/muh8pb3x0lkhe5-t.jpg",
+          "width": 1790,
           "height": 2560,
           "caption": "",
-          "x": -2.7,
-          "y": 73.65,
-          "w": 32.31,
-          "title": "",
-          "link": "#/turtle-concervancy"
-        },
-        {
-          "id": "mtbn0oj1epzm35",
-          "display": "photos/mtbn0oj1epzm35.jpg",
-          "thumb": "photos/mtbn0oj1epzm35-t.jpg",
-          "width": 2237,
-          "height": 2560,
-          "caption": "",
-          "x": 66.89,
-          "y": 73.4,
-          "w": 32.53,
-          "title": "",
-          "link": "#/yoco"
-        },
-        {
-          "id": "mtbn0xgygaaftx",
-          "display": "photos/mtbn0xgygaaftx.jpg",
-          "thumb": "photos/mtbn0xgygaaftx-t.jpg",
-          "width": 2237,
-          "height": 2560,
-          "caption": "",
-          "x": 32.02,
-          "y": 73.65,
-          "w": 32.31,
-          "title": "",
-          "link": "#/slipped-up"
-        },
-        {
-          "id": "mtbn248bvx5wyl",
-          "display": "photos/mtbn248bvx5wyl.jpg",
-          "thumb": "photos/mtbn248bvx5wyl-t.jpg",
-          "width": 2237,
-          "height": 2560,
-          "caption": "",
-          "x": -2.7,
-          "y": 113.46,
-          "w": 32.31,
-          "title": "",
-          "link": "https://www.dazeddigital.com/art-photography/article/66567/1/willow-borain-girlhood-photograph-series-teenage-adolescence-portraits"
-        },
-        {
-          "id": "mtbn2do4u9ptix",
-          "display": "photos/mtbn2do4u9ptix.jpg",
-          "thumb": "photos/mtbn2do4u9ptix-t.jpg",
-          "width": 2237,
-          "height": 2560,
-          "caption": "",
-          "x": 32.02,
-          "y": 113.33,
-          "w": 32.53,
-          "title": "",
-          "link": "#/deluxe-coffeeworks"
-        },
-        {
-          "id": "mtbn3fk24bap8h",
-          "display": "photos/mtbn3fk24bap8h.jpg",
-          "thumb": "photos/mtbn3fk24bap8h-t.jpg",
-          "width": 2237,
-          "height": 2560,
-          "caption": "",
-          "x": -2.7,
-          "y": 153.36,
-          "w": 32.53,
-          "title": "",
-          "link": "#/4wks"
-        },
-        {
-          "id": "mtbn3r62f4slv9",
-          "display": "photos/mtbn3r62f4slv9.jpg",
-          "thumb": "photos/mtbn3r62f4slv9-t.jpg",
-          "width": 2237,
-          "height": 2560,
-          "caption": "",
-          "x": 66.89,
-          "y": 153.36,
-          "w": 32.53,
-          "title": "",
-          "link": "https://superbalist.com/thewayofus/2015/12/22/do-not-enter/474"
-        },
-        {
-          "id": "mtbn4a463nkzf8",
-          "display": "photos/mtbn4a463nkzf8.jpg",
-          "thumb": "photos/mtbn4a463nkzf8-t.jpg",
-          "width": 2237,
-          "height": 2560,
-          "caption": "",
-          "x": 32.02,
-          "y": 153.36,
-          "w": 32.53,
-          "title": "",
-          "link": "#/cape-film-supply"
-        },
-        {
-          "id": "mtbn4s8pplllhc",
-          "display": "photos/mtbn4s8pplllhc.jpg",
-          "thumb": "photos/mtbn4s8pplllhc-t.jpg",
-          "width": 2237,
-          "height": 2560,
-          "caption": "",
-          "x": 66.89,
-          "y": 113.46,
-          "w": 32.53
-        },
-        {
-          "id": "mtcv2uh96tj30y",
-          "display": "photos/mtcv38ppforogg.jpg",
-          "thumb": "photos/mtcv38ppforogg-t.jpg",
-          "width": 2043,
-          "height": 197,
-          "caption": "PAST WORK AND FEATURES",
-          "x": 11.88,
-          "y": 55.54,
-          "w": 76.25
+          "x": 21.89,
+          "y": 12.72,
+          "w": 52.41
         }
       ],
-      "texts": []
+      "texts": [
+        {
+          "id": "muh8nwye56r6i6",
+          "type": "text",
+          "text": "Click here to email me.",
+          "align": "left",
+          "x": 26.09,
+          "y": 0,
+          "w": 44.01,
+          "link": "mailto:borainwillow@gmail.com"
+        }
+      ]
     }
   ],
   "cursor": {

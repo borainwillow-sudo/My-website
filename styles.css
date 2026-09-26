@@ -189,14 +189,30 @@ img {
   border-bottom: 1px solid var(--line);
   padding: 14px 18px;
   align-items: center;
-  justify-content: space-between;
+  /* The name is centred in the bar and the menu button sits over the right
+     edge, rather than the two sharing the row — so the name is centred on the
+     screen, not on whatever space the button leaves. */
+  justify-content: center;
+  position: relative;
+}
+
+.mobile-bar #nav-toggle {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .mobile-name {
   font-weight: var(--f-siteName-weight);
-  font-size: calc(var(--f-siteName-size) * 0.62);
+  /* Always one line. The vw cap is what keeps it to one: at the sizes the
+     heading is set to, the name would otherwise be wider than a phone and
+     wrap. It only ever shrinks the name — the first value wins whenever it
+     fits. */
+  font-size: min(calc(var(--f-siteName-size) * 0.62), 9vw);
   line-height: 1.08;
-  max-width: 6em;
+  white-space: nowrap;
+  text-align: center;
 }
 
 .icon-btn {
@@ -446,6 +462,17 @@ body.is-editing .text-block .text-content:empty::before {
   color: var(--faint);
 }
 
+/* A linked text block. Underlined, because a line of words that does
+   something when clicked has to look like it will — the site's links are
+   otherwise undecorated. */
+.text-link {
+  display: block;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
 /* The drag surface. The text itself can't be one, or clicking to type would
    move the block instead. */
 .text-grip {
@@ -519,6 +546,13 @@ body.is-editing .text-block.dragging .text-grip {
 
 body.is-editing .photo-block {
   cursor: grab;
+  /* A press on a photo has to be able to mean "scroll the page" on a
+     touchscreen, or a page of photos can't be scrolled at all. Only the photo
+     that has been picked up takes the gesture over. */
+  touch-action: auto;
+}
+
+body.is-editing .photo-block.selected {
   touch-action: none;
 }
 
@@ -566,8 +600,50 @@ body.is-editing .photo-block .resize-handle {
   z-index: 12;
 }
 
-body.is-editing .photo-block:hover .photo-tools {
+body.is-editing .photo-block:hover .photo-tools,
+body.is-editing .photo-block.selected .photo-tools {
   display: flex;
+}
+
+/* Where the buttons live in their own bar, the ones drawn inside the canvas
+   would only clip and overlap. */
+body.touch-tools .photo-block .photo-tools {
+  display: none !important;
+}
+
+/* The canvas is shrunk to fit a phone, which would shrink the controls with
+   it — a 13px handle becomes 4px. They scale back up by the same amount, so a
+   handle is a handle whatever the page is doing. */
+.photo-tools,
+.resize-handle {
+  transform: scale(calc(1 / var(--canvas-scale, 1)));
+}
+
+.photo-tools {
+  transform-origin: 0 100%;
+}
+
+.resize-handle {
+  transform-origin: 100% 100%;
+}
+
+/* Fingers need a bigger target than a pointer does. */
+@media (pointer: coarse) {
+  .resize-handle {
+    width: 22px;
+    height: 22px;
+    right: -11px;
+    bottom: -11px;
+  }
+
+  .photo-tools button {
+    font-size: 11px;
+    padding: 5px 9px;
+  }
+
+  .text-grip {
+    height: 22px;
+  }
 }
 
 .photo-tools button {
@@ -1092,7 +1168,7 @@ body.is-editing {
     grid-column: 1 / -1;
   }
 
-  .text-grip {
+  body:not(.phone-desktop-layout) .text-grip {
     display: none !important;
   }
 
@@ -1100,7 +1176,7 @@ body.is-editing {
     display: none;
   }
 
-  .resize-handle {
+  body:not(.phone-desktop-layout) .resize-handle {
     display: none !important;
   }
 
@@ -1117,4 +1193,57 @@ body.is-editing {
   body:not(.phone-desktop-layout) .canvas {
     grid-template-columns: 1fr;
   }
+}
+
+/* ---------- buttons for the picked-up item (touch) ---------- */
+
+.sel-tools {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 75;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  background: #fff;
+  border-top: 1px solid var(--line);
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* It sits above the editing toolbar, which is itself fixed to the bottom. */
+body.is-editing .sel-tools {
+  bottom: var(--edit-bar-h, 96px);
+}
+
+.sel-tools-label {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-right: 2px;
+}
+
+.sel-tools button {
+  font-family: inherit;
+  font-size: 13px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 9px 14px;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.sel-tools button.danger {
+  color: var(--danger);
+}
+
+.sel-tools button.sel-done {
+  margin-left: auto;
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
 }

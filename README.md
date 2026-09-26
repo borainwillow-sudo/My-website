@@ -129,6 +129,7 @@ kind of object, it just holds words.
 - **Resize** from the corner handle. Only the width is yours to set; the height
   follows the words, so a narrower block gets taller and the page grows to fit.
 - **Align** cycles left → centre → right.
+- **Link** makes the whole block clickable — see below.
 - **Remove** deletes it.
 
 Text blocks use the **Body text** weight and size from **Style**, so all the
@@ -138,6 +139,24 @@ overlap, which is what you want for a caption laid over an image.
 On phones they take the full width of the screen and fall into place among the
 photos in reading order — down the page, then across — rather than all landing
 at the bottom.
+
+## Linking text, and email links
+
+**Link** on a text block makes the whole block clickable, so a short block on
+its own — "Click here to email me" — becomes a link. Keep such a block brief
+rather than burying the link in a paragraph, since all of it is clickable. A
+linked block is underlined, because a line of words that does something when
+clicked has to look like it will.
+
+Type an **email address** into the link field of either a text block or a
+photo and it becomes a mail link: clicking it opens a new message in whatever
+mail app the reader uses, rather than going to a web page. Writing `mailto:`
+yourself works too but isn't needed. Anything else without `https://` in front
+is assumed to be a web address.
+
+While editing, the block shows the same small blue `link` marker a photo does,
+and isn't clickable — otherwise a click would follow the link instead of
+putting the caret in the text.
 
 ## Photo links and hover labels
 
@@ -184,6 +203,26 @@ background and uses it as the pointer across the whole site.
 
 Positions are stored as percentages, so a layout keeps its proportions at any
 window size. Outside edit mode photos are fixed and no longer draggable.
+
+## Editing on a phone
+
+Everything works on a phone, with one difference in how photos are handled:
+there is no hover, and the canvas is shrunk to fit, so the buttons that appear
+above a photo on a desktop would come out tiny and run off the screen.
+
+- **Tap a photo to pick it up.** Its buttons — Replace, Crop, Adjust, Link,
+  Front, Remove — appear in a bar of their own above the toolbar, at a size a
+  finger can hit. Text blocks get Align, Link and Remove the same way.
+- **Drag the photo you've picked up** to move it, and the corner handle to
+  resize. Only the picked-up photo takes the gesture over; a swipe anywhere
+  else still scrolls the page, which is why picking up is a separate step.
+- **Press anywhere off a photo, or Done in that bar, to put it down** and get
+  scrolling back.
+- Pinch to zoom in for fine positioning — the page is shown at about a third
+  of its real size, and dragging works the same at any zoom.
+
+A mouse is unaffected: hover still shows the buttons on the photo itself, and a
+press starts a drag straight away with no picking up.
 
 ## Phones
 

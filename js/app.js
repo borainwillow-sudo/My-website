@@ -1,7 +1,7 @@
 (function () {
   // Shown at the bottom of the Style panel. Bump alongside the ?v= query
   // strings in index.html so a stale copy can be identified at a glance.
-  var EDITOR_VERSION = "23";
+  var EDITOR_VERSION = "27";
   var data = null;
   var currentId = "home";
   var openGroups = {};
@@ -107,6 +107,12 @@
     var bar = document.querySelector(".mobile-bar");
     var h = bar ? bar.offsetHeight : 0;
     document.documentElement.style.setProperty("--mobile-bar-h", h + "px");
+    // The editing toolbar wraps onto more rows on a narrow screen, and the
+    // picked-up item's buttons stack on top of it, so its height is measured
+    // rather than assumed too.
+    var eb = document.getElementById("edit-bar");
+    var ebh = eb && !eb.hidden ? eb.offsetHeight : 0;
+    document.documentElement.style.setProperty("--edit-bar-h", ebh + "px");
   }
 
   // On a phone, either keep the desktop arrangement (shrunk to fit) or fall
@@ -380,6 +386,32 @@
     return /^#/.test(href) || /^\/(?!\/)/.test(href);
   }
 
+  function isMailLink(href) {
+    return /^mailto:/i.test(href || "");
+  }
+
+  // Turns what someone typed into something a browser can follow. An email
+  // address becomes a mailto: link, so writing it out by hand isn't necessary;
+  // anything else that arrives without a scheme is assumed to be a web address,
+  // since a bare domain would otherwise resolve as a path on this site.
+  function normalizeHref(href) {
+    href = (href || "").trim();
+    if (!href) return "";
+    if (/^(https?:\/\/|mailto:|#|\/)/i.test(href)) return href;
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(href)) return "mailto:" + href;
+    return "https://" + href;
+  }
+
+  // A link is only live outside edit mode — inside it an anchor would swallow
+  // the drag and the caret.
+  function linkAttrs(href) {
+    var external = !isInternalLink(href) && !isMailLink(href);
+    return (
+      ' href="' + esc(href) + '"' +
+      (external ? ' target="_blank" rel="noopener noreferrer"' : "")
+    );
+  }
+
   // ---------- photo adjustments ----------
   //
   // Rotation and saturation are stored as numbers and applied when the photo
@@ -462,9 +494,14 @@
     var tools = editing
       ? '<div class="photo-tools">' +
         '<button data-text-action="align">Align: ' + align + "</button>" +
+        '<button data-text-action="link">Link</button>' +
         '<button data-text-action="remove" class="danger">Remove</button>' +
         "</div>"
       : "";
+    var linkFlag =
+      editing && item.link
+        ? '<span class="link-flag" title="' + esc(item.link) + '">link</span>'
+        : "";
     // Nearly all of a text block is contenteditable, and the drag engine has to
     // leave that alone so a click can put the caret in it. The grip is the
     // part you drag by.
@@ -478,7 +515,9 @@
       order +
       '">' +
       tools +
+      linkFlag +
       grip +
+      (item.link && !editing ? '<a class="text-link"' + linkAttrs(item.link) + ">" : "") +
       '<div class="text-content" style="text-align:' +
       align +
       '"' +
@@ -486,6 +525,7 @@
       ">" +
       esc(item.text || "") +
       "</div>" +
+      (item.link && !editing ? "</a>" : "") +
       handle +
       "</div>"
     );
@@ -536,16 +576,12 @@
     // swallow the drag. A marker keeps it visible while editing.
     var media;
     if (photo.link && !editing) {
-      var external = !isInternalLink(photo.link);
       media =
         '<a class="photo-media' +
         rot.cls +
         '"' +
         styleAttr(rot.mediaStyle) +
-        ' href="' +
-        esc(photo.link) +
-        '"' +
-        (external ? ' target="_blank" rel="noopener noreferrer"' : "") +
+        linkAttrs(photo.link) +
         ">" +
         img +
         label +
@@ -662,7 +698,7 @@
     var canvas = $("canvas");
     if (!canvas) return;
     window.WB.layout.applyPositions(canvas, items);
-    if (window.WB.isEditing() && window.innerWidth > 820) {
+    if (window.WB.isEditing() && window.WB.layout.freeformActive()) {
       window.WB.layout.enableEditing(canvas, items, function () {
         markDirty();
       });
@@ -1444,12 +1480,59 @@
       return;
     }
 
+    if (action === "link") {
+      openTextLink(item);
+      return;
+    }
+
     if (action === "align") {
       var at = ALIGNMENTS.indexOf(item.align);
       item.align = ALIGNMENTS[(at + 1) % ALIGNMENTS.length];
       render();
       markDirty();
     }
+  }
+
+  // Makes the whole block a link. Keep such a block short and on its own —
+  // "Email me" — rather than burying it in a paragraph, since all of it is
+  // clickable.
+  function openTextLink(item) {
+    var modal = openModal(
+      "<h3>Link this text</h3>" +
+        '<p class="hint">The whole block becomes clickable. An email address is turned into a mail link, so clicking it opens a new message rather than a web page.</p>' +
+        "<label>Link to a page on this site</label>" +
+        '<select id="text-page"><option value="">— none —</option>' +
+        pageOptionsHTML(item.link) +
+        "</select>" +
+        "<label>…or an email address or web address</label>" +
+        '<input type="text" id="text-link" placeholder="you@example.com" value="' +
+        esc(item.link || "") +
+        '" spellcheck="false">' +
+        '<div class="modal-actions">' +
+        '<button class="pill-btn" id="text-link-clear">Clear link</button>' +
+        '<button class="pill-btn" id="text-link-cancel">Cancel</button>' +
+        '<button class="pill-btn pill-solid" id="text-link-save">Save</button>' +
+        "</div>"
+    );
+
+    modal.querySelector("#text-page").addEventListener("change", function () {
+      if (this.value) modal.querySelector("#text-link").value = this.value;
+    });
+    modal.querySelector("#text-link-cancel").addEventListener("click", closeModal);
+    modal.querySelector("#text-link-clear").addEventListener("click", function () {
+      delete item.link;
+      closeModal();
+      render();
+      markDirty();
+    });
+    modal.querySelector("#text-link-save").addEventListener("click", function () {
+      var href = normalizeHref(modal.querySelector("#text-link").value);
+      if (href) item.link = href;
+      else delete item.link;
+      closeModal();
+      render();
+      markDirty();
+    });
   }
 
   function addTextBlock() {
@@ -1556,8 +1639,9 @@
   }
 
   // Per-photo hover label and click-through link.
-  function openPhotoLink(photo) {
-    var pageOptions = allPages(data)
+  // The pages someone can link to, with the one already chosen selected.
+  function pageOptionsHTML(currentLink) {
+    return allPages(data)
       .filter(function (p) {
         return p.type !== "group";
       })
@@ -1566,13 +1650,17 @@
           '<option value="#/' +
           esc(p.id) +
           '"' +
-          (photo.link === "#/" + p.id ? " selected" : "") +
+          (currentLink === "#/" + p.id ? " selected" : "") +
           ">" +
           esc(p.title) +
           "</option>"
         );
       })
       .join("");
+  }
+
+  function openPhotoLink(photo) {
+    var pageOptions = pageOptionsHTML(photo.link);
 
     var modal = openModal(
       "<h3>Link &amp; label</h3>" +
@@ -1611,13 +1699,7 @@
 
     modal.querySelector("#photo-link-save").addEventListener("click", function () {
       photo.title = modal.querySelector("#photo-title").value.trim();
-      var href = modal.querySelector("#photo-link").value.trim();
-      // A bare domain typed without a scheme would otherwise resolve as a
-      // relative path on this site.
-      if (href && !/^(https?:\/\/|mailto:|#|\/)/i.test(href)) {
-        href = "https://" + href;
-      }
-      photo.link = href;
+      photo.link = normalizeHref(modal.querySelector("#photo-link").value);
       closeModal();
       render();
       markDirty();
@@ -1648,6 +1730,96 @@
       if (e.target.tagName !== "IMG") root.innerHTML = "";
     });
   }
+
+  // ---------- the picked-up item's buttons ----------
+
+  // On a touchscreen the buttons above a photo can't be used: they appear on
+  // hover, and on a phone they are drawn inside a canvas shrunk to a third of
+  // its size, so they come out tiny and run off the edge of the screen. The
+  // same buttons are put in a bar of their own instead, outside the canvas,
+  // for whatever is currently picked up.
+  function usingTouchTools() {
+    return (
+      window.matchMedia("(pointer: coarse)").matches ||
+      window.matchMedia("(max-width: 820px)").matches
+    );
+  }
+
+  function renderSelectionTools(id) {
+    var bar = $("sel-tools");
+    if (!bar) return;
+    document.body.classList.toggle("touch-tools", usingTouchTools());
+    if (!id || !usingTouchTools() || !window.WB.isEditing()) {
+      bar.hidden = true;
+      bar.innerHTML = "";
+      return;
+    }
+    var page = findPage(data, currentId);
+    if (!page) return;
+    var photo = (page.photos || []).find(function (p) {
+      return p.id === id;
+    });
+    var text = (page.texts || []).find(function (t) {
+      return t.id === id;
+    });
+    if (!photo && !text) {
+      bar.hidden = true;
+      return;
+    }
+    var buttons = photo
+      ? [
+          ["replace", "Replace"],
+          ["crop", "Crop"],
+          ["adjust", "Adjust"],
+          ["link", "Link"],
+          ["front", "Front"],
+          ["remove", "Remove"],
+        ]
+      : [
+          ["align", "Align"],
+          ["link", "Link"],
+          ["remove", "Remove"],
+        ];
+    bar.innerHTML =
+      '<span class="sel-tools-label">' +
+      (photo ? "Photo" : "Text") +
+      "</span>" +
+      buttons
+        .map(function (b) {
+          return (
+            '<button data-sel-action="' +
+            b[0] +
+            '"' +
+            (b[0] === "remove" ? ' class="danger"' : "") +
+            ">" +
+            b[1] +
+            "</button>"
+          );
+        })
+        .join("") +
+      '<button data-sel-action="done" class="sel-done">Done</button>';
+    bar.dataset.itemId = id;
+    bar.hidden = false;
+  }
+
+  $("sel-tools").addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-sel-action]");
+    if (!btn) return;
+    var id = $("sel-tools").dataset.itemId;
+    var action = btn.dataset.selAction;
+    if (action === "done") {
+      window.WB.layout.clearSelection($("canvas"));
+      return;
+    }
+    var page = findPage(data, currentId);
+    var isText = (page.texts || []).some(function (t) {
+      return t.id === id;
+    });
+    if (isText) handleTextAction(action, id);
+    else handlePhotoAction(action, id);
+  });
+
+  window.WB.layout.onSelectionChange(renderSelectionTools);
 
   // ---------- events ----------
 
